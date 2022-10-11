@@ -1,7 +1,7 @@
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
-import {  Container } from 'react-bootstrap';
+
 import  NavBav from './media/components/NavBar/NavBar';
 import OffCanvas from './media/components/OffCanvas/OffCanvas'
 

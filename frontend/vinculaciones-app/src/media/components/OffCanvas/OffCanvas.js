@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-const options = [
-  {
-    name: 'OffCanvas',
-    scroll: true,
-    backdrop: true,
-  },
-];
+
 
 function OffCanvas({ name, ...props }) {
   const [show, setShow] = useState(false);
@@ -34,14 +28,6 @@ function OffCanvas({ name, ...props }) {
   );
 }
 
-function Off() {
-  return (
-    <>
-      {options.map((props, idx) => (
-        <OffCanvas key={idx} {...props} />
-      ))}
-    </>
-  );
-}
+
 
 export default OffCanvas;
