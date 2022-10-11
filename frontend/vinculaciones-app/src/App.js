@@ -1,16 +1,22 @@
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
-import { Button } from 'react-bootstrap';
-import  NavBav from 'components/NavBar.js';
+import {  Container } from 'react-bootstrap';
+import  NavBav from './media/components/NavBar/NavBar';
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <Button>Boton</Button>
-          <NavBar></NavBar>
+            <Container fluid  ClassName="bg-">
+                
+                <NavBav>
+
+                
+                </NavBav>
+
+            </Container>
       </header>
     </div>
   );
