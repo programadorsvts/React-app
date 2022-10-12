@@ -12,10 +12,8 @@ function App() {
       <header className="App-header">
            
                 
-                <NavBav >
-                                   
-                </NavBav>
-                <OffCanvas></OffCanvas> 
+                <NavBav ></NavBav>
+                
 
             
       </header>

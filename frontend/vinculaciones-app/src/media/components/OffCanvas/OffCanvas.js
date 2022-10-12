@@ -4,20 +4,23 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 
 
 
+
+
+
 function OffCanvas({ name, ...props }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const toggleShow = () => setShow((s) => !s);
+  const handleShow = () => setShow(true);
 
   return (
     <>
-      <Button variant="secondary" onClick={toggleShow} className="me-2">
-        {name} 
+      <Button variant="primary" onClick={handleShow} className="me-2">
+       {name}
       </Button>
       <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Probando Menu Login</Offcanvas.Title>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           Some text as placeholder. In real life you can have the elements you
@@ -27,6 +30,10 @@ function OffCanvas({ name, ...props }) {
     </>
   );
 }
+
+
+
+
 
 
 
