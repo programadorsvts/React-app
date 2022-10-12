@@ -1,14 +1,29 @@
 /* -------------------------------Patrones de Colores------------------------ */
 
+$obscuro :#000000;
+$claro: #DFF4FF;
 $primario : #1F2937;
-$secundario :  #18273F;
+$secundario :  #DFF4FF;
+$claro:#DFF4FF;
+
+
+
+/* -------------------------------Patrones de Botones------------------------ */
+/* $btn-font-family: poppins ; */
+$btn-font-size: 16px ;
+
+
+/* ------------------------------Barra de Navegacion------------------------ */
 
 
 
 
-/*---------------------------Modificando la libreria de bootstrap----------- */;
+/*---------------------------Modificando la libreria de bootstrap----------- */
 
-$primary: $primario;
+$primary : $primario;
+$secondary: $secundario;
+$dark : $obscuro;
+$light : $claro;
 
 
 
