@@ -1,9 +1,9 @@
 
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.css'
+import './media/style/personalizado.css'
+
 
 import  NavBav from './media/components/NavBar/NavBar';
-import OffCanvas from './media/components/OffCanvas/OffCanvas'
+/* import OffCanvas from './media/components/OffCanvas/OffCanvas' */
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
            
                 
-                <NavBav ></NavBav>
+        <NavBav ></NavBav>
                 
 
             
