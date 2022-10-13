@@ -81,7 +81,8 @@ function NavBar() {
                   
                 <Nav.Link href="#features" className="text-light">INICIO</Nav.Link>
                 <Nav.Link href="#features" className="text-light">CATALOGO</Nav.Link>  
-                <Nav.Link href="#pricing" className="text-light">REVISTA DIGITRAL</Nav.Link>  
+                <Nav.Link href="#pricing" className="text-light">REVISTA DIGITRAL</Nav.Link>
+                <Nav.Link href="#pricing" className="text-light">OBSERVATORIO</Nav.Link>   
                 
 
                 </Nav>

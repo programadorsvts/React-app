@@ -6,7 +6,9 @@ import './media/style/personalizado.css'
 import  NavBav from './media/components/NavBar/NavBar';
 import  Inicio from './media/components/Inicio/Inicio'
 import  Noticias from './media/components/Noticias/Noticias'
-/* import OffCanvas from './media/components/OffCanvas/OffCanvas' */
+import Gestion from './media/components/Gestion/Gestion'
+import { Container } from 'react-bootstrap';
+
 
 
 function App() {
@@ -14,11 +16,18 @@ function App() {
     <div className="App" bg="secondary">
       <header className="App-header">
            
-                
-        <NavBav ></NavBav>
-        <Inicio></Inicio>
-        <Noticias></Noticias>
+       
+          
+          <NavBav ></NavBav>
+          <Inicio></Inicio>
+          
+          <Noticias></Noticias>
+          <Gestion></Gestion>
+        
+         
 
+             
+        
                 
 
             

@@ -1,32 +1,32 @@
 import {Container,Row,Col} from 'react-bootstrap';
 
-import Card from './Card'
+import Card from '../Noticias/Card'
 
 
 
-function noticias() {
+function gestion() {
   return (
 
 
-    <Container  className=" "  >
+    <Container  className="ms-5 me-5 "  >
         
-        <h4 className="mt-5 pt-5" xs lg="2">Noticias</h4>
-        
-        <Row className="bg-warning  justify-content-center  ">
-     
-            <Col className=" "  >
+        <h2 className="mt-5 pt-5" xs lg="2">Gestion</h2>
+       
+        <Row className="  ">
+
+            <Col className="mt-4"  md="4">
                     
                     <Card></Card>
             
             </Col>
 
-            <Col className=" "   >
+            <Col className="mt-4"    md="4">
                     
                     <Card></Card>
             
             </Col>
 
-            <Col className=""  >
+            <Col className="mt-4 "  md="4">
                     
                     <Card></Card>
             
@@ -39,4 +39,4 @@ function noticias() {
   );
 }
 
-export default noticias;
+export default gestion;
