@@ -14,24 +14,24 @@ function noticias() {
         
         <Row className=" bg-danger  justify-content-center ">
      
-            <Col className=" mt-3 justify-content-center" xs  style={{display:'flex'}}   >
+            <Col className=" mt-3 mb-2  d-flex justify-content-center" xs     >
                     
                     <Card></Card>
             
             </Col>
 
-            <Col className="mt-3 mb-2  justify-content-center   " xs  style={{display:'flex'}}  >
+            <Col className="mt-3 mb-2 d-flex jjustify-content-center   " xs    >
                     
                     <Card></Card>
             
             </Col>
 
-            <Col className="mt-3 mb-2 justify-content-center " xs  style={{display:'flex'}}   >
+            <Col className="mt-3 mb-2 d-flex justify-content-center " xs    >
                     
                     <Card></Card>
             
             </Col>
-             <Col className="mt-3 mb-2 justify-content-center " xs style={{display:'flex'}}    >
+             <Col className="mt-3 mb-2d-flex justify-content-center " xs    >
                     
                     <Card></Card>
             

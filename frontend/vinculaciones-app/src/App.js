@@ -4,7 +4,8 @@ import  NavBav from './media/components/NavBar/NavBar';
 import  Inicio from './media/components/Inicio/Inicio'
 import  Noticias from './media/components/Noticias/Noticias'
 import Gestion from './media/components/Gestion/Gestion'
-import { Container } from 'react-bootstrap';
+import Convocatorias from './media/components/Convocatorias/Convocatorias'
+
 
 
 
@@ -21,6 +22,7 @@ function App() {
           
           <Noticias></Noticias>
           <Gestion></Gestion>
+          <Convocatorias></Convocatorias>
         
          
 
