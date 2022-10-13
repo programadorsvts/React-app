@@ -1,3 +1,7 @@
+
+/*------------------------------Modificando la libreria de bootstrap--------------------------------- */
+
+
 /* -------------------------------Patrones de Colores------------------------ */
 
 $obscuro :#000000;
@@ -6,25 +10,33 @@ $primario : #1F2937;
 $secundario :  #DFF4FF;
 $claro:#DFF4FF;
 
-
-
-/* -------------------------------Patrones de Botones------------------------ */
-/* $btn-font-family: poppins ; */
-$btn-font-size: 16px ;
-
-
-/* ------------------------------Barra de Navegacion------------------------ */
-
-
-
-
-/*---------------------------Modificando la libreria de bootstrap----------- */
-
-$primary : $primario;
+$primary: $primario;
 $secondary: $secundario;
 $dark : $obscuro;
 $light : $claro;
 
+/* -------------------------------Patrones de Botones------------------------ */
+$btn-padding-y: 5px;
+$btn-padding-x: 22px;
+
+$btn-font-size: 16px ;
+$btn-font-family: 'Poppins';
+$btn-box-shadow: 0px 10px 25px rgba(89, 42, 190, 0.15);
+$btn-border-radius: 20px ;
+$btn-line-height:24px;
+$btn-font-style:normal;
+$btn-font-weight:700;
+
+
+/* ------------------------------Textos------------------------ */
+
+$font-family-sans-serif:'Poppins';
+$h1-font-size:50px;
+
+
+
+/* ------------------------------Card------------------------ */
+$card-bg:#192029;
 
 
 
@@ -38,5 +50,7 @@ $light : $claro;
 
 
 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss"
 
