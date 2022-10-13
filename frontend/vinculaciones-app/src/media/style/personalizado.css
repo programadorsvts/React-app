@@ -1,11 +1,15 @@
 @charset "UTF-8";
 /*------------------------------Modificando la libreria de bootstrap--------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+.not-found-container {
+  min-height: 95vh !important;
+}
+
 /* -------------------------------Patrones de Colores------------------------ */
 /* -------------------------------Patrones de Botones------------------------ */
 /* ------------------------------Textos------------------------ */
 /* ------------------------------Card------------------------ */
 /* ------------------------------OffCanvas------------------------ */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 /*!
  * Bootstrap  v5.2.2 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -10941,4 +10945,6 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+
+   
 }/*# sourceMappingURL=personalizado.css.map */

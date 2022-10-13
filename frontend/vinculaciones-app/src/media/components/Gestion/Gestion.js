@@ -12,21 +12,21 @@ function gestion() {
         
         <h2 className="mt-5 pt-5  text-center" >Gestion</h2>
        
-        <Row className=" bg-danger  justify-content-center">
+        <Row className=" bg-danger  justify-content-center"  >
 
-            <Col className="mt-4"  >
+            <Col className="mt-4  justify-content-center" style={{display:'flex'}} >
+                    
+                    <Card></Card>
+                        
+            </Col>
+
+            <Col className="mt-4  justify-content-center"  style={{display:'flex'}}  >
                     
                     <Card></Card>
             
             </Col>
 
-            <Col className="mt-4"    >
-                    
-                    <Card></Card>
-            
-            </Col>
-
-            <Col className="mt-4 "  >
+            <Col className="mt-4   justify-content-center" style={{display:'flex'}} >
                     
                     <Card></Card>
             

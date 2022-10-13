@@ -1,8 +1,5 @@
 
 import './media/style/personalizado.css'
-
-
-
 import  NavBav from './media/components/NavBar/NavBar';
 import  Inicio from './media/components/Inicio/Inicio'
 import  Noticias from './media/components/Noticias/Noticias'
@@ -13,8 +10,9 @@ import { Container } from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="App" bg="secondary">
-      <header className="App-header">
+    <div className="App" >
+     
+      <header className="App-header" >
            
        
           
@@ -26,10 +24,7 @@ function App() {
         
          
 
-             
         
-                
-
             
       </header>
     </div>
