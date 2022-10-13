@@ -12,21 +12,26 @@ function noticias() {
         
         <h4 className="mt-5 pt-5" xs lg="2">Noticias</h4>
         
-        <Row className="bg-warning  justify-content-center  ">
+        <Row className=" bg-danger  justify-content-center ">
      
-            <Col className=" "  >
+            <Col className=" mt-3" xs    >
                     
                     <Card></Card>
             
             </Col>
 
-            <Col className=" "   >
+            <Col className="mt-3 "xs   >
                     
                     <Card></Card>
             
             </Col>
 
-            <Col className=""  >
+            <Col className="mt-3" xs    >
+                    
+                    <Card></Card>
+            
+            </Col>
+             <Col className="mt-3" xs    >
                     
                     <Card></Card>
             

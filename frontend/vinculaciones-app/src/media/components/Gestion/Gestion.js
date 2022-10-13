@@ -10,23 +10,23 @@ function gestion() {
 
     <Container  className="ms-5 me-5 "  >
         
-        <h2 className="mt-5 pt-5" xs lg="2">Gestion</h2>
+        <h2 className="mt-5 pt-5  text-center" >Gestion</h2>
        
-        <Row className="  ">
+        <Row className=" bg-danger  justify-content-center">
 
-            <Col className="mt-4"  md="4">
+            <Col className="mt-4"  >
                     
                     <Card></Card>
             
             </Col>
 
-            <Col className="mt-4"    md="4">
+            <Col className="mt-4"    >
                     
                     <Card></Card>
             
             </Col>
 
-            <Col className="mt-4 "  md="4">
+            <Col className="mt-4 "  >
                     
                     <Card></Card>
             
