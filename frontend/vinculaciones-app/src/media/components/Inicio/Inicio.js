@@ -11,7 +11,7 @@ function Inicio() {
     <Container fluid>
       <Row className="">
 
-        <Col className="bg-danger  text-center text-">
+        <Col className="  text-center text-">
                 
                 <h1 className="mt-5 pt-5">Secretaría de Vinculación</h1>
                 <h1 className="">Tecnologica y Social</h1>

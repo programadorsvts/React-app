@@ -52,7 +52,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-function OffcanvasExample() {
+function NavBar() {
   return (
     <>
       {['lg' ].map((expand) => (
@@ -62,10 +62,10 @@ function OffcanvasExample() {
             <Navbar.Brand href="#" className="text-secondary" bg="primary"></Navbar.Brand>
 
                 <img src="'../../image/icons/escudounslweb.png" width="30" height="30" className="d-inline-block align-top  justify-content-start" alt=""/>
-                <img src="'../../image/icons/escudounslweb.png" width="30" height="30" className="d-inline-block align-top  " alt=""/> 
+              {/*   <img src="'../../image/icons/escudounslweb.png" width="30" height="30" className="d-inline-block align-top  " alt=""/>  */}
                
 
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}  />
 
             <Navbar.Offcanvas  id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end">
               <Offcanvas.Header closeButton >
@@ -74,7 +74,7 @@ function OffcanvasExample() {
 
               </Offcanvas.Header>
               
-              <Offcanvas.Body >
+              <Offcanvas.Body bg="primary" >
                 
                 <Nav className="justify-content-start  flex-grow-1 pe-3" >
                   
@@ -87,8 +87,8 @@ function OffcanvasExample() {
                 </Nav>
                 <Nav className="justify-content-end">
 
-                  <Button className="bg-secondary text-dark ms-1 mt-1 ms-2 ">registrarse</Button>
-                  <Button className="bg-secondary text-dark ms-1 mt-1 ms-2 ">iniciar sesion</Button>
+                  <Button className="bg-secondary text-dark ms-1 mt-1 ms-2  ">Registrarse</Button>
+                  <Button className="bg-secondary text-dark ms-1 mt-1 ms-2  ">Iniciar sesion</Button>
                    
                 </Nav>
                 
@@ -102,4 +102,4 @@ function OffcanvasExample() {
   );
 }
 
-export default OffcanvasExample;
+export default NavBar;

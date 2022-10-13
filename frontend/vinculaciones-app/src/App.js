@@ -11,7 +11,7 @@ import  Noticias from './media/components/Noticias/Noticias'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" bg="secondary">
       <header className="App-header">
            
                 
