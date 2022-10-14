@@ -4,7 +4,7 @@ import {Container,Row,Col} from 'react-bootstrap';
 
 
 
-function Inicio() {
+function principal() {
   return (
 
 
@@ -27,4 +27,4 @@ function Inicio() {
   );
 }
 
-export default Inicio;
+export default principal;

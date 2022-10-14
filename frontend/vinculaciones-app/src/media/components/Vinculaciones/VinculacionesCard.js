@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
-function gestioncard() {
+function vinculacionescard() {
   return (
     
-    <Card style={{height : "161px", width: "356px"}}>
+    <Card style={{height : "421px", width: "356px"}}>
         
       
       
@@ -18,16 +18,11 @@ function gestioncard() {
                     <Col>
                         <FontAwesomeIcon icon="fa-regular fa-users-gear" /> 
                     </Col>
-                    
-
-                    <Col>
-                            <Card.Text className="mt-3">4 de Junio 2021: Día de la Vinculación Tecnológica</Card.Text>
-                    </Col>
-
+                
             </Row>
         </Card.Body>
     </Card>
   );
 }
 
-export default gestioncard;
+export default vinculacionescard;

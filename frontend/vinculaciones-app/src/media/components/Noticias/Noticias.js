@@ -10,9 +10,9 @@ function noticias() {
 
     <Container  className=" "  >
         
-        <h4 className="mt-5 pt-5" xs lg="2">Noticias</h4>
+        <h4 className="mt-5 pt-5"  xs lg="2">Noticias</h4>
         
-        <Row className="   justify-content-center ">
+        <Row className=" mb-5  d-flex  justify-content-center ">
      
             <Col className=" mt-3 mb-2  d-flex justify-content-center" xs     >
                     

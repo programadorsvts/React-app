@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
-function gestioncard() {
+function redescard() {
   return (
     
     <Card style={{height : "161px", width: "356px"}}>
@@ -30,4 +30,4 @@ function gestioncard() {
   );
 }
 
-export default gestioncard;
+export default redescard;
