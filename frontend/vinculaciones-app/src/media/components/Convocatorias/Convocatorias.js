@@ -10,7 +10,7 @@ function convocatoria() {
 
     <Container  className=" "  >
         
-        <h4 className="mt-5 pt-5  text-center" >Convocatirias</h4>
+       <h2 className="mt-5 pt-5  text-center" >Convocatorias</h2>
        
         <Row className=" d-flex justify-content-center"  >
 

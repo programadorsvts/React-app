@@ -62,7 +62,7 @@ function NavBar() {
             <Navbar.Brand href="#" className="text-secondary" bg="primary"></Navbar.Brand>
 
                 <img src="'../../image/icons/escudounslweb.png" width="30" height="30" className="d-inline-block align-top  justify-content-start" alt=""/>
-              {/*   <img src="'../../image/icons/escudounslweb.png" width="30" height="30" className="d-inline-block align-top  " alt=""/>  */}
+                <img src="'../../image/icons/escudounslweb.png" width="30" height="30" className="d-inline-block align-top  " alt=""/>  
                
 
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}  />

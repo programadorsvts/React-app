@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function gestioncard() {
   return (
     
-    <Card style={{height : "161px", width: "356px"}}>
+    <Card style={{height : "130px", width: "356px"}}>
         
       
       
@@ -21,7 +21,7 @@ function gestioncard() {
                     
 
                     <Col>
-                            <Card.Text className="mt-3">4 de Junio 2021: Día de la Vinculación Tecnológica</Card.Text>
+                            <Card.Text className="mt-3">Servicios Tecnológicos de Alto Nivel</Card.Text>
                     </Col>
 
             </Row>

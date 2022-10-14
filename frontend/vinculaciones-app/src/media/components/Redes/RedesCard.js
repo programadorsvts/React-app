@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function redescard() {
   return (
     
-    <Card style={{height : "161px", width: "356px"}}>
+    <Card style={{height : "130px", width: "356px"}}>
         
       
       

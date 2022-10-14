@@ -1,5 +1,5 @@
 import {Card, Col, Row}from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 
@@ -16,7 +16,7 @@ function convocatoriacard() {
             <Row>
                     
                     <Col>
-                        <FontAwesomeIcon icon="fa-regular fa-users-gear" /> 
+                        <Card.Img src="../../image/icons/convocatorias/emprende.svg"  style={{height : "380px", width: "320px"}}/>
                     </Col>
                 
             </Row>

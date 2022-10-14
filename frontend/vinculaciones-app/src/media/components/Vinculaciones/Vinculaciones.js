@@ -10,7 +10,7 @@ function vinculaciones() {
 
     <Container  className=" "  >
         
-        <h4 className="mt-5 pt-5  text-center" >Vinculaciones</h4>
+        <h2 className="mt-5 pt-5  text-center" >Vinculaciones</h2>
        
         <Row className=" d-flex justify-content-center"  >
 
