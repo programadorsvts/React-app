@@ -135,12 +135,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: calc(1.325rem + 0.9vw);
-}
-@media (min-width: 1200px) {
-  h2, .h2 {
-    font-size: 2rem;
-  }
+  font-size: 1.0625rem;
 }
 
 h3, .h3 {
@@ -8035,7 +8030,7 @@ textarea.form-control-lg {
 }
 
 .fs-2 {
-  font-size: calc(1.325rem + 0.9vw) !important;
+  font-size: 1.0625rem !important;
 }
 
 .fs-3 {
@@ -10904,9 +10899,6 @@ textarea.form-control-lg {
   .fs-1 {
     font-size: 3.125rem !important;
   }
-  .fs-2 {
-    font-size: 2rem !important;
-  }
   .fs-3 {
     font-size: 1.75rem !important;
   }
@@ -10945,6 +10937,4 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-
-   
 }/*# sourceMappingURL=personalizado.css.map */

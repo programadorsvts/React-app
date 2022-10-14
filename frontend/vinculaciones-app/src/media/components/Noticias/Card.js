@@ -8,7 +8,7 @@ function card() {
   return (
     
     <Card style={{ width: '14rem' }}>
-      <Card.Img variant="top" src="../../image/images/oficina.jpg" />
+      <Card.Img variant="top" src="./oficina.jpg" />
       <Card.Body  className="text-secondary">
         <Card.Title><h6>4 de Junio de 2022</h6></Card.Title>
         <Card.Text className="mt-3">
