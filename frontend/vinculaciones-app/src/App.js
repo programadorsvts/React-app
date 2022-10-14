@@ -8,6 +8,7 @@ import Gestion from './media/components/Gestion/Gestion'
 import Convocatorias from './media/components/Convocatorias/Convocatorias'
 import Redes from './media/components/Redes/Redes';
 import Vinculaciones from './media/components/Vinculaciones/Vinculaciones';
+import Consulta from './media/components/Consulta/Consulta';
 
 
 
@@ -25,7 +26,8 @@ function App() {
               <Gestion></Gestion>
               <Convocatorias></Convocatorias>
               <Vinculaciones></Vinculaciones>
-            <Redes></Redes>
+              <Redes></Redes>
+              <Consulta></Consulta>
 
           
           
