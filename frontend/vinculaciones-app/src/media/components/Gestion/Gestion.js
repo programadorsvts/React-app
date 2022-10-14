@@ -12,7 +12,7 @@ function gestion() {
         
         <h2 className="mt-5 pt-5  text-center" >Gestion</h2>
        
-        <Row className=" bg-danger  justify-content-center"  >
+        <Row className="  justify-content-center"  >
 
             <Col className="mt-4  d-flex justify-content-center"  >
                     
