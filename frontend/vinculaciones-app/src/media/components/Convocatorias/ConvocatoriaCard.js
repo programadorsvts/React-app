@@ -12,7 +12,7 @@ function convocatoriacard() {
         
       
       
-        <Card.Body  className="text-secondary">
+        <Card.Body  className="text-secondary " >
             <Row>
                     
                     <Col>

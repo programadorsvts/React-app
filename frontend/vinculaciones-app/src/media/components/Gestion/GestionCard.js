@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function gestioncard() {
   return (
     
-    <Card style={{height : "130px", width: "356px"}}>
+    <Card  className="shadow" style={{height : "130px", width: "356px"}}>
         
       
       

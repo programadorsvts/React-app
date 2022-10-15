@@ -2,8 +2,12 @@
 /*------------------------------Modificando la libreria de bootstrap--------------------------------- */
 
 $enable-shadows: true;
-$enable-gradients:true;
-/* $enable-rounded:false; */
+
+
+/* $border-radius: .900rem; */
+$border-radius: 30px;
+
+/* $box-shadow: 0 .9rem ,1rem, rgba($obscuro, .15); */
 /* -------------------------------Patrones de Colores------------------------ */
 
 $obscuro :#000000;

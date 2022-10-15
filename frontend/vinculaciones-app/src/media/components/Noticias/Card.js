@@ -7,9 +7,9 @@ import {Card}from 'react-bootstrap';
 function card() {
   return (
     
-    <Card style={{height : "346px", width: "262px"}}>
+    <Card style={{height : "346px", width: "262px"}} >
 
-      <Card.Img variant="top" src="./oficina.jpg"  style={{height : "160px", width: "262px"}}/>
+      <Card.Img variant="top" src="./oficina.jpg"  style={{height : "160px", width: "262px"}}/ >
 
       
       <Card.Body  className="text-secondary ">
