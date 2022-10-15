@@ -1,5 +1,4 @@
 import {Card, Col, Row}from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
