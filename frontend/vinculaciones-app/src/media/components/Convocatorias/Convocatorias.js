@@ -7,7 +7,6 @@ import ConvocatoriaCard from '../Convocatorias/ConvocatoriaCard'
 function convocatoria() {
   return (
 
-
     <Container  className=" "  >
         
        <h2 className="mt-5 pt-5  text-center" >Convocatorias</h2>

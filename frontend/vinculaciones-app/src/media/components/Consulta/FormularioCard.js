@@ -5,7 +5,7 @@ import Formulario from './Formulario';
 
 
 
-function consultacard() {
+function formulariocard() {
   return (
     
     <Card style={{height : "655px", width: "544px"}}>
@@ -25,4 +25,4 @@ function consultacard() {
   );
 }
 
-export default consultacard;
+export default formulariocard;
