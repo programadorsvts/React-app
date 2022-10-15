@@ -5,7 +5,6 @@
 /* -------------------------------Patrones de Botones------------------------ */
 /* ------------------------------Textos------------------------ */
 /* ------------------------------Card------------------------ */
-/* $card-inner-border-radius: 100px; */
 /* ------------------------------OffCanvas------------------------ */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 /*!
@@ -402,8 +401,7 @@ button:not(:disabled),
 }
 
 textarea {
-  resize:none;
-  
+  resize: none;
 }
 
 fieldset {

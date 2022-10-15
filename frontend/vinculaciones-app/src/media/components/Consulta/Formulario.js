@@ -29,7 +29,7 @@ function formulario() {
             
             
         </Form.Group>
-        <Button className="ms-3 mt-2" >Enviar</Button>
+        <Button className="ms-3 mt-2 bg-secondary text-primary">Enviar</Button>
 
     </Form>
   
