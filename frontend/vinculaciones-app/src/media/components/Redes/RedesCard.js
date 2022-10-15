@@ -1,5 +1,5 @@
 import {Card, Col, Row}from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 
@@ -10,20 +10,13 @@ function redescard() {
     
     <Card style={{height : "130px", width: "356px"}}>
         
-      
-      
-        <Card.Body  className="text-secondary">
-            <Row>
+        <Card.Body  className=" d-flex justify-content-center text-secondary">
+            <Row className="mt-4">
                     
                     <Col>
-                        <FontAwesomeIcon icon="fa-regular fa-users-gear" /> 
+                          <p>icon</p>
                     </Col>
-                    
-
-                    <Col>
-                            <Card.Text className="mt-3">4 de Junio 2021: Día de la Vinculación Tecnológica</Card.Text>
-                    </Col>
-
+                  
             </Row>
         </Card.Body>
     </Card>

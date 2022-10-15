@@ -24,7 +24,7 @@ function consulta() {
 
             <Col className="mt-4  d-flex justify-content-center" >
                     
-                    <ConsultaCard></ConsultaCard>
+                   
             
             </Col>
 

@@ -14,9 +14,9 @@ function card() {
       
       <Card.Body  className="text-secondary ">
 
-        <Card.Title className="text-lowercase"><h6>4 de Junio de 2022</h6></Card.Title>
+        <Card.Title className="  ps-3 text-lowercase"><h6>4 de Junio de 2022</h6></Card.Title>
 
-        <Card.Text className="mt-3 text-uppercase">4 de Junio 2021: Día de la Vinculación Tecnológica</Card.Text>
+        <Card.Text className="mt-4 ps-3  text-uppercase">4 de Junio 2021: Día de la Vinculación Tecnológica</Card.Text>
         
       </Card.Body>
 

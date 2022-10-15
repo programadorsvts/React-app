@@ -1,5 +1,5 @@
 import {Card, Col, Row}from 'react-bootstrap';
-
+import Formulario from './Formulario';
 
 
 
@@ -16,7 +16,7 @@ function consultacard() {
             <Row>
                     
                     <Col>
-                        
+                        <Formulario></Formulario>
                     </Col>
                 
             </Row>

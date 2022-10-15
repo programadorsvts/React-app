@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /*------------------------------Modificando la libreria de bootstrap--------------------------------- */
 /* $border-radius: .900rem; */
-/* $box-shadow: 0 .9rem ,1rem, rgba($obscuro, .15); */
 /* -------------------------------Patrones de Colores------------------------ */
 /* -------------------------------Patrones de Botones------------------------ */
 /* ------------------------------Textos------------------------ */
 /* ------------------------------Card------------------------ */
+/* $card-inner-border-radius: 100px; */
 /* ------------------------------OffCanvas------------------------ */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 /*!
