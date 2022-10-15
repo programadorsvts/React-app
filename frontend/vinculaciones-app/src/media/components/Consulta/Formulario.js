@@ -4,31 +4,32 @@ import {Button,Form} from 'react-bootstrap';
 
 function formulario() {
   return (
-    <Form>
+    <Form className="m-2">
 
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         
-            <Form.Label>Nombre y apellido</Form.Label>
-            <Form.Control type="text" placeholder="Nombre....." />
+            <Form.Label className="ms-2">Nombre y apellido</Form.Label>
+                <Form.Control type="text" placeholder=""  />
             <br />
 
-            <Form.Label>Email </Form.Label>
+            <Form.Label className="ms-2">Email </Form.Label>
             <Form.Control type="email" placeholder="ejemplo@unsl.com" />
             <br />
         
-            <Form.Label>Telefono</Form.Label>
+            <Form.Label className="ms-2">Telefono</Form.Label>
             <Form.Control type="text" placeholder="+54 ....." />
             <br />
         
       
         </Form.Group>
+
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Descripcion</Form.Label>
+            <Form.Label className="ms-4">Descripcion</Form.Label>
             <Form.Control as="textarea" rows={9} />
             
             
         </Form.Group>
-        <Button>boton</Button>
+        <Button className="ms-3 mt-2" >Enviar</Button>
 
     </Form>
   

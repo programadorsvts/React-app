@@ -1,6 +1,6 @@
 import {Container,Row,Col} from 'react-bootstrap';
 
-import ConsultaCard from '../Consulta/ConsultaCard'
+import FormularioCard from './FormularioCard'
 
 
 
@@ -18,7 +18,7 @@ function consulta() {
             
             <Col className="mt-4  d-flex justify-content-center"  >
                     
-                    <ConsultaCard></ConsultaCard>
+                    <FormularioCard></FormularioCard>
                         
             </Col>
 
