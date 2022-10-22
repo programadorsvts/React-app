@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App bg-warning"  >
      
-      <header className="App-header" >
+      
            
        
 
@@ -32,12 +32,8 @@ function App() {
           
           
          
-        
-         
+      
 
-        
-            
-      </header>
     </div>
   );
 }
