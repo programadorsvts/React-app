@@ -4,11 +4,11 @@ import './media/style/personalizado.css'
 import  NavBav from './media/components/NavBar/NavBar';
 import  Principal from './media/components/Inicio/Principal'
 import  Noticias from './media/components/Noticias/Noticias'
-import Gestion from './media/components/Gestion/Gestion'
-import Convocatorias from './media/components/Convocatorias/Convocatorias'
+import Gestion from './media/components/ComponentsHome/Gestion/Gestion'
+import Convocatorias from './media/components/ComponentsHome/Convocatorias/Convocatorias'
 import Redes from './media/components/Redes/Redes';
 import Vinculaciones from './media/components/Vinculaciones/Vinculaciones';
-import Consulta from './media/components/Consulta/Consulta';
+import Consulta from './media/components/ComponentsHome/Consulta/Consulta';
 
 
 

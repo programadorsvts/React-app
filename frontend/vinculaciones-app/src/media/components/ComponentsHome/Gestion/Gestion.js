@@ -1,6 +1,6 @@
 import {Container,Row,Col} from 'react-bootstrap';
 
-import GestionCard from '../Gestion/GestionCard'
+import GestionCard from './GestionCard'
 
 
 

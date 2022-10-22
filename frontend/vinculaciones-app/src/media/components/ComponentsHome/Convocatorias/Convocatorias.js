@@ -1,6 +1,6 @@
 import {Container,Row,Col} from 'react-bootstrap';
 
-import ConvocatoriaCard from '../Convocatorias/ConvocatoriaCard'
+import ConvocatoriaCard from './ConvocatoriaCard'
 
 
 
