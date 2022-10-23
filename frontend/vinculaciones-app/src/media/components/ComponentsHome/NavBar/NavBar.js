@@ -13,9 +13,9 @@ function NavBar() {
           <Container fluid bg="primary">
 
             <Navbar.Brand href="#" className="text-secondary" bg="primary"></Navbar.Brand>
-
-                <img src="'../../image/icons/escudounslweb.png" width="30" height="30" className="d-inline-block align-top  justify-content-start" alt=""/>
-                <img src="'../../image/icons/escudounslweb.png" width="30" height="30" className="d-inline-block align-top  " alt=""/>  
+            
+                <img src="'../../image/icons/escudounslweb.png" width="100" height="50" className="d-inline-block align-top  justify-content-start me-3" alt=""/>
+                <img src="'../../image/icons/escudounslweb.png" width="100" height="50" className="d-inline-block align-top  justify-content-start me-3 " alt=""/>  
                
 
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}  />
