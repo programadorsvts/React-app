@@ -51,7 +51,7 @@ function footer() {
         </Row>
         <Row  className="text-center text-secondary bg-primary">
                
-                <p className="py-2 mt-3">&#169; COPYRIGHT 2021 Secretaría de Vinculación Tecnológica y Social (UNSL) <br />Diseñado y desarrollado por Octavio Riccardo y Iván Agustín Lucero</p>
+                <p className=" mt-4">&#169; COPYRIGHT 2021 Secretaría de Vinculación Tecnológica y Social (UNSL) <br />Diseñado y desarrollado por Octavio Riccardo y Iván Agustín Lucero</p>
 
                 
 
