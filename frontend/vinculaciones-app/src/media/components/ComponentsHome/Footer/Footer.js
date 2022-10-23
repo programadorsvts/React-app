@@ -5,23 +5,38 @@ function footer() {
   return (
 
 
-    <Container fluid>
-      <Row className="bg-warning">
+    <Container  className="mt-5">
+        <Row className=" mt-5">
 
-          <Col className="  text-center text-">
-                   <h1>wwwwwww</h1>
-          </Col>
+            <Col className="bg-danger text-center mt-5 ">
+                  
+                <h5 className="text-uppercase">Información Institucional</h5>
+
+                <p className="text-uppercase">Dirección: Ejército de los Andes 950 San Luis, Argentina</p>
+
+                <p className="text-uppercase">Telefono: +54 (0266) 4520300</p>
+
+            </Col>
           
-          <Col className="  text-center text-">
-                   <h1>wwwwwww</h1>
-          </Col>
+            <Col className="bg-danger text-center mt-5 ">
+                  
+                <h5 className="text-uppercase">Contacto</h5>
 
-          <Col className="  text-center text-">
-                   <h1>wwwwwww</h1>
-          </Col>
-      </Row>
-        <Row className=" bg-danger">
-        
+                <p className="text-uppercase">Dirección: Ejército de los Andes 950 San Luis, Argentina</p>
+
+                <p className="text-uppercase">Telefono: +54 (0266) 4520300</p>
+
+            </Col>
+            
+            <Col className="bg-danger text-center mt-5 ">
+                  
+                <h5 className="text-uppercase">Redes</h5>
+
+                <p className="text-uppercase">Dirección: Ejército de los Andes 950 San Luis, Argentina</p>
+
+                <p className="text-uppercase">Telefono: +54 (0266) 4520300</p>
+
+            </Col>
         </Row>
 
 
