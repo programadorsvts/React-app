@@ -16,7 +16,7 @@ function mapcard() {
             <Row>
                     
                     <Col>
-                           {/*   <Map ></Map >  */}
+                            <Map ></Map >  
                     </Col>
                 
             </Row>
