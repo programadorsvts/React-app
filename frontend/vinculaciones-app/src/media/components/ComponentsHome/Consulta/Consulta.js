@@ -1,7 +1,7 @@
 import {Container,Row,Col} from 'react-bootstrap';
 
 import FormularioCard from './FormularioCard';
-import MapCard from './MapCard';  
+ import MapCard from './MapCard';  
 
 
 
@@ -25,7 +25,7 @@ function consulta() {
 
             <Col className="mt-4  d-flex justify-content-center" >
                     
-                   <MapCard></MapCard>  
+                    <MapCard></MapCard>  
             
             </Col>
 

@@ -1,5 +1,5 @@
 
-import './media/style/personalizado.css'
+import './media/style/personalizado.css' 
 
 import  NavBav from './media/components/ComponentsHome/NavBar/NavBar';
 import  Principal from './media/components/ComponentsHome/Principal/Principal'
@@ -9,7 +9,8 @@ import Convocatorias from './media/components/ComponentsHome/Convocatorias/Convo
 import Redes from './media/components/ComponentsHome/Redes/Redes';
 import Vinculaciones from './media/components/ComponentsHome/Vinculaciones/Vinculaciones';
 import Consulta from './media/components/ComponentsHome/Consulta/Consulta';
-import Map from './media/components/ComponentsHome/Consulta/Map'
+import Footer from './media/components/ComponentsHome/Footer/Footer';
+
 
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
               <Vinculaciones></Vinculaciones>
               <Redes></Redes>
               <Consulta></Consulta>
-              <Map></Map>
+              <Footer></Footer>
+          
 
           
           

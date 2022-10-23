@@ -1,5 +1,5 @@
-import {Card, Col, Row}from 'react-bootstrap';
-import Map from './Map';
+import {Card} from 'react-bootstrap';
+/* import Map from './Map'; */
 
 
 
@@ -8,18 +8,14 @@ import Map from './Map';
 function mapcard() {
   return (
     
-    <Card style={{height : "655px", width: "544px"}}>
+    <Card  style={{height : "655px", width: "544px"}}>
         
       
       
-        <Card.Body  className="text-secondary">
-            <Row>
-                    
-                    <Col>
-                            <Map ></Map >  
-                    </Col>
-                
-            </Row>
+        <Card.Body  className="text-secondary " >
+       
+            
+         
         </Card.Body>
     </Card>
   );
