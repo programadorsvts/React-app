@@ -12,6 +12,26 @@ function App() {
 
       <Suspense fallback={<p>.............Loading</p>}>
 
+          <Switch>
+                 
+                <Route  exact path='/observatorio'>
+                  
+
+                </Route>
+
+                <Route  exact path='/revistadigital'>
+                  
+
+                </Route>
+
+                <Route  exact path='/'>
+
+
+                </Route>
+          </Switch>
+             
+
+
       </Suspense>
 
      </Router>
