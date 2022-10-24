@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { NavLink,Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function NavBar() {
@@ -36,7 +36,7 @@ function NavBar() {
                   
                 <Link to="/" className="text-light">inicio</Link>
                 
-                < Link to="/revistadigital" className="text-light">Revista Digital</Link>
+                <Link to="/revistadigital" className="text-light">Revista Digital</Link>
                 <Link to="/observatorio" className="text-light">Observatorio</Link>   
                 
 
