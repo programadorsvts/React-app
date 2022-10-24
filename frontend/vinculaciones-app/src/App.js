@@ -4,7 +4,7 @@ import { BrowserRouter as Router ,Switch  ,Route } from "react-router-dom";
 import observatorio from './media/pages/observatorio';
 import revistadigital from './media/pages/revistadigital'
 import NavBar from "./media/components/ComponentsHome/NavBar/NavBar";
-import Home from './media/pages/home'
+import home from './media/pages/home'
 
 import './media/style/personalizado.css' 
 
@@ -22,7 +22,7 @@ function App() {
           
             <Switch>  
 
-                <Route  exact path="/home" component={Home}/>
+                <Route  exact path="/home" component={home}/>
 
                 <Route  exact path="/observatorio" component={observatorio}/>
      
