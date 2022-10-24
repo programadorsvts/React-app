@@ -16,7 +16,7 @@ function App() {
 
       <Suspense fallback={<p>.............Loading</p>}>
 
-
+            <NavBar></NavBar>
           <Switch>
 
                 <Route  exact path="/home" component={home}/>

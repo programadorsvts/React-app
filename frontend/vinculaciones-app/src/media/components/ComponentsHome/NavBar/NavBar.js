@@ -4,6 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { NavLink,Link } from "react-router-dom";
+
 
 function NavBar() {
   return (
@@ -32,13 +34,14 @@ function NavBar() {
                 <Nav className="justify-content-start  flex-grow-1 pe-3" >
                   
                   
-                <Nav.Link href="#features" className="text-light">INICIO</Nav.Link>
+                <Link to="/" className="text-light">inicio</Link>
                 
-                <Nav.Link href="#pricing" className="text-light">REVISTA DIGITRAL</Nav.Link>
-                <Nav.Link href="#pricing" className="text-light">OBSERVATORIO</Nav.Link>   
+                < Link to="/revistadigital" className="text-light">Revista Digital</Link>
+                <Link to="/observatorio" className="text-light">Observatorio</Link>   
                 
 
                 </Nav>
+                
                 <Nav className="justify-content-end">
 
                   <Button className="bg-secondary text-dark ms-1 mt-1 ms-2  ">Registrarse</Button>
