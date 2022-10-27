@@ -1,5 +1,4 @@
-import { BrowserRouter as Router ,Switch  ,Route } from "react-router-dom";
-
+import { BrowserRouter as Router ,Routes  ,Route } from "react-router-dom";
 
 import observatorio from './media/pages/observatorio';
 import revistadigital from './media/pages/revistadigital'
@@ -8,19 +7,15 @@ import home from './media/pages/home'
 
 import './media/style/personalizado.css' 
 
-
-
 function App() {
 
   return (
    
      <Router>
 
-     
-
           <NavBar></NavBar>
           
-            <Switch>  
+            <Routes>  
 
                 <Route  exact path="/home" component={home}/>
 
@@ -28,13 +23,10 @@ function App() {
      
                  <Route  exact path="/revistadigital" component={revistadigital}/>
           
-            </Switch>  
+            </Routes>  
             
-     
-
      </Router>
       
-          
   );
 }
 

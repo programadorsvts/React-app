@@ -11,14 +11,14 @@ import Vinculaciones from '../components/ComponentsHome/Vinculaciones/Vinculacio
 function home (){
     return(
         <>
-                <Principal></Principal>;
-                <Noticias></Noticias>;
-                <Gestion></Gestion>;
-                <Convocatorias></Convocatorias>;
-                <Vinculaciones></Vinculaciones>;
-                <Redes></Redes>;
-                <Consulta></Consulta>;
-                
+            <Principal></Principal>;
+            <Noticias></Noticias>;
+            <Gestion></Gestion>;
+            <Convocatorias></Convocatorias>;
+            <Vinculaciones></Vinculaciones>;
+            <Redes></Redes>;
+            <Consulta></Consulta>;
+            
         
         
         
