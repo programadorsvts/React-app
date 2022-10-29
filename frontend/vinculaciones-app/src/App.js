@@ -1,32 +1,27 @@
-import { BrowserRouter as Router ,Routes  ,Route } from "react-router-dom";
+ import { BrowserRouter as Router ,/* Route */ } from "react-router-dom"; 
 
-import observatorio from './media/pages/observatorio';
-import revistadigital from './media/pages/revistadigital'
-import NavBar from "./media/components/ComponentsHome/NavBar/NavBar";
-import home from './media/pages/home'
 
-import './media/style/personalizado.css' 
+/* import observatorio from './media/pages/observatorio';
+  import revistadigital from './media/pages/revistadigital' */
+  /* import home from './media/pages/home' */
+import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
+import Principal from "./media/components/ComponentsHome/Principal/Principal";
+
+
+ import 'bootstrap/dist/css/bootstrap.min.css'; 
+
+
 
 function App() {
 
   return (
    
-     <Router>
-
-          <NavBar></NavBar>
-          
-            <Routes>  
-
-                <Route  exact path="/home" component={home}/>
-
-                <Route  exact path="/observatorio" component={observatorio}/>
-     
-                 <Route  exact path="/revistadigital" component={revistadigital}/>
-          
-            </Routes>  
-            
-     </Router>
-      
+                <Router> 
+                 
+                  <NavBar></NavBar>
+                  <Principal></Principal>
+               
+                </Router>   
   );
 }
 
