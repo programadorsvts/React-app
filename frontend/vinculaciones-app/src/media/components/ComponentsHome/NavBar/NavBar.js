@@ -3,8 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
+
+import {NavLink,/* Link */ } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import {NavLink } from "react-router-dom";
+
 import './navbar.css';
 
 function NavBar() {
@@ -31,8 +33,8 @@ function NavBar() {
                 <Nav className="navbar-buttons">
                   <Button >iniciar sesión</Button>
                   <Button >registrarse</Button>
-                  {/* <Button ><NavLink to="/Login" >iniciar secion</NavLink></Button>
-                  <Button ><NavLink to="/SingUp" >registrarse</NavLink></Button> */}
+                  {/* <Button ><Link to="/Login" >iniciar secion</Link></Button>
+                  <Button ><Link to="/SingUp" >registrarse</Link></Button> */}
                   <img src="'../../image/Escudo-UNSL-Blanco.svg" width="100" height="50" className="d-inline-block " alt=""/>
                 </Nav>
               </Offcanvas.Body>
