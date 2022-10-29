@@ -22,12 +22,13 @@ function App() {
                 <Router> 
                           <NavBar></NavBar>
                           
-                        <Routes> 
-                             <Route exact path="/"  element={<Home></Home>} /> 
+                      <Routes> 
+                          
+                             <Route exact path="/"  element={<Home/>} /> 
 
-                              <Route exact path="/revistadigital" element={<RevistaDigital></RevistaDigital>} />
+                              <Route exact path="/revistadigital" element={<RevistaDigital/>} />
 
-                              <Route exact path="/observatorio" element={<Observatorio></Observatorio>} />
+                              <Route exact path="/observatorio" element={<Observatorio/>} />
                               
                       </Routes>     
 
