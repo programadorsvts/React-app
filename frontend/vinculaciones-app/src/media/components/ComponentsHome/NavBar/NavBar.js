@@ -36,8 +36,8 @@ function NavBar() {
                   
                 <Link to="/" className="text-light">inicio</Link>
                 
-                <Link to="/revistadigital" className="text-light">Revista Digital</Link>
-                <Link to="/observatorio" className="text-light">Observatorio</Link>   
+                <Link to="/RevistaDigital" className="text-light">Revista Digital</Link>
+                <Link to="/Observatorio" className="text-light">Observatorio</Link>   
                 
 
                 </Nav>
