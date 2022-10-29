@@ -10,8 +10,7 @@ import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
  import Footer from "./media/components/ComponentsHome/Footer/Footer"
 
 /////////////////Bootstrap/////////////////
- import 'bootstrap/dist/css/bootstrap.min.css'; 
-
+import "./media/styles/index.css"
 
 
 
@@ -19,7 +18,7 @@ import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
 function App() {
 
   return (
-                <Router> 
+                <Router>  
                           <NavBar></NavBar>
                           
                       <Routes> 
