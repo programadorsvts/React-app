@@ -2,16 +2,15 @@
  import { BrowserRouter as Router ,Route,Routes  } from "react-router-dom"; 
 
 /////////////////Pages/////////////////////////
-import Observatorio from './media/pages/Observatorio'
-import RevistaDigital from './media/pages/RevistaDigital' 
-import Home from './media/pages/Home' 
+import Observatorio from './media/pages/observatorio'
+import RevistaDigital from './media/pages/revistadigital' 
+import Home from './media/pages/home' 
 
 import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
  import Footer from "./media/components/ComponentsHome/Footer/Footer"
 
 /////////////////Bootstrap/////////////////
- import 'bootstrap/dist/css/bootstrap.min.css'; 
-
+import "./media/styles/index.css"
 
 
 
