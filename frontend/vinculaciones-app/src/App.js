@@ -5,7 +5,8 @@
 import Observatorio from './media/pages/Observatorio'
 import RevistaDigital from './media/pages/RevistaDigital' 
 import Home from './media/pages/Home' 
-
+import NotFoundPage from './media/pages/NotFoundPage';
+ 
 import NavBar  from "./media/components/ComponentsHome/NavBar/NavBar"
  import Footer from "./media/components/ComponentsHome/Footer/Footer"
 
@@ -28,6 +29,8 @@ function App() {
                               <Route exact path="/revistadigital" element={<RevistaDigital/>} />
 
                               <Route exact path="/observatorio" element={<Observatorio/>} />
+
+                              <Route exact path=" * " element={<NotFoundPage/>} />
                                
                       </Routes>     
 

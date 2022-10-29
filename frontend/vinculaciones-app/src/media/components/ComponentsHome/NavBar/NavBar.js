@@ -31,6 +31,8 @@ function NavBar() {
                 <Nav className="navbar-buttons">
                   <Button >iniciar sesión</Button>
                   <Button >registrarse</Button>
+                  {/* <Button ><NavLink to="/Login" >iniciar secion</NavLink></Button>
+                  <Button ><NavLink to="/SingUp" >registrarse</NavLink></Button> */}
                   <img src="'../../image/Escudo-UNSL-Blanco.svg" width="100" height="50" className="d-inline-block " alt=""/>
                 </Nav>
               </Offcanvas.Body>
