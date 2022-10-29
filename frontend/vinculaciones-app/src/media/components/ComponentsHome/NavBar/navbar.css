@@ -1,0 +1,76 @@
+.navbar{
+    background-color: var(--bg-color-dark);
+    border-bottom: 2px solid var(--text-color);
+    padding-right: 20px;
+}
+.navbar .text-3{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.navbar .text-3:hover{
+    color: var(--text-color-third);
+}
+.navbar a{
+    color: var(--text-color);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.menu-toggle a{
+    color: var(--text-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 20px 0;
+}
+.menu-toggle{
+    text-align: center;
+    background-color: var(--bg-color-dark);
+}
+.menu-toggle .btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar .btn{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.navbar-buttons{
+    margin-top: 20px;
+}
+
+.navbar-buttons img{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 991px) { 
+    .navbar-buttons{
+        margin-top:0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .navbar-buttons img{
+        margin-top: 0;
+        margin-left: 10px;
+    }
+ }
+
+ /* RESETEOS DE BOOTSTRAP */
+
+.navbar-toggler .navbar-toggler-icon {
+    /* Unica manera de cambiar el color del icono Toggle */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28223, 244, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.btn-close {
+    /* Unica manera de cambiar el color del icono Toggle */
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba%28223, 244, 255'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+}
+
+
+.navbar-toggler:focus{
+    /* Quita la sombra al hacer click */
+    box-shadow: none;
+}

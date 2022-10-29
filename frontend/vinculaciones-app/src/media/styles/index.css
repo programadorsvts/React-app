@@ -1,0 +1,76 @@
+:root{
+    --bg-color-dark: #1F2937;
+    --bg-color-card: #192029;
+    --text-color: #DFF4FF;
+    --text-color-secundary: #C7DEE8;
+    --text-color-third: #71CEF2;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body{
+    font-size: 16px;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color-dark);
+}
+
+.hero {
+    font-weight: 700;
+    font-size: 3.125rem;
+}
+.encabezado-1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+.encabezado-2 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+.encabezado-3 {
+    font-weight: 500;
+    font-size: 1.5625rem;
+}
+.encabezado-4 {
+    font-weight: 500;
+    font-size: 1.375rem;
+}
+.text-1{
+    font-weight: 700;
+    font-size: 1.1875rem;
+}
+.text-2{
+    font-weight: 400;
+    font-size: 1.1875rem;
+}
+.text-3{
+    font-weight: 700;
+    font-size: 1rem;
+}
+.text-4{
+    font-weight: 400;
+    font-size: 1rem;
+}
+.text-date{
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 4%;
+}
+
+.btn{
+    font-size: 1rem;
+    padding-bottom: 10px;
+    padding-top:10px ;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: var(--text-color);
+    color: var(--bg-color-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+.btn:hover{
+    color: var(--bg-color-dark);
+    background-color: var(--text-color-third);
+}

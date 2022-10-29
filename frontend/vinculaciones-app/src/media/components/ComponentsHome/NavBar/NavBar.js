@@ -5,51 +5,34 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from "react-router-dom";
-
+import './navbar.css';
 
 function NavBar() {
   return (
     <>
       {['lg' ].map((expand) => (
-        <Navbar key={expand}  bg="primary" expand={expand} className="">
+        <Navbar key={expand} expand={expand} className="navbar">
           <Container fluid bg="primary">
-
-            <Navbar.Brand href="#" className="text-secondary" bg="primary"></Navbar.Brand>
-            
-                <img src="'../../image/icons/escudounslweb.png" width="100" height="50" className="d-inline-block align-top  justify-content-start me-3" alt=""/>
-                <img src="'../../image/icons/escudounslweb.png" width="100" height="50" className="d-inline-block align-top  justify-content-start me-3 " alt=""/>  
-               
-
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}  />
-
-            <Navbar.Offcanvas  id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end">
-              <Offcanvas.Header closeButton >
-                
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}></Offcanvas.Title>
-
-              </Offcanvas.Header>
+            <Navbar.Brand href="/">
+              <img src="'../../image/Solo-LogoSVTS-Blanco.svg" width="100" height="50" className="d-inline-block " alt=""/>
               
-              <Offcanvas.Body bg="primary" >
-                
-                <Nav className="justify-content-start  flex-grow-1 pe-3" >
-                  
-                  
-                <Link to="/" className="text-light">inicio</Link>
-                
-                <Link to="/RevistaDigital" className="text-light">Revista Digital</Link>
-                <Link to="/Observatorio" className="text-light">Observatorio</Link>   
-                
-
+            </Navbar.Brand>
+            <Navbar.Toggle className='navbar-toggler' aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end">
+              <Offcanvas.Header closeButton >
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}></Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-start  flex-grow-1" >
+                <Link to="/" className="text-3">inicio</Link>
+                <Link to="/revistadigital" className="text-3">Revista Digital</Link>
+                <Link to="/observatorio" className="text-3">Observatorio</Link>   
                 </Nav>
-                
-                <Nav className="justify-content-end">
-
-                  <Button className="bg-secondary text-dark ms-1 mt-1 ms-2  ">Registrarse</Button>
-                  <Button className="bg-secondary text-dark ms-1 mt-1 ms-2  ">Iniciar sesion</Button>
-                   
+                <Nav className="navbar-buttons">
+                  <Button >iniciar sesión</Button>
+                  <Button >registrarse</Button>
+                  <img src="'../../image/Escudo-UNSL-Blanco.svg" width="100" height="50" className="d-inline-block " alt=""/>
                 </Nav>
-                
-            
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
