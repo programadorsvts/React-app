@@ -18,12 +18,6 @@ function home (){
                 <Vinculaciones></Vinculaciones>;
                 <Redes></Redes>;
                 <Consulta></Consulta>;
-                
-        
-        
-        
-        
-        
         </>
     );
 }

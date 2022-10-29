@@ -1,5 +1,5 @@
 import {Card, Col, Row}from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 
@@ -16,7 +16,7 @@ function gestioncard() {
             <Row>
                     
                     <Col>
-                        <FontAwesomeIcon icon="fa-regular fa-users-gear" /> 
+                        
                     </Col>
                     
 
