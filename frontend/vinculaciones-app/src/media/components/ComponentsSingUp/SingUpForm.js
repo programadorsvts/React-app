@@ -11,17 +11,17 @@ function SingUpForm() {
       <Form.Group className="mb-3" controlId="correoregistro1" >
         <Form.Label className="encabezado-4 label" >Correo Electrónico:</Form.Label>
         <p className="text-5 label-secundary">Debe ser de formato unsl.edu.ar o email.unsl.edu.ar</p>
-        <Form.Control type="email" placeholder="ejemplo@unsl.com" />
-      </Form.Group>    
+        <Form.Control type="email" placeholder="ejemplo@unsl.edu.ar" />
+      </Form.Group>
       <Form.Group className="mb-3" controlId="contraseñaregistro1" >
         <Form.Label className="encabezado-4 label">Contraseña:</Form.Label>
-        <p className="text-5 label-secundary">Debe ser de mínino de 8 caracteres</p>
-        <Form.Control type="password" placeholder="" />
+        <p className="text-5 label-secundary">Debe ser de mínimo de 8 caracteres</p>
+        <Form.Control type="password"/>
       </Form.Group>
         <Form.Group className="mb-3" controlId="contraseñaregistro2" >
         <Form.Label className="encabezado-4 label">Confirmar contraseña:</Form.Label>
-        <Form.Control type="password" placeholder="" />
-        <Link  to="/LoginPage" className="text-4 link" >¿Ya tienes una cuenta? Iniciar Sesión</Link>
+        <Form.Control type="password"/>
+        <Link to="/LoginPage" className="text-4 link" >¿Ya tienes una cuenta? Iniciar Sesión</Link>
       </Form.Group>
       <Button className="btn btn-form">Registrarse</Button>
     </Form>
