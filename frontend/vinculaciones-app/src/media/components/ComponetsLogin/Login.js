@@ -1,5 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import LoginCard from './LoginCard';
+import LoginForm from './LoginForm';
 
 function login() {
   return (
@@ -8,7 +8,7 @@ function login() {
                                  <Row>
                     
                                     <Col className="d-flex justify-content-center mb-5 mt-5">
-                                            <img src="'../../image/Solo-LogoSVTS-Blanco.svg" width="300" height="100" className="d-inline-block " alt=""/>
+                                            <img src="'../../image/Logo-Svts-blanco.svg" width="300" height="100" className="d-inline-block " alt=""/>
                                     </Col>
                     
                                 </Row>
@@ -17,7 +17,7 @@ function login() {
                 <Container>   
                     <Row >
                                 <Col className="  d-flex justify-content-center ">
-                                    <LoginCard></LoginCard>
+                                    <LoginForm></LoginForm>
                                 </Col>
                                 
                     </Row>
