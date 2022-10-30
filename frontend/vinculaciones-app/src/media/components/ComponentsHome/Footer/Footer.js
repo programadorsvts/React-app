@@ -1,12 +1,13 @@
-import {Container,Row,Col} from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import {Container,Row,Col} from 'react-bootstrap'
+import { Link } from "react-router-dom"
+import './footer.css';
 
 
 function footer() {
   return (
 
         
-    <Container fluid  className="bg-primary mt-5   text-secondary rounded-top">
+    <Container fluid  className=" footer-body mt-5   trounded-top">
         
         <Row className="ms-5 me-5 mt-3">
 
@@ -23,7 +24,7 @@ function footer() {
 
             </Col>
           
-            <Col className="text-center mt-5"xs={12} md={4}>
+            <Col className="  text-center mt-5"xs={12} md={4}>
                   
                 <h6 className="text-uppercase">Contacto</h6>
                 <img src="../../image/icons/escudounslweb.png" width="150" height="100" alt=""/>  
@@ -49,7 +50,7 @@ function footer() {
             </Col>
 
         </Row>
-        <Row  className="text-center text-secondary bg-primary">
+        <Row  className="copyright-body text-center ">
                
                 <p className="mt-4">&#169; COPYRIGHT 2021 Secretaría de Vinculación Tecnológica y Social (UNSL) <br />Diseñado y desarrollado por Octavio Riccardo y Iván Agustín Lucero</p>
 
