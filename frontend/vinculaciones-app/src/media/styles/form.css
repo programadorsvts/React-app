@@ -1,0 +1,45 @@
+.form {
+    background-color: var(--bg-color-card);
+    padding: 2rem 2.5rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+}
+.form .title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form .label{
+    margin-bottom: 0;
+}
+.form .label-secundary{
+    margin-bottom: 5px;
+}
+
+.form input {
+    background-color: var(--bg-color-dark);
+    border-color: var(--bg-color-dark);
+    color: var(--text-color);
+}
+.form input::placeholder {
+    color: var(--text-color-placeholder);
+}
+.form input:focus {
+    background-color: var(--bg-color-dark);
+    border-color: var(--bg-color-dark);
+    color: var(--text-color);
+    box-shadow: none;
+}
+.form input:nth-last-child(2) {
+    margin-bottom: 20px;
+}
+
+.form .btn-form{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form .link{
+    color: var(--text-color);
+    margin-top: 20px;
+}
