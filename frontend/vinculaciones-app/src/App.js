@@ -6,7 +6,7 @@ import Observatorio from './media/pages/Observatorio'
 import RevistaDigital from './media/pages/RevistaDigital' 
 import Home from './media/pages/Home' 
 import LoginPage from './media/pages/LoginPage'
-/* import SingUpPage from './media/pages/SingUpPage' */
+import SingUpPage from './media/pages/SingUpPage' 
 import NotFoundPage from './media/pages/NotFoundPage'
  
 import NavBar  from "./media/components/ComponentsHome/NavBar/NavBar"
@@ -32,7 +32,7 @@ function App() {
 
                               <Route exact path="/Observatorio" element={<Observatorio/>} />
                               
-                              <Route exact path="/Login" element={<LoginPage/>} />
+                              <Route exact path="/SingUpPage" element={<SingUpPage/>} />
                               
                               {/* <Route exact path="/SingUp" element={<SingUpPage/>} /> */}
 

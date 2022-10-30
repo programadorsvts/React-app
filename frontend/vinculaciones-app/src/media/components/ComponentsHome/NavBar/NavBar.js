@@ -28,7 +28,7 @@ function NavBar() {
                 <Nav className="justify-content-start  flex-grow-1" >
                 <NavLink to="/" className="text-3">inicio</NavLink>
                 <NavLink to="/RevistaDigital" className="text-3">Revista Digital</NavLink>
-                <NavLink to="/Login" className="text-3">Observatorio</NavLink>   
+                <NavLink to="/SingUpPage" className="text-3">Observatorio</NavLink>   
                 </Nav>
                 <Nav className="navbar-buttons">
                   <Button >iniciar sesión</Button>
