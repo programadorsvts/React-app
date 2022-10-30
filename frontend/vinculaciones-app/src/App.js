@@ -32,9 +32,10 @@ function App() {
 
                               <Route exact path="/Observatorio" element={<Observatorio/>} />
                               
+                              <Route exact path="/LoginPage" element={<LoginPage/>} />
+                              
                               <Route exact path="/SingUpPage" element={<SingUpPage/>} />
                               
-                              {/* <Route exact path="/SingUp" element={<SingUpPage/>} /> */}
 
                               <Route exact path=" * " element={<NotFoundPage/>} />
                                

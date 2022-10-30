@@ -4,12 +4,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 
-import {NavLink,/* Link */ } from "react-router-dom";
+import {NavLink,useNavigate } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 import './navbar.css';
 
 function NavBar() {
+  const navigate = useNavigate();
   return (
     <>
       {['lg' ].map((expand) => (
@@ -28,13 +29,13 @@ function NavBar() {
                 <Nav className="justify-content-start  flex-grow-1" >
                 <NavLink to="/" className="text-3">inicio</NavLink>
                 <NavLink to="/RevistaDigital" className="text-3">Revista Digital</NavLink>
-                <NavLink to="/SingUpPage" className="text-3">Observatorio</NavLink>   
+                <NavLink to="/Observatorio" className="text-3">Observatorio</NavLink>   
                 </Nav>
                 <Nav className="navbar-buttons">
-                  <Button >iniciar sesión</Button>
-                  <Button >registrarse</Button>
-                  {/* <Button ><Link to="/Login" >iniciar secion</Link></Button>
-                  <Button ><Link to="/SingUp" >registrarse</Link></Button> */}
+                  
+                  <Button onClick={() => navigate("/LoginPage")}>iniciar sesión</Button>
+                  <Button onClick={() => navigate("/SingUpPage")}>registrarse</Button>
+            
                   <img src="'../../image/Escudo-UNSL-Blanco.svg" width="100" height="50" className="d-inline-block " alt=""/>
                 </Nav>
               </Offcanvas.Body>

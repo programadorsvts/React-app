@@ -1,7 +1,7 @@
 import {Container,Row,Col} from 'react-bootstrap';
 
 import FormularioCard from './FormularioCard';
-import MapCard from './MapCard';  
+/* import MapCard from './MapCard';  */ 
 
 function consulta() {
   return (
@@ -11,9 +11,9 @@ function consulta() {
             <Col className="mt-4  d-flex justify-content-center"  >
                     <FormularioCard></FormularioCard>
             </Col>
-            <Col className="mt-4  d-flex justify-content-center" >
+           {/*  <Col className="mt-4  d-flex justify-content-center" >
                     <MapCard></MapCard>  
-            </Col>
+            </Col> */}
         </Row>
     </Container>
     )
