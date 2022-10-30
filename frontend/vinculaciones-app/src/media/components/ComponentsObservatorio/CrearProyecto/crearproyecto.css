@@ -1,0 +1,30 @@
+.crear-proyectos{
+       
+        width: 1104px;
+        height: 114px;
+        left: 168px;
+        top: 740px;
+
+}
+
+.crear-proyectos text {
+
+            /* Encabezado2 */
+            
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 48px;
+                /* identical to box height */
+            
+                text-align: center;
+            
+                color: #DFF4FF;
+            
+                /* shadowdark */
+            
+                text-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+
+
+}

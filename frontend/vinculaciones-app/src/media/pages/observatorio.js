@@ -1,4 +1,5 @@
 import PrincipalObservatorio from '../components/ComponentsObservatorio/Principal/PrincipalObservatorio'
+import CrearProyecto from '../components/ComponentsObservatorio/CrearProyecto/CrearProyecto'
 
 
 function observatorio (){
@@ -6,7 +7,7 @@ function observatorio (){
             <>
             
                 <PrincipalObservatorio></PrincipalObservatorio>
-            
+                <CrearProyecto></CrearProyecto>
             
             </>
     );
