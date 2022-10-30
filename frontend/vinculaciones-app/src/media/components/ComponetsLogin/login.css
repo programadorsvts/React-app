@@ -1,4 +1,4 @@
-.card {
+ .cardform {
     background-color: var(--bg-color-dark);
    
     padding-right: 20px;
@@ -11,47 +11,47 @@
     border-radius: 12px;
 }
 
-.card .text-3 {
+.cardform.text-3 {
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.card .text-3:hover {
+.cardform .text-3:hover {
     color: var(--text-color-third);
 }
 
- .card Link {
+ .cardformLink {
     color: var(--text-color);
     text-transform: uppercase;
     text-decoration: none;
 } 
 
 
-.Card .btn {
+.cardform .btn {
     margin-left: 5px;
     margin-right: 5px;
 }
 
-.card-btn {
+.cardform-btn {
     margin-top: 20px;
 }
 
-.card-btn img {
+.cardform-btn img {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
 @media (min-width: 991px) {
-    .card-btn {
+    .cardform-btn {
         margin-top: 0;
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
-    .card-btn img {
+    .cardform-btn img {
         margin-top: 0;
         margin-left: 10px;
     }
-}
+} 
