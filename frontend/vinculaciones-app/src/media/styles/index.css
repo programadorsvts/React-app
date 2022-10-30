@@ -7,6 +7,9 @@
     --text-color-placeholder: #A5BAC7;
     --font-family: 'Poppins', sans-serif;
     --box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    --bg-gradient-stan: linear-gradient(124.5deg, #18273F 0%, #142D33 100%);
+    --bg-gradient-1: linear-gradient(127.43deg, #1F2937 0%, #18273F 11.08%, #142D33 29.98%, #1F2937 53.86%);
+    --bg-gradient-convocatorias: linear-gradient(141.34deg, #1C2531 24%, #18273F 36.15%, #142D33 56.85%, #1C2531 83.02%);
 }
 
 body{
