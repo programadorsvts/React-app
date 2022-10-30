@@ -6,3 +6,17 @@
      
 
  }
+
+
+ .text{
+    /* Encabezado1 */
+    
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 60px;
+        /* identical to box height */
+    
+        text-align: center;
+ }
