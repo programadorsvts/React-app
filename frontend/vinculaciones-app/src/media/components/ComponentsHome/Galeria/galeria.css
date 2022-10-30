@@ -1,0 +1,28 @@
+.img-galeria {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.galeria-1-1 {
+    height: 25%;
+}
+
+.galeria-1-2 {
+    height: 25%;
+}
+
+.galeria-2-1 {
+    height: 35%;
+}
+
+.galeria-2-2 {
+    height: 15%;
+}
+
+.galeria-3-1 {
+    height: 25%;
+}
+
+.galeria-3-2 {
+    height: 25%;
+}
