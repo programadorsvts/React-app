@@ -1,16 +1,34 @@
-.crear-proyectos{
-       
-        width: 1104px;
-        height: 114px;
-        left: 168px;
-        top: 740px;
+:root {
+    --bg-color-dark: #1F2937;
+    --bg-color-card: #192029;
+    --text-color: #DFF4FF;
+    --text-color-secundary: #C7DEE8;
+    --text-color-third: #71CEF2;
+    --text-color-placeholder: #A5BAC7;
+    --font-family: 'Poppins', sans-serif;
+    --box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-size: 16px;
+    font-family: var(--font-family);
+    color: tvar(--ext-color);
+    background-color: var(--bg-color-dark);
 
 }
 
-.crear-proyectos text {
+.crear-proyectos{
+       
+            
+            width: 1104px;
+            height: 95px;
+            left: 168px;
+            top: 740px;
+
+}
+.crear-proyectos .text {
 
             /* Encabezado2 */
-            
                 font-family: 'Poppins';
                 font-style: normal;
                 font-weight: 700;
