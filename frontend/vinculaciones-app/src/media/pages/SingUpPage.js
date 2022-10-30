@@ -1,7 +1,7 @@
 function singup (){
     return(
         <>
-        
+                    
         
         
         
