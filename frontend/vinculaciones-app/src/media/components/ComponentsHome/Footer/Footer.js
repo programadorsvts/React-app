@@ -7,7 +7,7 @@ function footer() {
   return (
 
         
-    <Container fluid  className=" footer-body mt-5   trounded-top">
+    <Container fluid  className=" footer-body mt-5  dragradado trounded-top">
         
         <Row className="ms-5 me-5 mt-3">
 
