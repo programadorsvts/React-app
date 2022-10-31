@@ -8,6 +8,7 @@ import Home from './media/pages/Home'
 import LoginPage from './media/pages/LoginPage'
 import SingUpPage from './media/pages/SingUpPage' 
 import NotFoundPage from './media/pages/NotFoundPage'
+import CrearProyectoPage from "./media/pages/CrearProyectoPage";
  
 import NavBar  from "./media/components/ComponentsHome/NavBar/NavBar"
 import Footer from "./media/components/ComponentsHome/Footer/Footer";
@@ -35,6 +36,8 @@ function App() {
                               <Route exact path="/LoginPage" element={<LoginPage/>} />
                               
                               <Route exact path="/SingUpPage" element={<SingUpPage/>} />
+
+                              <Route exact path="/CrearProyectoPage" element={<CrearProyectoPage/>} />
                               
 
                               <Route exact path=" * " element={<NotFoundPage/>} />

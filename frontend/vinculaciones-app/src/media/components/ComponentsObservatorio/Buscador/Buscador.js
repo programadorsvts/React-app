@@ -9,7 +9,7 @@ function buscador (){
             
                     <Container className="d-flex  justify-content-center mt-5   ">
      
-                        <Form className="form buscador-body  buscador-label2">
+                        <Form className="form buscador-body  mb-5">
                             
                             <Form.Group className="mb-3" controlId="buscador1" >
                                 <Form.Label className="encabezado-4 label" >Buscardor</Form.Label>
