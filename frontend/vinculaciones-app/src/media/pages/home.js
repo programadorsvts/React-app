@@ -5,13 +5,15 @@ import Noticias from '../components/ComponentsHome/Noticias/Noticias'
 import Principal from '../components/ComponentsHome/Principal/Principal'
 import Redes from '../components/ComponentsHome/Redes/Redes'
 import Vinculaciones from '../components/ComponentsHome/Vinculaciones/Vinculaciones'
-import Galeria from '../components/ComponentsHome/Galeria/Galeria';
+ import Galeria from '../components/ComponentsHome/Galeria/Galeria';
+/* import Carrousel from '../components/ComponentsHome/Carrousel/Carrousel'*/
 
 function home (){
     return(
         <>
             <Principal></Principal>
-            <Galeria></Galeria>
+            <Galeria></Galeria> 
+            {/* <Carrousel></Carrousel> */}
             <Noticias></Noticias>
             <Gestion></Gestion>
             <Convocatorias></Convocatorias>
