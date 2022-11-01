@@ -19,7 +19,7 @@ function galeria() {
 
                             <Col className='' md={6} >
 
-                                <img className='img-galeria galeria-2-1' src='https://tusradios.com.ar/uploads/noticias/5/2022/08/4ab6888d348d31303acd30fda37aeb90b6bf34b8.jpg '></img>
+                                <img className='img-galeria galeria-2-1' src='https://media1.giphy.com/media/y6hItRhTKMMsl32PuR/giphy.webp '></img>
                                 <img className='img-galeria galeria-2-2' src='https://tusradios.com.ar/uploads/noticias/5/2022/08/4ab6888d348d31303acd30fda37aeb90b6bf34b8.jpg'></img>
 
                             </Col>
