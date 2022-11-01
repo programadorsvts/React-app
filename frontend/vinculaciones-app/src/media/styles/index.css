@@ -81,3 +81,9 @@ body{
     color: var(--bg-color-dark);
     background-color: var(--text-color-third);
 }
+
+textarea {
+    resize: none;
+    overflow-y: scroll;
+    
+}

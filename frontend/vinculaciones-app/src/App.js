@@ -38,8 +38,7 @@ function App() {
                               <Route exact path="/SingUpPage" element={<SingUpPage/>} />
 
                               <Route exact path="/CrearProyectoPage" element={<CrearProyectoPage/>} />
-                              
-
+                            
                               <Route exact path=" * " element={<NotFoundPage/>} />
                                
                       </Routes>     
