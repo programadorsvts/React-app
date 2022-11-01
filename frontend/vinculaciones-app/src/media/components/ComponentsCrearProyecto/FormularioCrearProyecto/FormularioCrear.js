@@ -58,7 +58,7 @@ function formulariocrear() {
         </Form.Group>
         <Form.Group className="mb-3 mt-4" controlId="exampleForm.ControlTextarea1">
             <Form.Label className="encabezado-4 label">Descripcion</Form.Label>
-            <Form.Control as="textarea" rows={10} />
+            <Form.Control as="textarea" rows={10 } />
         </Form.Group>   
         <Button className="btn btn-form mt-5">Crear Proyecto</Button>
         </Form>
