@@ -6,9 +6,9 @@ import GestionCard from './GestionCard'
 
 function gestion() {
         
-                 const gestion1={imagen:'https://svts.unsl.edu.ar/ico/boligrafo.png',  titulo:'Informe de autoevaluación', ruta:'https://svts.unsl.edu.ar/infautoevaluacion.html'};
-                const gestion2={imagen:'https://svts.unsl.edu.ar/ico/STAN.png',  titulo:'Servicios Tecnológicos de Alto Nivel' ,ruta:'https://svts.unsl.edu.ar/infautoevaluacion.html'};
-                const gestion3={imagen:'https://svts.unsl.edu.ar/ico/contrato.png',  titulo:'Acreditación como Incubadoral', ruta:'https://svts.unsl.edu.ar/infautoevaluacion.html'};
+                 const gestion1={imagen:'https://svts.unsl.edu.ar/ico/boligrafo.png',  titulo:'Informe de autoevaluación', ruta:'https://svts.unsl.edu.ar/pdf/INFORME%20DE%20AUTOEVALUACION-2021.pdf'};
+                const gestion2={imagen:'https://svts.unsl.edu.ar/ico/STAN.png',  titulo:'Servicios Tecnológicos de Alto Nivel' ,ruta:'https://svts.unsl.edu.ar/pdf/STAN.pdf'};
+                const gestion3={imagen:'https://svts.unsl.edu.ar/ico/contrato.png',  titulo:'Acreditación como Incubadoral', ruta:'https://svts.unsl.edu.ar/pdf/Acreditacion.pdf'};
 return (
     <Container  className=" "  >
         

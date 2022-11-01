@@ -4,7 +4,7 @@ import {Card, Col, Row}from 'react-bootstrap';
 
 
 
-function vinculacionescard() {
+function vinculacionescard(props) {
   return (
     
     <Card style={{height : "421px", width: "356px"}}>
@@ -15,7 +15,7 @@ function vinculacionescard() {
             <Row>
                     
                     <Col>
-                        <Card.Img src="../../image/icons/convocatorias/emprende.svg"  style={{height : "380px", width: "320px"}}/>
+                        <Card.Img src={props.info.ruta}  style={{height : "380px", width: "320px"}}/>
                     </Col>
                 
             </Row>

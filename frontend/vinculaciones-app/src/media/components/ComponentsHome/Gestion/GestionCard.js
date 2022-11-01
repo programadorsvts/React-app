@@ -18,7 +18,7 @@ function gestioncard(props) {
                   <Col>
                           <Card.Text className="mt-3">{props.info.titulo}</Card.Text>
                   </Col>
-              <a href={props.info.ruta} target="_blank" rel='noreferrer' >Ver informacion</a>
+              <a href={props.info.ruta} download target="_blank" rel='noreferrer' >Ver informacion</a>
             </Row>
             
         </Card.Body>

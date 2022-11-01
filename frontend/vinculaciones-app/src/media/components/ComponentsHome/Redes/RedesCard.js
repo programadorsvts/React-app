@@ -5,7 +5,7 @@ import {Card, Col, Row}from 'react-bootstrap';
 
 
 
-function redescard() {
+function redescard(props) {
   return (
     
     <Card style={{height : "130px", width: "356px"}}>
@@ -14,7 +14,7 @@ function redescard() {
             <Row className="mt-4">
                     
                     <Col>
-                          <p>icon</p>
+                          <Card.Img src={props.info.ruta} />
                     </Col>
                   
             </Row>
