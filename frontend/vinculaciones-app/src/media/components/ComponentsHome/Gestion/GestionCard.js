@@ -1,30 +1,26 @@
-import {Card, Col, Row}from 'react-bootstrap';
+import {Card, Col, Row}from 'react-bootstrap'
 
 
 
-
-
-
-function gestioncard() {
+function gestioncard(props) {
   return (
     
-    <Card  className="shadow" style={{height : "130px", width: "356px"}}>
+    <Card  className="shadow d-flex justify-content-center" style={{height : "130px", width: "356px"}}>
         
       
       
         <Card.Body  className="text-secondary">
             <Row>
-                    
-                    <Col>
-                        
-                    </Col>
-                    
-
-                    <Col>
-                            <Card.Text className="mt-3">Servicios Tecnológicos de Alto Nivel</Card.Text>
-                    </Col>
-
+                  <Col>
+                        <Card.Img src={props.info.imagen}  style={{height : "100px", width: "100px"}}/>
+                  </Col>
+                  
+                  <Col>
+                          <Card.Text className="mt-3">{props.info.titulo}</Card.Text>
+                  </Col>
+              <a href={props.info.ruta} target="_blank" rel='noreferrer' >Ver informacion</a>
             </Row>
+            
         </Card.Body>
     </Card>
   );

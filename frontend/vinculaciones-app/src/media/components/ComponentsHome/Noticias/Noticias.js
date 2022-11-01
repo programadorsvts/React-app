@@ -5,6 +5,15 @@ import Card from './Card'
 
 
 function noticias() {
+        
+    
+        
+        const noticia1={imagen:'https://directivosygerentes.es/wp-content/uploads/2022/04/4-sesgos-dificultan-cambio-empresas-daniela-de-sousa.jpg',titulo:'Titulo 1',texto:'Texto referido a la noticia numero 1 del home page'};
+        const noticia2={imagen:'https://directivosygerentes.es/wp-content/uploads/2022/04/4-sesgos-dificultan-cambio-empresas-daniela-de-sousa.jpg' ,titulo:'Titulo 2' ,texto:'Texto referido a la noticia numero 2 del home page' };
+        const noticia3={imagen:'https://directivosygerentes.es/wp-content/uploads/2022/04/4-sesgos-dificultan-cambio-empresas-daniela-de-sousa.jpg' ,titulo:'Titulo 3' ,texto:'Texto referido a la noticia numero 3 del home page' };
+        const noticia4={imagen:'https://directivosygerentes.es/wp-content/uploads/2022/04/4-sesgos-dificultan-cambio-empresas-daniela-de-sousa.jpg' ,titulo:'Titulo 4' ,texto:'Texto referido a la noticia numero 4 del home page' };
+
+        
   return (
 
 
@@ -16,24 +25,24 @@ function noticias() {
      
             <Col className=" mt-3 mb-2  d-flex justify-content-center" xs     >
                     
-                    <Card></Card>
+                    <Card info={noticia1}></Card>
             
             </Col>
 
             <Col className="mt-3 mb-2 d-flex justify-content-center   " xs    >
                     
-                    <Card></Card>
+                    <Card  info={noticia2}></Card>
             
             </Col>
 
             <Col className="mt-3 mb-2 d-flex justify-content-center " xs    >
                     
-                    <Card></Card>
+                    <Card  info={noticia3}></Card>
             
             </Col>
              <Col className="mt-3 mb-2 d-flex justify-content-center " xs    >
                     
-                    <Card></Card>
+                    <Card   info={noticia4}></Card>
             
             </Col>
         </Row>

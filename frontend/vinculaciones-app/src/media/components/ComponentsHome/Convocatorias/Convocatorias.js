@@ -5,6 +5,9 @@ import ConvocatoriaCard from './ConvocatoriaCard'
 
 
 function convocatoria() {
+        const convocatoria1={ruta:'https://svts.unsl.edu.ar/img/Noticia%20pdts.svg'};
+        const convocatoria2={ruta:'https://svts.unsl.edu.ar/img/Noticia%20emprende.svg'};
+        const convocatoria3={ruta:'https://svts.unsl.edu.ar/img/Noticia%20unslXi.svg '};
   return (
 
     <Container  className=" "  >
@@ -19,19 +22,19 @@ function convocatoria() {
             
             <Col className="mt-4  d-flex justify-content-center"  >
                     
-                    <ConvocatoriaCard></ConvocatoriaCard>
+                    <ConvocatoriaCard info={convocatoria1}></ConvocatoriaCard>
                         
             </Col>
 
             <Col className="mt-4  d-flex justify-content-center" >
                     
-                    <ConvocatoriaCard></ConvocatoriaCard>
+                    <ConvocatoriaCard info={convocatoria2}></ConvocatoriaCard>
             
             </Col>
 
             <Col className="mt-4   d-flex justify-content-center" >
                     
-                    <ConvocatoriaCard></ConvocatoriaCard>
+                    <ConvocatoriaCard info={convocatoria3}></ConvocatoriaCard>
             
             </Col>
         </Row>

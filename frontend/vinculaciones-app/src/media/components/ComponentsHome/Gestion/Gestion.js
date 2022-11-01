@@ -5,9 +5,11 @@ import GestionCard from './GestionCard'
 
 
 function gestion() {
-  return (
-
-
+        
+                 const gestion1={imagen:'https://svts.unsl.edu.ar/ico/boligrafo.png',  titulo:'Informe de autoevaluación', ruta:'https://svts.unsl.edu.ar/infautoevaluacion.html'};
+                const gestion2={imagen:'https://svts.unsl.edu.ar/ico/STAN.png',  titulo:'Servicios Tecnológicos de Alto Nivel' ,ruta:'https://svts.unsl.edu.ar/infautoevaluacion.html'};
+                const gestion3={imagen:'https://svts.unsl.edu.ar/ico/contrato.png',  titulo:'Acreditación como Incubadoral', ruta:'https://svts.unsl.edu.ar/infautoevaluacion.html'};
+return (
     <Container  className=" "  >
         
         <h2 className="mt-5 pt-5  text-center" >Gestion</h2>
@@ -20,19 +22,19 @@ function gestion() {
             
             <Col className="mt-4  d-flex justify-content-center"  >
                     
-                    < GestionCard ></GestionCard>
+                    < GestionCard info={ gestion1} ></GestionCard>
                         
             </Col>
 
             <Col className="mt-4  d-flex justify-content-center" >
                     
-                    < GestionCard ></GestionCard>
+                    < GestionCard info={ gestion2}></GestionCard>
             
             </Col>
 
             <Col className="mt-4   d-flex justify-content-center" >
                     
-                    < GestionCard ></GestionCard>
+                    < GestionCard info={ gestion3}></GestionCard>
             
             </Col>
         </Row>
