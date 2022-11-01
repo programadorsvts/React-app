@@ -8,7 +8,7 @@ function card() {
     
       <Card style={{height : "346px", width: "262px"}} >
 
-        <Card.Img variant="top" src="./oficina.jpg"  style={{height : "160px", width: "262px"}}/>
+        <Card.Img  className='img-noticias'variant="top" src="https://tusradios.com.ar/uploads/noticias/5/2022/08/4ab6888d348d31303acd30fda37aeb90b6bf34b8.jpg"/>
 
         
           <Card.Body  className="text-secondary ">
