@@ -14,7 +14,6 @@ body{
     font-family: var(--font-family);
     color: var(--text-color);
     background-color: var(--bg-color-dark);
-    
 }
 
 .hero {
@@ -82,8 +81,13 @@ body{
     background-color: var(--text-color-third);
 }
 
+
+/* Esto lo agrege para que el area de texto tenga una scroll bar y no lo puedan redimenzionar  */
+
 textarea {
     resize: none;
     overflow-y: scroll;
     
 }
+
+
