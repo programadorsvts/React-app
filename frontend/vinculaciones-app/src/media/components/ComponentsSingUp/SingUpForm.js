@@ -39,7 +39,7 @@ const{
             placeholder="ejemplo@unsl.com"
             onBlur={handleBlur} 
             onChange={handleChange} 
-            value={this.email} 
+            
             required
             />
 
@@ -57,7 +57,7 @@ const{
               placeholder=""
               onBlur={handleBlur} 
               onChange={handleChange} 
-              value={this.email} 
+              
               required
             />
 
@@ -73,7 +73,7 @@ const{
               placeholder=""
               onBlur={handleBlur} 
               onChange={handleChange} 
-              value={this.email} 
+              
               required
             />
 
