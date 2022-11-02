@@ -1,16 +1,16 @@
- ///////////React Router Dom////////////////////
- import { BrowserRouter as Router ,Route,Routes  } from "react-router-dom"; 
+///////////React Router Dom////////////////////
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 /////////////////Pages/////////////////////////
 import Observatorio from './media/pages/Observatorio'
-import RevistaDigital from './media/pages/RevistaDigital' 
-import Home from './media/pages/Home' 
+import RevistaDigital from './media/pages/RevistaDigital'
+import Home from './media/pages/Home'
 import LoginPage from './media/pages/LoginPage'
-import SingUpPage from './media/pages/SingUpPage' 
+import SingUpPage from './media/pages/SingUpPage'
 import NotFoundPage from './media/pages/NotFoundPage'
 import CrearProyectoPage from "./media/pages/CrearProyectoPage";
- 
-import NavBar  from "./media/components/ComponentsHome/NavBar/NavBar"
+
+import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
 import Footer from "./media/components/ComponentsHome/Footer/Footer";
 
 /////////////////Bootstrap/////////////////
@@ -22,29 +22,29 @@ import "./media/styles/index.css"
 function App() {
 
   return (
-                <Router>  
-                          <NavBar></NavBar>
-                          
-                      <Routes> 
-                          
-                              <Route exact path="/"  element={<Home/>} /> 
+    <Router>
+      <NavBar></NavBar>
 
-                              <Route exact path="/RevistaDigital" element={<RevistaDigital/>} />
+      <Routes>
 
-                              <Route exact path="/Observatorio" element={<Observatorio/>} />
-                              
-                              <Route exact path="/LoginPage" element={<LoginPage/>} />
-                              
-                              <Route exact path="/SingUpPage" element={<SingUpPage/>} />
+        <Route exact path="/" element={<Home />} />
 
-                              <Route exact path="/CrearProyectoPage" element={<CrearProyectoPage/>} />
-                            
-                              <Route exact path=" * " element={<NotFoundPage/>} />
-                               
-                      </Routes>     
+        <Route exact path="/RevistaDigital" element={<RevistaDigital />} />
 
-                       <Footer></Footer> 
-                </Router>   
+        <Route exact path="/Observatorio" element={<Observatorio />} />
+
+        <Route exact path="/LoginPage" element={<LoginPage />} />
+
+        <Route exact path="/SingUpPage" element={<SingUpPage />} />
+
+        <Route exact path="/CrearProyectoPage" element={<CrearProyectoPage />} />
+
+        <Route exact path=" * " element={<NotFoundPage />} />
+
+      </Routes>
+
+      <Footer></Footer>
+    </Router>
   );
 }
 
