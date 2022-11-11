@@ -7,22 +7,52 @@ import '../../styles/form.css';
 const initialForm ={
   email:'',
   password:'',
-  passwordconfig:'',
+  passwordconfir:'',
 };
 
+//////////Funcion para poder validar los campos con expreciones regulares/////////////
 const validationsForm=(form)=>{
     let errors ={};
+    let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    let regexComments = /^.{1,255}$/;
+    let regexPassword = /^.{8,15}$/;
 
     if(!form.email.trim()){
-      errors.email=' se necesita un email para registrarse';
-      errors.password='se necesita una contraseña para registrarse '; 
-      errors.password='se necesita una confirmacion de contraseña';
+        errors.email='ingrese un mail valido';
+    } else if(!regexEmail.test(!form.email.trim())){
+        errors.email='Ingrese un dominio de email valido';
+    }
+
+    if(!form.name.trim()){
+        errors.name='el campo nombre es requerido';
+    }else if(!regexName.test(!form.name.trim())){
+        errors.name='Ingrese un nombre valido';
+    }
+    if(!form.comments.trim()){
+        errors.comments='el campo nombre es requerido';
+    }else if(!regexComments.test(!form.comments.trim())){
+        errors.comments='cantidad de caracteres superada';
+    }
+    
+     if(!form.password.trim()){
+        errors.password='el campo contrase;a es requerido';
+    }else if(!regexPassword.test(!form.password.trim())){
+        errors.password='maximo de caracteres superado';
+    }
+     if(!form.passwordconfir.trim()){
+        errors.passwordconfir='el campo contrase;a es requerido';
+    }else if(!regexPassword.test(!form.passwordconfir.trim())){
+        errors.passwordconfir='maximo de caracteres superado';
     }
 
 };
 
+
+///////////////////Formulario de registro///////////////////
 const   SingUpForm =() => {
 
+//////////////////Destructuracion del Hook useForm Personalizado///////////////////
 const{   
         form,
         errors,
@@ -42,16 +72,11 @@ const{
       <Form.Group className="mb-3" controlId="CorreoSingUp" >
 
         <Form.Label className="encabezado-4 label" >Correo Electrónico:</Form.Label>
+        
         <p className="text-5 label-secundary">Debe ser de formato @unsl.edu.ar</p>
-        <Form.Control 
-            type="email" 
-            name='email' 
-            placeholder="ejemplo@unsl.edu.ar"
-            onChange={handleChange} 
-            value={form.email} required
-            onBlur={handleBlur} 
-            />
-           {/*  {errors.email && <p>{errors.email}</p> } */}
+         {errors.email && <p>{errors.email}</p> }
+        <Form.Control  type="email" name='email' placeholder="ejemplo@gmail o @hotmail" onChange={handleChange}  value={form.email} required onBlur={handleBlur} />  
+          
       </Form.Group>    
 
 
@@ -69,6 +94,7 @@ const{
               required
               onBlur={handleBlur} 
             />
+            {errors.password && <p>{errors.password}</p> }
 
       </Form.Group>
 
@@ -77,14 +103,14 @@ const{
 
         <Form.Control 
               type="password" 
-              name='passwordconfig' 
+              name='passwordconfir' 
               placeholder=""
               onChange={handleChange} 
-              value={form.passwordconfig}
+              value={form.passwordconfir}
               required
               onBlur={handleBlur}   
             />
-
+          {errors.passwordconfir && <p>{errors.passwordconfir}</p> } 
         <Link  to="/LoginPage" className="text-4 link" >¿Ya tienes una cuenta? Iniciar Sesión</Link>
 
       </Form.Group>

@@ -21,7 +21,19 @@ export const useForm =(initialForm,validateForm )=>{
         setErrors(validateForm(form));
     };
 
-    const handleSubmit=(e)=>{};
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        setErrors(validateForm(form));
+
+        if(Object.keys(errors).length===0){
+            setLoading(true);
+            //////Peticion a la API//////
+            
+        }else{
+            return;
+        }
+        
+    };
     
     return{
         form,
