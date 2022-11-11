@@ -9,6 +9,7 @@ const initialForm ={
   password:'',
   passwordconfig:'',
 };
+
 const validationsForm=(form)=>{};
 
 const   SingUpForm =() => {
@@ -29,24 +30,23 @@ const{
 
       <h1 className="encabezado-3 title">Registrarse</h1>
 
-      <Form.Group className="mb-3" controlId="correoregistro1" >
+      <Form.Group className="mb-3" controlId="CorreoSingUp" >
 
         <Form.Label className="encabezado-4 label" >Correo Electrónico:</Form.Label>
-        <p className="text-5 label-secundary">Debe ser de formato unsl.edu.ar o email.unsl.edu.ar</p>
+        <p className="text-5 label-secundary">Debe ser de formato @unsl.edu.ar</p>
         <Form.Control 
             type="email" 
             name='email' 
-            placeholder="ejemplo@unsl.com"
-            onBlur={handleBlur} 
+            placeholder="ejemplo@unsl.edu.ar"
             onChange={handleChange} 
-            
-            required
+            value={form.email} required
+            onBlur={handleBlur} 
             />
 
       </Form.Group>    
 
 
-      <Form.Group className="mb-3" controlId="contraseñaregistro1" >
+      <Form.Group className="mb-3" controlId="ContraseñaSingUp" >
 
         <Form.Label className="encabezado-4 label">Contraseña:</Form.Label>
         <p className="text-5 label-secundary">Debe ser de mínino de 8 caracteres</p>
@@ -55,10 +55,14 @@ const{
               type="password" 
               name='password' 
               placeholder=""
-              onBlur={handleBlur} 
               onChange={handleChange} 
-              
+              value={form.password}
               required
+              onBlur={handleBlur} 
+
+              
+              
+              
             />
 
 
