@@ -10,7 +10,16 @@ const initialForm ={
   passwordconfig:'',
 };
 
-const validationsForm=(form)=>{};
+const validationsForm=(form)=>{
+    let errors ={};
+
+    if(!form.email.trim()){
+      errors.email=' se necesita un email para registrarse';
+      errors.password='se necesita una contraseña para registrarse '; 
+      errors.password='se necesita una confirmacion de contraseña';
+    }
+
+};
 
 const   SingUpForm =() => {
 
@@ -42,7 +51,7 @@ const{
             value={form.email} required
             onBlur={handleBlur} 
             />
-
+           {/*  {errors.email && <p>{errors.email}</p> } */}
       </Form.Group>    
 
 
@@ -59,12 +68,7 @@ const{
               value={form.password}
               required
               onBlur={handleBlur} 
-
-              
-              
-              
             />
-
 
       </Form.Group>
 
@@ -75,10 +79,10 @@ const{
               type="password" 
               name='passwordconfig' 
               placeholder=""
-              onBlur={handleBlur} 
               onChange={handleChange} 
-              
+              value={form.passwordconfig}
               required
+              onBlur={handleBlur}   
             />
 
         <Link  to="/LoginPage" className="text-4 link" >¿Ya tienes una cuenta? Iniciar Sesión</Link>
