@@ -1,7 +1,7 @@
 import {Button,Form} from 'react-bootstrap';
 import '../../../styles/form.css';
 import * as Yup from 'yup';
-import { Formik, useFormik,} from 'formik';
+import { Formik,} from 'formik';
 
 
 
@@ -14,10 +14,10 @@ import { Formik, useFormik,} from 'formik';
 
           const schema = Yup.object().shape({
 
-           email:Yup.string().email('Email no valido').required('Required'),
-           name: Yup.string().min(2, 'Nombre no valido').max(30, 'Nombre no valido!').required('Required'),
+           email:Yup.string().email('email no valido').required('el mail es requerido').trim('los espacio en blanco no estan permitidos '),
+           name: Yup.string().min(2, 'nombre muy corto').max(30, 'el nombre supera la cantidad de caracteres').required('se requiere un nombre'),
            telephone: Yup.number(),
-           description: Yup.string().min(2, 'Nombre no valido').max(600, 'Nombre no valido!').required('Required'),
+           description: Yup.string().min(2, 'descripcion es muy corta').max(600, 'descripcion supera la cantidad de caracteres'),
            
            
           });
@@ -52,7 +52,7 @@ import { Formik, useFormik,} from 'formik';
                                   isInvalid={!!errors.name}
                                   />
                                 <Form.Control.Feedback type='invalid'>
-                                   {errors.name && <p>nombre no valido</p>}
+                                   {errors.name}
                                 </Form.Control.Feedback>
                                 
                         </Form.Group>
@@ -69,7 +69,7 @@ import { Formik, useFormik,} from 'formik';
                                   isInvalid={!!errors.email}
                                   />
                                   <Form.Control.Feedback type='invalid'>
-                                   {errors.email  && <p>Email no valido</p> }
+                                   {errors.email  }
                                 </Form.Control.Feedback>
                                
                               
@@ -82,7 +82,7 @@ import { Formik, useFormik,} from 'formik';
                                   placeholder=""  
                                   value={values.telephone}
                                   onChange={handleChange}
-                                  isValid={touched.telephone && !errors.telephone}
+                                  isValid={touched.telephone }
                                   isInvalid={!!errors.telephone}
                                   />
                                 <Form.Control.Feedback type='invalid'>
@@ -99,7 +99,7 @@ import { Formik, useFormik,} from 'formik';
                                     placeholder=""  
                                     value={values.description}
                                     onChange={handleChange}
-                                    isValid={touched.description && !errors.description}
+                                    isValid={touched.description}
                                     isInvalid={!!errors.description} 
                                  />  
                                 <Form.Control.Feedback type='invalid'>

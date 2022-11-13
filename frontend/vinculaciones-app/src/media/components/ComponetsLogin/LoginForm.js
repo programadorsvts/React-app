@@ -15,11 +15,11 @@ function loginForm() {
 
      const schema = Yup.object().shape({
 
-           email:Yup.string().email('Email no valido').required('Required').trim(''),
+           email:Yup.string().email('Email no valido').required('mail requerido').trim(''),
            password: Yup.string()
-            .required('se requiere una contrase;a.') 
-            .min(8, 'contrase;a no valida - minimo 8 caracteres.'),
-          
+            .required('se requiere una contraseña.') 
+            .min(8, 'contraseña no valida - minimo 8 caracteres.')
+            .trim('los espacio en blanco no estan permitidos '),
           });
 
   return(
@@ -28,7 +28,6 @@ function loginForm() {
                   initialValues={{
                       email:'',
                       password:'',
-                      
                   } }
                   onSubmit={values => {alert(JSON.stringify(values, null, 2));}}
                   >    
