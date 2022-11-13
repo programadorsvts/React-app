@@ -16,7 +16,7 @@ import { Formik,} from 'formik';
 
            email:Yup.string().email('email no valido').required('el mail es requerido').trim('los espacio en blanco no estan permitidos '),
            name: Yup.string().min(2, 'nombre muy corto').max(30, 'el nombre supera la cantidad de caracteres').required('se requiere un nombre'),
-           telephone: Yup.number(),
+           telephone: Yup.number().required('se requiere un telefono'),
            description: Yup.string().min(2, 'descripcion es muy corta').max(600, 'descripcion supera la cantidad de caracteres'),
            
            
@@ -86,7 +86,7 @@ import { Formik,} from 'formik';
                                   isInvalid={!!errors.telephone}
                                   />
                                 <Form.Control.Feedback type='invalid'>
-                                  {errors.telephone && <p>telefono no valido</p>}
+                                  {errors.telephone}
                                 </Form.Control.Feedback>
                           </Form.Group>
 
@@ -103,7 +103,7 @@ import { Formik,} from 'formik';
                                     isInvalid={!!errors.description} 
                                  />  
                                 <Form.Control.Feedback type='invalid'>
-                                   {errors.description && <p>description no valida</p>}
+                                   {errors.description}
                                 </Form.Control.Feedback> 
                                   
                         </Form.Group>
