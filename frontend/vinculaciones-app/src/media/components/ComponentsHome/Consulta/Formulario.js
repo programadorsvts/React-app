@@ -15,9 +15,10 @@ import { Formik, useFormik,} from 'formik';
           const schema = Yup.object().shape({
 
            email:Yup.string().email('Email no valido').required('Required'),
-           name: Yup.string().min(2, 'nombre muy corto !').max(30, 'nombre muy largo!').required('Required'),
-           telephone: Yup.string().min(1, 'nombre muy corto !').max(14, 'nombre muy largo!').required('Required'),
-           description: Yup.string().min(5, 'nombre muy corto !').max(200, 'nombre muy largo!').required('Required'),
+           name: Yup.string().min(2, 'Nombre no valido').max(30, 'Nombre no valido!').required('Required'),
+           telephone: Yup.number(),
+           description: Yup.string().min(2, 'Nombre no valido').max(600, 'Nombre no valido!').required('Required'),
+           
            
           });
   
@@ -31,7 +32,10 @@ import { Formik, useFormik,} from 'formik';
                       telephone:'',
                       description:'',
                   } }
-                  onSubmit={() => console.log('datos enviados!!')}
+                  onSubmit={values => {
+                    alert(JSON.stringify(values, null, 2));
+                  }}
+
               >    
               {({handleChange, handleSubmit,  values ,touched , errors}) => (
                     <Form onSubmit={handleSubmit}>
@@ -88,20 +92,20 @@ import { Formik, useFormik,} from 'formik';
 
 
                         <Form.Group className="" controlId="Textarea">
-                            <Form.Label className="mt-2">description</Form.Label>
+                            <Form.Label className="mt-2">descripcion</Form.Label>
                           
                                 <Form.Control  as="textarea" rows={9} 
-                                   /*  name='description ' 
+                                   name='description' 
                                     placeholder=""  
                                     value={values.description}
                                     onChange={handleChange}
                                     isValid={touched.description && !errors.description}
-                                    isInvalid={!!errors.description} */
+                                    isInvalid={!!errors.description} 
                                  />  
-                                 {/*  <Form.Control.Feedback type='invalid'>
+                                <Form.Control.Feedback type='invalid'>
                                    {errors.description && <p>description no valida</p>}
-                                </Form.Control.Feedback> */}
-                                    
+                                </Form.Control.Feedback> 
+                                  
                         </Form.Group>
                         <Button className='mt-3' onClick={handleSubmit}>Enviar</Button>
                         <br/>
