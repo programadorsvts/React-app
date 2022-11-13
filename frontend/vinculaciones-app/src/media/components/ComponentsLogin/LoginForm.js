@@ -72,7 +72,7 @@ function loginForm() {
                             <Link to="/SingUpPage" className="text-4 link" >¿No tienes una cuenta? Registrarse</Link>
                         </Form.Group>
                         <Button className="btn btn-form"onClick={handleSubmit}>Ingresar</Button>
-                        <Link to="/SingUpPage" className="text-4 link" >Olvidé mi contraseña</Link>
+                        <Link to="/RestablecerPage" className="text-4 link" >Olvidé mi contraseña</Link>
                     </Form>
                   )}
             </Formik>   

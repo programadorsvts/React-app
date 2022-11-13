@@ -9,7 +9,7 @@ import LoginPage from './media/pages/LoginPage'
 import SingUpPage from './media/pages/SingUpPage'
 import NotFoundPage from './media/pages/NotFoundPage'
 import CrearProyectoPage from "./media/pages/CrearProyectoPage";
-
+import Restablecer from './media/components/ComponentsRestablecerPass/Restablecer'
 import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
 import Footer from "./media/components/ComponentsHome/Footer/Footer";
 
@@ -38,6 +38,8 @@ function App() {
         <Route exact path="/SingUpPage" element={<SingUpPage />} />
 
         <Route exact path="/CrearProyectoPage" element={<CrearProyectoPage />} />
+
+        <Route exact path='/RestablecerPage' element={<Restablecer/>}/>
 
         <Route exact path=" * " element={<NotFoundPage />} />
 

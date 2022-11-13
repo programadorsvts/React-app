@@ -11,7 +11,22 @@ const   SingUpForm =() => {
 
    const schema = Yup.object().shape({
 
-           email:Yup.string().email('email no valido').required('el mail es requerido').trim('los espacio en blanco no estan permitidos '),
+           email:Yup.string().email('email no valido').required('el mail es requerido').trim('los espacio en blanco no estan permitidos ')
+            .test('Unique Email', 'Email already in use', // <- key, message
+                    function (value) {
+                        return new Promise((resolve, reject) => {
+                            axios.get(`http://localhost:8003/api/u/user/${value}/available`)
+                                .then((res) => {
+                                    resolve(true)
+                                })
+                                .catch((error) => {
+                                    if (error.response.data.content === "The email has already been taken.") {
+                                        resolve(false);
+                                    }
+                                })
+                        })
+                    }
+                ),
            password: Yup.string()
             .required('se requiere una contraseña.') 
             .min(8, 'contraseña no valida - minimo 8 caracteres.')
