@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import {Link} from  'react-router-dom';
 import * as Yup from 'yup';
 import { Formik} from 'formik';
+import axios from 'axios';
 import '../../styles/form.css';
 
 
@@ -14,27 +15,27 @@ import '../../styles/form.css';
 function restablecerform() {
 
      const schema = Yup.object().shape({
-                email: Yup.string()
-                    .min(8, 'Minimo de catacteres 8')
-       
-                    .required('se requiere una contraseña.')
-                    .test('Unique Email', 'Email already in use', // <- key, message
-                        function (value) {
-                            return new Promise((resolve, reject) => {
-                                axios.get(`http://localhost:8003/api/u/user/${value}/available`)
-                                    .then((res) => {
-                                        resolve(true)
-                                    })
-                                    .catch((error) => {
-                                        if (error.response.data.content === "The email has already been taken.") {
-                                            resolve(false);
-                                        }
-                                    })
+         email: Yup.string()
+        /*  .test('Unique Email', 'Email already in use', // <- key, message
+                function (value) {
+                    return new Promise((resolve, reject) => {
+                        axios.get(`http://localhost:8003/api/u/user/${value}/available`)
+                            .then((res) => {
+                                resolve(true)
                             })
-                        }
-                    )
-                    .trim('los espacio en blanco no estan permitidos '),
-
+                            .catch((error) => {
+                                if (error.response.data.content === "The email has already been taken.") {
+                                    resolve(false);
+                                }
+                            })
+                    })
+                }
+            ) */
+            .min(8, 'Minimo de catacteres 8')
+            .required('se requiere una contraseña.')
+            .trim('los espacio en blanco no estan permitidos '),
+            
+    
            password: Yup.string()
             .required('se requiere una contraseña.') 
             .min(8, 'contraseña no valida - minimo 8 caracteres.')
@@ -113,8 +114,8 @@ function restablecerform() {
                                    {errors.newpassword}
                                 </Form.Control.Feedback>
                         </Form.Group>
-                        <Button className="btn btn-form"onClick={handleSubmit}>Ingresar</Button>
-                        <Link to="/SingUpPage" className="text-4 link" >Olvidé mi contraseña</Link>
+                        <Button className="btn btn-form"onClick={handleSubmit}>Restablecer</Button>
+                      
                     </Form>
                   )}
             </Formik>   
