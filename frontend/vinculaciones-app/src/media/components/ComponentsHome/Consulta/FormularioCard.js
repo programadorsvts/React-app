@@ -8,17 +8,12 @@ import Formulario from './Formulario';
 function formulariocard() {
   return (
     
-    <Card style={{height : "655px", width: "544px"}}>
-        
-      
-      
-        <Card.Body  className="text-secondary">
-            <Row>
-                    
-                    <Col>
-                        <Formulario></Formulario>
+    <Card style={{height : "730px", width: "544px"}} className="form">
+        <Card.Body >
+            <Row >
+                    <Col >
+                        <Formulario ></Formulario>
                     </Col>
-                
             </Row>
         </Card.Body>
     </Card>

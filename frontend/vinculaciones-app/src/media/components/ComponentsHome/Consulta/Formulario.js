@@ -1,9 +1,124 @@
 import {Button,Form} from 'react-bootstrap';
 import '../../../styles/form.css';
+import * as Yup from 'yup';
+import { Formik, useFormik,} from 'formik';
 
 
 
-function formulario() {
+
+
+
+
+
+ export const Formulario = () => {
+
+          const schema = Yup.object().shape({
+
+           email:Yup.string().email('Email no valido').required('Required'),
+           name: Yup.string().min(2, 'nombre muy corto !').max(30, 'nombre muy largo!').required('Required'),
+           telephone: Yup.string().min(1, 'nombre muy corto !').max(14, 'nombre muy largo!').required('Required'),
+           description: Yup.string().min(5, 'nombre muy corto !').max(200, 'nombre muy largo!').required('Required'),
+           
+          });
+  
+
+    return(
+              <Formik  
+                  validationSchema={schema}
+                  initialValues={{
+                      name:'',
+                      email:'',
+                      telephone:'',
+                      description:'',
+                  } }
+                  onSubmit={() => console.log('datos enviados!!')}
+              >    
+              {({handleChange, handleSubmit,  values ,touched , errors}) => (
+                    <Form onSubmit={handleSubmit}>
+                      
+                          <Form.Group className="" controlId="Input1">
+                            <Form.Label className="mt-2">Nombre</Form.Label>
+                                <Form.Control 
+                                  name='name' 
+                                  type="text" 
+                                  placeholder=""  
+                                  value={values.name}
+                                  onChange={handleChange}
+                                  isValid={touched.name && !errors.name}
+                                  isInvalid={!!errors.name}
+                                  />
+                                <Form.Control.Feedback type='invalid'>
+                                   {errors.name && <p>nombre no valido</p>}
+                                </Form.Control.Feedback>
+                                
+                        </Form.Group>
+
+                          <Form.Group className="" controlId="Input2">
+                            <Form.Label className="mt-2">Email</Form.Label>
+                                <Form.Control 
+                                  name='email' 
+                                  type="text" 
+                                  placeholder=""  
+                                  value={values.email}
+                                  onChange={handleChange}
+                                  isValid={touched.email && !errors.email}
+                                  isInvalid={!!errors.email}
+                                  />
+                                  <Form.Control.Feedback type='invalid'>
+                                   {errors.email  && <p>Email no valido</p> }
+                                </Form.Control.Feedback>
+                               
+                              
+                        </Form.Group>
+                          <Form.Group className="" controlId="lInput3">
+                            <Form.Label className="mt-2">Telefono</Form.Label>
+                                <Form.Control 
+                                  name='telephone' 
+                                  type="text" 
+                                  placeholder=""  
+                                  value={values.telephone}
+                                  onChange={handleChange}
+                                  isValid={touched.telephone && !errors.telephone}
+                                  isInvalid={!!errors.telephone}
+                                  />
+                                <Form.Control.Feedback type='invalid'>
+                                  {errors.telephone && <p>telefono no valido</p>}
+                                </Form.Control.Feedback>
+                          </Form.Group>
+
+
+                        <Form.Group className="" controlId="Textarea">
+                            <Form.Label className="mt-2">description</Form.Label>
+                          
+                                <Form.Control  as="textarea" rows={9} 
+                                   /*  name='description ' 
+                                    placeholder=""  
+                                    value={values.description}
+                                    onChange={handleChange}
+                                    isValid={touched.description && !errors.description}
+                                    isInvalid={!!errors.description} */
+                                 />  
+                                 {/*  <Form.Control.Feedback type='invalid'>
+                                   {errors.description && <p>description no valida</p>}
+                                </Form.Control.Feedback> */}
+                                    
+                        </Form.Group>
+                        <Button className='mt-3' onClick={handleSubmit}>Enviar</Button>
+                        <br/>
+                        
+                    </Form>
+                
+              )}
+          </Formik>       
+         
+    )
+};
+ export default Formulario ;
+
+
+
+
+/* function formulario() {
   return (
     <Form className="  ">
 
@@ -31,6 +146,8 @@ function formulario() {
     </Form>
   
   );
-}
+} */
 
-export default formulario;
+
+
+
