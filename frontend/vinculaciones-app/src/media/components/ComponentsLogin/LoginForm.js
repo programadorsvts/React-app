@@ -37,7 +37,7 @@ function loginForm() {
                         <h1 className='encabezado-3 title'>Iniciar Sesión</h1>
                         <Form.Group className="mb-3" controlId="correologin1" >
                             <Form.Label className="encabezado-4 label">Correo Electrónico:</Form.Label>
-                            <p className="text-5 label-secundary">Debe ser de formato unsl.edu.ar o email.unsl.edu.ar</p>
+                            <p className="text-5 label-secundary">debe ser de formato @gmail/hotmail</p>
                             <Form.Control 
                                   name='email' 
                                   type="text" 
@@ -55,8 +55,8 @@ function loginForm() {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="contraseñalogin1" >
                             <Form.Label className="encabezado-4 label">Contraseña:</Form.Label>
-                            <p className="text-5 label-secundary">Debe ser de mínimo de 8 caracteres</p>
-                            <Form.Control 
+                            <p className="text-5 label-secundary">debe ser de mínimo de 8 caracteres</p>
+                            <Form.Control className='mb-4'
                                   name='password' 
                                   type="password" 
                                   placeholder=""  

@@ -44,7 +44,7 @@ const   SingUpForm =() => {
                 <h1 className="encabezado-3 title">Registrarse</h1>
                 <Form.Group className="mb-3" controlId="CorreoSingUp" >
                   <Form.Label className="encabezado-4 label" >Correo Electrónico:</Form.Label>
-                  <p className="text-5 label-secundary">Debe ser de formato @gmail/hotmail</p>
+                  <p className="text-5 label-secundary">debe ser de formato @gmail/hotmail</p>
                   <Form.Control  
                       type="email"
                       name='email'
@@ -60,7 +60,7 @@ const   SingUpForm =() => {
                 </Form.Group>    
                 <Form.Group className="mb-3" controlId="ContraseñaSingUp" >
                   <Form.Label className="encabezado-4 label">Contraseña:</Form.Label>
-                  {/* <p className="text-5 label-secundary">Debe ser de mínino de 8 caracteres</p> */}
+                  <p className="text-5 label-secundary">debe ser de mínino de 8 caracteres</p> 
                   <Form.Control 
                         type="password" 
                         name='password' 
@@ -76,7 +76,7 @@ const   SingUpForm =() => {
                 </Form.Group>
                   <Form.Group className="mb-3" controlId="contraseñaconfig2" >
                   <Form.Label className="encabezado-4 label">Confirmar contraseña:</Form.Label>
-                  <Form.Control 
+                  <Form.Control  className='mb-4'
                         type="password" 
                         name='confir' 
                         placeholder=""
@@ -88,7 +88,7 @@ const   SingUpForm =() => {
                     <Form.Control.Feedback type='invalid'>
                         {errors.confir }
                     </Form.Control.Feedback>
-                  <Link  to="/LoginPage" className="text-4 link" >¿Ya tienes una cuenta? Iniciar Sesión</Link>
+                  <Link  to="/LoginPage" className="text-4 link">¿Ya tienes una cuenta? Iniciar Sesión</Link>
                 </Form.Group>
                 <Button className="btn btn-form" type='submit' onClick={handleSubmit} value='Enviar'>Registrarse</Button>
               </Form>

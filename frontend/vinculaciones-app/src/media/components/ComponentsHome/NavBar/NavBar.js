@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import {NavLink,useNavigate } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
+
 import './navbar.css';
 
 function NavBar() {
@@ -17,7 +18,7 @@ function NavBar() {
         <Navbar key={expand} expand={expand} className="navbar" sticky="top">
           <Container fluid bg="primary">
             <Navbar.Brand href="/">
-              <img src="'../../image/Solo-LogoSVTS-Blanco.svg" width="100" height="50" className="d-inline-block " alt=""/>
+              <img src='/assets/svgs/Solo-LogoSVTS.svg'  width="100" height="50" className="d-inline-block " alt=""/>
               
             </Navbar.Brand>
             <Navbar.Toggle className='navbar-toggler' aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -36,7 +37,7 @@ function NavBar() {
                   <Button onClick={() => navigate("/LoginPage")}>iniciar sesión</Button>
                   <Button onClick={() => navigate("/SingUpPage")}>registrarse</Button>
             
-                  <img src="'../../image/Escudo-UNSL-Blanco.svg" width="100" height="50" className="d-inline-block " alt=""/>
+                  <img src='/assets/svgs/Escudo-UNSL-Blanco.svg'  width="100" height="50" className="d-inline-block " alt=""/>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
