@@ -9,7 +9,7 @@ function CrearProyecto() {
 
     <Container className="d-flex  justify-content-center mt-5  ">
      
-      <Button className='proyectos-body' onClick={() => navigate("/CrearProyectoPage")}>Crear Proyecto</Button>
+      <Button className=' proyectos-btn text ' onClick={() => navigate("/CrearProyectoPage")}>Crear Proyecto</Button>
  
     </Container>
   );

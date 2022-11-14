@@ -8,7 +8,7 @@ function proyectocard() {
         <Card className='card text-center'>
           <Card.Body>
             <Card.Title>Area tematica</Card.Title>
-            <Card.Text className='mt-5'>
+            <Card.Text className='mt-3 d-flex'>
               Hortalizas deshidratadas utilizando energia no convencional
             </Card.Text>
           </Card.Body>
