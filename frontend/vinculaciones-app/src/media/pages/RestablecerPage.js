@@ -5,7 +5,7 @@ import RestablecerForm from '../components/ComponentsRestablecerPass/Restablecer
 function restablecerpage (){
     return(
             <>
-                <Restablecer></>
+                <Restablecer></Restablecer>
             </>
     );
 }
