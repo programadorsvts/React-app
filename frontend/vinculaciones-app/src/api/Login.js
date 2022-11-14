@@ -1,5 +1,6 @@
 import {useRef, useState, useEffects } from '';
 import { ErrorMessage } from "formik";
+import { useEffect } from "react";
 
 
 
@@ -10,7 +11,14 @@ function Login =()=>{
 
     const [ user,setUser]=useState('');
     const [password,setPassword]=useState('');
-    cons [ErrorMessage, setErrorMessage]=useState('');
+    const  [ErrorMessage, setErrorMessage]=useState('');
+    const [succes,setSucces]=useState(false);
+
+    useEffect(()=>{
+        
+
+
+    },[])
 
     
 
