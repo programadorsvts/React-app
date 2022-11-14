@@ -9,17 +9,12 @@ import '../../../styles/form.css';
 
 const schema = Yup.object().shape({
 
-           email:Yup.string().email('email no valido').required('el mail es requerido').trim('los espacio en blanco no estan permitidos '),
-           
-           password: Yup.string()
-            .required('se requiere una contraseña.') 
-            .min(8, 'contraseña no valida - minimo 8 caracteres.')
-            .trim('los espacio en blanco no estan permitidos '),
+            email:Yup.string().email('email no valido').required('el mail es requerido').trim('los espacio en blanco no estan permitidos '),
+            titulo: Yup.string().min(5, 'titulo muy corto').max(60, 'el nombre supera la cantidad de caracteres').required('se requiere un nombre'),
+            telephone: Yup.number().required('se requiere un telefono'),
+            description: Yup.string().min(2, 'descripcion es muy corta').max(800, 'descripcion supera la cantidad de caracteres'),
+        
 
-           confir:Yup.string().oneOf([Yup.ref('password'), null], 'las contrasenas no son iguales')
-            .required('se requiere una contraseña.') 
-            .min(8, 'contraseña no valida - minimo 8 caracteres.')
-            .trim('los espacio en blanco no estan permitidos '),
     
           });
 
@@ -93,30 +88,26 @@ function formulariocrear() {
                         <Form.Group className="mb-3" controlId="tipo1" >
                             <Form.Label className="encabezado-4 label" ></Form.Label>
                             <h1 className="encabezado-4 ">Tipo de Organizacion:</h1>
-                                <Form.Select >
-                                    <option
-                                            type="text"
-                                            name='opcion'
-                                            placeholder="" 
-                                            onChange={handleChange}  
-                                            value={values.Orgaopcion} 
-                                            isValid={touched.Orgaopcion && !errors.Orgaopcion}
-                                            isInvalid={!!errors.Orgaopcion}
-                                    >
+                                {/* <Form.Select 
+                                    type="text"
+                                    name='opcion'
+                                    placeholder="" 
+                                    onChange={handleChange}  
+                                    value={values.opcion} 
+                                    isValid={touched.opcion && !errors.opcion}
+                                    isInvalid={!!errors.opcion}
+                                    
+                                >
+                                    <option>
                                              Opcion 1
                                     </option>
-                                     <option
-                                            type="text"
-                                            name='Orgaopcion'
-                                            placeholder="" 
-                                            onChange={handleChange}  
-                                            value={values.select} 
-                                            isValid={touched.Orgaopcion && !errors.Orgaopcion}
-                                            isInvalid={!!errors.Orgaopcion}
-                                    >
+                                     <option>
                                              Opcion 2
                                     </option>
                                 </Form.Select>
+                                 <Form.Select.Feedback type='invalid'>
+                                    {errors.opcion}
+                                </Form.Select.Feedback> */}
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="area1" >
@@ -175,27 +166,72 @@ function formulariocrear() {
                         <Form.Group className="" controlId="contacto1" >
                             <Form.Label className="encabezado-4 label"></Form.Label>
                             <h1 className="encabezado-2 title">Contacto</h1>
+
                             <h1 className="encabezado-4 ">Correo Electronico:</h1>
-                            <Form.Control type="text" placeholder="" />
+                            <Form.Control 
+                                type="text"
+                                name='email'
+                                placeholder="" 
+                                onChange={handleChange}  
+                                value={values.director} 
+                                isValid={touched.email && !errors.email}
+                                isInvalid={!!errors.email}
+                                />
+                                <Form.Control.Feedback type='invalid'>
+                                    {errors.email}
+                                </Form.Control.Feedback>
                         </Form.Group>
 
                         <Form.Group className="" controlId="telefono1" >
                             <Form.Label className="encabezado-4 label"></Form.Label>
                             <h1 className="encabezado-4 ">Telefono:</h1>
-                            <Form.Control type="text" placeholder="" />
+                            <Form.Control 
+                                type="text"
+                                name='telefono'
+                                placeholder="" 
+                                onChange={handleChange}  
+                                value={values.telefono} 
+                                isValid={touched.telefono && !errors.telefono}
+                                isInvalid={!!errors.telefono}
+                                />
+                                <Form.Control.Feedback type='invalid'>
+                                    {errors.telefono}
+                                </Form.Control.Feedback>
                         </Form.Group>
-
                         <Form.Group className="" controlId="direccion1" >
                             <Form.Label className="encabezado-4 label"></Form.Label>
                             <h1 className="encabezado-4 ">Direccion:</h1>
-                            <Form.Control type="text" placeholder="" />
+                            <Form.Control 
+                                type="text"
+                                name='direccion '
+                                placeholder="" 
+                                onChange={handleChange}  
+                                value={values.direccion} 
+                                isValid={touched.direccion && !errors.direccion}
+                                isInvalid={!!errors.direccion}
+                                />
+                                <Form.Control.Feedback type='invalid'>
+                                    {errors.direccion}
+                                </Form.Control.Feedback>
                         </Form.Group>
 
 
                         <Form.Group className="mb-3 mt-4" controlId="exampleForm.ControlTextarea1">
                             <Form.Label className="encabezado-4 label">Descripcion</Form.Label>
-                            <Form.Control as="textarea" rows={10} />
-                        </Form.Group>   
+                            <Form.Control as="textarea" rows={10} 
+                                type="text"
+                                name='descripcion'
+                                placeholder="" 
+                                onChange={handleChange}  
+                                value={values.descripcion} 
+                                isValid={touched.descripcion && !errors.descripcion}
+                                isInvalid={!!errors.description}
+                                />
+                                <Form.Control.Feedback type='invalid'>
+                                    {errors.description}
+                                </Form.Control.Feedback>
+                        </Form.Group>
+                        
 
                         <Button className="btn btn-form mt-5" type='submit' onClick={handleSubmit} value='Enviar'>Crear Proyecto</Button>
                         </Form>
