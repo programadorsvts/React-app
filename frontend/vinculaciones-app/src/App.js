@@ -2,8 +2,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 /////////////////Pages/////////////////////////
-import Observatorio from './media/pages/Observatorio'
-import RevistaDigital from './media/pages/RevistaDigital'
+import Observatorio from './media/pages/ObservatorioPage'
+import RevistaDigital from './media/pages/RevistaDigitalPage'
 import Home from './media/pages/Home'
 import LoginPage from './media/pages/LoginPage'
 import SingUpPage from './media/pages/SingUpPage'
@@ -29,9 +29,9 @@ function App() {
 
         <Route exact path="/" element={<Home />} />
 
-        <Route exact path="/RevistaDigital" element={<RevistaDigital />} />
+        <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
 
-        <Route exact path="/Observatorio" element={<Observatorio />} />
+        <Route exact path="/ObservatorioPage" element={<Observatorio />} />
 
         <Route exact path="/LoginPage" element={<LoginPage />} />
 

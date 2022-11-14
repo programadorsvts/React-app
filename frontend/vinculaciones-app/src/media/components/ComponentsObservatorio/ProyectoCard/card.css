@@ -8,7 +8,37 @@
                 box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
                 border-radius: 25px;
    
-   
+}
+
+.card .text-area{
 
 
+        font-family: 'Poppins';
+        
+        font-style: normal;
+        
+        font-weight: 700;
+        
+        font-size: 19px;
+        
+        line-height: 28px;
+
+        /* degradado dark */
+        background: linear-gradient(111.69deg, #C7DEE8 8.1%, #71CEF2 90.96%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+
+}
+
+.card .text-titulo{
+
+                /* Encabezado3 */
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 38px;
+                color: #DFF4FF;
 }

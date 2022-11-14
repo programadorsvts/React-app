@@ -1,7 +1,29 @@
+import { useEffect,useState } from 'react';
+import { axios } from 'axios';
 import {Row,Container, Col} from 'react-bootstrap';
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
 
 function proyectospublicados(){
+
+
+
+                const [ proyectos, setProyectos]=useState=([]);
+
+                useEffect( ()=> {
+                        
+                        const ObtenerProyectos = async ()=>{
+
+                                const url ='';
+                                const result = axios.get(url);
+                                console.log(result);
+                        
+                        }
+
+
+                },[ ]);
+
+
+
     return(
             <>
                     <Container>

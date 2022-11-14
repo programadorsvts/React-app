@@ -5,9 +5,9 @@ import RedesCard from '../Redes/RedesCard'
 
 
 function gestion() {
-        const redes1={ruta:''};
-        const redes2={ruta:''};
-        const redes3={ruta:''};
+        const redes1={ruta:'/assets/svgs/redes-1.svg'};
+        const redes2={ruta:'/assets/svgs/redes-2.svg'};
+        const redes3={ruta:'/assets/svgs/redes-3.svg'};
 return (
     <Container  className=" "  >
         
