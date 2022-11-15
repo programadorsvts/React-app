@@ -1,5 +1,4 @@
-import { useEffect,useState } from 'react';
-import  axios  from 'axios';
+
 import {create} from 'apisauce';
 
 import {Row,Container, Col} from 'react-bootstrap';
@@ -7,7 +6,7 @@ import ProyectoCard from '../ProyectoCard/ProyectoCard';
 
 function ProyectosPublicados(){
 
-                const api = create({ baseURL: 'https://api.github.com' })
+               /*  const api = create({ baseURL: 'https://api.github.com' })
 
                 const [ proyectos, setProyectos]=useState=([]);
 
@@ -33,7 +32,7 @@ function ProyectosPublicados(){
                                     }
                                      console.log(response);    
                                 })
-                }
+                } */
 
 
 
