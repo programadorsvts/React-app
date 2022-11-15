@@ -37,51 +37,17 @@ function ProyectosPublicados(){
 
 
     return(
-            <>
-                    <Container>
-                        <h1 className='encabezado-2 text'>Proyectos Publicados</h1>
-                        <Row   className='mt-5 '>
-                               
-                            <Col className='mt-5 d-flex justify-content-center'>
-
-                                    <ProyectoCard ></ProyectoCard>
-
-                            </Col>
-                           
-                            <Col className='mt-5  d-flex justify-content-center'>
-
-                                   <ProyectoCard ></ProyectoCard>
-
-                            </Col>
-                            
-                            <Col className='mt-5  d-flex justify-content-center'>
-
-                                    <ProyectoCard ></ProyectoCard>
-
-                            </Col>
-                        </Row>
-                           <Row   className='mt-5 '>
-                               
-                            <Col className='mt-5 d-flex justify-content-center'>
-
-                                    <ProyectoCard></ProyectoCard>
-
-                            </Col>
-                           
-                            <Col className='mt-5  d-flex justify-content-center'>
-
-                                   <ProyectoCard></ProyectoCard>
-
-                            </Col>
-                            
-                            <Col className='mt-5  d-flex justify-content-center'>
-
-                                    <ProyectoCard></ProyectoCard>
-
-                            </Col>
-                        </Row>
-                    </Container>   
-            </>
+        <>
+        <Container class="proyectos">
+                <h1 className='encabezado-2 text'>Proyectos Publicados</h1>
+                <ProyectoCard></ProyectoCard>
+                <ProyectoCard></ProyectoCard>
+                <ProyectoCard></ProyectoCard>
+                <ProyectoCard></ProyectoCard>
+                <ProyectoCard></ProyectoCard>
+                <ProyectoCard></ProyectoCard>
+        </Container>   
+        </>
     );
 }
 

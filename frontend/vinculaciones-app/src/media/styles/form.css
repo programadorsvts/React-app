@@ -21,6 +21,7 @@
     border-color: var(--bg-color-dark);
     color: var(--text-color);
 }
+
 .form input::placeholder {
     color: var(--text-color-placeholder);
 }
@@ -32,6 +33,24 @@
 }
 .form input:nth-last-child(2) {
     margin-bottom: 20px;
+}
+
+.form select {
+    background-color: var(--bg-color-dark);
+    border-color: var(--bg-color-dark);
+    color: var(--text-color);
+    appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.form select:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.form option:focus {
+    border-color: red;
 }
 
 .form .btn-form{
