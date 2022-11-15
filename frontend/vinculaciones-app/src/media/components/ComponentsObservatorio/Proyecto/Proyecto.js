@@ -1,40 +1,24 @@
 import { useEffect,useState } from 'react';
-import  axios  from 'axios';
-import {create} from 'apisauce';
+
+import {ObtenerProyectos } from '../../../../api/ObtenerProyectos';
 
 import {Row,Container, Col} from 'react-bootstrap';
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
 
+
+
 function ProyectosPublicados(){
-
-                const api = create({ baseURL: 'https://api.github.com' })
-
-                const [ proyectos, setProyectos]=useState=([]);
+    
+               const [ proyectos, setProyectos]=useState('');
 
                 useEffect( ()=> {
-                        ObtenerProyectos();
+
+                       ObtenerProyectos(setProyectos);
+                        
                 },[ ]);
 
-                const ObtenerProyectos = async ()=>{
-
-                                api.get('/proyectos').then (response =>{
-                                    if(!response.ok){
-                                        response.problem
-                                    }
-                                     console.log(response);    
-                                })
-                }
-
-                const BuscarProyectos = async ()=>{
-
-                                api.get('/proyectos').then (response =>{
-                                    if(!response.ok){
-                                        response.problem
-                                    }
-                                     console.log(response);    
-                                })
-                }
-
+              
+              
 
 
     return(
@@ -45,19 +29,19 @@ function ProyectosPublicados(){
                                
                             <Col className='mt-5 d-flex justify-content-center'>
 
-                                    <ProyectoCard ></ProyectoCard>
+                                    <ProyectoCard prop={proyectos} ></ProyectoCard>
 
                             </Col>
                            
                             <Col className='mt-5  d-flex justify-content-center'>
 
-                                   <ProyectoCard ></ProyectoCard>
+                                   <ProyectoCard prop={proyectos} ></ProyectoCard>
 
                             </Col>
                             
                             <Col className='mt-5  d-flex justify-content-center'>
 
-                                    <ProyectoCard ></ProyectoCard>
+                                    <ProyectoCard prop={proyectos} ></ProyectoCard>
 
                             </Col>
                         </Row>
@@ -81,7 +65,8 @@ function ProyectosPublicados(){
 
                             </Col>
                         </Row>
-                    </Container>   
+                    </Container> 
+                
             </>
     );
 }
