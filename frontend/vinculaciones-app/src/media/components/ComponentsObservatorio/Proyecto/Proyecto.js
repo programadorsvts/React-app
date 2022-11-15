@@ -19,7 +19,7 @@ function ProyectosPublicados(){
 
                                 api.get('/proyectos').then (response =>{
                                     if(!response.ok){
-                                        response.problem
+                                        // response.problem
                                     }
                                      console.log(response);    
                                 })
@@ -29,7 +29,7 @@ function ProyectosPublicados(){
 
                                 api.get('/proyectos').then (response =>{
                                     if(!response.ok){
-                                        response.problem
+                                        // response.problem
                                     }
                                      console.log(response);    
                                 })

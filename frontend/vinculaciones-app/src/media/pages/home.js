@@ -8,7 +8,7 @@ import Vinculaciones from '../components/ComponentsHome/Vinculaciones/Vinculacio
 import Galeria from '../components/ComponentsHome/Galeria/Galeria';
 
 
-function home (){
+function Home (){
     return(
         <>
             <Principal></Principal>
@@ -23,4 +23,4 @@ function home (){
     );
 }
 
- export default home
+ export default Home
