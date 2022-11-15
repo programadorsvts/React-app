@@ -65,6 +65,14 @@ body{
     line-height: 1.5rem;
     letter-spacing: 4%;
 }
+.text-deg {
+    background: -webkit-linear-gradient(45deg, #C7DEE8 8.1%, #71CEF2 90.96%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+    background-color: red;
+}
+
 
 .btn{
     font-size: 1rem;
