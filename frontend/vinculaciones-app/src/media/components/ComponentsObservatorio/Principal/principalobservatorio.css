@@ -1,22 +1,20 @@
  .principal-body {
-    
-    background-color: var(--bg-color-dark);
-     text-align: center;
-     justify-content: center;
-     
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
  }
 
+ .principal-body img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-top: 1.5rem;
+ }
 
  .text{
-    /* Encabezado1 */
-    
-        font-family: 'Poppins';
-        font-style: normal;
         font-weight: 700;
         font-size: 40px;
         line-height: 60px;
-        /* identical to box height */
-    
         text-align: center;
  }

@@ -76,7 +76,9 @@ body{
     color: var(--bg-color-dark);
     font-weight: 700;
     text-transform: uppercase;
+    border-color: var(--bg-color-dark);
     border-radius: 20px;
+    
 }
 
 .btn:hover{
@@ -84,6 +86,20 @@ body{
     background-color: var(--text-color-third);
 }
 
+.btn-deg {
+    background: linear-gradient(124.5deg, #18273F 0%, #142D33 100%);
+    color: var(--text-color);
+    box-shadow: var(--box-shadow);
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: none;
+    padding: 1.5rem;
+}
+
+.btn-deg:hover {
+    color: var(--text-color-third);
+    border-color: var(--bg-color-dark);
+}
 
 /* Esto lo agrege para que el area de texto tenga una scroll bar y no lo puedan redimenzionar  */
 
