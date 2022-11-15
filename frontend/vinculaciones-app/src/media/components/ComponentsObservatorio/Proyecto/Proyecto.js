@@ -1,7 +1,9 @@
 
-import {create} from 'apisauce';
+import{ ObtenerProyectos } from '../../../api/ObtenerProyectos'
+import {useState , useEffect} from 'react';
 
 import {Row,Container, Col} from 'react-bootstrap';
+
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
 
 

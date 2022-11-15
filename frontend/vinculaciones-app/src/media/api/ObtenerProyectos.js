@@ -2,9 +2,7 @@ import {create }from 'apisauce';
 
 
     const api = create({ baseURL: 'https://rickandmortyapi.com/api' })
-    const config = {
-  
-    };
+
 
 
 const ObtenerProyectos = async (state)=>{
