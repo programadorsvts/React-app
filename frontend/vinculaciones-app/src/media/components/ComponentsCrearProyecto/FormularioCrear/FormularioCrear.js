@@ -1,8 +1,8 @@
 import {Button,Form,Container} from 'react-bootstrap'
-import {Link} from  'react-router-dom';
+
 import * as Yup from 'yup';
 import { Formik} from 'formik';
-import axios from 'axios';
+
 
 import '../../../styles/form.css';
 
@@ -15,8 +15,6 @@ const schema = Yup.object().shape({
             description: Yup.string().min(2, 'descripcion es muy corta').max(800, 'descripcion supera la cantidad de caracteres'),
 
           });
-
-
 
 
 function formulariocrear() {
