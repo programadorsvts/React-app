@@ -1,9 +1,9 @@
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import {Link} from  'react-router-dom';
+
 import * as Yup from 'yup';
 import { Formik} from 'formik';
-import axios from 'axios';
+
 import '../../styles/form.css';
 
 
@@ -16,21 +16,7 @@ function restablecerform() {
 
      const schema = Yup.object().shape({
          email: Yup.string()
-        /*  .test('Unique Email', 'Email already in use', // <- key, message
-                function (value) {
-                    return new Promise((resolve, reject) => {
-                        axios.get(`http://localhost:8003/api/u/user/${value}/available`)
-                            .then((res) => {
-                                resolve(true)
-                            })
-                            .catch((error) => {
-                                if (error.response.data.content === "The email has already been taken.") {
-                                    resolve(false);
-                                }
-                            })
-                    })
-                }
-            ) */
+      
             .min(8, 'Minimo de catacteres 8')
             .required('se requiere una contraseña.')
             .trim('los espacio en blanco no estan permitidos '),

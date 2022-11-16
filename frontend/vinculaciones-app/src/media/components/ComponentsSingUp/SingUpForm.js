@@ -3,7 +3,7 @@ import {Button,Form} from 'react-bootstrap'
 import {Link} from  'react-router-dom';
 import * as Yup from 'yup';
 import { Formik} from 'formik';
-import axios from 'axios';
+
 import '../../styles/form.css';
 
 
