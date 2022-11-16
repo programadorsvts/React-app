@@ -1,5 +1,5 @@
 /* import CrearPrincipal from "../components/ComponentsCrearProyecto/PrincipalCrearProyecto/Principal"; */
-import FormularioCrear from "../components/ComponentsCrear/FormularioCrear/FormularioCrear";
+import FormularioCrear from "../components/ComponentsCrearProyecto/FormularioCrear/FormularioCrear";
 
 function crearproyectopage(){
     return(
