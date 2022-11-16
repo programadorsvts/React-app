@@ -1,10 +1,8 @@
 import {Button,Form,Container} from 'react-bootstrap'
-
 import * as Yup from 'yup';
 import { Formik} from 'formik';
-
-
 import '../../../styles/form.css';
+
 
 
 const schema = Yup.object().shape({
