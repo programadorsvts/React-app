@@ -15,5 +15,4 @@ function proyectocard(props) {
         </Card>
   );
 }
-
 export default proyectocard;

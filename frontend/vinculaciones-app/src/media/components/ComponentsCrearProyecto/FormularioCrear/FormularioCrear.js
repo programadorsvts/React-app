@@ -13,9 +13,7 @@ const schema = Yup.object().shape({
             titulo: Yup.string().min(5, 'titulo muy corto').max(60, 'el nombre supera la cantidad de caracteres').required('se requiere un nombre'),
             telephone: Yup.number().required('se requiere un telefono'),
             description: Yup.string().min(2, 'descripcion es muy corta').max(800, 'descripcion supera la cantidad de caracteres'),
-        
 
-    
           });
 
 
