@@ -6,9 +6,9 @@ import VinculacionesCard from '../Vinculaciones/VinculacionesCard'
 
 function vinculaciones() {
   
-        const vinculacion1={ruta:'https://svts.unsl.edu.ar/img/ttsocial-protocolos.svg'};
-        const vinculacion2={ruta:'https://svts.unsl.edu.ar/img/UNSL2.0.svg'};
-        const vinculacion3={ruta:'https://svts.unsl.edu.ar/img/comite-vinc.svg'};
+        const vinculacion1={ruta:'https://svts.unsl.edu.ar/img/ttsocial-protocolos.svg', link:''};
+        const vinculacion2={ruta:'https://svts.unsl.edu.ar/img/UNSL2.0.svg'  ,link:'/RevistaDigitalPage'};
+        const vinculacion3={ruta:'https://svts.unsl.edu.ar/img/comite-vinc.svg' , link:''};
         return (
                 <Container>
                         <h2 className="mt-5 pt-5  text-center" >Vinculaciones</h2>
@@ -17,19 +17,19 @@ function vinculaciones() {
                                 <h5 className="d-flex justify-content-center text-center " >cursus imperdiet ipsum sodales eget. Vivamus ut lacus justo. Cras non ante nisl.</h5>
                         <Col className="mt-4  d-flex justify-content-center"  >
                                 
-                                <VinculacionesCard info={vinculacion1}></VinculacionesCard>
+                                <VinculacionesCard data={vinculacion1}></VinculacionesCard>
                                         
                         </Col>
 
                         <Col className="mt-4  d-flex justify-content-center" >
                                 
-                                <VinculacionesCard info={vinculacion2}></VinculacionesCard>
+                                <VinculacionesCard data={vinculacion2}></VinculacionesCard>
                         
                         </Col>
 
                         <Col className="mt-4   d-flex justify-content-center" >
                                 
-                                <VinculacionesCard info={vinculacion3}></VinculacionesCard>
+                                <VinculacionesCard data={vinculacion3}></VinculacionesCard>
                         
                         </Col>
                         </Row>

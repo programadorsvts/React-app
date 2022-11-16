@@ -15,7 +15,9 @@ function vinculacionescard(props) {
             <Row>
                     
                     <Col>
-                        <Card.Img src={props.info.ruta}  style={{height : "380px", width: "320px"}}/>
+                      <a href={props.data.link}  rel="noreferrer">
+                          <Card.Img src={props.data.ruta}  style={{height : "380px", width: "320px"}}/>
+                      </a>   
                     </Col>
                 
             </Row>
