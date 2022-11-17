@@ -8,6 +8,7 @@ import Home from './media/pages/Home'
 import LoginPage from './media/pages/LoginPage'
 import SingUpPage from './media/pages/SingUpPage'
 import NotFoundPage from './media/pages/NotFoundPage'
+import HerramientasPage from './media/pages/HerramientasPage'
 import CrearProyectoPage from "./media/pages/CrearProyectoPage";
 import Restablecer from './media/components/ComponentsRestablecerPass/Restablecer'
 import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
@@ -32,6 +33,8 @@ function App() {
         <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
 
         <Route exact path="/ObservatorioPage" element={<Observatorio />} />
+
+        <Route exact path="/HerramientasPage" element={<HerramientasPage/>}/>
 
         <Route exact path="/LoginPage" element={<LoginPage />} />
 

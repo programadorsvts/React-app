@@ -30,6 +30,7 @@ function NavBar() {
                 <Nav className="justify-content-start  flex-grow-1" >
                 <NavLink to="/" className="text-3">inicio</NavLink>
                 <NavLink to="/RevistaDigitalPage" className="text-3">Revista Digital</NavLink>
+                <NavLink to="/HerramientasPage" className="text-3">Herramientas</NavLink>   
                 <NavLink to="/ObservatorioPage" className="text-3">Observatorio</NavLink>   
                 </Nav>
                 <Nav className="navbar-buttons">
