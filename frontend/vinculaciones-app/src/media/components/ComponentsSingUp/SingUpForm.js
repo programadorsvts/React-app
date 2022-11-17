@@ -76,7 +76,7 @@ const   SingUpForm =() => {
                 </Form.Group>
                   <Form.Group className="mb-3" controlId="contraseñaconfig2" >
                   <Form.Label className="encabezado-4 label">Confirmar contraseña:</Form.Label>
-                  <Form.Control  className='mb-4'
+                  <Form.Control className='mb-4'
                         type="password" 
                         name='confir' 
                         placeholder=""

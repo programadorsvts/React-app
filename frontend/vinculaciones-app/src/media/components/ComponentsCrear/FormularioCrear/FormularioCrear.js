@@ -3,16 +3,20 @@ import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../../styles/form.css';
 
-
+const regExp = {
+    telefono: /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+}
 
 const schema = Yup.object().shape({
-    titulo: Yup.string().min(5, 'titulo muy corto').max(60, 'el nombre supera la cantidad de caracteres').required('se requiere un nombre'),
-    director: Yup.string().min(2, 'El nombre ingresado es muy corto'),
-    email: Yup.string().email('email no valido').required('el mail es requerido').trim('los espacio en blanco no estan permitidos '),
-    telephone: Yup.number().required('se requiere un telefono'),
-    description: Yup.string().min(2, 'descripcion es muy corta').max(800, 'descripcion supera la cantidad de caracteres'),
+    titulo: Yup.string().min(5, 'El titulo ingresado es demasiado corto').max(150, 'El Titulo ingresado es demasiado largo').required('El Título es obligatorio'),
+    director: Yup.string().min(2, 'El Nombre ingresado es demasiado corto').required("El Director es obligatorio"),
+    organizacion: Yup.number().min(1, "Debe seleccionar un tipo de organización").required("Debe seleccionar un tipo de organización"),
+    area: Yup.number().min(1, "Debe seleccionar un tipo de área tematica").required("Debe seleccionar un tipo de área tematica"),
+    email: Yup.string().email('El valor ingresado no es un email').required('el Correo electrónico es obligatorio').trim('Los espacio en blanco no estan permitidos'),
+    telefono: Yup.string().matches(regExp.telefono, "El valor ingresado no es un telefono").max(20),
+    direccion: Yup.string().max(254, "La dirección es demasiado larga"),
+    description: Yup.string().min(2, 'La descripción es demasiado corta').max(4000, 'La descripción es demasiado larga'),
 });
-
 
 function formulariocrear() {
   return (
@@ -36,13 +40,12 @@ function formulariocrear() {
           
             {({handleChange, handleSubmit, handleBlur, values ,touched , errors}) => (
             <Container className='mt-5'>
-                <Form className="form ">
+                <Form className="form">
                 <h1 className="encabezado-2 title">Crear Nuevo Proyecto</h1>
 
-                <Form.Group className="mb-3" controlId="titulo1" >
-                    <Form.Label className="encabezado-4 label" ></Form.Label>
-                    <h1 className="encabezado-4 ">Titulo</h1>
-                    <p className="text-5 label-secundary">(maximo 60 caracteres)</p>
+                <Form.Group className="mb-3" >
+                    <Form.Label className="encabezado-4 label" >Título: </Form.Label>
+                    <span className="text-4 label-secundary"> (Máximo 150 caracteres)</span>
                     <Form.Control 
                         type="text"
                         name='titulo'
@@ -55,13 +58,10 @@ function formulariocrear() {
                         <Form.Control.Feedback type='invalid'>
                             {errors.titulo}
                         </Form.Control.Feedback>
-                </Form.Group>    
-
+                </Form.Group>
 
                 <Form.Group className="mb-3" controlId="director1" >
-                    <Form.Label className="encabezado-4 label" ></Form.Label>
-                    <h1 className="encabezado-4 "> Nombre de el/la director/a:</h1>
-                    <p className="text-5 label-secundary">(maximo 8 caracteres)</p>
+                    <Form.Label className="encabezado-4 label" >Nombre de el/la director/a:</Form.Label>
                     <Form.Control 
                     type="text"
                     name='director'
@@ -77,7 +77,7 @@ function formulariocrear() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="tipo1" >
-                    <Form.Label className="encabezado-4 label" >Tipo de Organizacion</Form.Label>
+                    <Form.Label className="encabezado-4 label" >Tipo de Organización:</Form.Label>
                     <Form.Select 
                     name='organizacion'
                     onChange={handleChange}
@@ -85,52 +85,39 @@ function formulariocrear() {
                     value={values.organizacion} 
                     isValid={touched.organizacion && !errors.organizacion}
                     isInvalid={touched.organizacion && errors.organizacion}>
-                        <option value="0">seleccione opcion</option>
-                        <option value="1">Opcion 1</option>
-                        <option value="2">Opcion 2</option>
+                        <option value={0}>seleccione tipo de organización</option>
+                        <option value={1}>Publica</option>
+                        <option value={2}>Privada</option>
                     </Form.Select>
+                    <Form.Control.Feedback type='invalid'>
+                        {errors.organizacion}
+                    </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="area1" >
-                    <Form.Label className="encabezado-4 label" ></Form.Label>
-                    <h1 className="encabezado-4 ">Area tematica:</h1>
-                    <Form.Select >
-                        <option
-                        type="text"
-                        name='area'
-                        placeholder="" 
-                        onChange={handleChange}  
-                        value={values.area} 
-                        isValid={touched.area && !errors.area}
-                        isInvalid={touched.area && errors.area}
-                        >
-                            Opcion 1
-                        </option>
-                        <option
-                        type="text"
-                        name='area'
-                        placeholder="" 
-                        onChange={handleChange}  
-                        value={values.area} 
-                        isValid={touched.area && !errors.area}
-                        isInvalid={touched.area && errors.area}
-                        >
-                            Opcion 2
-                        </option>
+                    <Form.Label className="encabezado-4 label" >Área tematica:</Form.Label>
+                    <Form.Select 
+                    name='area'
+                    placeholder="" 
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.area} 
+                    isValid={touched.area && !errors.area}
+                    isInvalid={touched.area && errors.area}>
+                        <option value={0}>Seleccione área tematica</option>
+                        <option value={1}>Área 1</option>
+                        <option value={2}>Área 2</option>
                     </Form.Select>
+                    <Form.Control.Feedback type='invalid'>
+                        {errors.area}
+                    </Form.Control.Feedback>
                 </Form.Group>
-
-
-                {/*--------------------Formulario Informacion del Contacto----------------*/}
-                <Form.Group className="" controlId="contacto1" >
-                    <Form.Label className="encabezado-4 label"></Form.Label>
-                    <h1 className="encabezado-2 title">Contacto</h1>
-
-                    <h1 className="encabezado-4 ">Correo Electronico:</h1>
+                <Form.Label className="encabezado-4 label my-3">Contacto:</Form.Label>
+                <Form.Group className="mb-3" controlId="contacto1" >
+                    <Form.Label className="encabezado-4 label">Correo Electrónico:</Form.Label>
                     <Form.Control 
                         type="text"
                         name='email'
-                        placeholder="" 
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.email} 
@@ -142,14 +129,14 @@ function formulariocrear() {
                         </Form.Control.Feedback>
                 </Form.Group>
 
-                <Form.Group className="" controlId="telefono1" >
-                    <Form.Label className="encabezado-4 label"></Form.Label>
-                    <h1 className="encabezado-4 ">Telefono:</h1>
+                <Form.Group className="mb-3" controlId="telefono1" >
+                    <Form.Label className="encabezado-4 label">Telefono:</Form.Label>
+                    <span className="text-4 label-secundary"> (Opcional)</span>
                     <Form.Control 
                         type="text"
                         name='telefono'
-                        placeholder="" 
-                        onChange={handleChange}  
+                        onChange={handleChange}
+                        onBlur={handleBlur} 
                         value={values.telefono} 
                         isValid={touched.telefono && !errors.telefono}
                         isInvalid={touched.telefono && errors.telefono}
@@ -159,13 +146,13 @@ function formulariocrear() {
                         </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="" controlId="direccion1" >
-                    <Form.Label className="encabezado-4 label"></Form.Label>
-                    <h1 className="encabezado-4 ">Direccion:</h1>
+                    <Form.Label className="encabezado-4 label">Dirección:</Form.Label>
+                    <span className="text-4 label-secundary"> (Opcional)</span>
                     <Form.Control 
                         type="text"
                         name='direccion'
-                        placeholder="" 
-                        onChange={handleChange}  
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         value={values.direccion} 
                         isValid={touched.direccion && !errors.direccion}
                         isInvalid={touched.direccion && errors.direccion}
@@ -174,15 +161,13 @@ function formulariocrear() {
                             {errors.direccion}
                         </Form.Control.Feedback>
                 </Form.Group>
-
-
                 <Form.Group className="mb-3 mt-4" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label className="encabezado-4 label">Descripcion</Form.Label>
+                    <Form.Label className="encabezado-4 label">Descripción:</Form.Label>
                     <Form.Control as="textarea" rows={10} 
                         type="text"
                         name='descripcion'
-                        placeholder="" 
-                        onChange={handleChange}  
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         value={values.descripcion} 
                         isValid={touched.descripcion && !errors.descripcion}
                         isInvalid={touched.descripcion && errors.description}
@@ -194,9 +179,9 @@ function formulariocrear() {
                 
                 <Button className="btn btn-form mt-5" type='submit' onClick={handleSubmit}>Crear Proyecto</Button>
                 </Form>
-            </Container>    
+            </Container>
                 )}
-        </Formik>         
+        </Formik>
   );
 }
 

@@ -16,7 +16,8 @@
     margin-bottom: 5px;
 }
 
-.form input {
+.form input,
+.form textarea {
     background-color: var(--bg-color-dark);
     border-color: var(--bg-color-dark);
     color: var(--text-color);
@@ -25,7 +26,8 @@
 .form input::placeholder {
     color: var(--text-color-placeholder);
 }
-.form input:focus {
+.form input:focus,
+.form textarea:focus {
     background-color: var(--bg-color-dark);
     border-color: var(--bg-color-dark);
     color: var(--text-color);
@@ -62,3 +64,4 @@
     color: var(--text-color);
     margin-top: 20px;
 }
+
