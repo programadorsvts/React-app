@@ -88,7 +88,7 @@ const   SingUpForm =() => {
                     <Form.Control.Feedback type='invalid'>
                         {errors.confir }
                     </Form.Control.Feedback>
-                  <Link  to="/LoginPage" className="text-4 link">¿Ya tienes una cuenta? Iniciar Sesión</Link>
+                  <Link to="/LoginPage" className="text-4 link">¿Ya tienes una cuenta? Iniciar Sesión</Link>
                 </Form.Group>
                 <Button className="btn btn-form" type='submit' onClick={handleSubmit} value='Enviar'>Registrarse</Button>
               </Form>
