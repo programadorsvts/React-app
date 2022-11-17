@@ -4,6 +4,7 @@ import Card from './Card'
 
 
 
+
 function noticias() {
         
     

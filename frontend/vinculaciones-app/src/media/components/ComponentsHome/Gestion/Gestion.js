@@ -6,9 +6,9 @@ import GestionCard from './GestionCard'
 
 function gestion() {
         
-                 const gestion1={imagen:'https://svts.unsl.edu.ar/ico/boligrafo.png',  titulo:'Informe de autoevaluación', ruta:'https://svts.unsl.edu.ar/pdf/INFORME%20DE%20AUTOEVALUACION-2021.pdf'};
-                const gestion2={imagen:'https://svts.unsl.edu.ar/ico/STAN.png',  titulo:'Servicios Tecnológicos de Alto Nivel' ,ruta:'https://svts.unsl.edu.ar/pdf/STAN.pdf'};
-                const gestion3={imagen:'https://svts.unsl.edu.ar/ico/contrato.png',  titulo:'Acreditación como Incubadoral', ruta:'https://svts.unsl.edu.ar/pdf/Acreditacion.pdf'};
+                 const gestion1={imagen:'/assets/svgs/gestion-1.svg',  titulo:'Informe de autoevaluación', ruta:'https://svts.unsl.edu.ar/pdf/INFORME%20DE%20AUTOEVALUACION-2021.pdf'};
+                const gestion2={imagen:'/assets/svgs/gestion-2.svg',  titulo:'Servicios Tecnológicos de Alto Nivel' ,ruta:'https://svts.unsl.edu.ar/pdf/STAN.pdf'};
+                const gestion3={imagen:'/assets/svgs/gestion-3.svg',  titulo:'Acreditación como Incubadoral', ruta:'https://svts.unsl.edu.ar/pdf/Acreditacion.pdf'};
 return (
     <Container  className=" "  >
         
@@ -17,8 +17,8 @@ return (
         <Row className=" d-flex justify-content-center"  >
 
                
-                <h5 className="mt-3 d-flex justify-content-center text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus ligula purus, </h5>
-                <h5 className="d-flex justify-content-center text-center " >cursus imperdiet ipsum sodales eget. Vivamus ut lacus justo. Cras non ante nisl.</h5>
+                <h5 className="mt-3  text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus ligula purus, </h5>
+                <h5 className="text-center " >cursus imperdiet ipsum sodales eget. Vivamus ut lacus justo. Cras non ante nisl.</h5>
             
             <Col className="mt-4  d-flex justify-content-center"  >
                     
