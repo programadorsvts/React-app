@@ -9,6 +9,4 @@ function herramientaspage(){
             </>
     );
 }
-
-
  export default herramientaspage

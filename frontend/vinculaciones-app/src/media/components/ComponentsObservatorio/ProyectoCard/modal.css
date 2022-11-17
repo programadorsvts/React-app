@@ -1,0 +1,27 @@
+.modal{
+ justify-content: center;
+ align-items:center;
+        
+}
+
+.modal-body{
+   
+        width: 900px;
+        height: 1140px;
+        border-radius: 20px;
+        background: #1F2937;
+        justify-content: center;
+            align-items: center;
+
+}
+
+.modal-content{
+
+      
+        width: 900px;
+        height: 1140px;
+        border-radius: 20px;
+        background: #1F2937;
+        justify-content: center;
+            align-items: center;
+}
