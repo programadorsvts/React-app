@@ -25,7 +25,6 @@ function formulariocrear() {
                 director:'',
                 organi:'',      
                 area:'',    
-
                  //Formulario Informacion de Contacto//////////    
                  email:'',
                  telefono:'',
@@ -34,202 +33,183 @@ function formulariocrear() {
 
             } }
             onSubmit={values => {alert(JSON.stringify(values, null, 2));}}
-            >    
+            >
           
             {({handleChange, handleSubmit,  values ,touched , errors}) => (
-                    <Container className='mt-5'>
-                        <Form className="form ">
-                        <h1 className="encabezado-2 title">Crear Nuevo Proyecto</h1>
+            <Container className='mt-5'>
+                <Form className="form ">
+                <h1 className="encabezado-2 title">Crear Nuevo Proyecto</h1>
 
-                        {/*--------------------Formulario Informacion del Proyecto----------------*/}
-                        <Form.Group className="mb-3" controlId="titulo1" >
-                            <Form.Label className="encabezado-4 label" ></Form.Label>
-                            <h1 className="encabezado-4 ">Titulo</h1>
-                            <p className="text-5 label-secundary">(maximo 60 caracteres)</p>
-                            <Form.Control type="text" placeholder="" 
-                                type="text"
-                                name='titulo'
-                                placeholder="" 
-                                onChange={handleChange}  
-                                value={values.titulo} 
-                                isValid={touched.titulo && !errors.titulo}
-                                isInvalid={!!errors.titulo}
-                                />
-                                <Form.Control.Feedback type='invalid'>
-                                    {errors.titulo}
-                                </Form.Control.Feedback>
-                        </Form.Group>    
-
-
-                        <Form.Group className="mb-3" controlId="director1" >
-                            <Form.Label className="encabezado-4 label" ></Form.Label>
-                            <h1 className="encabezado-4 "> Nombre de el/la director/a:</h1>
-                            <p className="text-5 label-secundary">(maximo 8 caracteres)</p>
-                            <Form.Control 
-                                type="text"
-                                name='director'
-                                placeholder="" 
-                                onChange={handleChange}  
-                                value={values.director} 
-                                isValid={touched.director && !errors.director}
-                                isInvalid={!!errors.director}
-                                />
-                                <Form.Control.Feedback type='invalid'>
-                                    {errors.director}
-                                </Form.Control.Feedback>
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="tipo1" >
-                            <Form.Label className="encabezado-4 label" ></Form.Label>
-                            <h1 className="encabezado-4 ">Tipo de Organizacion:</h1>
-                                {/* <Form.Select 
-                                    type="text"
-                                    name='opcion'
-                                    placeholder="" 
-                                    onChange={handleChange}  
-                                    value={values.opcion} 
-                                    isValid={touched.opcion && !errors.opcion}
-                                    isInvalid={!!errors.opcion}
-                                    
-                                >
-                                    <option>
-                                             Opcion 1
-                                    </option>
-                                     <option>
-                                             Opcion 2
-                                    </option>
-                                </Form.Select>
-                                 <Form.Select.Feedback type='invalid'>
-                                    {errors.opcion}
-                                </Form.Select.Feedback> */}
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="area1" >
-                            <Form.Label className="encabezado-4 label" ></Form.Label>
-                            <h1 className="encabezado-4 ">Area tematica:</h1>
-                                <Form.Select >
-                                    <option
-                                            type="text"
-                                            name='area'
-                                            placeholder="" 
-                                            onChange={handleChange}  
-                                            value={values.area} 
-                                            isValid={touched.area && !errors.area}
-                                            isInvalid={!!errors.Orgaopcion}
-                                    >
-                                             Opcion 1
-                                    </option>
-                                    <option
-                                            type="text"
-                                            name='area'
-                                            placeholder="" 
-                                            onChange={handleChange}  
-                                            value={values.area} 
-                                            isValid={touched.area && !errors.area}
-                                            isInvalid={!!errors.Orgaopcion}
-                                    >
-                                             Opcion 2
-                                    </option>
-                                    <option
-                                            type="text"
-                                            name='area'
-                                            placeholder="" 
-                                            onChange={handleChange}  
-                                            value={values.area} 
-                                            isValid={touched.area && !errors.area}
-                                            isInvalid={!!errors.area}
-                                    >
-                                             Opcion 3
-                                    </option>
-                                    <option
-                                            type="text"
-                                            name='area'
-                                            placeholder="" 
-                                            onChange={handleChange}  
-                                            value={values.area} 
-                                            isValid={touched.area && !errors.area}
-                                            isInvalid={!!errors.area}
-                                    >
-                                             Opcion 4
-                                    </option>
-                                </Form.Select>
-                        </Form.Group>
+                {/*--------------------Formulario Informacion del Proyecto----------------*/}
+                <Form.Group className="mb-3" controlId="titulo1" >
+                    <Form.Label className="encabezado-4 label" ></Form.Label>
+                    <h1 className="encabezado-4 ">Titulo</h1>
+                    <p className="text-5 label-secundary">(maximo 60 caracteres)</p>
+                    <Form.Control 
+                        type="text"
+                        name='titulo'
+                        onChange={handleChange}  
+                        value={values.titulo} 
+                        isValid={touched.titulo && !errors.titulo}
+                        isInvalid={!errors.titulo}
+                        />
+                        <Form.Control.Feedback type='invalid'>
+                            {errors.titulo}
+                        </Form.Control.Feedback>
+                </Form.Group>    
 
 
-                        {/*--------------------Formulario Informacion del Contacto----------------*/}
-                        <Form.Group className="" controlId="contacto1" >
-                            <Form.Label className="encabezado-4 label"></Form.Label>
-                            <h1 className="encabezado-2 title">Contacto</h1>
+                <Form.Group className="mb-3" controlId="director1" >
+                    <Form.Label className="encabezado-4 label" ></Form.Label>
+                    <h1 className="encabezado-4 "> Nombre de el/la director/a:</h1>
+                    <p className="text-5 label-secundary">(maximo 8 caracteres)</p>
+                    <Form.Control 
+                    type="text"
+                    name='director'
+                    placeholder="" 
+                    onChange={handleChange}  
+                    value={values.director} 
+                    isValid={touched.director && !errors.director}
+                    isInvalid={!!errors.director}
+                    />
+                    <Form.Control.Feedback type='invalid'>
+                        {errors.director}
+                    </Form.Control.Feedback>
+                </Form.Group>
 
-                            <h1 className="encabezado-4 ">Correo Electronico:</h1>
-                            <Form.Control 
-                                type="text"
-                                name='email'
-                                placeholder="" 
-                                onChange={handleChange}  
-                                value={values.director} 
-                                isValid={touched.email && !errors.email}
-                                isInvalid={!!errors.email}
-                                />
-                                <Form.Control.Feedback type='invalid'>
-                                    {errors.email}
-                                </Form.Control.Feedback>
-                        </Form.Group>
+                <Form.Group className="mb-3" controlId="tipo1" >
+                    <Form.Label className="encabezado-4 label" ></Form.Label>
+                    <h1 className="encabezado-4 ">Tipo de Organizacion:</h1>
+                    <Form.Select >
+                        <option
+                        type="text"
+                        name='area'
+                        placeholder="" 
+                        onChange={handleChange}  
+                        value={values.area} 
+                        isValid={touched.area && !errors.area}
+                        isInvalid={!!errors.area}
+                        >
+                            Opcion 1
+                        </option>
+                        <option
+                        type="text"
+                        name='area'
+                        placeholder="" 
+                        onChange={handleChange}  
+                        value={values.area} 
+                        isValid={touched.area && !errors.area}
+                        isInvalid={!!errors.area}
+                        >
+                            Opcion 2
+                        </option>
+                    </Form.Select>
+                </Form.Group>
 
-                        <Form.Group className="" controlId="telefono1" >
-                            <Form.Label className="encabezado-4 label"></Form.Label>
-                            <h1 className="encabezado-4 ">Telefono:</h1>
-                            <Form.Control 
-                                type="text"
-                                name='telefono'
-                                placeholder="" 
-                                onChange={handleChange}  
-                                value={values.telefono} 
-                                isValid={touched.telefono && !errors.telefono}
-                                isInvalid={!!errors.telefono}
-                                />
-                                <Form.Control.Feedback type='invalid'>
-                                    {errors.telefono}
-                                </Form.Control.Feedback>
-                        </Form.Group>
-                        <Form.Group className="" controlId="direccion1" >
-                            <Form.Label className="encabezado-4 label"></Form.Label>
-                            <h1 className="encabezado-4 ">Direccion:</h1>
-                            <Form.Control 
-                                type="text"
-                                name='direccion '
-                                placeholder="" 
-                                onChange={handleChange}  
-                                value={values.direccion} 
-                                isValid={touched.direccion && !errors.direccion}
-                                isInvalid={!!errors.direccion}
-                                />
-                                <Form.Control.Feedback type='invalid'>
-                                    {errors.direccion}
-                                </Form.Control.Feedback>
-                        </Form.Group>
+                <Form.Group className="mb-3" controlId="area1" >
+                    <Form.Label className="encabezado-4 label" ></Form.Label>
+                    <h1 className="encabezado-4 ">Area tematica:</h1>
+                    <Form.Select >
+                        <option
+                        type="text"
+                        name='area'
+                        placeholder="" 
+                        onChange={handleChange}  
+                        value={values.area} 
+                        isValid={touched.area && !errors.area}
+                        isInvalid={!!errors.area}
+                        >
+                            Opcion 1
+                        </option>
+                        <option
+                        type="text"
+                        name='area'
+                        placeholder="" 
+                        onChange={handleChange}  
+                        value={values.area} 
+                        isValid={touched.area && !errors.area}
+                        isInvalid={!!errors.area}
+                        >
+                            Opcion 2
+                        </option>
+                    </Form.Select>
+                </Form.Group>
 
 
-                        <Form.Group className="mb-3 mt-4" controlId="exampleForm.ControlTextarea1">
-                            <Form.Label className="encabezado-4 label">Descripcion</Form.Label>
-                            <Form.Control as="textarea" rows={10} 
-                                type="text"
-                                name='descripcion'
-                                placeholder="" 
-                                onChange={handleChange}  
-                                value={values.descripcion} 
-                                isValid={touched.descripcion && !errors.descripcion}
-                                isInvalid={!!errors.description}
-                                />
-                                <Form.Control.Feedback type='invalid'>
-                                    {errors.description}
-                                </Form.Control.Feedback>
-                        </Form.Group>
-                        
+                {/*--------------------Formulario Informacion del Contacto----------------*/}
+                <Form.Group className="" controlId="contacto1" >
+                    <Form.Label className="encabezado-4 label"></Form.Label>
+                    <h1 className="encabezado-2 title">Contacto</h1>
 
-                        <Button className="btn btn-form mt-5" type='submit' onClick={handleSubmit} value='Enviar'>Crear Proyecto</Button>
-                        </Form>
-                    </Container>    
+                    <h1 className="encabezado-4 ">Correo Electronico:</h1>
+                    <Form.Control 
+                        type="text"
+                        name='email'
+                        placeholder="" 
+                        onChange={handleChange}  
+                        value={values.director} 
+                        isValid={touched.email && !errors.email}
+                        isInvalid={!!errors.email}
+                        />
+                        <Form.Control.Feedback type='invalid'>
+                            {errors.email}
+                        </Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group className="" controlId="telefono1" >
+                    <Form.Label className="encabezado-4 label"></Form.Label>
+                    <h1 className="encabezado-4 ">Telefono:</h1>
+                    <Form.Control 
+                        type="text"
+                        name='telefono'
+                        placeholder="" 
+                        onChange={handleChange}  
+                        value={values.telefono} 
+                        isValid={touched.telefono && !errors.telefono}
+                        isInvalid={!!errors.telefono}
+                        />
+                        <Form.Control.Feedback type='invalid'>
+                            {errors.telefono}
+                        </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group className="" controlId="direccion1" >
+                    <Form.Label className="encabezado-4 label"></Form.Label>
+                    <h1 className="encabezado-4 ">Direccion:</h1>
+                    <Form.Control 
+                        type="text"
+                        name='direccion '
+                        placeholder="" 
+                        onChange={handleChange}  
+                        value={values.direccion} 
+                        isValid={touched.direccion && !errors.direccion}
+                        isInvalid={!!errors.direccion}
+                        />
+                        <Form.Control.Feedback type='invalid'>
+                            {errors.direccion}
+                        </Form.Control.Feedback>
+                </Form.Group>
+
+
+                <Form.Group className="mb-3 mt-4" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label className="encabezado-4 label">Descripcion</Form.Label>
+                    <Form.Control as="textarea" rows={10} 
+                        type="text"
+                        name='descripcion'
+                        placeholder="" 
+                        onChange={handleChange}  
+                        value={values.descripcion} 
+                        isValid={touched.descripcion && !errors.descripcion}
+                        isInvalid={!!errors.description}
+                        />
+                        <Form.Control.Feedback type='invalid'>
+                            {errors.description}
+                        </Form.Control.Feedback>
+                </Form.Group>
+                
+
+                <Button className="btn btn-form mt-5" type='submit' onClick={handleSubmit} value='Enviar'>Crear Proyecto</Button>
+                </Form>
+            </Container>    
                 )}
         </Formik>         
   );
