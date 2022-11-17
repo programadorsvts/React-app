@@ -11,3 +11,14 @@
     
 
 }
+
+.convocatorias-bg{
+    
+    /* degradado3-dark */
+    background: linear-gradient(141.34deg, #1C2531 24%, #18273F 36.15%, #142D33 56.85%, #1C2531 83.02%);
+    /* shadowdark */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+
+
+
+}

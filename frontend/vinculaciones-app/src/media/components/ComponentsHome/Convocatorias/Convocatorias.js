@@ -10,7 +10,7 @@ function convocatoria() {
         const convocatoria3={ruta:'https://svts.unsl.edu.ar/img/Noticia%20unslXi.svg '};
   return (
 
-    <Container  className=" "  >
+    <Container fluid  className="convocatorias-bg "  >
         
        <h2 className="mt-5 pt-5  text-center" >Convocatorias</h2>
        
