@@ -1,13 +1,14 @@
 import {Container,Row,Col} from 'react-bootstrap';
 
 import RedesCard from '../Redes/RedesCard'
+import './redes.css';
 
 
 
 function gestion() {
-        const redes1={ruta:'/assets/svgs/redes-1.svg'};
-        const redes2={ruta:'/assets/svgs/redes-2.svg'};
-        const redes3={ruta:'/assets/svgs/redes-3.svg'};
+        const redes1={ruta:'assets/svgs/redes-1.svg'};
+        const redes2={ruta:'assets/svgs/redes-2.svg'};
+        const redes3={ruta:'assets/svgs/redes-3.svg'};
 return (
     <Container  className=" "  >
         
