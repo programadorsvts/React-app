@@ -29,8 +29,8 @@ function footer() {
                 <h5 className="text-1">Redes</h5>
                 <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsTwitter/></Link>
                 <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsFacebook/></Link>
-                <Link className="m-2 icon" to="tel:+54 (0266) 4520300"> <BsInstagram/> </Link>
-                <Link className="m-2 icon" to="tel:+54 (0266) 4520300"> <BsYoutube/> </Link>
+                <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsInstagram/></Link>
+                <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsYoutube/></Link>
             </div>
     </Container>
         <div className="copyright-body text-center ">
