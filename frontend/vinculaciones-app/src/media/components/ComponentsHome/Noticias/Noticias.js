@@ -9,10 +9,10 @@ function noticias() {
         
     
         
-        const noticia1={imagen:'https://directivosygerentes.es/wp-content/uploads/2022/04/4-sesgos-dificultan-cambio-empresas-daniela-de-sousa.jpg',titulo:'Titulo 1',texto:'Texto referido a la noticia numero 1 del home page'};
-        const noticia2={imagen:'https://directivosygerentes.es/wp-content/uploads/2022/04/4-sesgos-dificultan-cambio-empresas-daniela-de-sousa.jpg' ,titulo:'Titulo 2' ,texto:'Texto referido a la noticia numero 2 del home page' };
-        const noticia3={imagen:'https://directivosygerentes.es/wp-content/uploads/2022/04/4-sesgos-dificultan-cambio-empresas-daniela-de-sousa.jpg' ,titulo:'Titulo 3' ,texto:'Texto referido a la noticia numero 3 del home page' };
-        const noticia4={imagen:'https://directivosygerentes.es/wp-content/uploads/2022/04/4-sesgos-dificultan-cambio-empresas-daniela-de-sousa.jpg' ,titulo:'Titulo 4' ,texto:'Texto referido a la noticia numero 4 del home page' };
+        const noticia1={imagen:'assets/images/noticia-1.jpg',titulo:'Titulo 1',texto:'Texto referido a la noticia numero 1 del home page'};
+        const noticia2={imagen:'assets/images/noticia-2.png' ,titulo:'Titulo 2' ,texto:'Texto referido a la noticia numero 2 del home page' };
+        const noticia3={imagen:'assets/images/noticia-3.png' ,titulo:'Titulo 3' ,texto:'Texto referido a la noticia numero 3 del home page' };
+        const noticia4={imagen:'assets/images/noticia-4.png' ,titulo:'Titulo 4' ,texto:'Texto referido a la noticia numero 4 del home page' };
 
         
   return (
