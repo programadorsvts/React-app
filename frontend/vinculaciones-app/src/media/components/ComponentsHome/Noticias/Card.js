@@ -1,6 +1,6 @@
 
 import {Card}from 'react-bootstrap';
-import  './noticiascard.css' 
+import  './noticiacard.css' 
 
 
 function card(props) {
