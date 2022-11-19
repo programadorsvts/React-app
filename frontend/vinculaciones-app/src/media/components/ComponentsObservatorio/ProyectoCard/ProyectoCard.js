@@ -7,6 +7,7 @@ import ProyectoModal from '../ProyectoCard/ProyectoModal'
 
 
 function ProyectoCard(props) {
+  
       const [modalShow, setModalShow] = useState(false);
 
   return (

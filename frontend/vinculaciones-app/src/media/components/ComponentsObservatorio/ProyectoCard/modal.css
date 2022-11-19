@@ -1,17 +1,12 @@
-.modal-body{
-            width: 800px;
-            height: 500px;
-            background: #1F2937;
-            border-radius: 30px;
-            margin-bottom: 900px;
-            margin-top: 60px;
-}
 
 .modal-content {
-    width: 0px;
-    height: 0px;
+    width: 800px;
+    height: 700px;
+    background: #1F2937;
+    border-radius: 20px;
     margin-bottom: 900px;
-    margin-top: 100px;
+    margin-top: 50px;
+    padding: 30px;
 }
 
 .modal-dialog {
