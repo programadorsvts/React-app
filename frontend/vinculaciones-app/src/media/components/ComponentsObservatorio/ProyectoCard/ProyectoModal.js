@@ -5,19 +5,18 @@ import './modal.css';
 
 function ProyectoModal(props) {
 
-        const [show, setShow] = useState(false);
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(false);
+        const [show, setShow] = useState(true);
+  
 
   return (
         <>
 
-            <Modal {...props} show={show} onHide={ handleShow }     >
+            <Modal  {...props} >
                
-                <CloseButton onClick={handleClose}/>
+                
                 <Modal.Body className=' '>
 
-                
+                    <CloseButton  show={show} onClick={ () => setShow(false) }/>
                     <p  className=' encabezado-2 text-deg '>{props.area}</p>{/* Por que text-deg tiene  la propiedad in line  */}             
                     <h4 className='encabezado-2 '>{props.titulo}</h4>
                     <p  className='encabezado-4'>Director/a : {props.director}</p>
