@@ -9,7 +9,7 @@ function herramientascard() {
     
     <Card className='herramientas-card'>
               
-        <Card.Img className='me-5 herramientas-img' src='' /> 
+        <Card.Img className=' herramientas-img' src='' /> 
        
     </Card>
   );
