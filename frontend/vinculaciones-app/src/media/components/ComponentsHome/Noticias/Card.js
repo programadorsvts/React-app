@@ -1,6 +1,6 @@
 
 import {Card}from 'react-bootstrap';
-import  './noticiacard.css' ;
+import  './noticiacard.css' 
 
 
 function card(props) {
@@ -8,7 +8,7 @@ function card(props) {
     
       <Card  classname='card-noticias' >
 
-        <Card.Img  className='img-noticias'  src={props.info.imagen}/>
+        <Card.Img  className='img-noticias bg-danger'  src={props.info.imagen}/>
 
           <Card.Body  className="">
 

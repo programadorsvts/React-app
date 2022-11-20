@@ -3,9 +3,6 @@ import HerramientasCard from './HerramientasCard';
 
 function herramienta(){
         
-        const herramienta1={imagen:'assets/images/Herramienta.png', titulo:'Herramienta 1', informacion:'La herramienta 1 se utiliza para obtener.... '  };
-        const herramienta2={imagen:'assets/images/Herramienta.png', titulo:'Herramienta 2', informacion:'La herramienta 2 se utiliza para obtener.... '  };
-        const herramienta3={imagen:'assets/images/Herramienta.png', titulo:'Herramienta 3', informacion:'La herramienta 3 se utiliza para obtener.... '  };
         
         return(
                 <>
@@ -15,19 +12,19 @@ function herramienta(){
                                 
                                 <Col className='mt-5 d-flex justify-content-center'>
 
-                                     <HerramientasCard data={herramienta1}></HerramientasCard>
+                                     <HerramientasCard></HerramientasCard>
 
                                 </Col>
                             
                                 <Col className='mt-5  d-flex justify-content-center'>
 
-                                    <HerramientasCard data={ herramienta2}></HerramientasCard>
+                                    <HerramientasCard></HerramientasCard>
 
                                 </Col>
                                 
                                 <Col className='mt-5  d-flex justify-content-center'>
 
-                                      <HerramientasCard data={ herramienta3} ></HerramientasCard>
+                                      <HerramientasCard></HerramientasCard>
 
                                 </Col>
                             </Row>
