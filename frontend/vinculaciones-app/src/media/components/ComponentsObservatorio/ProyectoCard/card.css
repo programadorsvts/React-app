@@ -6,4 +6,9 @@
         max-width: 30%;
         margin: 1rem;
         min-width: 250px;
+        cursor: pointer;
+        transition: .25s;
+}
+.card:hover{
+        transform: scale(1.03);
 }

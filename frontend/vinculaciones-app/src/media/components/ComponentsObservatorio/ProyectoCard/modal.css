@@ -1,26 +1,18 @@
-
 .modal-content {
-    width: 800px;
-    height: 700px;
     background: #1F2937;
     border-radius: 20px;
-    margin-bottom: 900px;
-    margin-top: 50px;
-    padding: 30px;
+    padding: 1rem;
 }
 
-.modal-dialog {
-    margin-left: 340px !important
+.text-description {
+    width: 100%;
+    white-space: pre-wrap !important;
+    text-align: left;
+    line-break: strict;
+    hyphens: 100px;
+    overflow-wrap: break-word;
 }
-
-@media screen and (max-width: 1000px) {
-    .modal-dialog {
-        margin-left: 100px !important
-    }
+.modal-header,
+.modal-footer {
+    border: none;
 }
-
-.modal-dialog {
-    margin: auto;
-}
-
-

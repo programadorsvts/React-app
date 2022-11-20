@@ -12,17 +12,16 @@ function ProyectoCard(props) {
 
   return (
       <>
-              <Card className='card' onClick={() => setModalShow(true)}>
-                <Card.Body>
-                  <Card.Text className='encabezado-4'>
-                    {props.titulo}
-                  </Card.Text>
-                  <Card.Title className='text-1 text-deg text-capitalize'>{props.area}</Card.Title>
-                </Card.Body>
-              </Card>
-                
-                <ProyectoModal show={modalShow} onHide={() => setModalShow(false)}/>
-        </>       
+        <Card className='card' onClick={() => setModalShow(true)}>
+          <Card.Body>
+            <Card.Text className='encabezado-4'>
+              {props.titulo}
+            </Card.Text>
+            <Card.Title className='text-1 text-deg text-capitalize'>{props.area}</Card.Title>
+          </Card.Body>
+        </Card>
+        <ProyectoModal titulo={props.titulo} area={props.area} show={modalShow} onHide={() => setModalShow(false)}/>
+      </>
   );
 }
 export default ProyectoCard;
