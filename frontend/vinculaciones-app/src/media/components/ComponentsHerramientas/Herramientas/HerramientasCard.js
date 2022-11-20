@@ -1,16 +1,17 @@
-import {Card}from 'react-bootstrap';
+import {Card,Button}from 'react-bootstrap';
 import './herramientas.css';
 
 
-
-
-function herramientascard() {
+function herramientascard(props) {
   return (
     
-    <Card className='herramientas-card'>
-              
-        <Card.Img className=' herramientas-img' src='' /> 
-       
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={props.data.img} />
+      <Card.Body>
+        <Card.Title>{props.data.titulo}</Card.Title>
+        <Card.Text>{props.data.info}</Card.Text>
+        <Button variant="primary">Utilizar</Button>
+      </Card.Body>
     </Card>
   );
 }

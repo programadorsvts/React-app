@@ -2,10 +2,8 @@ import Herramientas from "../components/ComponentsHerramientas/Herramientas/Herr
 
 function herramientaspage(){
     return(
-            <>
-                    
+            <>     
                     <Herramientas></Herramientas>
-               
             </>
     );
 }
