@@ -16,3 +16,14 @@
 .modal-footer {
     border: none;
 }
+
+
+
+@media screen and (max-width: 768px) {
+    .modal-content{
+        padding: .5rem;
+    }
+    div .fade .modal .show {
+        padding-left: 50px;
+    }
+}

@@ -27,7 +27,7 @@ function ProyectoModal(props) {
                 <p className='encabezado-4 mb-4'>Organización privada</p>
                 <p className='text-1 mb-1'>CONTACTO:</p>
                 <p className='text-2 mb-1'>walterwhite@gmail.com</p>
-                <p className='text-2 mb-1'>2664 - 123456</p>
+                <p className='text-2 mb-1'>2664-123456</p>
                 <p className='text-2 mb-4'>nombre calle 1234</p>
                 <p className='text-1 mb-1'>DESCRIPCIÓN:</p>
                 <p >Rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla 
@@ -44,6 +44,9 @@ function ProyectoModal(props) {
                 malesuada fames ac ante ipsum primis in faucibus. Proin lectus ligula, suscipit et aliquam in, rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla.
                 </p>
             </Modal.Body>
+            <Modal.Footer>
+                <Button onClick={props.onHide}>Cerrar</Button>
+            </Modal.Footer>
             </Modal>
             
             
