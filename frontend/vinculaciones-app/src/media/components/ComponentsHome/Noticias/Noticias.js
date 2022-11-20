@@ -1,6 +1,5 @@
 import {Container,Row,Col} from 'react-bootstrap';
-
-import Card from './Card'
+import NoticiasCard from './NoticiasCard'
 
 
 
@@ -19,31 +18,28 @@ function noticias() {
 
 
     <Container  className=" "  >
-        
-        
-        
         <Row className=" mb-5  d-flex  justify-content-center ">
                 <h4 className="text-start ms-5 mt-5 ">Noticias</h4>
             <Col className=" mt-3 mb-2  d-flex justify-content-center" xs     >
                     
-                    <Card info={noticia1}></Card>
+                    <NoticiasCard info={noticia1}></NoticiasCard>
             
             </Col>
 
             <Col className="mt-3 mb-2 d-flex justify-content-center   " xs    >
                     
-                    <Card  info={noticia2}></Card>
+                    <NoticiasCard  info={noticia2}></NoticiasCard>
             
             </Col>
 
             <Col className="mt-3 mb-2 d-flex justify-content-center " xs    >
                     
-                    <Card  info={noticia3}></Card>
+                    <NoticiasCard  info={noticia3}></NoticiasCard>
             
             </Col>
              <Col className="mt-3 mb-2 d-flex justify-content-center " xs    >
                     
-                    <Card   info={noticia4}></Card>
+                    <NoticiasCard   info={noticia4}></NoticiasCard>
             
             </Col>
         </Row>

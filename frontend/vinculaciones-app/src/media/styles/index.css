@@ -113,6 +113,7 @@ body{
     border-color: var(--bg-color-dark);
 }
 
+
 /* Esto lo agrege para que el area de texto tenga una scroll bar y no lo puedan redimenzionar  */
 
 textarea {
