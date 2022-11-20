@@ -8,9 +8,9 @@ function RevistaCard(props) {
    
   return (       
                 <Row>
-                        <Col >
+                        <Col  className='img-revista'>
                             <a href={props.data.link} target="_blank" rel="noreferrer">
-                                  <Card.Img src={props.data.imagen}  style={{height : "550px", width: "410px"}}/>
+                                  <Card.Img src={props.data.imagen}  style={{height : "450px", width: "310px"}}/>
                             </a>
                                <Card.Body  className=" ">
 

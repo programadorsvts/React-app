@@ -12,7 +12,7 @@ function revista(){
                 <>
                         <Container>
                             <h1 className='encabezado-2 encabezado-1 text-center mt-5'>Publicaciones</h1>
-                            <Row   className='mt-5 '>
+                            <Row   className='mt-5  '>
                                 
                                 <Col className='mt-5 d-flex justify-content-center'>
 
