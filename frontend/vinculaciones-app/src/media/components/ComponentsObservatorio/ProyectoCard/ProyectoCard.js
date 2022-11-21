@@ -1,6 +1,6 @@
 
 import {Card} from 'react-bootstrap'
-import './card.css';
+import './proyectocard.css';
 import {useState} from 'react';
 
 import ProyectoModal from '../ProyectoCard/ProyectoModal'

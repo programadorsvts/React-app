@@ -1,14 +1,17 @@
-import {create }from 'apisauce';
+import Axios from 'axios';
+import {useState} from 'react';
+
+function ObtenerProyectos = ( )=>{
+  
+        Axios.get('http://127.0.0.1:8000/api/user/proyects')
+                .then(response =>{
+                    console.log(response);
+                 })
+}
 
 
-    const api = create({ baseURL: 'https://rickandmortyapi.com/api' })
 
 
 
-const ObtenerProyectos = async (state)=>{
-         const response = await api.get('https://rickandmortyapi.com/api/character')
-        state(response)
-        console.log(response.data)
-    }
 
     export  { ObtenerProyectos }

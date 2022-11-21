@@ -1,16 +1,14 @@
-.card{      
-                width: 353px;
-                height: 254px;
+.revista-card{      
+             
                 background: #192029;
                 box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
                 border-radius: 25px;
 }
- .img-revista{
+ .revista-img{
         border-radius: 25px;
-
  }
 
-.card-revista:hover {
+.revista-img:hover {
         transform: scale(1.03);
         transition: .25s;
 }

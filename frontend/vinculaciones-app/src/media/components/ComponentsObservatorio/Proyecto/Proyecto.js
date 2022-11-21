@@ -7,36 +7,6 @@ import "./proyecto.css"
 
 function ProyectosPublicados(){
 
-               /*  const api = create({ baseURL: 'https://api.github.com' })
-
-                const [ proyectos, setProyectos]=useState=([]);
-
-                useEffect( ()=> {
-                        ObtenerProyectos();
-                },[ ]);
-
-                const ObtenerProyectos = async ()=>{
-
-                                api.get('/proyectos').then (response =>{
-                                    if(!response.ok){
-                                        // response.problem
-                                    }
-                                     console.log(response);    
-                                })
-                }
-
-                const BuscarProyectos = async ()=>{
-
-                                api.get('/proyectos').then (response =>{
-                                    if(!response.ok){
-                                        // response.problem
-                                    }
-                                     console.log(response);    
-                                })
-                } */
-
-
-
     return(
         <>
         <Container>
