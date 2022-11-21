@@ -1,7 +1,5 @@
 
-
 import {Card,Col,Row}from 'react-bootstrap'
-
 
 
 function RevistaCard(props) {

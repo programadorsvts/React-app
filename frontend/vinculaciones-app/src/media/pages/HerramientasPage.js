@@ -1,9 +1,9 @@
-import Herramientas from "../components/ComponentsHerramientas/Herramientas/Herramientas";
+import Herramienta from "../components/ComponentsHerramientas/Herramientas/Herramienta";
 
 function herramientaspage(){
     return(
             <>     
-                    <Herramientas></Herramientas>
+                    <Herramienta></Herramienta>
             </>
     );
 }

@@ -5,7 +5,7 @@ import Noticias from '../components/ComponentsHome/Noticias/Noticias'
 import Principal from '../components/ComponentsHome/Principal/Principal'
 import Redes from '../components/ComponentsHome/Redes/Redes'
 import Vinculaciones from '../components/ComponentsHome/Vinculaciones/Vinculaciones'
-import Galeria from '../components/ComponentsHome/Galeria/Galeria';
+
 
 function Home (){
     return(
