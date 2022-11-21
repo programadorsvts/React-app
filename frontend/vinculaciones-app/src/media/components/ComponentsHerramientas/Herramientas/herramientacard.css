@@ -9,10 +9,6 @@
         display: flex;
         flex-wrap: wrap;
 }
-.herramienta-list{
-        background: #192029;
-}
-
 .herramienta-img:hover {
         transform: scale(1.03);
         transition: .25s;
