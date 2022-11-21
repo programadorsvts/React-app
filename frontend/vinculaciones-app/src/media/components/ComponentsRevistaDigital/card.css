@@ -5,8 +5,12 @@
                 box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
                 border-radius: 25px;
 }
+ .img-revista{
+        border-radius: 25px;
 
-.img-revista:hover {
+ }
+
+.card-revista:hover {
         transform: scale(1.03);
         transition: .25s;
 }

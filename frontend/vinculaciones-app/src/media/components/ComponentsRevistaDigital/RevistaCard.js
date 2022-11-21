@@ -1,16 +1,17 @@
 
 import {Card,Col,Row}from 'react-bootstrap'
+import './card.css';
 
 
 function RevistaCard(props) {
    
   return (       
                 <Row>
-                        <Col  className='img-revista'>
+                        <Col  className='card-revista '>
                             <a href={props.data.link} target="_blank" rel="noreferrer">
-                                  <Card.Img src={props.data.imagen}  style={{height : "450px", width: "310px"}}/>
+                                  <Card.Img className='img-revista' src={props.data.imagen}  style={{height : "450px", width: "310px"}}/>
                             </a>
-                               <Card.Body  className=" ">
+                               <Card.Body >
 
                                   <Card.Title className=" text-center mt-3 text-1">{props.data.titulo}</Card.Title>
 
