@@ -1,33 +1,20 @@
-import {Card, Col, Row}from 'react-bootstrap'
+import Card from 'react-bootstrap/Card'
 import './gestion.css'  
-
 
 function gestioncard(props) {
   return (
-    
-    <Card  className="card-gestion" >
-        
-      
-      
-     
-            <Card.Body  className="">
-                <Row>
-                      <Col>
-                      <a  className='' href={props.info.ruta} download  target="_blank" rel='noreferrer' >
-                            <Card.Img className='mt-3' src={props.info.imagen}  />
-                        </a>    
-                      </Col>
-                      
-                      <Col>
-                              <Card.Text className="mt-3 encabezado-5">{props.info.titulo}</Card.Text>
-                              
-                      </Col>
-                   
-                </Row>
-            </Card.Body>
 
-      </Card>
-   
+    <Card style={{ width: '18rem' }}>
+      <a href='#'>
+      <Card.Body className='d-flex align-items-center justify-content-center'>
+        <Card.Img className='icon-gestion' src={props.info.imagen} />
+        <Card.Text className='gestion-card'>
+          {props.info.titulo}
+        </Card.Text>
+      </Card.Body>
+    </a>
+    </Card>
+
   );
 }
 

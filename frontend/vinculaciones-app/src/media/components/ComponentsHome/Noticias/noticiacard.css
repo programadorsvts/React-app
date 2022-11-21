@@ -1,26 +1,9 @@
-
-
 .card-noticias{
-
-        width: 100px;
-        height: 346px;
-       
+        padding: 0;
+        padding-bottom: 1rem;
 }
 
-.img-noticias {
-    
-        width: 235px;
-        height: 160px;
-        border-top: ;
-}
-
-.fecha-noticias{
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-
+.container-noticias{
+        display: flex;
+        flex-wrap: wrap;
 }

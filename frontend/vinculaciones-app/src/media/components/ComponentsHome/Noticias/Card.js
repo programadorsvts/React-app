@@ -1,24 +1,22 @@
-
 import {Card}from 'react-bootstrap';
-import  './noticiacard.css' 
-
+import './noticiacard.css'
+import '../../../styles/index.css'
 
 function card(props) {
   return (
-    
-      <Card  classname='card-noticias' >
 
-        <Card.Img  className='img-noticias'  src={props.info.imagen}/>
+    <Card className="card-noticias" style={{ width: '16rem' }}>
+      <a href='#'>
+        <Card.Img variant="top" src={props.info.imagen} />
+        <Card.Body> 
+          <Card.Title className='text-date'>{props.info.fecha}</Card.Title>
+          <Card.Text className='text-1'>
+            {props.info.texto}
+          </Card.Text>
+        </Card.Body>
+      </a>
+    </Card>
 
-          <Card.Body  className="">
-
-            <Card.Title className="fecha-noticias"><h6>{props.info.fecha}</h6></Card.Title>
-
-            <Card.Text className="mt-4 text-center text-1 ">{props.info.texto}</Card.Text>
-            
-          </Card.Body>
-          
-      </Card>
   );
 }
 

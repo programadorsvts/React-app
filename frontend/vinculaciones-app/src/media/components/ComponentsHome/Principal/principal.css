@@ -1,6 +1,16 @@
  .principal-body {
     text-align: center;
     justify-content: center;
-   
  }
 
+ .bg-home {
+   background: var(--bg-gradient-1);
+ }
+
+.principal-body .hero {
+   margin-top: 8rem;
+}
+
+.principal-body .encabezado-3 {
+   line-height: 1.5;
+}

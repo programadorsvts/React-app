@@ -7,12 +7,10 @@ import Redes from '../components/ComponentsHome/Redes/Redes'
 import Vinculaciones from '../components/ComponentsHome/Vinculaciones/Vinculaciones'
 import Galeria from '../components/ComponentsHome/Galeria/Galeria';
 
-
 function Home (){
     return(
         <>
             <Principal></Principal>
-            <Galeria></Galeria> 
             <Noticias ></Noticias> 
             <Gestion></Gestion>
             <Convocatorias></Convocatorias>

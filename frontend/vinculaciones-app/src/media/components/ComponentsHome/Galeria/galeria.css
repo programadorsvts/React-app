@@ -1,32 +1,9 @@
-.img-galeria {
-        
-        width: 100%;
-        margin: 1px;
-        filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.2));
-        border-radius: 60px;
-
+.galeria img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
 }
 
-.galeria-1-1 {
-    height: 45%;
-}
-
-.galeria-1-2 {
-    height: 45%;
-}
-
-.galeria-2-1 {
-    height: 65%;
-}
-
-.galeria-2-2 {
-    height: 25%;
-}
-
-.galeria-3-1 {
-    height: 45%;
-}
-
-.galeria-3-2 {
-    height: 45%;
+.galeria {
+    columns: 3 320px;
 }

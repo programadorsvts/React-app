@@ -19,6 +19,14 @@ body{
     background-color: var(--bg-color-dark);
 }
 
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+a:hover{
+    color: var(--text-color);
+}
+
 .hero {
     font-weight: 700;
     font-size: 3.125rem;
@@ -64,6 +72,7 @@ body{
     font-size: 1rem;
     line-height: 1.5rem;
     letter-spacing: 4%;
+    text-transform: uppercase;
 }
 .text-deg {
     background: -webkit-linear-gradient(45deg, #C7DEE8 8.1%, #71CEF2 90.96%);

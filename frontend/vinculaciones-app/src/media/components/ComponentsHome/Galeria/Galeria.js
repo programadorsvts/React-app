@@ -6,30 +6,14 @@ import './galeria.css';
 
 function galeria() {
   return (
-
-                <Container className='mt-5  '>
-                        <Row >
-
-                            <Col md={3} sm={12}>
-                                <img className='img-galeria galeria-1-1' src='/assets/images/galeria1-1.png' alt=''></img>
-                                <img className='img-galeria galeria-1-2' src='/assets/images/galeria1-2.png' alt=''></img>
-                            </Col>
-
-                            <Col className='' md={6} >
-                                <img className='img-galeria galeria-2-1' src='/assets/images/galeria2-1.png' alt=''></img>
-                                <img className='img-galeria galeria-2-2' src='/assets/images/galeria2-2.png' alt=''></img>
-                            </Col>
-
-                            <Col md={3} sm={12}>
-
-                                <img className='img-galeria galeria-3-1' src='assets/images/galeria3-1.png' alt=''></img>
-                                <img className='img-galeria galeria-3-2' src='assets/images/galeria3-2.png' alt=''></img>
-
-                            </Col>
-
-                        </Row>
-                    </Container>
-
+    <Container className='galeria mt-5'>
+        <img src='assets/images/galeria-1.jpg' alt=''></img>
+        <img src='assets/images/galeria-2.jpg' alt=''></img>
+        <img src='assets/images/galeria-3.PNG' alt=''></img>
+        <img src='assets/images/galeria-5.jpg' alt=''></img>
+        <img src='assets/images/galeria-6.jpg' alt=''></img>
+        <img src='assets/images/galeria-4.jpg' alt=''></img>
+    </Container>
   );
 }
 

@@ -1,18 +1,12 @@
 import {Card}from 'react-bootstrap';
 import './convocatorias.css';
 
-
-
-
-
-
-function convocatoriacard(props) {
+function convocatoriacard({ruta}) {
   return (
-    
-    <Card className='convocatorias-card'>
-              
-        <Card.Img className='me-5 convocatorias-img' src={props.info.ruta} /> 
-       
+    <Card className='d-flex align-items-center justify-content-center'>
+      <a href='#'>
+        <Card.Img className='convocatorias-card' src={ruta} /> 
+      </a>
     </Card>
   );
 }
