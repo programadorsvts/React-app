@@ -28,7 +28,7 @@ function App() {
 
       <Routes>
 
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/Vinculaciones-Frontend/" element={<Home />} />
 
         <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
 

@@ -4,17 +4,17 @@ import GestionCard from './GestionCard'
 function gestion() {
         
         const gestion1={
-                imagen:'/assets/svgs/gestion-1.svg',
+                imagen:'assets/svgs/gestion-1.svg',
                 titulo:'Informe de autoevaluación',
                 ruta:'https://svts.unsl.edu.ar/pdf/INFORME%20DE%20AUTOEVALUACION-2021.pdf'
         };
         const gestion2={
-                imagen:'/assets/svgs/gestion-2.svg',
+                imagen:'assets/svgs/gestion-2.svg',
                 titulo:'Servicios Tecnológicos de Alto Nivel',
                 ruta:'https://svts.unsl.edu.ar/pdf/STAN.pdf'
         };
         const gestion3={
-                imagen:'/assets/svgs/gestion-3.svg',
+                imagen:'assets/svgs/gestion-3.svg',
                 titulo:'Acreditación como Incubadora',
                 ruta:'https://svts.unsl.edu.ar/pdf/Acreditacion.pdf'
         };

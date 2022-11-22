@@ -2,9 +2,9 @@ import {Container,Row,Col} from 'react-bootstrap';
 import ConvocatoriaCard from './ConvocatoriaCard'
 
 function convocatoria() {
-        const convocatoria1={ruta:'/assets/svgs/convocatorias-1.svg'};
-        const convocatoria2={ruta:'/assets/svgs/convocatorias-2.svg'};
-        const convocatoria3={ruta:'/assets/svgs/convocatorias-3.svg'};
+        const convocatoria1={ruta:'assets/svgs/convocatorias-1.svg'};
+        const convocatoria2={ruta:'assets/svgs/convocatorias-2.svg'};
+        const convocatoria3={ruta:'assets/svgs/convocatorias-3.svg'};
   return (
 
     <Container fluid className="convocatorias-bg mt-5 pb-5 ">
