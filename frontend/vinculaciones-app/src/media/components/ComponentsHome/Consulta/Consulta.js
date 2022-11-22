@@ -1,4 +1,4 @@
-import {Container,Row,Col} from 'react-bootstrap';
+
 
 import FormularioCard from './FormularioCard';
 /* import MapCard from './MapCard';  */ 

@@ -1,4 +1,4 @@
-import {Container,Row,Col} from 'react-bootstrap';
+import {Row,Col} from 'react-bootstrap';
 import VinculacionesCard from '../Vinculaciones/VinculacionesCard'
 import './vinculaciones.css';
 

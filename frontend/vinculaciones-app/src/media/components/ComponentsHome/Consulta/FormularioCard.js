@@ -1,4 +1,4 @@
-import {Card, Col, Row}from 'react-bootstrap';
+
 import Formulario from './Formulario';
 
 
