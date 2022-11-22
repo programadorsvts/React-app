@@ -17,7 +17,7 @@ function NavBar() {
       {['lg' ].map((expand) => (
         <Navbar key={expand} expand={expand} className="navbar" sticky="top">
           <Container fluid bg="primary">
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/Vinculaciones-Frontend/">
               <img src='assets/svgs/Solo-LogoSVTS.svg'  width="100" height="50" className="d-inline-block " alt=""/>
               
             </Navbar.Brand>
