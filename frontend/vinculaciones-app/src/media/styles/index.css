@@ -118,8 +118,9 @@ a:hover{
 }
 
 .btn-deg:hover {
-    color: var(--text-color-third);
     border-color: var(--bg-color-dark);
+    color: var(--text-color);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Esto lo agrege para que el area de texto tenga una scroll bar y no lo puedan redimenzionar  */

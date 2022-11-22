@@ -4,21 +4,21 @@ import HerramientaCard from '../Herramientas/HerramientaCard';
 
 function herramienta(){
         const herramienta1={      
-                img:'assets/images/herramienta.png',   
+                img:'Vinculaciones-Frontend/assets/images/herramienta.png',   
                 hreft:'#0' ,
                 titulo:'Herramienta 1',                                    
                 texto:'Descripcion sobre la herramienta y su fin '   
         }
 
         const herramienta2={      
-                img:'assets/images/herramienta.png',   
+                img:'Vinculaciones-Frontend/assets/images/herramienta.png',   
                 hreft:'#0' ,
                 titulo:'Herramienta 2',                                    
                 texto:'Descripcion sobre la herramienta y su fin ' 
         }
 
          const herramienta3={      
-                img:'assets/images/herramienta.png',   
+                img:'Vinculaciones-Frontend/assets/images/herramienta.png',   
                 hreft:'#0',
                 titulo:'Herramienta 3',                                    
                 texto:'Descripcion sobre la herramienta y su fin',

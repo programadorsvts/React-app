@@ -5,6 +5,7 @@ import Noticias from '../components/ComponentsHome/Noticias/Noticias'
 import Principal from '../components/ComponentsHome/Principal/Principal'
 import Redes from '../components/ComponentsHome/Redes/Redes'
 import Vinculaciones from '../components/ComponentsHome/Vinculaciones/Vinculaciones'
+import Stan from '../components/ComponentsHome/Stan/Stan'
 
 
 function Home (){
@@ -13,6 +14,7 @@ function Home (){
             <Principal></Principal>
             <Noticias ></Noticias> 
             <Gestion></Gestion>
+            <Stan></Stan>
             <Convocatorias></Convocatorias>
             <Vinculaciones></Vinculaciones>
             <Redes></Redes>

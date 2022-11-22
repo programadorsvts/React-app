@@ -28,8 +28,8 @@ function noticias() {
 
         return (
 
-        <Container className='my-5'>
-                <h4 className="encabezado-2 my-3">Noticias</h4>
+        <section className='container my-5'>
+                <h3 className="encabezado-2 my-3">Noticias</h3>
                 <Container className='container-noticias'>
                         <Row>
                         <Col className='d-flex justify-content-center'>
@@ -46,7 +46,7 @@ function noticias() {
                         </Col>
                         </Row>
                 </Container>
-        </Container>
+        </section>
 
         );
 }
