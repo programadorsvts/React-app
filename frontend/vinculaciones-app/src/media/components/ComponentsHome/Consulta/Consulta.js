@@ -5,17 +5,13 @@ import FormularioCard from './FormularioCard';
 
 function consulta() {
   return (
-    <Container  className=" "  >
-       <h2 className="mt-5 pt-5  text-center" >Envianos tu Consulta</h2>
-        <Row className=" d-flex justify-content-center"  >
-            <Col className="mt-4  d-flex justify-content-center"  >
-                    <FormularioCard></FormularioCard>
-            </Col>
+    <section className="container mx-auto">
+       <h2 className="mt-5 text-center encabezado-2">Envianos tu Consulta</h2>
+          <FormularioCard></FormularioCard>
            {/*  <Col className="mt-4  d-flex justify-content-center" >
                     <MapCard></MapCard>  
             </Col> */}
-        </Row>
-    </Container>
+    </section>
     )
  }
 export default consulta;

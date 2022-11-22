@@ -10,7 +10,7 @@ import './footer.css';
 function footer() {
   return (
     <>
-    <Container fluid className="footer">
+    <footer fluid className="footer">
             <div className="text-left" xs={12} md={4}>
                 <h6 className="text-1">Información Institucional</h6>
                 <img src="assets/svgs/Escudo-UNSL-Blanco.svg" width="150" height="100" alt=""/>  
@@ -26,13 +26,13 @@ function footer() {
                 <p>Email: svts.unsl@gmail.com</p>
             </div>
             <div className="text-left"xs={12} md={4}>
-                <h5 className="text-1">Redes</h5>
+                <h6 className="text-1">Redes</h6>
                 <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsTwitter/></Link>
                 <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsFacebook/></Link>
                 <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsInstagram/></Link>
                 <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsYoutube/></Link>
             </div>
-    </Container>
+    </footer>
         <div className="copyright-body text-center ">
             <p className="text-5">&#169; COPYRIGHT 2021 Secretaría de Vinculación Tecnológica y Social (UNSL) <br/>Diseñado y desarrollado por Octavio Riccardo y Iván Agustín Lucero</p>
         </div>

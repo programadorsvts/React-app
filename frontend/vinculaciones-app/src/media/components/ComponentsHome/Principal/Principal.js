@@ -5,11 +5,11 @@ import './principal.css' ;
 function principal() {
   return (
     <Container fluid className="bg-home">
-      <Container className='principal-body'>
+      <section className='container principal-body'>
         <h1 className="hero text-deg">Secretaría de Vinculación<br/>Tecnologica y Social</h1>
-        <h2 className="encabezado-3 mt-5 w-75">Promovemos la apropiación social de conocimiento generado en el ámbito de la Universidad Nacional de San Luis, impulsando la vinculación del sector cientifico-tecnológico con su entorno socio-productivo</h2>
+        <p className="encabezado-3 mt-5 w-75">Promovemos la apropiación social de conocimiento generado en el ámbito de la Universidad Nacional de San Luis, impulsando la vinculación del sector cientifico-tecnológico con su entorno socio-productivo</p>
         <Galeria/>
-      </Container>
+      </section>
     </Container>
   );
 }

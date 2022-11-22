@@ -10,7 +10,7 @@ function convocatoria() {
     <Container fluid className="convocatorias-bg mt-5 pb-5 ">
       <section className='container d-flex align-items-center flex-column'>
         <h2 className="mt-5 text-center encabezado-1 my-5">Convocatorias</h2>
-        <h5 className="text-2 text-center w-75 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus ligula purus, cursus imperdiet ipsum sodales eget. Vivamus ut lacus justo. Cras non ante nisl.</h5>
+        <p className="text-2 text-center w-75 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus ligula purus, cursus imperdiet ipsum sodales eget. Vivamus ut lacus justo. Cras non ante nisl.</p>
         <Row className='d-flex justify-content-center'>
           <Col className="d-flex justify-content-center">
             <ConvocatoriaCard ruta={convocatoria1.ruta}></ConvocatoriaCard>
