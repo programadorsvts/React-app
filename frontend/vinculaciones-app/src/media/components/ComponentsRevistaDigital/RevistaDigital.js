@@ -4,7 +4,7 @@ import RevistaCard from '../ComponentsRevistaDigital/RevistaCard';
 function revista(){
         const revista1=
         { 
-                imagen:'/assets/revistadigital/Revista1.jpg',   
+                imagen:'Vinculaciones-Frontend/assets/revistadigital/Revista1.jpg',   
                 link:'https://svts.unsl.edu.ar/pdf/UNSL2.0-Jun20.pdf ',                                   
                 titulo:'Volumen 1 - Numero 1 ',    
                 fecha:'Junio 2020 ' , 
