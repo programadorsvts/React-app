@@ -2,6 +2,7 @@ import {Button,Form,Container} from 'react-bootstrap'
 import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../../styles/form.css';
+import { useState } from 'react';
 
 const regExp = {
     telefono: /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -12,14 +13,16 @@ const schema = Yup.object().shape({
     director: Yup.string().min(2, 'El Nombre ingresado es demasiado corto').required("El Director es obligatorio"),
     organizacion: Yup.number().min(1, "Debe seleccionar un tipo de organización").required("Debe seleccionar un tipo de organización"),
     area: Yup.number().min(1, "Debe seleccionar un tipo de área tematica").required("Debe seleccionar un tipo de área tematica"),
-    email: Yup.string().email('El valor ingresado no es un email').required('el Correo electrónico es obligatorio').trim('Los espacio en blanco no estan permitidos'),
-    telefono: Yup.string().matches(regExp.telefono, "El valor ingresado no es un telefono").max(20),
+    email: Yup.string().email('El valor ingresado no es un email').required('el email es obligatorio').trim('El email no permite espacios en blanco'),
+    telefono: Yup.string().matches(regExp.telefono, "El valor ingresado no es un telefono").max(15),
     direccion: Yup.string().max(254, "La dirección es demasiado larga"),
     description: Yup.string().min(2, 'La descripción es demasiado corta').max(4000, 'La descripción es demasiado larga'),
 });
 
-function formulariocrear() {
-  return (
+function FormularioCrear() {
+
+    
+    return (
      <Formik
         validationSchema={schema}
             initialValues={{
@@ -33,8 +36,8 @@ function formulariocrear() {
                 descripcion:'',
             } }
             onSubmit={values => {
-                console.log("SUBMIT")
                 alert(JSON.stringify(values, null, 2))
+                
             }}
             >
           
@@ -185,4 +188,4 @@ function formulariocrear() {
   );
 }
 
-export default formulariocrear;
+export default FormularioCrear;
