@@ -1,0 +1,16 @@
+
+.form-contacto {
+    width: 50%;
+}
+
+.alert-submited{
+    margin-top: 10px;
+    color: #1fc276;
+}
+
+@media (max-width: 768px ){ 
+    .form {
+        width: 95%;
+    }
+    
+}

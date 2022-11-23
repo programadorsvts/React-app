@@ -1,6 +1,5 @@
 import {Row,Col} from 'react-bootstrap';
 import RedesCard from '../Redes/RedesCard'
-import './redes.css';
 
 function gestion() {
         const redes1={ruta:'assets/svgs/redes-1.svg'};
