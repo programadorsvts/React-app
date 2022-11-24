@@ -3,10 +3,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import {useEffect, useRef, useState} from 'react';
-import {NavLink,useNavigate,Link } from "react-router-dom";
+import {useNavigate,Link } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import Axios from 'axios';
+
 import './navbar.css';
+import CheckAuth from '../../../api/ChechAuth';
 
 function NavBar() {
   const navigate = useNavigate();
@@ -16,15 +17,9 @@ function NavBar() {
   
 
   useEffect(() => {
-      Axios.get('http://127.0.0.1:8000/api/checkAuth')
-          .then(response => {
-              console.log(response);
-              setAuth(true);
-          })
-          .catch(function (error) {
-              console.log(error);
-              setAuth(false);
-          })
+      
+              setAuth(CheckAuth());
+
   },[])
 
   return (
@@ -45,10 +40,10 @@ function NavBar() {
 
               <Offcanvas.Body >
                 <Nav className="justify-content-start  flex-grow-1" >
-                  <Link to="/"  onClick={closeOffCanvas}  className="text-3">inicio</ Link>
-                  <Link to="/RevistaDigitalPage"  onClick={closeOffCanvas}  className="text-3">Revista Digital</Link>
-                  <Link to="/HerramientasPage"  onClick={closeOffCanvas}  className="text-3">Herramientas</Link>   
-                  <Link to="/ObservatorioPage"  onClick={closeOffCanvas}  className="text-3">Observatorio</Link>   
+                  <Link exact to="/"  onClick={closeOffCanvas}  className="text-3">inicio</ Link>
+                  <Link exact to="/RevistaDigitalPage"  onClick={closeOffCanvas}  className="text-3">Revista Digital</Link>
+                  <Link exact to="/HerramientasPage"  onClick={closeOffCanvas}  className="text-3">Herramientas</Link>   
+                  <Link exact to="/ObservatorioPage"  onClick={closeOffCanvas}  className="text-3">Observatorio</Link>   
                 </Nav>
                 <Nav className="navbar-buttons">
                   
