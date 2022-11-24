@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import {useEffect, useRef, useState} from 'react';
-import {NavLink,useNavigate } from "react-router-dom";
+import {NavLink,useNavigate,Link } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Axios from 'axios';
 import './navbar.css';
@@ -13,17 +13,18 @@ function NavBar() {
   const offCanvasRef = useRef();
   const [auth, setAuth] = useState(false)
   const closeOffCanvas = () => offCanvasRef.current.backdrop.click() ;
+  
 
   useEffect(() => {
-    Axios.get('http://127.0.0.1:8000/api/checkAuth')
-        .then(response => {
-            console.log(response);
-            setAuth(true);
-        })
-        .catch(function (error) {
-            console.log(error);
-            setAuth(false);
-        })
+      Axios.get('http://127.0.0.1:8000/api/checkAuth')
+          .then(response => {
+              console.log(response);
+              setAuth(true);
+          })
+          .catch(function (error) {
+              console.log(error);
+              setAuth(false);
+          })
   },[])
 
   return (
@@ -36,18 +37,18 @@ function NavBar() {
               <img src='assets/svgs/Solo-LogoSVTS.svg'  width="100" height="50" className="d-inline-block " alt=""/>
               
             </Navbar.Brand>
-            <Navbar.Toggle className='navbar-toggler' aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end" ref={offCanvasRef} >
+            <Navbar.Toggle className='navbar-toggler' aria-controls={`offcanvasNavbar-expand-${expand}`}/>
+            <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end"  ref={offCanvasRef}>
               <Offcanvas.Header closeButton >
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}></Offcanvas.Title>
               </Offcanvas.Header>
 
               <Offcanvas.Body >
                 <Nav className="justify-content-start  flex-grow-1" >
-                <NavLink to="/" onClick={closeOffCanvas}   className="text-3">inicio</NavLink>
-                <NavLink to="/RevistaDigitalPage" onClick={closeOffCanvas}  className="text-3">Revista Digital</NavLink>
-                <NavLink to="/HerramientasPage" onClick={closeOffCanvas} className="text-3">Herramientas</NavLink>   
-                <NavLink to="/ObservatorioPage" onClick={closeOffCanvas} className="text-3">Observatorio</NavLink>   
+                  <Link to="/"  onClick={closeOffCanvas}  className="text-3">inicio</ Link>
+                  <Link to="/RevistaDigitalPage"  onClick={closeOffCanvas}  className="text-3">Revista Digital</Link>
+                  <Link to="/HerramientasPage"  onClick={closeOffCanvas}  className="text-3">Herramientas</Link>   
+                  <Link to="/ObservatorioPage"  onClick={closeOffCanvas}  className="text-3">Observatorio</Link>   
                 </Nav>
                 <Nav className="navbar-buttons">
                   
