@@ -1,30 +1,44 @@
-
-// import {create} from 'apisauce';
-
+import Axios from 'axios';
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
 import "./proyecto.css"
 
-function ProyectosPublicados(){
+function ProyectosPublicados () {
+
+    const [proyectos, setProyectos] = useState([])
+    const [areas, setAreas] = useState([])
+
+    useEffect(() => {
+        Axios.get('http://127.0.0.1:8000/api/proyects')
+        .then(response => {
+            setProyectos(response.data)
+            Axios.get('http://127.0.0.1:8000/api/area')
+            .then(response => {
+                setAreas(response.data)
+            })
+            .catch(() => {
+
+            })
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    }, [])
 
     return(
         <>
         <Container>
         <h1 className='encabezado-2 mb-5'>Proyectos Publicados</h1>
-                
-                <Container className="proyecto">
-                        <ProyectoCard titulo="Hortalizas deshidratadas utilizando energia no convencional" area="alimentos"/>
-                        <ProyectoCard titulo="Jabón en comprimidos" area="salud"/>
-                        <ProyectoCard titulo="Kit biodegradable para control de malezas" area="alimentos"/>
-                        <ProyectoCard titulo="Perlas biofertilizantes - Biopek" area="fertilizantes"/>
-                        <ProyectoCard titulo="Tratamiento de temblor esencial en extremidades" area="salud"/>
-                        <ProyectoCard titulo="Conversor de contamienantes organicos" area="salud"/>
-                        <ProyectoCard titulo="Estudio de procesos avanzados de oxigenación aplicados al tratamiento de aguas residuales de la industria farmaceutica" area="tratamiento de aguas asdsadasdasd"/>
-                        <ProyectoCard titulo="Estudio de procesos avanzados de oxigenación aplicados al tratamiento de aguas residuales de la industria farmaceutica" area="salud"/>
-                        <ProyectoCard titulo="Desarrollo y ambiente" area="ambiente"/>
-                        <ProyectoCard titulo="Estudio de procesos avanzados de oxigenación aplicados al tratamiento de aguas residuales de la industria farmaceutica" area="salud"/>
-                        <ProyectoCard titulo="Desarrollo y ambiente" area="ambiente"/>
-                </Container>
+            <Container className="proyecto">
+                {
+                    proyectos.map((proyecto) => {
+                        return(
+                        <ProyectoCard proyecto={proyecto} ></ProyectoCard>
+                    )
+                    })
+                }
+            </Container>
         </Container>   
         </>
     );

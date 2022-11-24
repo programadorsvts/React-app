@@ -4,14 +4,12 @@ import {Link} from  'react-router-dom';
 import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../styles/form.css';
+import PostLogin from "../../api/PostLogin"
+import { useNavigate } from 'react-router-dom';
 
+function LoginForm() {
 
-
-
-
-
-
-function loginForm() {
+    const navigate = useNavigate();
 
      const schema = Yup.object().shape({
 
@@ -29,9 +27,11 @@ function loginForm() {
                       email:'',
                       password:'',
                   } }
-                  onSubmit={values => {alert(JSON.stringify(values, null, 2));}}
-                  >    
-          
+                  onSubmit={values => {
+                    alert(JSON.stringify(values, null, 2));
+                    PostLogin(values, navigate)
+                }}
+                  >
                   {({handleChange, handleSubmit,  values ,touched , errors}) => (
                     <Form onSubmit={handleSubmit} className="form">
                         <h1 className='encabezado-3 title'>Iniciar Sesión</h1>
@@ -81,4 +81,4 @@ function loginForm() {
     )
 }
 
-export default loginForm;
+export default LoginForm;

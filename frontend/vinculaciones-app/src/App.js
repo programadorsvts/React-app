@@ -13,12 +13,20 @@ import CrearProyectoPage from "./media/pages/CrearProyectoPage";
 import Restablecer from './media/components/ComponentsRestablecerPass/Restablecer'
 import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
 import Footer from "./media/components/ComponentsHome/Footer/Footer";
-
 /////////////////Bootstrap/////////////////
 import "./media/styles/index.css"
+import Axios from "axios";
 
-
-
+Axios.defaults.baseURL = 'http://127.0.0.1:8000'
+Axios.defaults.headers.post['Accept'] = 'application/json'
+Axios.defaults.headers.post['Content-Type'] = 'application/json'
+Axios.interceptors.request.use((config) => {
+  const token = localStorage.getItem('local-token')
+  if(token){
+    config.headers.Authorization = token ? `Bearer ${token}` : ''
+  }
+  return config
+})
 
 function App() {
 

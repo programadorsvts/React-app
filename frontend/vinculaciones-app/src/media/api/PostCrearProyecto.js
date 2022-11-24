@@ -1,15 +1,15 @@
 import Axios from 'axios';
 
 
-function CrearProyecto = ( ) =>{
+const PostCrearProyecto = ( ) =>{
   
         Axios.post('http://127.0.0.1:8000/api/user/proyects')
         .then(response =>{
             console.log(response);
             })
-        .catch{
-
-        }
+            .catch(function (error) {
+                console.log(error);
+            })
 }
 
-export  { CrearProyectos }
+export default PostCrearProyecto 

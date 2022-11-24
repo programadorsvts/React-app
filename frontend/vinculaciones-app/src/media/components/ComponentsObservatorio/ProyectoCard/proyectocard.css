@@ -12,3 +12,7 @@
 .card:hover{
         transform: scale(1.03);
 }
+
+.card .encabezado-4::first-letter {
+        text-transform: capitalize
+}

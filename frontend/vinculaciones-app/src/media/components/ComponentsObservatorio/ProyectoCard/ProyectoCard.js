@@ -6,21 +6,29 @@ import {useState} from 'react';
 import ProyectoModal from '../ProyectoCard/ProyectoModal'
 
 
-function ProyectoCard(props) {
+function ProyectoCard({proyecto}) {
   
-      const [modalShow, setModalShow] = useState(false);
+
+
+  // const getArea = (area_id) => {
+  //   console.log(areas)
+  //   let area = areas.filter(area => area.id === area_id)
+  //   return area[0].name
+  // }
+  
+  const [modalShow, setModalShow] = useState(false);
 
   return (
       <>
         <Card className='card' onClick={() => setModalShow(true)}>
           <Card.Body>
-            <Card.Text className='encabezado-4'>
-              {props.titulo}
+            <Card.Text className='encabezado-4 text-lowercase'>
+              {proyecto.title}
             </Card.Text>
-            <Card.Title className='text-1 text-deg text-capitalize'>{props.area}</Card.Title>
+            <Card.Title className='text-1 text-deg text-capitalize'>{}</Card.Title>
           </Card.Body>
         </Card>
-        <ProyectoModal titulo={props.titulo} area={props.area} show={modalShow} onHide={() => setModalShow(false)}/>
+        <ProyectoModal titulo={proyecto.title} show={modalShow} onHide={() => setModalShow(false)}/>
       </>
   );
 }
