@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import {useEffect, useRef, useState} from 'react';
-import {useNavigate,Link } from "react-router-dom";
+import {useNavigate,NavLink  } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 import './navbar.css';
@@ -12,12 +12,12 @@ import CheckAuth from '../../../api/ChechAuth';
 function NavBar() {
   const navigate = useNavigate();
   const offCanvasRef = useRef();
-  const [auth, setAuth] = useState(false)
-  const closeOffCanvas = () => offCanvasRef.current.backdrop.click() ;
+  const [auth, setAuth] = useState(false);
+  const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
   
 
   useEffect(() => {
-      
+            
               setAuth(CheckAuth());
 
   },[])
@@ -27,10 +27,9 @@ function NavBar() {
       {['lg' ].map((expand) => (
         
         <Navbar key={expand} expand={expand} className="navbar" sticky="top">
-          <Container fluid bg="primary">
+          <Container fluid>
             <Navbar.Brand href="/Vinculaciones-Frontend/">
               <img src='assets/svgs/Solo-LogoSVTS.svg'  width="100" height="50" className="d-inline-block " alt=""/>
-              
             </Navbar.Brand>
             <Navbar.Toggle className='navbar-toggler' aria-controls={`offcanvasNavbar-expand-${expand}`}/>
             <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end"  ref={offCanvasRef}>
@@ -40,10 +39,10 @@ function NavBar() {
 
               <Offcanvas.Body >
                 <Nav className="justify-content-start  flex-grow-1" >
-                  <Link exact to="/"  onClick={closeOffCanvas}  className="text-3">inicio</ Link>
-                  <Link exact to="/RevistaDigitalPage"  onClick={closeOffCanvas}  className="text-3">Revista Digital</Link>
-                  <Link exact to="/HerramientasPage"  onClick={closeOffCanvas}  className="text-3">Herramientas</Link>   
-                  <Link exact to="/ObservatorioPage"  onClick={closeOffCanvas}  className="text-3">Observatorio</Link>   
+                  <NavLink   to="/"  onClick={closeOffCanvas}  className="text-3">inicio</ NavLink >
+                  <NavLink   to="/RevistaDigitalPage"  onClick={closeOffCanvas}  className="text-3">Revista Digital</NavLink >
+                  <NavLink   to="/HerramientasPage"  onClick={closeOffCanvas}  className="text-3">Herramientas</NavLink >   
+                  <NavLink   to="/ObservatorioPage"  onClick={closeOffCanvas}  className="text-3">Observatorio</NavLink >   
                 </Nav>
                 <Nav className="navbar-buttons">
                   

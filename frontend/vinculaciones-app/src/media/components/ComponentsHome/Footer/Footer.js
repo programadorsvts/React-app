@@ -1,16 +1,14 @@
 
-import { Link } from "react-router-dom"
-import { BsFacebook } from "react-icons/bs"
-import { BsTwitter } from "react-icons/bs"
-import { BsInstagram } from "react-icons/bs"
-import { BsYoutube } from "react-icons/bs"
+import { NavLink } from "react-router-dom"
+
+import { BsTwitter ,BsFacebook, BsInstagram,BsYoutube } from "react-icons/bs"
 
 import './footer.css';
 
 function footer() {
   return (
     <>
-    <footer fluid className="footer">
+    <footer  className="footer">
             <div className="text-left" xs={12} md={4}>
                 <h6 className="text-1">Información Institucional</h6>
                 <img src="assets/svgs/Escudo-UNSL-Blanco.svg" width="150" height="100" alt=""/>  
@@ -27,10 +25,10 @@ function footer() {
             </div>
             <div className="text-left"xs={12} md={4}>
                 <h6 className="text-1">Redes</h6>
-                <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsTwitter/></Link>
-                <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsFacebook/></Link>
-                <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsInstagram/></Link>
-                <Link className="m-2 icon" to="tel:+54 (0266) 4520300"><BsYoutube/></Link>
+                <NavLink className="m-2 icon"  to="tel:+54 (0266) 4520300"><BsTwitter/></NavLink>
+                <NavLink className="m-2 icon"  to="tel:+54 (0266) 4520300"><BsFacebook/></NavLink>
+                <NavLink className="m-2 icon"  to="tel:+54 (0266) 4520300"><BsInstagram/></NavLink>
+                <NavLink className="m-2 icon"  to="tel:+54 (0266) 4520300"><BsYoutube/></NavLink>
             </div>
     </footer>
         <div className="copyright-body text-center ">
