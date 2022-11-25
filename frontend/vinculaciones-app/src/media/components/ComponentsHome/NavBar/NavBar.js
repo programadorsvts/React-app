@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import {useEffect, useRef, useState} from 'react';
 import {useNavigate,NavLink  } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
-
+/* import Axios from 'axios'; */
 import './navbar.css';
 import CheckAuth from '../../../api/ChechAuth';
 
@@ -17,8 +17,17 @@ function NavBar() {
   
 
   useEffect(() => {  
-
-          setAuth(CheckAuth())
+    
+      /*   Axios.get('http://127.0.0.1:8000/api/checkAuth')
+          .then(response => {
+              console.log(response);
+                setAuth(true)
+          })
+          .catch(function (error) {
+              console.log(error);
+              setAuth(false)
+          }) */
+          setAuth(CheckAuth()) 
           
   },[])
 
@@ -52,8 +61,8 @@ function NavBar() {
                       <Button onClick={() => {  navigate("/SingUpPage")  ;  closeOffCanvas()  }} >Cerrar sesion</Button>
                     </> : 
                     <>
-                    <Button  onClick={() => {  navigate("/LoginPage")  ;  closeOffCanvas()  }} >iniciar sesión</Button>
-                    <Button onClick={() => {  navigate("/SingUpPage")  ;  closeOffCanvas()  }} >registrarse</Button>
+                      <Button  onClick={() => {  navigate("/LoginPage")  ;  closeOffCanvas()  }} >iniciar sesión</Button>
+                      <Button onClick={() => {  navigate("/SingUpPage")  ;  closeOffCanvas()  }} >registrarse</Button>
                     </>
                   }
             

@@ -2,8 +2,6 @@ import Axios from 'axios';
 
 const PostLogin = (data, navigate)=> {
     
-        console.log("POST LOGIN")
-        // console.log(data)
         Axios.post('http://127.0.0.1:8000/api/login', {
             "email": data.email,
             "password": data.password

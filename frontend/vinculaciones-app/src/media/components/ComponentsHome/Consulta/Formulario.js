@@ -20,7 +20,7 @@ import { useState } from 'react';
   });
 
   const [isSubmited, setIsSubmited] = useState(false)
-    console.log(isSubmited)
+    
 
   return(
   <Formik  
