@@ -1,0 +1,9 @@
+.form-crear {
+    width: 50%;
+}
+
+@media (max-width: 1000px){ 
+    .form {
+        width: 95%;
+    }
+}

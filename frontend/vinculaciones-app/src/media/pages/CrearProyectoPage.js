@@ -4,14 +4,9 @@ import FormularioCrear from "../components/ComponentsCrear/FormularioCrear/Formu
 
 function crearproyectopage(){
     return(
-            <>
-                    
-                    <Container className="d-flex justify-content-center w-50">
-                    <FormularioCrear></FormularioCrear>
-
-                    </Container>
-               
-            </>
+        <>
+                <FormularioCrear></FormularioCrear>
+        </>
     );
 }
 
