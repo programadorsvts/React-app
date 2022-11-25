@@ -48,7 +48,7 @@ const   SingUpForm =() => {
                   <Form.Control  
                       type="email"
                       name='email'
-                      placeholder="ejemplo@gmail o @hotmail" 
+                      placeholder="" 
                       onChange={handleChange}  
                       value={values.email} 
                       isValid={touched.email && !errors.email}
