@@ -16,10 +16,10 @@ function NavBar() {
   const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
   
 
-  useEffect(() => {
-            
-              setAuth(CheckAuth());
+  useEffect(() => {  
 
+          setAuth(CheckAuth())
+          
   },[])
 
   return (
