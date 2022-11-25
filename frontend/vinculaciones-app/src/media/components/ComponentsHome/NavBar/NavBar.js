@@ -41,17 +41,17 @@ function NavBar() {
               <img src='assets/svgs/Solo-LogoSVTS.svg'  width="100" height="50" className="d-inline-block " alt=""/>
             </Navbar.Brand>
             <Navbar.Toggle className='navbar-toggler' aria-controls={`offcanvasNavbar-expand-${expand}`}/>
-            <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end"  ref={offCanvasRef}>
+            <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end"  >
               <Offcanvas.Header closeButton >
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}></Offcanvas.Title>
               </Offcanvas.Header>
 
               <Offcanvas.Body >
                 <Nav className="justify-content-start  flex-grow-1" >
-                  <NavLink   to="/"  onClick={closeOffCanvas}  className="text-3">inicio</ NavLink >
-                  <NavLink   to="/RevistaDigitalPage"  onClick={closeOffCanvas}  className="text-3">Revista Digital</NavLink >
-                  <NavLink   to="/HerramientasPage"  onClick={closeOffCanvas}  className="text-3">Herramientas</NavLink >   
-                  <NavLink   to="/ObservatorioPage"  onClick={closeOffCanvas}  className="text-3">Observatorio</NavLink >   
+                  <NavLink   to="/"   className="text-3">inicio</ NavLink >
+                  <NavLink   to="/RevistaDigitalPage"    className="text-3">Revista Digital</NavLink >
+                  <NavLink   to="/HerramientasPage"    className="text-3">Herramientas</NavLink >   
+                  <NavLink   to="/ObservatorioPage"    className="text-3">Observatorio</NavLink >   
                 </Nav>
                 <Nav className="navbar-buttons">
                   
