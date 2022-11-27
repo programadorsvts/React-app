@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const PostLogin = (data, navigate)=> {
+const PostLogin = (data, redirect) => {
     
         console.log("POST LOGIN")
         // console.log(data)
@@ -12,10 +12,11 @@ const PostLogin = (data, navigate)=> {
             console.log(response);
             localStorage.setItem('local-email', data.email);
             localStorage.setItem('local-token', response.data.token);
-            navigate("/")
+            return redirect("/")
         })
         .catch(function (error) {
             console.log(error);
+            return false
         }) 
 }
 

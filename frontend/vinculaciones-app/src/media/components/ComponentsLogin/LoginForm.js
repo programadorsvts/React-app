@@ -4,8 +4,8 @@ import {Link} from  'react-router-dom';
 import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../styles/form.css';
-import PostLogin from "../../api/PostLogin"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, redirect } from 'react-router-dom';
+import Axios from 'axios';
 
 function LoginForm() {
 
@@ -29,9 +29,20 @@ function LoginForm() {
               password:'',
           } }
           onSubmit={values => {
-            alert(JSON.stringify(values, null, 2));
-            // VALIDAR ACÁ si es unsl.edu.ar o email.unsl.edu.ar
-            PostLogin(values, navigate)
+            Axios.post('/api/login', {
+            "email": values.email,
+            "password": values.password
+        })
+        .then(response => {
+          console.log(response);
+          localStorage.setItem('local-email', values.email);
+          localStorage.setItem('local-token', response.data.token);
+          navigate("/")
+        })
+        .catch(function (error) {
+          console.log("ERROR PETICION LOGIN")
+          console.log(error);
+        }) 
         }}
       >
       {({handleChange, handleSubmit, handleBlur, values ,touched , errors}) => (

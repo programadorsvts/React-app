@@ -27,8 +27,7 @@ const SingUpForm =() => {
                 confir:'',
             }}
             onSubmit={values => {
-                          // VALIDAR ACÁ si es unsl.edu.ar o email.unsl.edu.ar
-
+              // VALIDAR ACÁ si es unsl.edu.ar o email.unsl.edu.ar
               alert(JSON.stringify(values, null, 2));
             }}
             >

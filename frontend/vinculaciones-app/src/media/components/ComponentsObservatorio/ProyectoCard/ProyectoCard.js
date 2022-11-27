@@ -7,14 +7,6 @@ import ProyectoModal from '../ProyectoCard/ProyectoModal'
 
 function ProyectoCard({proyecto}) {
   
-
-
-  // const getArea = (area_id) => {
-  //   console.log(areas)
-  //   let area = areas.filter(area => area.id === area_id)
-  //   return area[0].name
-  // }
-  
   const [modalShow, setModalShow] = useState(false);
 
   return (
@@ -24,10 +16,10 @@ function ProyectoCard({proyecto}) {
             <Card.Text className='encabezado-4 text-lowercase'>
               {proyecto.title}
             </Card.Text>
-            <Card.Title className='text-1 text-deg text-capitalize'>{}</Card.Title>
+            <Card.Title className='text-1 text-deg text-capitalize'>{proyecto.area}</Card.Title>
           </Card.Body>
         </Card>
-        <ProyectoModal titulo={proyecto.title} show={modalShow} onHide={() => setModalShow(false)}/>
+        <ProyectoModal proyecto={proyecto} show={modalShow} onHide={() => setModalShow(false)}/>
       </>
   );
 }
