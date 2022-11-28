@@ -1,22 +1,23 @@
 import {Button,Form} from 'react-bootstrap'
-import {Link} from  'react-router-dom';
+import {Link, redirect, useNavigate} from  'react-router-dom';
 import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../styles/form.css';
+import Axios from "axios"
 
 const SingUpForm =() => {
 
-   const schema = Yup.object().shape({
+  const navigate = useNavigate()
 
-      email: Yup.string().email('El valor ingresado no es un email').required('el email es obligatorio').trim('El email no permite espacios en blanco'),
-      password: Yup.string()
-        .required('La contraseña es obligatoria.') 
-        .min(8, 'La contraseña debe tener mínimo 8 caracteres'),
-
-      confir:Yup.string().oneOf([Yup.ref('password'), null], 'las contrasenas no son iguales')
-        .required('La contraseña es obligatoria.') 
-        .min(8, 'La contraseña debe tener mínimo 8 caracteres'),
-      });
+  const schema = Yup.object().shape({
+    email: Yup.string().email('El valor ingresado no es un email').required('el email es obligatorio').trim('El email no permite espacios en blanco'),
+    password: Yup.string()
+      .required('La contraseña es obligatoria.') 
+      .min(8, 'La contraseña debe tener mínimo 8 caracteres'),
+    confir:Yup.string().oneOf([Yup.ref('password'), null], 'las contrasenas no son iguales')
+      .required('La contraseña es obligatoria.') 
+      .min(8, 'La contraseña debe tener mínimo 8 caracteres'),
+  });
 
   return (
     <Formik    
@@ -28,7 +29,15 @@ const SingUpForm =() => {
             }}
             onSubmit={values => {
               // VALIDAR ACÁ si es unsl.edu.ar o email.unsl.edu.ar
-              alert(JSON.stringify(values, null, 2));
+              Axios.post("api/register",{
+                "email": values.email,
+                "password": values.password,
+                "confirm_password": values.confir,
+              })
+              .then(response => {
+                console.log(response)
+                navigate("/registro-exitoso")
+              })
             }}
             >
             {({handleChange, handleSubmit, handleBlur, values ,touched , errors}) => (

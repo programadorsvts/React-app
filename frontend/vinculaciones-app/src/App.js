@@ -11,6 +11,7 @@ import CrearProyectoPage from "./media/pages/CrearProyectoPage";
 import Restablecer from './media/components/ComponentsRestablecerPass/Restablecer'
 import "./media/styles/index.css"
 import Axios from "axios";
+import RegistroExitoso from "./media/pages/RegistroExitoso";
 
 Axios.defaults.baseURL = 'http://127.0.0.1:8000/'
 Axios.defaults.headers.post['Accept'] = 'application/json'
@@ -36,6 +37,7 @@ function App() {
         <Route exact path="/SingUpPage" element={<SingUpPage />} />
         <Route exact path="/CrearProyectoPage" element={<CrearProyectoPage />} />
         <Route exact path='/RestablecerPage' element={<Restablecer/>}/>
+        <Route exact path='/registro-exitoso' element={<RegistroExitoso/>}/>
         <Route exact path=" * " element={<NotFoundPage />} />
       </Routes>
     </Router>

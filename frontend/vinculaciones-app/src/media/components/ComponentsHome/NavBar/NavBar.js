@@ -11,7 +11,7 @@ import Axios from 'axios';
 function NavBar() {
   const navigate = useNavigate();
   const offCanvasRef = useRef();
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(null);
   const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
   let UserButtons = ''
   
@@ -38,8 +38,8 @@ function NavBar() {
   else {
     UserButtons = 
     <>
-      <Button onClick={() => {  navigate("/LoginPage")  ;  closeOffCanvas()  }} >iniciar sesión</Button>
-      <Button onClick={() => {  navigate("/SingUpPage")  ;  closeOffCanvas()  }} >registrarse</Button>
+      <Button onClick={() => {  navigate("/LoginPage")  ;  closeOffCanvas()  }} >Iniciar sesión</Button>
+      <Button onClick={() => {  navigate("/SingUpPage")  ;  closeOffCanvas()  }} >Registrarse</Button>
     </>
   }
 
