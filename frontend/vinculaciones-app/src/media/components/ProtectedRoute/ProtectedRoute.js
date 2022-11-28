@@ -1,7 +1,7 @@
 import {Navigate} from 'react-router-dom'
 
 
-export const ProtectedRoute = ({user,children}) =>{
+export const ProtectedRoute = ({user, redirectTo ,children}) =>{
     
     if ( user ){
         console.log(user);
