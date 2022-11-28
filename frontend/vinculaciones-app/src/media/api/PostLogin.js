@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const PostLogin = (data, navigate)=> {
+const PostLogin = (data, redirect) => {
     
         Axios.post('http://127.0.0.1:8000/api/login', {
             "email": data.email,
@@ -10,10 +10,11 @@ const PostLogin = (data, navigate)=> {
             console.log(response);
             localStorage.setItem('local-email', data.email);
             localStorage.setItem('local-token', response.data.token);
-            navigate("/")
+            return redirect("/")
         })
         .catch(function (error) {
             console.log(error);
+            return false
         }) 
 }
 

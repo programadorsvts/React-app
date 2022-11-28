@@ -2,20 +2,18 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import {useEffect, useRef, useState} from 'react';
-import {useNavigate,NavLink  } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 /* import Axios from 'axios'; */
 import './navbar.css';
-import CheckAuth from '../../../api/ChechAuth';
+import Axios from 'axios';
 
 function NavBar() {
   const navigate = useNavigate();
   const offCanvasRef = useRef();
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(null);
   const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
+  let UserButtons = ''
   
-
   useEffect(() => {  
     
       /*   Axios.get('http://127.0.0.1:8000/api/checkAuth')
@@ -38,7 +36,7 @@ function NavBar() {
         <Navbar key={expand} expand={expand} className="navbar" sticky="top">
           <Container fluid>
             <Navbar.Brand href="/Vinculaciones-Frontend/">
-              <img src='assets/svgs/Solo-LogoSVTS.svg'  width="100" height="50" className="d-inline-block " alt=""/>
+              <img src='assets/svgs/Solo-LogoSVTS.svg' width="100" height="50" className="d-inline-block " alt=""/>
             </Navbar.Brand>
             <Navbar.Toggle className='navbar-toggler' aria-controls={`offcanvasNavbar-expand-${expand}`}/>
             <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end"  >

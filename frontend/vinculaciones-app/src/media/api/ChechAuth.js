@@ -1,6 +1,5 @@
 import Axios from 'axios';
 
-
 const CheckAuth = ()=> {
     var auth =false
     Axios.get('http://127.0.0.1:8000/api/checkAuth')

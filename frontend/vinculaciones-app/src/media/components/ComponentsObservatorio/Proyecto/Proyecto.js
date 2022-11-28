@@ -7,17 +7,12 @@ import "./proyecto.css"
 function ProyectosPublicados () {
 
     const [proyectos, setProyectos] = useState([])
-    const [areas, setAreas] = useState([])
 
     useEffect(() => {
         Axios.get('http://127.0.0.1:8000/api/proyects')
         .then(response => {
             setProyectos(response.data)
-            Axios.get('http://127.0.0.1:8000/api/area')
-            .then(response => {
-                setAreas(response.data)
-            })
-            .catch(() => {
+        .catch(() => {
 
             })
         })
@@ -43,6 +38,5 @@ function ProyectosPublicados () {
         </>
     );
 }
-
 
  export default ProyectosPublicados

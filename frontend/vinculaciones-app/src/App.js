@@ -49,12 +49,8 @@ function App() {
 
   return (
     <Router>
-      <NavBar></NavBar>
-
       <Routes>
-
         <Route exact path="/" element={<Home />} />
-
         <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
 
         <Route exact path="/ObservatorioPage"  element={
@@ -90,10 +86,7 @@ function App() {
           }/>
 
         <Route exact path=" * " element={<NotFoundPage />} />
-
       </Routes>
-
-      <Footer></Footer>
     </Router>
   );
 }

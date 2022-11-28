@@ -1,12 +1,9 @@
-
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 import './modal.css';
 
 function ProyectoModal(props) {
-
-    
   
   return (
         <>
@@ -18,43 +15,26 @@ function ProyectoModal(props) {
             >
             <Modal.Header closeButton>
                 <Modal.Title className='text-1 text-deg text-capitalize' id="contained-modal-title-vcenter">
-                {props.area}
+                {props.proyecto.area}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4 className='encabezado-2 mb-3'>{props.titulo}</h4>
-                <p className='encabezado-4 mb-1'>Director/a: Walter White</p>
-                <p className='encabezado-4 mb-4'>Organización privada</p>
+                <h4 className='encabezado-2 mb-3'>{props.proyecto.title}</h4>
+                <p className='encabezado-4 mb-1'>{props.proyecto.director_name}</p>
+                <p className='encabezado-4 mb-4'>Organización {props.proyecto.organization == 0 ? "Pública" : "Privada"}</p>
                 <p className='text-1 mb-1'>CONTACTO:</p>
-                <p className='text-2 mb-1'>walterwhite@gmail.com</p>
-                <p className='text-2 mb-1'>2664-123456</p>
-                <p className='text-2 mb-4'>nombre calle 1234</p>
+                <p className='text-2 mb-1'>{props.proyecto.email}</p>
+                <p className='text-2 mb-1'>{props.proyecto.phone_number}</p>
+                <p className='text-2 mb-4'>{props.proyecto.address}</p>
                 <p className='text-1 mb-1'>DESCRIPCIÓN:</p>
-                <p >Rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla 
-                malesuada fames ac ante ipsum primis in faucibus. Proin lectus ligula, suscipit et aliquam in, rutrum at turpis. Donec mollis.
-                Rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla 
-                malesuada fames ac ante ipsum primis in faucibus. Proin lectus ligula, suscipit et aliquam in, rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla.
-                Rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla 
-                malesuada fames ac ante ipsum primis in faucibus. Proin lectus ligula, suscipit et aliquam in, rutrum at turpis. Donec mollis.
-                Rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla 
-                malesuada fames ac ante ipsum primis in faucibus. Proin lectus ligula, suscipit et aliquam in, rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla.
-                Rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla 
-                malesuada fames ac ante ipsum primis in faucibus. Proin lectus ligula, suscipit et aliquam in, rutrum at turpis. Donec mollis.
-                Rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla 
-                malesuada fames ac ante ipsum primis in faucibus. Proin lectus ligula, suscipit et aliquam in, rutrum at turpis. Donec mollis massa in ipsum pretium iaculis. Duis sed fringilla.
-                </p>
+                <p className='text-2 mb-1'>{props.proyecto.description}</p>
+                <p className='text-2 mb-1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros miaaaaaasd asd asd asdasd asdasd asdasd asd a,</p>
+                <p className='text-2 mb-1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros mi,</p>
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Cerrar</Button>
             </Modal.Footer>
             </Modal>
-            
-            
-            
-            
-            
-            
-            
       </>  
   );
 }

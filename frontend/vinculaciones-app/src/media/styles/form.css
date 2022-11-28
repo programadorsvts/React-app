@@ -63,5 +63,6 @@
 .form .link{
     color: var(--text-color);
     margin-top: 20px;
+    text-decoration: underline;
 }
 

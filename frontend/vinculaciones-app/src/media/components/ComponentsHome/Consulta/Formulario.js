@@ -13,10 +13,10 @@ import { useState } from 'react';
   }
 
   const schema = Yup.object().shape({
-    name: Yup.string().min(2, 'El nombre es demasiado corto').max(50, 'El nombre es demasiado largo').required('El nombre es obligatorio'),
-    email:Yup.string().email('El valor ingresado no es un email').required('El email es obligatorio').trim('El email no permite espacios en blanco'),
-    telephone: Yup.string().matches(regExp.telefono, "El valor ingresado no es un telefono").max(15),
-    consulta: Yup.string().max(500, 'La consulta es demasiado larga').required("Debe ingresar su consulta"),
+    name: Yup.string().min(2, 'El nombre es demasiado corto').max(50, 'El nombre es demasiado largo').required('El nombre es obligatorio').trim('los espacio en blanco no estan permitidos '),
+    email:Yup.string().email('El valor ingresado no es un email').required('El email es obligatorio').trim('El email no permite espacios en blanco').trim('los espacio en blanco no estan permitidos '),
+    telephone: Yup.string().matches(regExp.telefono, "El valor ingresado no es un telefono").max(15).trim('los espacio en blanco no estan permitidos '),
+    consulta: Yup.string().max(500, 'La consulta es demasiado larga').required("Debe ingresar su consulta").trim('los espacio en blanco no estan permitidos '),
   });
 
   const [isSubmited, setIsSubmited] = useState(false)
