@@ -51,8 +51,7 @@ function FormularioCrear() {
                 })
                 .then((response) => {
                     console.log(response)
-                    // Redireccionar a "mis proyectos": 
-                    // navigate("/proyects")
+                    navigate("/mis-proyectos")
                 })
                 .catch((error) => {
                     console.log(error)

@@ -12,7 +12,7 @@ function observatorio (){
     return(
             <>
             <NavBar></NavBar>
-                <PrincipalObservatorio></PrincipalObservatorio>
+                <PrincipalObservatorio titulo="Observatorio SVTS"></PrincipalObservatorio>
                 <CrearProyecto></CrearProyecto>
                 <Buscador></Buscador>
                 <Proyecto></Proyecto>
