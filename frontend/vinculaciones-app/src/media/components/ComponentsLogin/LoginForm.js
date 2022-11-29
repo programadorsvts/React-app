@@ -6,11 +6,12 @@ import { Formik} from 'formik';
 import '../../styles/form.css';
 import { useNavigate, redirect } from 'react-router-dom';
 import Axios from 'axios';
+import { useState } from 'react';
 
 function LoginForm() {
 
     const navigate = useNavigate();
-
+    const [errorSubmit, setErrorSubmit] = useState("")
       const schema = Yup.object().shape({
         email: Yup.string()
           .email('El valor ingresado no es un email')
@@ -40,8 +41,8 @@ function LoginForm() {
           navigate("/")
         })
         .catch(function (error) {
-          console.log("ERROR PETICION LOGIN")
-          console.log(error);
+          console.log(error.response.data);
+          setErrorSubmit(error.response.data.message)
         }) 
         }}
       >
@@ -83,6 +84,7 @@ function LoginForm() {
               <Link to="/SingUpPage" className="text-5 link" >¿No tienes una cuenta? Registrarse</Link>
           </Form.Group>
           <Button className="btn btn-form "onClick={handleSubmit}>Ingresar</Button>
+          {errorSubmit ? <p className="error-submit"> {errorSubmit}</p> : ""}
           <Link to="/RestablecerPage" className="text-5 link" >Olvidé mi contraseña</Link>
         </Form>
       )}

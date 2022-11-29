@@ -15,7 +15,7 @@ function NavBar() {
   const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
   let UserButtons = ''
   
-  useEffect(() => {  
+  useEffect(() => {
 
     Axios.get('/api/checkAuth')
     .then((response) => {
