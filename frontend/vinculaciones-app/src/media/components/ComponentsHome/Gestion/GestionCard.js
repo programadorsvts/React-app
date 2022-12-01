@@ -5,7 +5,7 @@ function gestioncard(props) {
   return (
 
     <Card style={{ width: '18rem' }}>
-      <a href='#0'>
+      <a href={props.info.ruta} target="_blank"rel="noreferrer">
       <Card.Body className='d-flex align-items-center justify-content-center'>
         <Card.Img className='icon-gestion' src={props.info.imagen} />
         <Card.Text className='gestion-card'>

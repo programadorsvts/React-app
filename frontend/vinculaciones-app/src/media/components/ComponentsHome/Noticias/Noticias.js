@@ -23,30 +23,31 @@ function noticias() {
         const noticia4= {
                 imagen:'assets/images/noticia-4.png',
                 fecha:'7 de junio de 2022',
-                texto:'7 de junio de 2022: Día de la Vinculación Tecnológica' 
+                texto:'Día de la Vinculación Tecnológica' 
         };
 
         return (
 
-        <section className='container my-5'>
-                <h3 className="encabezado-2 my-3">Noticias</h3>
-                <Container className='container-noticias'>
+        <>
+                <h3 className="encabezado-2  mt-5 d-flex justify-content-center">Noticias</h3>
+                <Container fluid className='container-noticias mt-5'>
+                        
                         <Row>
-                        <Col className='d-flex justify-content-center'>
-                                <Card info={noticia1}></Card>
-                        </Col>
-                        <Col className='d-flex justify-content-center'>
-                                <Card info={noticia2}></Card>
-                        </Col>
-                        <Col className='d-flex justify-content-center'>
-                                <Card info={noticia3}></Card>
-                        </Col>
-                        <Col className='d-flex justify-content-center'>
-                                <Card info={noticia4}></Card>
-                        </Col>
+                                <Col className=''>
+                                        <Card info={noticia1}></Card>
+                                </Col>
+                                <Col className=''>
+                                        <Card info={noticia2}></Card>
+                                </Col>
+                                <Col className=''>
+                                        <Card info={noticia3}></Card>
+                                </Col>
+                                <Col className=''>
+                                        <Card info={noticia4}></Card>
+                                </Col>
                         </Row>
                 </Container>
-        </section>
+        </>
 
         );
 }
