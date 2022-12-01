@@ -6,7 +6,7 @@ import './galeria.css';
 
 function galeria() {
   return (
-    <Container className='galeria mt-5'>
+    <Container className='galeria mt-5 mb-5'>
         <img src='assets/images/galeria-1.jpg' alt=''></img>
         <img src='assets/images/galeria-2.jpg' alt=''></img>
         <img src='assets/images/galeria-3.PNG' alt=''></img>
