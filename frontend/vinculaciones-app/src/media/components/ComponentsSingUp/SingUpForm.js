@@ -1,13 +1,15 @@
 import {Button,Form} from 'react-bootstrap'
-import {Link, redirect, useNavigate} from  'react-router-dom';
+import {Link, useNavigate} from  'react-router-dom';
 import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../styles/form.css';
 import Axios from "axios"
+import { useState } from 'react';
 
 const SingUpForm =() => {
 
   const navigate = useNavigate()
+  const [errorsSubmit, setErrorsSubmit] = useState({})
 
   const schema = Yup.object().shape({
     email: Yup.string().email('El valor ingresado no es un email').required('el email es obligatorio').trim('El email no permite espacios en blanco'),
@@ -38,6 +40,11 @@ const SingUpForm =() => {
                 console.log(response)
                 navigate("/registro-exitoso")
               })
+              .catch(error => {
+                setErrorsSubmit({})
+                console.log(error)
+                setErrorsSubmit(error.response.data.errors)
+              })
             }}
             >
             {({handleChange, handleSubmit, handleBlur, values ,touched , errors}) => (
@@ -58,6 +65,9 @@ const SingUpForm =() => {
                     <Form.Control.Feedback type='invalid'>
                         {errors.email }
                     </Form.Control.Feedback>
+                    {
+                      errorsSubmit.email ? <p className='error-submit'>{errorsSubmit.email}</p> : ""
+                    }
                 </Form.Group>    
                 <Form.Group className="mb-3" controlId="ContraseñaSingUp" >
                   <Form.Label className="encabezado-4 label">Contraseña:</Form.Label>
@@ -74,6 +84,9 @@ const SingUpForm =() => {
                     <Form.Control.Feedback type='invalid'>
                         {errors.password }
                     </Form.Control.Feedback>
+                    {
+                      errorsSubmit.password ? <p>{errorsSubmit.password}</p> : ""
+                    }
                 </Form.Group>
                   <Form.Group className="mb-3" controlId="contraseñaconfig2" >
                   <Form.Label className="encabezado-4 label">Confirmar contraseña:</Form.Label>

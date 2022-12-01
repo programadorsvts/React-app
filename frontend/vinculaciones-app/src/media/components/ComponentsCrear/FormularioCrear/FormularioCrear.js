@@ -5,6 +5,7 @@ import '../../../styles/form.css';
 import './form-crear.css';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const regExp = {
     telefono: /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -22,8 +23,23 @@ const schema = Yup.object().shape({
 });
 
 function FormularioCrear() {
-
     const navigate = useNavigate()
+    const [areas, setAreas] = useState([])
+
+    useEffect(() => {
+      
+        Axios.get("/api/area")
+        .then((response) => {
+            console.log(response)
+            setAreas(response.data)
+            console.log(areas)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    
+    }, [])
+    
 
     return (
      <Formik
@@ -51,8 +67,7 @@ function FormularioCrear() {
                 })
                 .then((response) => {
                     console.log(response)
-                    // Redireccionar a "mis proyectos": 
-                    // navigate("/proyects")
+                    navigate("/mis-proyectos")
                 })
                 .catch((error) => {
                     console.log(error)
@@ -126,8 +141,12 @@ function FormularioCrear() {
                     isValid={touched.area && !errors.area}
                     isInvalid={touched.area && errors.area}>
                         <option value={0}>Seleccione área tematica</option>
-                        <option value={1}>Área 1</option>
-                        <option value={2}>Área 2</option>
+                        { 
+                        areas.map((area) => {
+                            return(
+                                <option key={area.id} value={area.id}>{area.name}</option>
+                            )
+                        })}
                     </Form.Select>
                     <Form.Control.Feedback type='invalid'>
                         {errors.area}

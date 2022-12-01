@@ -66,3 +66,7 @@
     text-decoration: underline;
 }
 
+.error-submit {
+    color: var(--error-color);
+    font-size: 14px;
+}

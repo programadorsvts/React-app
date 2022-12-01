@@ -4,7 +4,6 @@ import {useState} from 'react';
 
 import ProyectoModal from '../ProyectoCard/ProyectoModal'
 
-
 function ProyectoCard({proyecto}) {
   
   const [modalShow, setModalShow] = useState(false);

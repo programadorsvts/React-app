@@ -34,7 +34,7 @@ function ProyectoModal(props) {
             <Modal.Footer>
                 <Button onClick={props.onHide}>Cerrar</Button>
             </Modal.Footer>
-            </Modal>
+        </Modal>
       </>  
   );
 }

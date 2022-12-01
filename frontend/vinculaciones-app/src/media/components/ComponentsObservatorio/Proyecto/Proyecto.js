@@ -9,16 +9,13 @@ function ProyectosPublicados () {
     const [proyectos, setProyectos] = useState([])
 
     useEffect(() => {
-        Axios.get('http://127.0.0.1:8000/api/proyects')
-        .then(response => {
-            setProyectos(response.data)
-        .catch(() => {
-
+            Axios.get('http://127.0.0.1:8000/api/proyects')
+            .then(response => {
+                setProyectos(response.data)
             })
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+            .catch(function (error) {
+                console.log(error);
+            })
     }, [])
 
     return(
@@ -29,7 +26,7 @@ function ProyectosPublicados () {
                 {
                     proyectos.map((proyecto) => {
                         return(
-                        <ProyectoCard proyecto={proyecto} ></ProyectoCard>
+                        <ProyectoCard key={proyecto.id} proyecto={proyecto} ></ProyectoCard>
                     )
                     })
                 }

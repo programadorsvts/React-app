@@ -5,6 +5,7 @@
     --text-color-secundary: #C7DEE8;
     --text-color-third: #71CEF2;
     --text-color-placeholder: #A5BAC7;
+    --error-color: #dc3545;
     --font-family: 'Poppins', sans-serif;
     --box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
     --bg-gradient-stan: linear-gradient(124.5deg, #18273F 0%, #142D33 100%);
