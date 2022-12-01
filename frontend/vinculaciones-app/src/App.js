@@ -8,7 +8,7 @@ import SingUpPage from './media/pages/SingUpPage'
 import NotFoundPage from './media/pages/NotFoundPage'
 import HerramientasPage from './media/pages/HerramientasPage'
 import CrearProyectoPage from "./media/pages/CrearProyectoPage";
-import Restablecer from './media/components/ComponentsRestablecerPass/Restablecer'
+import RestablecerPage from './media/pages/RestablecerPage'
 import "./media/styles/index.css"
 import Axios from "axios";
 import RegistroExitoso from "./media/pages/RegistroExitoso";
@@ -38,7 +38,7 @@ function App() {
         <Route exact path="/SingUpPage" element={<SingUpPage />} />
         <Route exact path="/CrearProyectoPage" element={<CrearProyectoPage />} />
         <Route exact path="/mis-proyectos" element={<MisProyectosPage />} />
-        <Route exact path='/RestablecerPage' element={<Restablecer/>}/>
+        <Route exact path='/RestablecerPage' element={<RestablecerPage/>}/>
         <Route exact path='/registro-exitoso' element={<RegistroExitoso/>}/>
         <Route exact path=" * " element={<NotFoundPage />} />
       </Routes>

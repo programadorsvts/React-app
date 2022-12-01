@@ -25,7 +25,7 @@ function MisProyectos () {
     return(
         <>
         <Container>
-        <h1 className='encabezado-2 my-5'>Proyectos Publicados</h1>
+        <h1 className='encabezado-2 my-5'>Proyectos publicados por mi</h1>
             <Container className="proyecto">
                 {
                    proyectos.map((proyecto) => {

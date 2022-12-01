@@ -22,7 +22,6 @@ function gestion() {
         
         <section className='container d-flex align-items-center flex-column'>
                 <h2 className="encabezado-1 text-center my-5">Gestión</h2>
-                <p className="text-2 text-center w-75 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus ligula purus, cursus imperdiet ipsum sodales eget. Vivamus ut lacus justo. Cras non ante nisl.</p>
                 <Row className='d-flex align-items-center' >
                 <Col className='d-flex justify-content-center'>
                         <GestionCard info={ gestion1}></GestionCard>

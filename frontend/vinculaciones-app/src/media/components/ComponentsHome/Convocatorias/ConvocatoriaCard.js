@@ -1,11 +1,11 @@
 import {Card}from 'react-bootstrap';
 import './convocatorias.css';
 
-function convocatoriacard({ruta}) {
+function convocatoriacard({img, link}) {
   return (
     <Card className='d-flex align-items-center justify-content-center'>
-      <a href='#0'>
-        <Card.Img className='convocatorias-card' src={ruta} /> 
+      <a href={link} target="_blank">
+        <Card.Img className='convocatorias-card' src={img} /> 
       </a>
     </Card>
   );
