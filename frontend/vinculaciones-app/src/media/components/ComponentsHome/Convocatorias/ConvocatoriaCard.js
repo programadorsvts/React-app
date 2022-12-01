@@ -4,7 +4,7 @@ import './convocatorias.css';
 function convocatoriacard({img, link}) {
   return (
     <Card className='d-flex align-items-center justify-content-center'>
-      <a href={link} target="_blank">
+      <a href={link} target="_blank" rel="noreferrer">
         <Card.Img className='convocatorias-card' src={img} /> 
       </a>
     </Card>
