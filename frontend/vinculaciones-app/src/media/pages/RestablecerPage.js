@@ -8,7 +8,7 @@ function restablecerpage (){
             <>
             <NavBar></NavBar>
                 <RestablecerForm></RestablecerForm>
-                <Footer></Footer>
+            <Footer></Footer>
             </>
     );
 }
