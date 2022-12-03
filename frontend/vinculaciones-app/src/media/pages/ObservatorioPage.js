@@ -3,7 +3,7 @@ import CrearProyecto from '../components/ComponentsObservatorio/CrearProyecto/Cr
 import Buscador from '../components/ComponentsObservatorio/Buscador/Buscador'
 import Proyecto from '../components/ComponentsObservatorio/Proyecto/Proyecto';
 
-import { Navigate } from 'react-router-dom';
+
 
 
 function observatorio ( ){

@@ -75,7 +75,7 @@ function NavBar() {
                 <Nav className="justify-content-start flex-grow-1" >
                   <NavLink to="/" onClick={closeOffCanvas} className="text-3">inicio</ NavLink >
                   <NavLink to="/RevistaDigitalPage" onClick={closeOffCanvas} className="text-3">Revista Digital</NavLink >
-                  {/* <NavLink to="/HerramientasPage" onClick={closeOffCanvas} className="text-3">Herramientas</NavLink >  */}  
+                  <NavLink to="/ObiPage" onClick={closeOffCanvas} className="text-3">Obi </NavLink >  
                   <NavLink to="/ObservatorioPage" onClick={closeOffCanvas} className="text-3">Observatorio</NavLink >   
                 </Nav>
                 <Nav className="navbar-buttons">

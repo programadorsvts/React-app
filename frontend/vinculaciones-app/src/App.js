@@ -12,19 +12,18 @@ import Home from './media/pages/Home'
 import LoginPage from './media/pages/LoginPage'
 import SingUpPage from './media/pages/SingUpPage'
 import NotFoundPage from './media/pages/NotFoundPage'
-import HerramientasPage from './media/pages/HerramientasPage'
+import HerramientasPage from './media/pages/ObiPage'
 import CrearProyectoPage from "./media/pages/CrearProyectoPage";
 import Restablecer from './media/components/ComponentsRestablecerPass/Restablecer'
-import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
-import Footer from "./media/components/ComponentsHome/Footer/Footer";
+/* import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
+import Footer from "./media/components/ComponentsHome/Footer/Footer"; */
 
 /////////////////Bootstrap/////////////////////////////////
 import "./media/styles/index.css"
 
 /////////////////Imports//////////////////////////////////
 import {useState } from 'react';
-import PostLogin from '././media/api/PostLogin'
-import PostSingUp from './media/api/PostSingUp'
+
 
 
 
@@ -61,7 +60,7 @@ function App() {
                       </ProtectedRoute>
            }/>
 
-        <Route exact path="/HerramientasPage" element={<HerramientasPage/>}/>
+        <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
 
         <Route exact path="/LoginPage" element={<LoginPage user={user} />} />
 

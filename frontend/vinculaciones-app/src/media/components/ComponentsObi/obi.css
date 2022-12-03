@@ -1,0 +1,15 @@
+.obi-card {
+        padding: 0;
+       
+        width: 20rem;
+        height: 30rem;
+}
+
+.obi-container {
+        display: flex;
+        flex-wrap: wrap;
+}
+.obi-img:hover {
+        transform: scale(1.03);
+        transition: .25s;
+}

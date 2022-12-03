@@ -1,14 +1,14 @@
-import Herramienta from "../components/ComponentsHerramientas/Herramientas/Herramienta";
+import Obi from "../components/ComponentsObi/Obi";
 import NavBar from "../components/ComponentsHome/NavBar/NavBar";
 import Footer from "../components/ComponentsHome/Footer/Footer";
 
-function herramientaspage(){
+function obipage(){
     return(
         <>   
         <NavBar></NavBar>  
-        <Herramienta></Herramienta>
+            <Obi></Obi>
         <Footer></Footer>
         </>
     );
 }
- export default herramientaspage
+ export default obipage
