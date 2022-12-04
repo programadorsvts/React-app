@@ -15,7 +15,7 @@ function obicard(props) {
         <Card.Text>
             {props.data.texto}
         </Card.Text>
-        <Button className='d-flex justify-content-center ' href={props.data.href}>ir a</Button>
+        <Button className='d-flex justify-content-center obi-button ' href={props.data.href}>ir a</Button>
       </Card.Body>
     </Card>
 

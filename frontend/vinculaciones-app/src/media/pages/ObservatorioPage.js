@@ -2,6 +2,8 @@ import PrincipalObservatorio from '../components/ComponentsObservatorio/Principa
 import CrearProyecto from '../components/ComponentsObservatorio/CrearProyecto/CrearProyecto'
 import Buscador from '../components/ComponentsObservatorio/Buscador/Buscador'
 import Proyecto from '../components/ComponentsObservatorio/Proyecto/Proyecto';
+import NavBar from "../components/ComponentsHome/NavBar/NavBar";
+import Footer from "../components/ComponentsHome/Footer/Footer";
 
 
 
@@ -9,10 +11,12 @@ import Proyecto from '../components/ComponentsObservatorio/Proyecto/Proyecto';
 function observatorio ( ){
         return( 
                 <>
+                    <NavBar></NavBar>  
                     <PrincipalObservatorio></PrincipalObservatorio>
                     <CrearProyecto></CrearProyecto>
                     <Buscador></Buscador>
                     <Proyecto></Proyecto>
+                    <Footer></Footer>
                 </>
         );
 }
