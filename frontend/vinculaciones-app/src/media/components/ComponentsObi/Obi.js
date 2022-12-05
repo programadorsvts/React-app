@@ -79,7 +79,7 @@ function herramienta(){
                                 
                                 <Row className='mt-5'>
                                         <h1 className='encabezado-2 encabezado-1 text-center mt-5'>Unidad de Búsqueda Inteligente</h1>
-                                        <p className="encabezado-3 mt-5 text-center">Desde la Secretaria de Vinculaciones Tecnológica y Social brindamos un Hubo de herramientas para la facilidad y optimización de búsquedas..</p> 
+                                        <p className="encabezado-3 mt-5 text-center">Desde la Secretaria de Vinculaciones Tecnológica y Social brindamos un Hub de herramientas para la facilidad y optimización de búsquedas.</p> 
                                         <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta1}></ObiCard> 
                                         </Col>
