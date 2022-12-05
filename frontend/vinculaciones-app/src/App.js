@@ -15,6 +15,8 @@ import NotFoundPage from './media/pages/NotFoundPage'
 import HerramientasPage from './media/pages/ObiPage'
 import CrearProyectoPage from "./media/pages/CrearProyectoPage";
 import Restablecer from './media/components/ComponentsRestablecerPass/Restablecer'
+import MisProyectos from './'
+
 /* import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
 import Footer from "./media/components/ComponentsHome/Footer/Footer"; */
 
@@ -66,7 +68,8 @@ function App() {
 
         <Route exact path="/SingUpPage" element={<SingUpPage />} />
 
-       
+       <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
+
         <Route exact path="/CrearProyectoPage"  element={
                       <ProtectedRoute user={user}>
                             
