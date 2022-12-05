@@ -38,7 +38,7 @@ function FormularioCrear() {
             console.log(error)
         })
     
-    }, [])
+    }, [areas])
     
 
     return (

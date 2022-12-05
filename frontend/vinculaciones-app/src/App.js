@@ -15,7 +15,7 @@ import NotFoundPage from './media/pages/NotFoundPage'
 import HerramientasPage from './media/pages/ObiPage'
 import CrearProyectoPage from "./media/pages/CrearProyectoPage";
 import Restablecer from './media/components/ComponentsRestablecerPass/Restablecer'
-import MisProyectos from './'
+import MisProyectosPage from './media/pages/MisProyectosPage'
 
 /* import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
 import Footer from "./media/components/ComponentsHome/Footer/Footer"; */
