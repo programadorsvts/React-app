@@ -31,7 +31,7 @@ function NavBar() {
   {
     UserButtons = 
     <>
-      <Button onClick={() => {  navigate("/mis-proyectos")  ;  closeOffCanvas()  }} >Mis proyectos</Button>
+      <Button onClick={() => {  navigate("/MisProyectosPage")  ;  closeOffCanvas()  }} >Mis proyectos</Button>
       <Button onClick={() => {  logoutSubmit()  ;  closeOffCanvas()  }} >Cerrar sesion</Button>
     </>
   }
