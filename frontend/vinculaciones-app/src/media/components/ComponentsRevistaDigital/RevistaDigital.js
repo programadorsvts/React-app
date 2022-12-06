@@ -45,7 +45,7 @@ function revista(){
           const revista6=
         {  
                 imagen:'assets/revistadigital/revista6.jpg',  
-                link:'',                            
+                link:'assets/revistadigital/revistapdf/Revista-6.pdf',                            
                 titulo:'Volumen 3 - Numero 6' ,    
                 fecha:'Diciembre 2022 ' , 
                 isbn:''  

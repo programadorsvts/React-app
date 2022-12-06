@@ -21,7 +21,7 @@ function ProyectosPublicados () {
     return(
         <>
         <Container>
-        <h1 className='encabezado-2 mb-5'>Proyectos Publicados</h1>
+        <h1 className='encabezado-2 mb-5'>Catalogo de Proyectos de Inovacion</h1>
             <Container className="proyecto">
                 {
                     proyectos.map((proyecto) => {
