@@ -50,47 +50,52 @@ function App() {
   const [user,SetUser] = useState(false)
 
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
+    
+      <Router>
+        <Layout>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
 
-        <Route exact path="/ObservatorioPage"  element={
-                      <ProtectedRoute user={ user }>
-                            
-                            <Observatorio />
+            <Route exact path="/ObservatorioPage"  element={
+                          <ProtectedRoute user={ user }>
+                                
+                                <Observatorio />
+                                
+                          </ProtectedRoute>
+              }/>
 
-                      </ProtectedRoute>
-           }/>
+            <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
 
-        <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
+            <Route exact path="/LoginPage" element={<LoginPage user={user} />} />
 
-        <Route exact path="/LoginPage" element={<LoginPage user={user} />} />
+            <Route exact path="/SingUpPage" element={<SingUpPage />} />
 
-        <Route exact path="/SingUpPage" element={<SingUpPage />} />
+          <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
 
-       <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
+            <Route exact path="/CrearProyectoPage"  element={
+                          <ProtectedRoute user={user}>
+                                
+                                <CrearProyectoPage/>
 
-        <Route exact path="/CrearProyectoPage"  element={
+                          </ProtectedRoute>
+              }/>
+
+
+            <Route exact path="/RestablecerPage"  element={
                       <ProtectedRoute user={user}>
                             
-                            <CrearProyectoPage/>
+                            <Restablecer/>
 
                       </ProtectedRoute>
-           }/>
+              }/>
 
+            <Route exact path=" * " element={<NotFoundPage />} />
+          </Routes>
+        </Layout>  
+      </Router>
+    
 
-        <Route exact path="/RestablecerPage"  element={
-                  <ProtectedRoute user={user}>
-                        
-                        <Restablecer/>
-
-                  </ProtectedRoute>
-          }/>
-
-        <Route exact path=" * " element={<NotFoundPage />} />
-      </Routes>
-    </Router>
   );
 }
 

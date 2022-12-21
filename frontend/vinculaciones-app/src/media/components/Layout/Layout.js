@@ -11,4 +11,4 @@ import Footer from '../ComponentsHome/Footer/Footer'
     )
  }
  
- 
+ export default layout

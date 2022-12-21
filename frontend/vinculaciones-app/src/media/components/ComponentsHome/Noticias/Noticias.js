@@ -32,7 +32,7 @@ function noticias() {
                 <h3 className="encabezado-2  mt-5 d-flex justify-content-center">Noticias</h3>
                 <Container fluid className='container-noticias mt-5'>
                         
-                        <Row>
+                        <Row className='d-flex justift-content-center'>
                                 <Col className=''>
                                         <Card info={noticia1}></Card>
                                 </Col>

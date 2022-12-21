@@ -6,13 +6,12 @@ import Principal from '../components/ComponentsHome/Principal/Principal'
 import Redes from '../components/ComponentsHome/Redes/Redes'
 import Vinculaciones from '../components/ComponentsHome/Vinculaciones/Vinculaciones'
 import Stan from '../components/ComponentsHome/Stan/Stan'
-import NavBar from "../components/ComponentsHome/NavBar/NavBar";
-import Footer from "../components/ComponentsHome/Footer/Footer";
+
 
 function Home (){
     return(
         <>
-        <NavBar></NavBar>
+        
             <Principal></Principal>
             <Noticias ></Noticias> 
             <Gestion></Gestion>
@@ -21,7 +20,7 @@ function Home (){
             <Vinculaciones></Vinculaciones>
             <Redes></Redes>
             <Consulta></Consulta>
-            <Footer></Footer>
+            >
         </>
     );
 }
