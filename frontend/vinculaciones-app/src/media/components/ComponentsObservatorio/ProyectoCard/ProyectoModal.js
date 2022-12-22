@@ -21,7 +21,7 @@ function ProyectoModal(props) {
             <Modal.Body>
                 <h4 className='encabezado-2 mb-3'>{props.proyecto.title}</h4>
                 <p className='encabezado-4 mb-1'>{props.proyecto.director_name}</p>
-                <p className='encabezado-4 mb-4'>Organización {props.proyecto.organization == 0 ? "Pública" : "Privada"}</p>
+                <p className='encabezado-4 mb-4'>Organización {props.proyecto.organization === 0 ? "Pública" : "Privada"}</p>
                 <p className='text-1 mb-1'>CONTACTO:</p>
                 <p className='text-2 mb-1'>{props.proyecto.email}</p>
                 <p className='text-2 mb-1'>{props.proyecto.phone_number}</p>

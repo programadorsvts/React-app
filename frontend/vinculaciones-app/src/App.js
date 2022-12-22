@@ -24,6 +24,7 @@ import Footer from "./media/components/ComponentsHome/Footer/Footer"; */
 /////////////////Bootstrap/////////////////////////////////
 import "./media/styles/index.css"
 
+
 /////////////////Imports//////////////////////////////////
 import {useState } from 'react';
 

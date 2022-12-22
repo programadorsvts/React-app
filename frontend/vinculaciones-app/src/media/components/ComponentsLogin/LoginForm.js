@@ -7,6 +7,7 @@ import '../../styles/form.css';
 import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 import { useState } from 'react';
+import Swal from 'sweetalert2'
 
 function LoginForm() {
 
@@ -38,6 +39,7 @@ function LoginForm() {
           console.log(response);
           localStorage.setItem('local-email', values.email);
           localStorage.setItem('local-token', response.data.token);
+          Swal.fire ({ position: 'top-end', icon: 'success', title: 'Seccion iniciada Correctamente', showConfirmButton: false, timer: 1800 })
           navigate("/")
         })
         .catch(function (error) {

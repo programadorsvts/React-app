@@ -8,6 +8,7 @@ import {useNavigate,NavLink} from "react-router-dom";
 import './navbar.css';
 import Axios from 'axios';
 
+
 function NavBar() {
   const navigate = useNavigate();
   const offCanvasRef = useRef();
@@ -20,15 +21,20 @@ function NavBar() {
     Axios.get('/api/checkAuth')
     .then((response) => {
       setAuth(true)
+      console.log('ENTRO AL THEM')
+     
     })
     .catch((error) => {
+      console.log('ENTRO AL CATCH')
       console.log(error)
       setAuth(false)
+      
     })
   },[auth])
 
   if(auth)
   {
+   
     UserButtons = 
     <>
       <Button onClick={() => {  navigate("/MisProyectosPage")  ;  closeOffCanvas()  }} >Mis proyectos</Button>
@@ -36,6 +42,7 @@ function NavBar() {
     </>
   }
   else {
+    
     UserButtons = 
     <>
       <Button onClick={() => {  navigate("/LoginPage")  ;  closeOffCanvas()  }} >Iniciar sesión</Button>
