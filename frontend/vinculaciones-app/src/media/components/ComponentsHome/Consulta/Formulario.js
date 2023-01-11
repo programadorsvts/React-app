@@ -3,7 +3,8 @@ import '../../../styles/form.css';
 import './form-contacto.css';
 import * as Yup from 'yup';
 import { Formik,} from 'formik';
-import { useState } from 'react';
+import { useState,useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 
  export const Formulario = () => {
@@ -20,6 +21,19 @@ import { useState } from 'react';
   });
 
   const [isSubmited, setIsSubmited] = useState(false)
+
+  
+   const SendEmail = (e) => {
+    const form = useRef();
+    e.preventDefault();
+
+    emailjs.sendForm('service_vd3tb4o', 'template_zjx272g', form.current, 'A9urjmdZT3uPy4bs2')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
     
 
   return(
@@ -98,7 +112,7 @@ import { useState } from 'react';
                 {errors.consulta}
               </Form.Control.Feedback>
           </Form.Group>
-          <Button className='mt-3' onClick={handleSubmit}>Enviar</Button><br></br>
+          <Button className='mt-3' onClick={SendEmail }>Enviar</Button><br></br>
           {isSubmited && 
             <p className='alert-submited'>
               La consulta ha sido enviada exitosamente. Espere a ser contactado.
