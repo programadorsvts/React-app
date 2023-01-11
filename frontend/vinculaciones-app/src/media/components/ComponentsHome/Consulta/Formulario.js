@@ -21,12 +21,11 @@ import emailjs from '@emailjs/browser';
   });
 
   const [isSubmited, setIsSubmited] = useState(false)
-
+  const form = useRef();
   
    const SendEmail = (e) => {
-    const form = useRef();
+   
     e.preventDefault();
-
     emailjs.sendForm('service_vd3tb4o', 'template_zjx272g', form.current, 'A9urjmdZT3uPy4bs2')
       .then((result) => {
           console.log(result.text);
@@ -52,7 +51,7 @@ import emailjs from '@emailjs/browser';
       }}
   >
   {({handleChange, handleSubmit, handleBlur, values, touched ,errors}) => (
-        <Form className='form form-contacto' onSubmit={handleSubmit}>
+        <Form className='form form-contacto' ref={form} onSubmit={SendEmail}>
           <Form.Group controlId="Input1">
             <Form.Label className="encabezado-4">Nombre</Form.Label>
             <Form.Control 
