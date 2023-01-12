@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { Formik,} from 'formik';
 import { useState,useRef } from 'react';
 import emailjs from '@emailjs/browser';
-
+import Swal from 'sweetalert2'
 
  export const Formulario = () => {
 
@@ -29,6 +29,10 @@ import emailjs from '@emailjs/browser';
     emailjs.sendForm('service_vd3tb4o', 'template_zjx272g', form.current, 'A9urjmdZT3uPy4bs2')
       .then((result) => {
           console.log(result.text);
+          Swal.fire(
+            'Consulta Enviada Exitosamente',
+            'success'
+          )
       }, (error) => {
           console.log(error.text);
       });
@@ -112,10 +116,7 @@ import emailjs from '@emailjs/browser';
               </Form.Control.Feedback>
           </Form.Group>
           <Button className='mt-3' onClick={SendEmail }>Enviar</Button><br></br>
-          {isSubmited && 
-            <p className='alert-submited'>
-              La consulta ha sido enviada exitosamente. Espere a ser contactado.
-            </p>}
+          
         </Form>
         )}
     </Formik>
