@@ -141,6 +141,9 @@ function FormularioCrear() {
                     isValid={touched.area && !errors.area}
                     isInvalid={touched.area && errors.area}>
                         <option value={0}>Seleccione área tematica</option>
+                        <option value={1}>Salud</option>
+                        <option value={2}>Alimentos</option>
+                        <option value={2}>Tecnologia</option>
                         
                         { 
                         areas.map((area) => {

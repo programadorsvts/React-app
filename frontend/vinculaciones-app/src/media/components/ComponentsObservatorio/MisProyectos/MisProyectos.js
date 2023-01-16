@@ -2,6 +2,7 @@ import Axios from 'axios';
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
+import Pagination from '../Pagination/Pagination';
 import "./proyecto.css"
 
 function MisProyectos () {
@@ -25,8 +26,10 @@ function MisProyectos () {
     return(
         <>
         <Container>
-        <h1 className='encabezado-2 my-5'>Proyectos publicados por mi</h1>
-            <Container className="proyecto">
+            <h1 className='encabezado-2 my-5'>Proyectos publicados por mi</h1>
+       
+            {/* <Pagination data={proyectos}></Pagination> */}
+           <Container className="proyecto">
                 {
                    proyectos.map((proyecto) => {
                     return(
@@ -34,7 +37,7 @@ function MisProyectos () {
                 )
                 })
                 }
-            </Container>
+            </Container> 
         </Container>   
         </>
     );

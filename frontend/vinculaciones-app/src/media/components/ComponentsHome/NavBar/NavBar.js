@@ -13,8 +13,7 @@ function NavBar() {
   const navigate = useNavigate();
   const offCanvasRef = useRef();
   const [auth, setAuth] = useState(null);
-  const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
-  let UserButtons = ''
+  let UserButtons = ' '
   
   useEffect(() => {
 
@@ -37,16 +36,16 @@ function NavBar() {
    
     UserButtons = 
     <>
-      <Button onClick={() => {  navigate("/MisProyectosPage")  ;  closeOffCanvas()  }} >Mis proyectos</Button>
-      <Button onClick={() => {  logoutSubmit()  ;  closeOffCanvas()  }} >Cerrar sesion</Button>
+      <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
+      <Button onClick={() => {  logoutSubmit()  ;   }} >Cerrar sesion</Button>
     </>
   }
   else {
     
     UserButtons = 
     <>
-      <Button onClick={() => {  navigate("/LoginPage")  ;  closeOffCanvas()  }} >Iniciar sesión</Button>
-      <Button onClick={() => {  navigate("/SingUpPage")  ;  closeOffCanvas()  }} >Registrarse</Button>
+      <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
+      <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
     </>
   }
 
@@ -80,10 +79,10 @@ function NavBar() {
 
               <Offcanvas.Body >
                 <Nav className="justify-content-start flex-grow-1" >
-                  <NavLink to="/" onClick={closeOffCanvas} className="text-3">inicio</ NavLink >
-                  <NavLink to="/RevistaDigitalPage" onClick={closeOffCanvas} className="text-3">Revista Digital</NavLink >
-                  <NavLink to="/ObiPage" onClick={closeOffCanvas} className="text-3">Ubi </NavLink >  
-                  <NavLink to="/ObservatorioPage" onClick={closeOffCanvas} className="text-3">Observatorio</NavLink >   
+                  <NavLink to="/" className="text-3">inicio</ NavLink >
+                  <NavLink to="/RevistaDigitalPage"  className="text-3">Revista Digital</NavLink >
+                  <NavLink to="/ObiPage"className="text-3">Ubi </NavLink >  
+                  <NavLink to="/ObservatorioPage"  className="text-3">Observatorio</NavLink >   
                 </Nav>
                 <Nav className="navbar-buttons">
                   {UserButtons}
