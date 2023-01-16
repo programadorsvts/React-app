@@ -1,8 +1,8 @@
 import Axios from 'axios';
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
-import ProyectoCard from '../ProyectoCard/ProyectoCard';
-import "./proyecto.css"
+import Pagination from '../Pagination/Pagination';
+
 
 function ProyectosPublicados () {
 
@@ -22,15 +22,17 @@ function ProyectosPublicados () {
         <>
         <Container>
         <h1 className='encabezado-2 mb-5'>Catalogo de Proyectos de Inovacion</h1>
-            <Container className="proyecto">
+            { /* <Container className="proyecto">
                 {
                     proyectos.map((proyecto) => {
                         return(
                         <ProyectoCard key={proyecto.id} proyecto={proyecto} ></ProyectoCard>
                     )
-                    })
+                    }) 
+                    
                 }
-            </Container>
+            </Container> */}
+            <Pagination data={proyectos}></Pagination>
         </Container>   
         </>
     );

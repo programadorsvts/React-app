@@ -22,9 +22,6 @@ function MisProyectos () {
         })
     }, [])
 
-
-    
-
     return(
         <>
         <Container>
