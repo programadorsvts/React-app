@@ -39,7 +39,7 @@ function LoginForm() {
           console.log(response);
           localStorage.setItem('local-email', values.email);
           localStorage.setItem('local-token', response.data.token);
-          Swal.fire ({ position: 'top-end', icon: 'success', title: 'Seccion iniciada Correctamente', showConfirmButton: false, timer: 1800 })
+          Swal.fire ({ icon: 'success', title: 'Seccion iniciada Correctamente', showConfirmButton: false, timer: 1800 })
           navigate("/")
         })
         .catch(function (error) {
