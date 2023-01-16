@@ -2,7 +2,7 @@ import Axios from 'axios';
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
-import Pagination from '../Pagination/Pagination';
+/* import Pagination from '../Pagination/Pagination'; */
 import "./proyecto.css"
 
 function MisProyectos () {
