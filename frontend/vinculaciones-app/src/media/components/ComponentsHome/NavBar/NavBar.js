@@ -7,6 +7,7 @@ import {useEffect, useRef, useState} from 'react';
 import {useNavigate,NavLink} from "react-router-dom";
 import './navbar.css';
 import Axios from 'axios';
+import Swal from 'sweetalert2'
 
 
 function NavBar() {
@@ -20,11 +21,8 @@ function NavBar() {
     Axios.get('/api/checkAuth')
     .then((response) => {
       setAuth(true)
-      console.log('ENTRO AL THEM')
-     
     })
     .catch((error) => {
-      console.log('ENTRO AL CATCH')
       console.log(error)
       setAuth(false)
       
@@ -55,6 +53,7 @@ function NavBar() {
       localStorage.removeItem("local-token")
       localStorage.removeItem("local-email")
       setAuth(false)
+      Swal.fire ({title: 'Sesion Cerrada Correctamente', showConfirmButton: false, timer: 2000 })
       navigate("/")
     })
     .catch((error) => {

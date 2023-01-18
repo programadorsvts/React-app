@@ -9,9 +9,9 @@ import Stan from '../components/ComponentsHome/Stan/Stan'
 
 
 function Home (){
+   window.scrollTo({top: 0,left: 0,behavior: 'smooth'});
     return(
         <>
-        
             <Principal></Principal>
             <Noticias ></Noticias> 
             <Gestion></Gestion>
