@@ -14,39 +14,6 @@ function NavBar() {
   const navigate = useNavigate();
   const offCanvasRef = useRef();
   const [auth, setAuth] = useState(null);
-  let UserButtons = ' '
-  
-  useEffect(() => {
-
-    Axios.get('/api/checkAuth')
-    .then((response) => {
-      setAuth(true)
-    })
-    .catch((error) => {
-      console.log(error)
-      setAuth(false)
-      
-    })
-  },[auth])
-
-  if(auth)
-  {
-   
-    UserButtons = 
-    <>
-      <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
-      <Button onClick={() => {  logoutSubmit()  ;   }} >Cerrar sesion</Button>
-    </>
-  }
-  else {
-    
-    UserButtons = 
-    <>
-      <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
-      <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
-    </>
-  }
-
   const logoutSubmit = () => {
     Axios.post("/api/logout")
     .then((response) => {
@@ -60,6 +27,45 @@ function NavBar() {
       console.log(error)
     })
   }
+  let UserButtons = ' '
+  
+  useEffect(() => {
+    Axios.get('/api/checkAuth')
+    .then((response) => {
+      setAuth(true)
+    })
+    .catch((error) => {
+      console.log(error)
+      setAuth(false)
+    })
+  },[auth])
+
+  useEffect( ()=>{
+     verificacion(auth);
+  } ,[])
+const verification = (auth) => {
+  return (
+     if(auth){
+        console.log('cartel del if',auth )
+      
+        return UserButtons = 
+        <>
+          <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
+          <Button onClick={() => {  logoutSubmit()  ;   }} >Cerrar sesion</Button>
+        </>
+      }
+    else {
+      console.log('cartel del else',auth )
+      return UserButtons = 
+      <>
+        <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
+        <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
+      </>
+    }
+  );
+}
+
+ 
 
   return (
     <>
