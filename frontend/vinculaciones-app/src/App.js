@@ -1,10 +1,8 @@
 /////////////////////////////React Router Dom////////////////////////////////////
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {ProtectedRoute} from './media/components/ProtectedRoute/ProtectedRoute'
-
 /////////////////////////////AXIOS////////////////////////////////////////////////
 import Axios from "axios";
-
 ///////////////////////Pages/////////////////////////////////////////
 import Observatorio from './media/pages/ObservatorioPage'
 import RevistaDigital from './media/pages/RevistaDigitalPage'
@@ -17,18 +15,11 @@ import CrearProyectoPage from "./media/pages/CrearProyectoPage";
 import Restablecer from './media/components/ComponentsRestablecerPass/Restablecer'
 import MisProyectosPage from './media/pages/MisProyectosPage'
 import Layout from './media/components/Layout/Layout'
-
-/* import NavBar from "./media/components/ComponentsHome/NavBar/NavBar"
-import Footer from "./media/components/ComponentsHome/Footer/Footer"; */
-
 /////////////////Bootstrap/////////////////////////////////
 import "./media/styles/index.css"
-
-
 /////////////////Imports//////////////////////////////////
-import {useState } from 'react';
-
-
+import {useContext, useState,useEffect } from 'react';
+import LoginContext  from "./LoginProvider";
 
 
 /////////////////TOKEN/////////////////////////////////
@@ -45,55 +36,69 @@ import {useState } from 'react';
   })
 ///////////////////////////////////////////////////////
 
-
 function App() {
-
   const [user,SetUser] = useState(false)
+  
+
+  /////////////////Login Auth/////////////////////////////////
+    const [auth, setAuth] = useState(null);
+  useEffect(() => {
+    Axios.get('/api/checkAuth')
+    .then((response) => {
+      setAuth(true)
+    })
+    .catch((error) => {
+      console.log(error)
+      setAuth(false)
+    })
+  },[auth])
+
 
   return (
-    
       <Router>
-        <Layout>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
+        <LoginContext.Provider value={auth}>
+          <Layout>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
 
-            <Route exact path="/ObservatorioPage"  element={
-                          <ProtectedRoute user={ user }>
-                                
-                                <Observatorio />
-                                
-                          </ProtectedRoute>
-              }/>
+              <Route exact path="/ObservatorioPage"  element={
+                            <ProtectedRoute user={ user }>
+                                  
+                                  <Observatorio />
+                                  
+                            </ProtectedRoute>
+                }/>
 
-            <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
+              <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
 
-            <Route exact path="/LoginPage" element={<LoginPage user={user} />} />
+              <Route exact path="/LoginPage" element={<LoginPage user={user} />} />
 
-            <Route exact path="/SingUpPage" element={<SingUpPage />} />
+              <Route exact path="/SingUpPage" element={<SingUpPage />} />
 
-          <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
+            <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
 
-            <Route exact path="/CrearProyectoPage"  element={
-                          <ProtectedRoute user={user}>
-                                
-                                <CrearProyectoPage/>
+              <Route exact path="/CrearProyectoPage"  element={
+                            <ProtectedRoute user={user}>
+                                  
+                                  <CrearProyectoPage/>
 
-                          </ProtectedRoute>
-              }/>
+                            </ProtectedRoute>
+                }/>
 
 
-            <Route exact path="/RestablecerPage"  element={
-                      <ProtectedRoute user={user}>
-                            
-                            <Restablecer/>
+              <Route exact path="/RestablecerPage"  element={
+                        <ProtectedRoute user={user}>
+                              
+                              <Restablecer/>
 
-                      </ProtectedRoute>
-              }/>
+                        </ProtectedRoute>
+                }/>
 
-            <Route exact path=" * " element={<NotFoundPage />} />
-          </Routes>
-        </Layout>  
+              <Route exact path=" * " element={<NotFoundPage />} />
+            </Routes>
+          </Layout>  
+        </LoginContext.Provider>  
       </Router>
     
 

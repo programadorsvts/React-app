@@ -3,23 +3,24 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState,useContext} from 'react';
 import {useNavigate,NavLink} from "react-router-dom";
 import './navbar.css';
 import Axios from 'axios';
 import Swal from 'sweetalert2'
+import  LoginContext  from '../../../../LoginProvider';
 
 
 function NavBar() {
   const navigate = useNavigate();
+  const auth=useContext(LoginContext);
   const offCanvasRef = useRef();
-  const [auth, setAuth] = useState(null);
   const logoutSubmit = () => {
     Axios.post("/api/logout")
     .then((response) => {
       localStorage.removeItem("local-token")
       localStorage.removeItem("local-email")
-      setAuth(false)
+      auth=false;
       Swal.fire ({title: 'Sesion Cerrada Correctamente', showConfirmButton: false, timer: 2000 })
       navigate("/")
     })
@@ -27,44 +28,66 @@ function NavBar() {
       console.log(error)
     })
   }
-  let UserButtons = ' '
+  var UserButtons = ' '
   
-  useEffect(() => {
+/*   useEffect(() => {
     Axios.get('/api/checkAuth')
     .then((response) => {
       setAuth(true)
+     
     })
     .catch((error) => {
       console.log(error)
       setAuth(false)
     })
-  },[auth])
+  },[auth]) */
 
-  useEffect( ()=>{
-     verificacion(auth);
-  } ,[])
+
 const verification = (auth) => {
-  return (
-     if(auth){
-        console.log('cartel del if',auth )
-      
-        return UserButtons = 
-        <>
-          <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
-          <Button onClick={() => {  logoutSubmit()  ;   }} >Cerrar sesion</Button>
-        </>
+      if(auth){
+          console.log('cartel del if',auth )
+          return(
+             
+              UserButtons = 
+              <>
+                <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
+                <Button onClick={() => {  logoutSubmit()  ;   }} >Cerrar sesion</Button>
+                
+              </>
+          ) 
+        }
+      else {
+        console.log('cartel del else',auth )
+        return(
+            
+              UserButtons = 
+              <>
+                <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
+                <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
+              </>
+        ) 
       }
-    else {
-      console.log('cartel del else',auth )
-      return UserButtons = 
-      <>
-        <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
-        <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
-      </>
-    }
-  );
 }
-
+/*  if(auth){
+          console.log('cartel del if',auth )
+   
+              UserButtons = 
+              <>
+                <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
+                <Button onClick={() => {  logoutSubmit()  ;   }} >Cerrar sesion</Button>
+              </>
+        
+        }
+      else {
+        console.log('cartel del else',auth )
+       
+              UserButtons = 
+              <>
+                <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
+                <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
+              </>
+   
+      } */
  
 
   return (
@@ -90,7 +113,7 @@ const verification = (auth) => {
                   <NavLink to="/ObservatorioPage"  className="text-3">Observatorio</NavLink >   
                 </Nav>
                 <Nav className="navbar-buttons">
-                  {UserButtons}
+                  { verification(auth)}
                   <img src='assets/svgs/Escudo-UNSL-Blanco.svg'  width="100" height="50" className="d-inline-block " alt=""/>
                 </Nav>
               </Offcanvas.Body>
