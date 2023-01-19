@@ -18,8 +18,8 @@ import Layout from './media/components/Layout/Layout'
 /////////////////Bootstrap/////////////////////////////////
 import "./media/styles/index.css"
 /////////////////Imports//////////////////////////////////
-import {useContext, useState,useEffect } from 'react';
-import LoginContext  from "./LoginProvider";
+import { useState} from 'react';
+import { LoginProvider}  from "./LoginProvider";
 
 
 /////////////////TOKEN/////////////////////////////////
@@ -40,23 +40,9 @@ function App() {
   const [user,SetUser] = useState(false)
   
 
-  /////////////////Login Auth/////////////////////////////////
-    const [auth, setAuth] = useState(null);
-  useEffect(() => {
-    Axios.get('/api/checkAuth')
-    .then((response) => {
-      setAuth(true)
-    })
-    .catch((error) => {
-      console.log(error)
-      setAuth(false)
-    })
-  },[auth])
-
-
   return (
       <Router>
-        <LoginContext.Provider value={auth}>
+        <LoginProvider>
           <Layout>
             <Routes>
               <Route exact path="/" element={<Home />} />
@@ -98,7 +84,7 @@ function App() {
               <Route exact path=" * " element={<NotFoundPage />} />
             </Routes>
           </Layout>  
-        </LoginContext.Provider>  
+        </LoginProvider>  
       </Router>
     
 

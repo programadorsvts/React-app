@@ -3,19 +3,22 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import {useEffect, useRef, useState,useContext} from 'react';
+/* import {useEffect, useState} from 'react'; */
 import {useNavigate,NavLink} from "react-router-dom";
 import './navbar.css';
-import Axios from 'axios';
-import Swal from 'sweetalert2'
-import  LoginContext  from '../../../../LoginProvider';
+/* import Axios from 'axios';
+import Swal from 'sweetalert2' */
+import  {useLoginContext ,useLogOutContext}  from '../../../../LoginProvider';
 
 
 function NavBar() {
   const navigate = useNavigate();
-  const auth=useContext(LoginContext);
-  const offCanvasRef = useRef();
-  const logoutSubmit = () => {
+  var auth=useLoginContext();
+  const  logout=useLogOutContext();
+  let UserButtons=' '
+
+
+  /* const logoutSubmit = () => {
     Axios.post("/api/logout")
     .then((response) => {
       localStorage.removeItem("local-token")
@@ -27,67 +30,24 @@ function NavBar() {
     .catch((error) => {
       console.log(error)
     })
-  }
-  var UserButtons = ' '
-  
-/*   useEffect(() => {
-    Axios.get('/api/checkAuth')
-    .then((response) => {
-      setAuth(true)
-     
-    })
-    .catch((error) => {
-      console.log(error)
-      setAuth(false)
-    })
-  },[auth]) */
+  } */
 
-
-const verification = (auth) => {
-      if(auth){
+        if(auth){
           console.log('cartel del if',auth )
-          return(
-             
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
-                <Button onClick={() => {  logoutSubmit()  ;   }} >Cerrar sesion</Button>
-                
+                <Button onClick={() => {  logout();      }} >Cerrar sesion</Button>
               </>
-          ) 
         }
       else {
         console.log('cartel del else',auth )
-        return(
-            
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
                 <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
               </>
-        ) 
-      }
-}
-/*  if(auth){
-          console.log('cartel del if',auth )
-   
-              UserButtons = 
-              <>
-                <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
-                <Button onClick={() => {  logoutSubmit()  ;   }} >Cerrar sesion</Button>
-              </>
-        
-        }
-      else {
-        console.log('cartel del else',auth )
-       
-              UserButtons = 
-              <>
-                <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
-                <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
-              </>
-   
-      } */
+      } 
  
 
   return (
@@ -100,7 +60,7 @@ const verification = (auth) => {
               <img src='assets/svgs/Solo-LogoSVTS.svg' width="100" height="50" className="d-inline-block " alt=""/>
             </Navbar.Brand>
             <Navbar.Toggle className='navbar-toggler' aria-controls={`offcanvasNavbar-expand-${expand}`}/>
-            <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end"  ref={offCanvasRef}>
+            <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end" >
               <Offcanvas.Header closeButton >
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}></Offcanvas.Title>
               </Offcanvas.Header>
@@ -113,7 +73,7 @@ const verification = (auth) => {
                   <NavLink to="/ObservatorioPage"  className="text-3">Observatorio</NavLink >   
                 </Nav>
                 <Nav className="navbar-buttons">
-                  { verification(auth)}
+                  { UserButtons}
                   <img src='assets/svgs/Escudo-UNSL-Blanco.svg'  width="100" height="50" className="d-inline-block " alt=""/>
                 </Nav>
               </Offcanvas.Body>
