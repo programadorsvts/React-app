@@ -43,10 +43,10 @@ export function LoginProvider( {children } ){
     }
   
     return(
-        <LoginContext.Provider value={LogUser}>
-            <LogOutContext value={LogOutUser}>
+        <LoginContext.Provider value={auth}>
+            <LogOutContext.Provider value={auth}>
                    {children}
-            </LogOutContext>
+            </LogOutContext.Provider>
         </LoginContext.Provider>
     );
   }

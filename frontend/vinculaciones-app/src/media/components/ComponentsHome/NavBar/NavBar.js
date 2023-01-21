@@ -13,7 +13,7 @@ import  {useLoginContext ,useLogOutContext}  from '../../../../LoginProvider';
 
 function NavBar() {
   const navigate = useNavigate();
-  var auth=useLoginContext();
+  const login=useLoginContext();
   const  logout=useLogOutContext();
   let UserButtons=' '
 
@@ -32,8 +32,8 @@ function NavBar() {
     })
   } */
 
-        if(auth){
-          console.log('cartel del if',auth )
+         if(login){
+          console.log('cartel del if',login )
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
@@ -41,7 +41,7 @@ function NavBar() {
               </>
         }
       else {
-        console.log('cartel del else',auth )
+        console.log('cartel del else',login )
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
