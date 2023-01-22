@@ -14,7 +14,7 @@ import  {useAuthUserContext, useLogOutContext}  from '../../../../LoginProvider'
 function NavBar() {
   const navigate = useNavigate();
   
-  const  logout=useLogOutContext();
+  const logout=useLogOutContext();
   const auth=useAuthUserContext();
  
   let UserButtons=' '
@@ -25,7 +25,7 @@ function NavBar() {
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
-                <Button onClick={() => {  logout();      }} >Cerrar sesion</Button>
+                <Button onClick={() => {   logout   }} >Cerrar sesion</Button>
               </>
         }
       else {

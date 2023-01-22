@@ -25,19 +25,18 @@ export function LoginProvider( {children } ){
      const navigate = useNavigate();
 
      /////////////////User Auth/////////////////////////////////
-
-    const AuthUser  =async () => {
-       
-        const response = await  Axios.get('/api/checkAuth')
-                .then((response) => {
-                setAuth(true);
-            })
-            .catch((error) => {
-                console.log(error)
+      const  AuthUser = () => {
+            try {
+                Axios.get('/api/checkAuth') 
+                 setAuth(true);
+                return auth
+            }
+            catch (error) {
+                console.log(error);
                 setAuth(false);
-            })
-        return response;
-    }
+                return auth
+            }
+        } 
      /////////////////////////////////////////////////////////////
       console.log('Console del provider',auth)
      
@@ -60,12 +59,13 @@ export function LoginProvider( {children } ){
      /////////////////Login Out/////////////////////////////////
     const LogOutUser = () => {
         return(  
-            Axios.post("/api/logout")
-            .then((response) => {
+            Axios.post("/api/logout").then((response) => {
+
             localStorage.removeItem("local-token")
             localStorage.removeItem("local-email")
             setAuth(false);
             })
+            
             .catch((error) => {
             console.log(error)
             }))
