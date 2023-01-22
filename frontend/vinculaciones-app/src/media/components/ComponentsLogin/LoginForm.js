@@ -5,15 +5,16 @@ import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../styles/form.css';
 import { useNavigate } from 'react-router-dom';
-import Axios from 'axios';
+
 import { useState } from 'react';
-import Swal from 'sweetalert2'
+import  {useLoginContext}  from '../../../LoginProvider';
+
 
 function LoginForm() {
 
     const navigate = useNavigate();
-    const [errorSubmit, setErrorSubmit] = useState("")
-      const schema = Yup.object().shape({
+    const [errorSubmit, setErrorSubmit] = useState("");
+    const schema = Yup.object().shape({
         email: Yup.string()
           .email('El valor ingresado no es un email')
           .required('el email es obligatorio')
@@ -21,8 +22,8 @@ function LoginForm() {
         password: Yup.string()
           .required('La contraseña es obligatoria.')
           .min(8, 'La contraseña debe tener mínimo 8 caracteres')
-      });
-
+    });
+    const login=useLoginContext();
   return(
     <Formik    
       validationSchema={schema}
@@ -31,21 +32,7 @@ function LoginForm() {
               password:'',
           } }
           onSubmit={values => {
-            Axios.post('/api/login', {
-            "email": values.email,
-            "password": values.password
-        })
-        .then(response => {
-          console.log(response);
-          localStorage.setItem('local-email', values.email);
-          localStorage.setItem('local-token', response.data.token);
-          Swal.fire ({ icon: 'success', title: 'Sesion Iniciada Correctamente', showConfirmButton: false, timer: 2000 })
-          navigate("/")
-        })
-        .catch(function (error) {
-          console.log(error.response.data);
-          setErrorSubmit(error.response.data.message)
-        }) 
+           
         }}
       >
       {({handleChange, handleSubmit, handleBlur, values ,touched , errors}) => (

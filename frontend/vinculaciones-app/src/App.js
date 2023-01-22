@@ -41,53 +41,53 @@ function App() {
   
 
   return (
-     <LoginProvider>
-        <Router>
-            <Layout>
-              <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
+    
+  <Router>
+            <LoginProvider>
+                <Layout>
+                  <Routes>
+                    <Route exact path="/" element={<Home />} />
+                    <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
 
-                <Route exact path="/ObservatorioPage"  element={
-                              <ProtectedRoute user={ user }>
-                                    
-                                    <Observatorio />
-                                    
-                              </ProtectedRoute>
-                  }/>
+                    <Route exact path="/ObservatorioPage"  element={
+                                  <ProtectedRoute user={ user }>
+                                        
+                                        <Observatorio />
+                                        
+                                  </ProtectedRoute>
+                      }/>
 
-                <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
+                    <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
 
-                <Route exact path="/LoginPage" element={<LoginPage user={user} />} />
+                    <Route exact path="/LoginPage" element={<LoginPage user={user} />} />
 
-                <Route exact path="/SingUpPage" element={<SingUpPage />} />
+                    <Route exact path="/SingUpPage" element={<SingUpPage />} />
 
-              <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
+                  <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
 
-                <Route exact path="/CrearProyectoPage"  element={
+                    <Route exact path="/CrearProyectoPage"  element={
+                                  <ProtectedRoute user={user}>
+                                        
+                                        <CrearProyectoPage/>
+
+                                  </ProtectedRoute>
+                      }/>
+
+
+                    <Route exact path="/RestablecerPage"  element={
                               <ProtectedRoute user={user}>
                                     
-                                    <CrearProyectoPage/>
+                                    <Restablecer/>
 
                               </ProtectedRoute>
-                  }/>
+                      }/>
 
-
-                <Route exact path="/RestablecerPage"  element={
-                          <ProtectedRoute user={user}>
-                                
-                                <Restablecer/>
-
-                          </ProtectedRoute>
-                  }/>
-
-                <Route exact path=" * " element={<NotFoundPage />} />
-              </Routes>
-            </Layout>  
-        
-        </Router>
-       </LoginProvider>  
-    
+                    <Route exact path=" * " element={<NotFoundPage />} />
+                  </Routes>
+                </Layout>  
+            </LoginProvider>  
+  </Router>
+     
 
   );
 }

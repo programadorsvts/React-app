@@ -8,32 +8,20 @@ import {useNavigate,NavLink} from "react-router-dom";
 import './navbar.css';
 /* import Axios from 'axios';
 import Swal from 'sweetalert2' */
-import  {useLoginContext ,useLogOutContext}  from '../../../../LoginProvider';
+import  {useAuthUserContext, useLogOutContext}  from '../../../../LoginProvider';
 
 
 function NavBar() {
   const navigate = useNavigate();
-  const login=useLoginContext();
+  
   const  logout=useLogOutContext();
+  const auth=useAuthUserContext();
+ 
   let UserButtons=' '
 
-
-  /* const logoutSubmit = () => {
-    Axios.post("/api/logout")
-    .then((response) => {
-      localStorage.removeItem("local-token")
-      localStorage.removeItem("local-email")
-      auth=false;
-      Swal.fire ({title: 'Sesion Cerrada Correctamente', showConfirmButton: false, timer: 2000 })
-      navigate("/")
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-  } */
-
-         if(login){
-          console.log('cartel del if',login )
+        console.log('Console del NavBar',auth)
+        if(auth){
+         
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
@@ -41,7 +29,7 @@ function NavBar() {
               </>
         }
       else {
-        console.log('cartel del else',login )
+       
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
