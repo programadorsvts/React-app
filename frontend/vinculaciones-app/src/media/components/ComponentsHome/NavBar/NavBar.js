@@ -15,12 +15,12 @@ function NavBar() {
   const navigate = useNavigate();
   
   const logout=useLogOutContext();
-  const auth=useAuthUserContext();
+  const AuthUser=useAuthUserContext();
  
   let UserButtons=' '
-
-        console.log('Console del NavBar',auth)
-        if(auth){
+  
+        console.log('Console del NavBar',AuthUser)
+        /* if(AuthUser){
          
               UserButtons = 
               <>
@@ -35,7 +35,7 @@ function NavBar() {
                 <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
                 <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
               </>
-      } 
+      }  */
  
 
   return (

@@ -25,21 +25,22 @@ export function LoginProvider( {children } ){
      const navigate = useNavigate();
 
      /////////////////User Auth/////////////////////////////////
-      const  AuthUser = () => {
-            try {
-                Axios.get('/api/checkAuth') 
-                 setAuth(true);
-                return auth
-            }
-            catch (error) {
-                console.log(error);
-                setAuth(false);
-                return auth
-            }
-        } 
+    const  AuthUser= ()=> {
+
+                Axios.get('/user?ID=12345')
+                .then((response) =>{
+                    setAuth(true);
+                    console.log(response);
+                    return auth
+                })
+                .catch((error) =>{
+                   setAuth(false);
+                    console.log(error);
+                    return auth
+                })   
+           }          
      /////////////////////////////////////////////////////////////
-      console.log('Console del provider',auth)
-     
+      
      ///////////////////Log In///////////////////////////////////
      const LogUser = (props) => {
         Axios.post('/api/login', { "email": props.email,"password": props.password})
