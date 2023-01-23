@@ -1,6 +1,6 @@
 import React  from "react";
 import { useState,useContext } from "react";
-import {Axios } from "axios";
+import Axios  from "axios";
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
 
@@ -27,17 +27,18 @@ export function LoginProvider( {children } ){
      /////////////////User Auth/////////////////////////////////
     const  AuthUser= ()=> {
 
-                Axios.get('/user?ID=12345')
+                Axios.get('/api/checkAuth')
                 .then((response) =>{
                     setAuth(true);
                     console.log(response);
-                    return auth
+                   
                 })
                 .catch((error) =>{
                    setAuth(false);
                     console.log(error);
-                    return auth
+                   
                 })   
+                return auth
            }          
      /////////////////////////////////////////////////////////////
       

@@ -16,16 +16,17 @@ function NavBar() {
   
   const logout=useLogOutContext();
   const AuthUser=useAuthUserContext();
+  const auth=AuthUser();
  
   let UserButtons=' '
   
-        console.log('Console del NavBar',AuthUser)
-        /* if(AuthUser){
+        console.log('Console del NavBar',auth)
+         if(auth){
          
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
-                <Button onClick={() => {   logout   }} >Cerrar sesion</Button>
+                <Button onClick={() => {     }} >Cerrar sesion</Button>
               </>
         }
       else {
@@ -35,7 +36,7 @@ function NavBar() {
                 <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
                 <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
               </>
-      }  */
+      }  
  
 
   return (
