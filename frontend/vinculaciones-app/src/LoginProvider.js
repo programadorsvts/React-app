@@ -28,17 +28,17 @@ export function LoginProvider( {children } ){
      const navigate = useNavigate();
 
      /////////////////User Auth/////////////////////////////////
-    const  AuthUser = ()=> {
-                Axios.get('/api/checkAuth')
-                .then((response) =>{
-                    setAuth(true);
-                })
-                .catch((error) =>{
-                   setAuth(false);
-                     console.log(error); 
-                })   
-                return auth
-    }          
+        const  AuthUser = ()=> {
+                    Axios.get('/api/checkAuth')
+                    .then((response) =>{
+                        setAuth(true);
+                    })
+                    .catch((error) =>{
+                    setAuth(false);
+                        console.log(error); 
+                    },[])   
+                    return auth
+        }          
      /////////////////////////////////////////////////////////////
       
      ///////////////////Log In///////////////////////////////////

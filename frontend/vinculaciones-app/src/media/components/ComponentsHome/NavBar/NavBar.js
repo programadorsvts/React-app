@@ -15,8 +15,8 @@ function NavBar() {
   const navigate = useNavigate();
   const AuthUser=useAuthUserContext();
   const logout=useLogOutContext();
-  let UserButtons=' ';
  const [auth,setAuth]=useState(null);
+  let UserButtons=' ';
   
  useEffect(() => {
    setAuth(AuthUser());
