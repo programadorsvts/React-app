@@ -29,10 +29,11 @@ import Swal from 'sweetalert2'
     emailjs.sendForm('service_vd3tb4o', 'template_zjx272g', form.current, 'A9urjmdZT3uPy4bs2')
       .then((result) => {
           console.log(result.text);
-          Swal.fire(
-            'Consulta Enviada Exitosamente',
-            'success'
-          )
+          Swal.fire({
+            icon: 'success',
+            title: 'Consulta enviada Exitosamente',
+            timer: 2500
+          })
       }, (error) => {
           console.log(error.text);
       });
