@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import { useParams } from 'react-router-dom';
 
-const RegistroExitoso = () => {
+const RegistroExitosoPage = () => {
 
     let {userId} = useParams()
 
@@ -22,4 +22,4 @@ const RegistroExitoso = () => {
   )
 }
 
-export default RegistroExitoso
+export default RegistroExitosoPage

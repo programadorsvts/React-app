@@ -7,12 +7,16 @@ import { useNavigate } from 'react-router-dom';
 const LoginContext =React.createContext();
 const LogOutContext =React.createContext();
 const AuthUserContext =React.createContext();
+const SingUpUserContext=React.createContext();
  
 export const useLoginContext= ()=>{
     return useContext (LoginContext );
 }
 export const useLogOutContext= ()=>{
     return useContext (LogOutContext );
+}
+export const useSingUpUserContext=()=>{
+    return useContext(SingUpUserContext);
 }
 export const useAuthUserContext= ()=>{
     return useContext (AuthUserContext );
@@ -49,9 +53,36 @@ export function LoginProvider( {children } ){
         })
          .catch((error) => {
             console.log(error.response)
+            Swal.fire({
+                icon: 'error',
+                text: error.response.data.message  ,
+             })
             setErrorSubmit(error.response.data.message)
         })
          return errorSubmit
+    }
+     /////////////////////////////////////////////////////////////
+
+      ///////////////////Sing Up///////////////////////////////////
+     const SingUpUser = (email,password,confir) => {
+              Axios.post("api/register",{
+                "email": email,
+                "password": password,
+                "confirm_password": confir,
+              })
+              .then( (response ) => {
+                console.log(response)
+                navigate("/RegistroExitosoPage")
+              })
+              .catch((error)=> {
+               
+                console.log(error)
+                Swal.fire({
+                icon: 'error',
+                text: error.response.data.message,
+                })
+                setErrorSubmit(error.response.data.errors)
+              })
     }
      /////////////////////////////////////////////////////////////
 
@@ -67,17 +98,20 @@ export function LoginProvider( {children } ){
             .catch((error) => {
             console.log(error)
             
-            })
-           
+            })    
     }
     ///////////////////////////////////////////////////////////
+
+
     return(
         <LoginContext.Provider value={LogUser}>
-            <AuthUserContext.Provider value={AuthUser}>
-                  <LogOutContext.Provider value={LogOutUser}>
-                   {children}
-            </LogOutContext.Provider>
-            </AuthUserContext.Provider>
+            <SingUpUserContext.Provider value={SingUpUser}>
+                <AuthUserContext.Provider value={AuthUser}>
+                    <LogOutContext.Provider value={LogOutUser}>
+                        {children}
+                    </LogOutContext.Provider>
+                </AuthUserContext.Provider>
+            </SingUpUserContext.Provider>    
         </LoginContext.Provider>
     );
   }

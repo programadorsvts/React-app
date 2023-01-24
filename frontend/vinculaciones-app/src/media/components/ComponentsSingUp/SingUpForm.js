@@ -5,12 +5,11 @@ import { Formik} from 'formik';
 import '../../styles/form.css';
 import Axios from "axios"
 import { useState } from 'react';
-
+import  {useSingUpUserContext}  from '../../../LoginProvider';
 const SingUpForm =() => {
 
   const navigate = useNavigate()
-  const [errorsSubmit, setErrorsSubmit] = useState({})
-
+    let errorSubmit=' '
   const schema = Yup.object().shape({
     email: Yup.string().email('El valor ingresado no es un email').required('el email es obligatorio').trim('El email no permite espacios en blanco'),
     password: Yup.string()
@@ -21,6 +20,8 @@ const SingUpForm =() => {
       .min(8, 'La contraseña debe tener mínimo 8 caracteres'),
   });
 
+  const SingUp=useSingUpUserContext();
+
   return (
     <Formik    
         validationSchema={schema}
@@ -30,21 +31,7 @@ const SingUpForm =() => {
                 confir:'',
             }}
             onSubmit={values => {
-              // VALIDAR ACÁ si es unsl.edu.ar o email.unsl.edu.ar
-              Axios.post("api/register",{
-                "email": values.email,
-                "password": values.password,
-                "confirm_password": values.confir,
-              })
-              .then(response => {
-                console.log(response)
-                navigate("/registro-exitoso")
-              })
-              .catch(error => {
-                setErrorsSubmit({})
-                console.log(error)
-                setErrorsSubmit(error.response.data.errors)
-              })
+               errorSubmit= SingUp(values.email,values.password,values.confir);
             }}
             >
             {({handleChange, handleSubmit, handleBlur, values ,touched , errors}) => (
@@ -66,7 +53,7 @@ const SingUpForm =() => {
                         {errors.email }
                     </Form.Control.Feedback>
                     {
-                      errorsSubmit.email ? <p className='error-submit'>{errorsSubmit.email}</p> : ""
+                      errorSubmit.email ? <p className='error-submit'>{errorSubmit.email}</p> : ""
                     }
                 </Form.Group>    
                 <Form.Group className="mb-3" controlId="ContraseñaSingUp" >
@@ -85,7 +72,7 @@ const SingUpForm =() => {
                         {errors.password }
                     </Form.Control.Feedback>
                     {
-                      errorsSubmit.password ? <p>{errorsSubmit.password}</p> : ""
+                      errorSubmit.password ? <p>{errorSubmit.password}</p> : ""
                     }
                 </Form.Group>
                   <Form.Group className="mb-3" controlId="contraseñaconfig2" >
