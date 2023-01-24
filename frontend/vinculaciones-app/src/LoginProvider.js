@@ -61,7 +61,7 @@ export function LoginProvider( {children } ){
             localStorage.removeItem("local-token")
             localStorage.removeItem("local-email")
             setAuth(false);
-            Swal.fire ({ title: 'Sesion Cerrada', showConfirmButton: false, timer: 2000 });
+            Swal.fire ({ icon: 'warning', title: 'Sesion Cerrada', showConfirmButton: false, timer: 2000 });
             navigate("/LoginPage");
             })
             .catch((error) => {
