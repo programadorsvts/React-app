@@ -28,14 +28,14 @@ export function LoginProvider( {children } ){
      const navigate = useNavigate();
 
      /////////////////User Auth/////////////////////////////////
-    const  AuthUser= ()=> {
+    const  AuthUser = ()=> {
                 Axios.get('/api/checkAuth')
                 .then((response) =>{
                     setAuth(true);
                 })
                 .catch((error) =>{
                    setAuth(false);
-                   /*  console.log(error); */ /* Tengo que averiguar por que se Ejecuta esta peticion 4 veces al principio de la Pagina */
+                     console.log(error); 
                 })   
                 return auth
     }          
@@ -101,7 +101,6 @@ export function LoginProvider( {children } ){
             })    
     }
     ///////////////////////////////////////////////////////////
-
 
     return(
         <LoginContext.Provider value={LogUser}>

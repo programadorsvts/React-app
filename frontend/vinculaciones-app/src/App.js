@@ -1,6 +1,5 @@
 /////////////////////////////React Router Dom////////////////////////////////////
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {ProtectedRoute} from './media/components/ProtectedRoute/ProtectedRoute'
 /////////////////////////////AXIOS////////////////////////////////////////////////
 import Axios from "axios";
 ///////////////////////Pages/////////////////////////////////////////
@@ -18,7 +17,6 @@ import Layout from './media/components/Layout/Layout'
 /////////////////Bootstrap/////////////////////////////////
 import "./media/styles/index.css"
 /////////////////Imports//////////////////////////////////
-import { useState} from 'react';
 import { LoginProvider}  from "./LoginProvider";
 
 
@@ -37,7 +35,7 @@ import { LoginProvider}  from "./LoginProvider";
 ///////////////////////////////////////////////////////
 
 function App() {
-  const [user,setUser] = useState(false)
+
   
   return (
     
@@ -47,40 +45,13 @@ function App() {
                   <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
-
-                    <Route exact path="/ObservatorioPage"  element={
-                                  <ProtectedRoute user={ user }>
-                                        
-                                        <Observatorio />
-                                        
-                                  </ProtectedRoute>
-                      }/>
-
+                    <Route exact path="/ObservatorioPage"  element={<Observatorio /> }/>            
                     <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
-
-                    <Route exact path="/LoginPage" element={<LoginPage user={user} />} />
-
+                    <Route exact path="/LoginPage" element={<LoginPage />} />
                     <Route exact path="/SingUpPage" element={<SingUpPage />} />
-
-                  <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
-
-                    <Route exact path="/CrearProyectoPage"  element={
-                                  <ProtectedRoute user={user}>
-                                        
-                                        <CrearProyectoPage/>
-
-                                  </ProtectedRoute>
-                      }/>
-
-
-                    <Route exact path="/RestablecerPage"  element={
-                              <ProtectedRoute user={user}>
-                                    
-                                    <Restablecer/>
-
-                              </ProtectedRoute>
-                      }/>
-
+                    <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
+                    <Route exact path="/CrearProyectoPage"  element={<CrearProyectoPage/>}/>
+                    <Route exact path="/RestablecerPage"  element={<Restablecer/>}/>
                     <Route exact path=" * " element={<NotFoundPage />} />
                   </Routes>
                 </Layout>  

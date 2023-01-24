@@ -6,6 +6,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import {useNavigate,NavLink} from "react-router-dom";
 import './navbar.css';
 import  {useAuthUserContext, useLogOutContext}  from '../../../../LoginProvider';
+import { useEffect,useState } from 'react';
 
 
 
@@ -13,10 +14,14 @@ function NavBar() {
   
   const navigate = useNavigate();
   const AuthUser=useAuthUserContext();
-  const auth=AuthUser();
   const logout=useLogOutContext();
-  let UserButtons=' '
-
+  let UserButtons=' ';
+ const [auth,setAuth]=useState(null);
+  
+ useEffect(() => {
+   setAuth(AuthUser());
+  }, [AuthUser])
+  
     if(auth){
               UserButtons = 
               <>
@@ -38,9 +43,9 @@ function NavBar() {
         
         <Navbar key={expand} expand={expand} className="navbar" sticky="top">
           <Container fluid>
-            <Navbar.Brand href="/">
-              <img src='assets/svgs/Solo-LogoSVTS.svg' width="100" height="50" className="d-inline-block " alt=""/>
-            </Navbar.Brand>
+            <NavLink to="/">
+                <img src='assets/svgs/Solo-LogoSVTS.svg' width="100" height="50" className="d-inline-block " alt=""/>
+            </ NavLink >
             <Navbar.Toggle className='navbar-toggler' aria-controls={`offcanvasNavbar-expand-${expand}`}/>
             <Navbar.Offcanvas className='menu-toggle' id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end" >
               <Offcanvas.Header closeButton >

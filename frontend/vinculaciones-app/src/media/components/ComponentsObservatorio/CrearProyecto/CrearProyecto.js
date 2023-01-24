@@ -1,25 +1,24 @@
 import {useNavigate } from "react-router-dom";
 import {Button,Container} from 'react-bootstrap';
-import { useEffect, useState } from "react";
-import Axios from "axios";
+import { useEffect,useState } from "react";
+import  {useAuthUserContext}  from '../../../../LoginProvider';
 
 function CrearProyecto() {
   
-  const [auth, setAuth] = useState(null)
-
   const navigate = useNavigate();
-  
-  useEffect(() => {  
+  const AuthUser=useAuthUserContext();
+  const [auth,setAuth]=useState(null);
 
-    Axios.get('/api/checkAuth')
-    .then((response) => {
-      setAuth(true)
-    })
-    .catch((error) => {
-      console.log(error)
-      setAuth(false)
-    })
-  },[auth])
+  useEffect(() => {
+    setAuth(AuthUser());
+  }, [AuthUser])
+
+  useEffect(() => {
+  const dataTimer = setInterval(() => {
+     setAuth(AuthUser());
+  }, 1000);
+  return () => clearInterval(dataTimer);
+}, []);
   
   return (
 
