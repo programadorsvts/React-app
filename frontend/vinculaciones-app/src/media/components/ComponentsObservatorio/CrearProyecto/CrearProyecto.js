@@ -12,13 +12,6 @@ function CrearProyecto() {
   useEffect(() => {
     setAuth(AuthUser());
   }, [AuthUser])
-
-  useEffect(() => {
-  const dataTimer = setInterval(() => {
-     setAuth(AuthUser());
-  }, 1000);
-  return () => clearInterval(dataTimer);
-}, []);
   
   return (
 
