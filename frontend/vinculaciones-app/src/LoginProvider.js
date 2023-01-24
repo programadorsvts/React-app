@@ -81,7 +81,7 @@ export function LoginProvider( {children } ){
                 icon: 'error',
                 text: error.response.data.message,
                 })
-                setErrorSubmit(error.response.data.errors)
+                setErrorSubmit(error.response)
               })
     }
      /////////////////////////////////////////////////////////////

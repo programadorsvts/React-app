@@ -1,15 +1,13 @@
 import {Button,Form} from 'react-bootstrap'
-import {Link, useNavigate} from  'react-router-dom';
+import {Link} from  'react-router-dom';
 import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../styles/form.css';
-import Axios from "axios"
-import { useState } from 'react';
 import  {useSingUpUserContext}  from '../../../LoginProvider';
 const SingUpForm =() => {
 
-  const navigate = useNavigate()
-    let errorSubmit=' '
+
+  let errorSubmit=' '
   const schema = Yup.object().shape({
     email: Yup.string().email('El valor ingresado no es un email').required('el email es obligatorio').trim('El email no permite espacios en blanco'),
     password: Yup.string()
