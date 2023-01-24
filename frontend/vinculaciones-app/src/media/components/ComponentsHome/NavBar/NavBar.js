@@ -3,42 +3,35 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-/* import {useEffect, useState} from 'react'; */
 import {useNavigate,NavLink} from "react-router-dom";
 import './navbar.css';
-/* import Axios from 'axios';
-import Swal from 'sweetalert2' */
 import  {useAuthUserContext, useLogOutContext}  from '../../../../LoginProvider';
 
 
+
 function NavBar() {
-  const navigate = useNavigate();
   
-  const logout=useLogOutContext();
+  const navigate = useNavigate();
   const AuthUser=useAuthUserContext();
   const auth=AuthUser();
- 
+  const logout=useLogOutContext();
   let UserButtons=' '
-  
-        console.log('Console del NavBar',auth)
-         if(auth){
-         
+
+    if(auth){
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
-                <Button onClick={() => {     }} >Cerrar sesion</Button>
+                <Button onClick={() => {  logout() }} >Cerrar sesion</Button>
               </>
-        }
+      }
       else {
-       
               UserButtons = 
               <>
                 <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
                 <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
               </>
       }  
- 
-
+   
   return (
     <>
       {['lg' ].map((expand) => (

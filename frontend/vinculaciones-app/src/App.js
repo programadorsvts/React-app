@@ -37,9 +37,8 @@ import { LoginProvider}  from "./LoginProvider";
 ///////////////////////////////////////////////////////
 
 function App() {
-  const [user,SetUser] = useState(false)
+  const [user,setUser] = useState(false)
   
-
   return (
     
   <Router>

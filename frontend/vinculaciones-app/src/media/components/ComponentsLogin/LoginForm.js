@@ -4,16 +4,14 @@ import {Link} from  'react-router-dom';
 import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../styles/form.css';
-import { useNavigate } from 'react-router-dom';
 
-import { useState } from 'react';
 import  {useLoginContext}  from '../../../LoginProvider';
 
 
 function LoginForm() {
 
-    const navigate = useNavigate();
-    const [errorSubmit, setErrorSubmit] = useState("");
+
+   
     const schema = Yup.object().shape({
         email: Yup.string()
           .email('El valor ingresado no es un email')
@@ -23,7 +21,10 @@ function LoginForm() {
           .required('La contraseña es obligatoria.')
           .min(8, 'La contraseña debe tener mínimo 8 caracteres')
     });
-    const login=useLoginContext();
+    const LogUser=useLoginContext();
+    let errorSubmit=' '
+ 
+   
   return(
     <Formik    
       validationSchema={schema}
@@ -32,7 +33,7 @@ function LoginForm() {
               password:'',
           } }
           onSubmit={values => {
-           
+            errorSubmit=LogUser(values.email, values.password);
         }}
       >
       {({handleChange, handleSubmit, handleBlur, values ,touched , errors}) => (

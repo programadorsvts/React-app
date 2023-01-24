@@ -8,7 +8,6 @@ const LoginContext =React.createContext();
 const LogOutContext =React.createContext();
 const AuthUserContext =React.createContext();
  
-
 export const useLoginContext= ()=>{
     return useContext (LoginContext );
 }
@@ -18,62 +17,60 @@ export const useLogOutContext= ()=>{
 export const useAuthUserContext= ()=>{
     return useContext (AuthUserContext );
 }
-
 export function LoginProvider( {children } ){
 
      const [auth, setAuth] = useState(null);
+      const [errorSubmit, setErrorSubmit] = useState("");
      const navigate = useNavigate();
 
      /////////////////User Auth/////////////////////////////////
     const  AuthUser= ()=> {
-
                 Axios.get('/api/checkAuth')
                 .then((response) =>{
                     setAuth(true);
-                    console.log(response);
-                   
                 })
                 .catch((error) =>{
                    setAuth(false);
-                    console.log(error);
-                   
+                   /*  console.log(error); */ /* Tengo que averiguar por que se Ejecuta esta peticion 4 veces al principio de la Pagina */
                 })   
                 return auth
-           }          
+    }          
      /////////////////////////////////////////////////////////////
       
      ///////////////////Log In///////////////////////////////////
-     const LogUser = (props) => {
-        Axios.post('/api/login', { "email": props.email,"password": props.password})
+     const LogUser = (email,password) => {
+        Axios.post('/api/login', { "email":email,"password": password})
         .then((response) => {
-          console.log(response);
-          localStorage.setItem('local-email', props.email);
-          localStorage.setItem('local-token', response.data.token);
-          Swal.fire ({ icon: 'success', title: 'Sesion Iniciada Correctamente', showConfirmButton: false, timer: 2000 });
-          navigate("/");
+            console.log(response);
+            localStorage.setItem('local-email', email);
+            localStorage.setItem('local-token', response.data.token);
+            Swal.fire ({ icon: 'success', title: 'Sesion Iniciada Correctamente', showConfirmButton: false, timer: 2000 });
+            navigate("/");
         })
          .catch((error) => {
-        console.log(error)
+            console.log(error.response)
+            setErrorSubmit(error.response.data.message)
         })
+         return errorSubmit
     }
      /////////////////////////////////////////////////////////////
 
      /////////////////Login Out/////////////////////////////////
-    const LogOutUser = () => {
-        return(  
+    const LogOutUser = (sumiterror) => { 
             Axios.post("/api/logout").then((response) => {
-
             localStorage.removeItem("local-token")
             localStorage.removeItem("local-email")
             setAuth(false);
+            Swal.fire ({ title: 'Sesion Cerrada', showConfirmButton: false, timer: 2000 });
+            navigate("/LoginPage");
             })
-            
             .catch((error) => {
             console.log(error)
-            }))
+            
+            })
+           
     }
     ///////////////////////////////////////////////////////////
-  
     return(
         <LoginContext.Provider value={LogUser}>
             <AuthUserContext.Provider value={AuthUser}>
