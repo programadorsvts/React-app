@@ -15,28 +15,34 @@ function NavBar() {
   const navigate = useNavigate();
   const AuthUser=useAuthUserContext();
   const logout=useLogOutContext();
- const [auth,setAuth]=useState(null);
-  let UserButtons=' ';
+ const [auth,setAuth]=useState(false);
+ let UserButtons=''
+ 
   
  useEffect(() => {
    setAuth(AuthUser());
+    
   }, [AuthUser])
   
-    if(auth){
-              UserButtons = 
+
+
+  if(auth){
+        
+              UserButtons= 
               <>
                 <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
                 <Button onClick={() => {  logout() }} >Cerrar sesion</Button>
               </>
       }
       else {
-              UserButtons = 
+        
+              UserButtons=
               <>
                 <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
                 <Button onClick={() => {  navigate("/SingUpPage")  ;  }} >Registrarse</Button>
               </>
       }  
-   
+
   return (
     <>
       {['lg' ].map((expand) => (

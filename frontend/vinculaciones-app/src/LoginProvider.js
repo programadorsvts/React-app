@@ -1,5 +1,5 @@
 import React  from "react";
-import { useState,useContext } from "react";
+import { useState,useContext,useEffect } from "react";
 import Axios  from "axios";
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
@@ -28,17 +28,20 @@ export function LoginProvider( {children } ){
      const navigate = useNavigate();
 
      /////////////////User Auth/////////////////////////////////
-        const  AuthUser = ()=> {
-                    Axios.get('/api/checkAuth')
-                    .then((response) =>{
-                        setAuth(true);
-                    })
-                    .catch((error) =>{
-                    setAuth(false);
-                        console.log(error); 
-                    },[])   
-                    return auth
-        }          
+            const  AuthUser = ()=> {
+                        Axios.get('/api/checkAuth')
+                        .then((response) =>{
+                            setAuth(true);
+                            console.log(response)
+                        })
+                        .catch((error) =>{
+                            setAuth(false);
+                              console.log(error)
+                            console.log(error.response.data.message); 
+                            Swal.fire({ icon: 'error', text: error.response.data.message })
+                        },[])   
+                        return auth
+            }          
      /////////////////////////////////////////////////////////////
       
      ///////////////////Log In///////////////////////////////////
@@ -77,10 +80,7 @@ export function LoginProvider( {children } ){
               .catch((error)=> {
                
                 console.log(error)
-                Swal.fire({
-                icon: 'error',
-                text: error.response.data.message,
-                })
+                Swal.fire({ icon: 'error', text: error.response.data.message })
                 setErrorSubmit(error.response)
               })
     }
@@ -97,7 +97,7 @@ export function LoginProvider( {children } ){
             })
             .catch((error) => {
             console.log(error)
-            
+            Swal.fire({ icon: 'error', text: error.response.data.message })
             })    
     }
     ///////////////////////////////////////////////////////////
@@ -107,7 +107,7 @@ export function LoginProvider( {children } ){
             <SingUpUserContext.Provider value={SingUpUser}>
                 <AuthUserContext.Provider value={AuthUser}>
                     <LogOutContext.Provider value={LogOutUser}>
-                        {children}
+                                 {children}
                     </LogOutContext.Provider>
                 </AuthUserContext.Provider>
             </SingUpUserContext.Provider>    
