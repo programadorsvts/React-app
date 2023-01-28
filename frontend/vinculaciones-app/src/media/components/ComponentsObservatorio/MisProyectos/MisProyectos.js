@@ -10,17 +10,19 @@ function MisProyectos () {
     const [proyectos, setProyectos] = useState([])
 
     useEffect(() => {
-        Axios.get('http://127.0.0.1:8000/api/user/proyects')
-        .then(response => {
-            console.log(response)
-            setProyectos(response.data.proyects)
-        .catch(() => {
+        Axios.get('/sanctum/csrf-cookie' ).then(response => {
+            Axios.get('http://127.0.0.1:8000/api/user/proyects')
+            .then(response => {
+                console.log(response)
+                setProyectos(response.data.proyects)
+            .catch(() => {
 
+                })
             })
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+            .catch(function (error) {
+                console.log(error);
+            })
+        });      
     }, [])
 
     return(
