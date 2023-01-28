@@ -38,10 +38,12 @@ export function LoginProvider( {children } ){
                     Axios.get('http://127.0.0.1:8000/api/checkAuth')
                     .then((response) => {
                         console.log(response)
+                        
                         setAuth(true);
                     })
                     .catch((error)=> {
                         console.log(error);
+                         console.log(JSON.stringify(response))
                         setAuth(false);
                     })
                 }); 
@@ -78,7 +80,7 @@ export function LoginProvider( {children } ){
       ///////////////////Sing Up///////////////////////////////////
      const SingUpUser = (email,password,confir) => {
         Axios.get('/sanctum/csrf-cookie' ).then(response => {
-              Axios.post("http://127.0.0.1:8000/api/register",{
+              Axios.post("/api/register",{
                 "email": email,
                 "password": password,
                 "confirm_password": confir,
