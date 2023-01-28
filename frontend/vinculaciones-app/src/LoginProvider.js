@@ -28,26 +28,29 @@ export function LoginProvider( {children } ){
      const [auth, setAuth] = useState(null);
       const [errorSubmit, setErrorSubmit] = useState("");
      const navigate = useNavigate();
+   
 
      /////////////////User Auth/////////////////////////////////
-            const  AuthUser = ()=> {
-                        Axios.get('/api/checkAuth' , {
-                        headers: {
-                            'X-CSRF-TOKEN': 'csrf_token()' // from js or meta
-                        }
-                        })
-                        .then((response) =>{
-                            setAuth(true);
-                            console.log(response)
-                        })
-                        .catch((error) =>{
-                            setAuth(false);
-                              console.log(error)
-                            console.log(error.response.data.message); 
-                            Swal.fire({ icon: 'error', text: error.response.data.message })
-                        },[])   
+          
+
+            
+                     const  AuthUser = ()=> {
+                        Axios.get('/sanctum/csrf-cookie').then(response => {
+                                Axios.get('/api/checkAuth' )
+                                .then((response) =>{
+                                    setAuth(true);
+                                    console.log(response)
+                                })
+                                .catch((error) =>{
+                                    setAuth(false);
+                                    console.log(error)
+                                    console.log(error.response.data.message); 
+                                    Swal.fire({ icon: 'error', text: error.response.data.message })
+                                },[])   
+                             });    
                         return auth
-            }          
+                    }       
+           
         /*     const AuthUser = async () => {
          
                 try {
