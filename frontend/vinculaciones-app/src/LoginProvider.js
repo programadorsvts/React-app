@@ -28,25 +28,22 @@ export function LoginProvider( {children } ){
      const [auth, setAuth] = useState(null);
       const [errorSubmit, setErrorSubmit] = useState("");
      const navigate = useNavigate();
+     
 
      /////////////////User Auth/////////////////////////////////
-             
-         
-
-            const AuthUser=()=> {
+            const AuthUser= ()=> {
                 Axios.get('/sanctum/csrf-cookie' ).then(response => {
-                    Axios.get('http://127.0.0.1:8000/api/checkAuth')
-                    .then((response) => {
-                        console.log(response)
-                        
-                        setAuth(true);
-                    })
-                    .catch((error)=> {
-                        console.log(error);
-                         console.log(JSON.stringify(response))
-                        setAuth(false);
-                    })
-                }); 
+                        Axios.get('http://127.0.0.1:8000/api/checkAuth' )
+                        .then((response) => {
+                            console.log(response)
+                            
+                            setAuth(true);
+                        })
+                        .catch((error)=> {
+                            console.log(error.response);
+                            setAuth(false);
+                        })
+                    }); 
                 return auth;
             }
 
@@ -56,7 +53,7 @@ export function LoginProvider( {children } ){
      ///////////////////Log In///////////////////////////////////
      const LogUser = (email,password) => {
         Axios.get('/sanctum/csrf-cookie' ).then(response => {
-            Axios.post('http://127.0.0.1:8000/api/login', { "email":email,"password": password})
+            Axios.post('/api/login', { "email":email,"password": password})
             .then((response) => {
                 console.log(response);
                 localStorage.setItem('local-email', email);
@@ -65,10 +62,10 @@ export function LoginProvider( {children } ){
                 navigate("/");
             })
             .catch((error) => {
-                console.log(error.response)
+                 console.log(error.response);
                 Swal.fire({
                     icon: 'error',
-                    text: error.response.data.message  ,
+                    text: error.response  ,
                 })
                 setErrorSubmit(error.response.data.message)
             })
@@ -79,7 +76,7 @@ export function LoginProvider( {children } ){
 
       ///////////////////Sing Up///////////////////////////////////
      const SingUpUser = (email,password,confir) => {
-        Axios.get('/sanctum/csrf-cookie' ).then(response => {
+        Axios.get('/sanctum/csrf-cookie' ).then((response) => {
               Axios.post("/api/register",{
                 "email": email,
                 "password": password,
@@ -90,9 +87,8 @@ export function LoginProvider( {children } ){
                 navigate("/RegistroExitosoPage")
               })
               .catch((error)=> {
-               
-                console.log(error)
-                Swal.fire({ icon: 'error', text: error.response.data.message })
+                 console.log(error.response);
+                Swal.fire({ icon: 'error', text: error.response })
                 setErrorSubmit(error.response)
               })
         });     
