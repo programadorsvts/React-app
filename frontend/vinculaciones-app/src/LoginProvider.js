@@ -1,6 +1,7 @@
 import React  from "react";
 import { useState,useContext} from "react";
 import Axios  from "axios";
+
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ export const useAuthUserContext= ()=>{
     return useContext (AuthUserContext );
 }
 export function LoginProvider( {children } ){
+          
 
      const [auth, setAuth] = useState(null);
       const [errorSubmit, setErrorSubmit] = useState("");
@@ -29,7 +31,11 @@ export function LoginProvider( {children } ){
 
      /////////////////User Auth/////////////////////////////////
             const  AuthUser = ()=> {
-                        Axios.get('/api/checkAuth')
+                        Axios.get('/api/checkAuth' , {
+                        headers: {
+                            'X-CSRF-TOKEN': 'csrf_token()' // from js or meta
+                        }
+                        })
                         .then((response) =>{
                             setAuth(true);
                             console.log(response)
@@ -42,6 +48,23 @@ export function LoginProvider( {children } ){
                         },[])   
                         return auth
             }          
+        /*     const AuthUser = async () => {
+         
+                try {
+                        const response = await Axios({
+                        url: "/api/checkAuth",  
+                    });
+                    setAuth(true);
+                    console.log(response)
+                    
+                } catch (error) {
+                    console.log(error.response);
+                    setAuth(false);
+                    
+                }
+                return auth
+                console.log(auth)
+            }    */
      /////////////////////////////////////////////////////////////
       
      ///////////////////Log In///////////////////////////////////
