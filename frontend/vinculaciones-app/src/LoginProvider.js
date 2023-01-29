@@ -40,19 +40,17 @@ export function LoginProvider( {children } ){
                             setAuth(true);
                         })
                         .catch((error)=> {
-                            console.log(error.response);
+                            console.log(error.messages);
                             setAuth(false);
                         })
                     }); 
                 return auth;
-            }
-
-            
+            }       
      /////////////////////////////////////////////////////////////
       
      ///////////////////Log In///////////////////////////////////
      const LogUser = (email,password) => {
-        Axios.get('/sanctum/csrf-cookie' ).then(response => {
+    
             Axios.post('/api/login', { "email":email,"password": password})
             .then((response) => {
                 console.log(response);
@@ -62,14 +60,13 @@ export function LoginProvider( {children } ){
                 navigate("/");
             })
             .catch((error) => {
-                 console.log(error.response);
+                 console.log(error);
                 Swal.fire({
                     icon: 'error',
-                    text: error.response  ,
+                    text: error  ,
                 })
-                setErrorSubmit(error.response.data.message)
+                setErrorSubmit(error)
             })
-        });    
          return errorSubmit
     }
      /////////////////////////////////////////////////////////////
@@ -87,9 +84,9 @@ export function LoginProvider( {children } ){
                 navigate("/RegistroExitosoPage")
               })
               .catch((error)=> {
-                 console.log(error.response);
-                Swal.fire({ icon: 'error', text: error.response })
-                setErrorSubmit(error.response)
+                 console.log(error);
+                Swal.fire({ icon: 'error', text: error })
+                setErrorSubmit(error)
               })
         });     
     }
@@ -107,7 +104,7 @@ export function LoginProvider( {children } ){
             })
             .catch((error) => {
             console.log(error)
-            Swal.fire({ icon: 'error', text: error.response.data.message })
+            Swal.fire({ icon: 'error', text: error })
             })    
         });    
     }
