@@ -7,11 +7,11 @@ import "./proyecto.css"
 
 function MisProyectos () {
 
-    const [proyectos, setProyectos] = useState(null)
-    setProyectos(useProyectosContext())
-
+   const [proyecto, setProyecto] = useState(null)
+   const  proyectos=useProyectosContext(null)
+    console.log(proyecto)
     useEffect(() => {
-           proyectos()
+        setProyecto(proyectos)
     }, [proyectos])
 
     return(
@@ -21,7 +21,7 @@ function MisProyectos () {
        
            <Container className="proyecto">
                 {
-                     proyectos.map((proyecto) => {
+                     proyecto?.map((proyecto) => {
                             return(
                             <ProyectoCard proyecto={proyecto} ></ProyectoCard>
                         )
