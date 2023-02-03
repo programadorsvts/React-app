@@ -4,21 +4,14 @@ import Buscador from '../components/ComponentsObservatorio/Buscador/Buscador'
 import Proyecto from '../components/ComponentsObservatorio/Proyecto/Proyecto';
 
 
-
-
-
 function observatorio ( ){
         return( 
                 <>
-                   
                     <PrincipalObservatorio></PrincipalObservatorio>
                     <CrearProyecto></CrearProyecto>
                     <Buscador></Buscador>
                     <Proyecto></Proyecto>
-                   
                 </>
         );
 }
-
-
  export default observatorio

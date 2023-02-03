@@ -1,40 +1,29 @@
-import Axios from 'axios';
+
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
-/* import Pagination from '../Pagination/Pagination'; */
+import {useProyectosContext} from '../../../../ProyectosProvider' 
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
 import '../Proyecto/proyecto.css'
 
 
 function ProyectosPublicados () {
 
-    const [proyectos, setProyectos] = useState([])
-
+    const [proyecto, setProyecto] = useState(null)
+   const  proyectos=useProyectosContext(null)
+ 
     useEffect(() => {
-            Axios.get('http://127.0.0.1:8000/api/proyects')
-            .then(response => {
-                setProyectos(response.data)
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    }, [])
+        setProyecto(proyectos)
+    }, [proyectos])
 
     return(
         <>
             <Container>
-            <h1 className='encabezado-2 mb-5'>Catalogo de Proyectos de Inovacion</h1>
+                <h1 className='encabezado-2 mb-5'>Catalogo de Proyectos de Inovacion</h1>
                 <Container className="proyecto">
-                    {
-                        proyectos.map((proyecto) => {
-                            return(
-                            <ProyectoCard key={proyecto.id} proyecto={proyecto} ></ProyectoCard>
-                        )
-                        }) 
-                        
-                    }
+                        {proyecto?.map((proyecto) => {
+                            return(<ProyectoCard key={proyecto.data.id} proyecto={proyecto} ></ProyectoCard>)
+                        })}  
                 </Container>
-                {/* <Pagination data={proyectos}></Pagination> */}
             </Container>   
         </>
     );

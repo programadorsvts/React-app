@@ -7,11 +7,9 @@ import MisProyectos from '../components/ComponentsObservatorio/MisProyectos/MisP
 const MisProyectosPage = () => {
   return (
     <>
-   
-    <PrincipalObservatorio titulo="Mis Proyectos"></PrincipalObservatorio>
-    <CrearProyecto></CrearProyecto>
-    <MisProyectos/>
-  
+      <PrincipalObservatorio titulo="Mis Proyectos"></PrincipalObservatorio>
+      <CrearProyecto></CrearProyecto>
+      <MisProyectos/>
     </>
   )
 }

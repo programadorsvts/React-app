@@ -6,27 +6,26 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import {useNavigate,NavLink} from "react-router-dom";
 import './navbar.css';
 import  {useAuthUserContext, useLogOutContext}  from '../../../../LoginProvider';
-import { useEffect,useState } from 'react';
+import { useState,useEffect } from 'react';
+
 
 
 
 function NavBar() {
   
   const navigate = useNavigate();
-  const AuthUser=useAuthUserContext();
   const logout=useLogOutContext();
- const [auth,setAuth]=useState(false);
- let UserButtons=''
- 
+  const AuthUser=useAuthUserContext();
+ const [auth,setAuth]=useState()
+  let UserButtons=''
+  useEffect(() => {
   
- useEffect(() => {
-   setAuth(AuthUser());
-    
+          setAuth(AuthUser()); 
+
   }, [AuthUser])
+
   
-
-
-  if(auth){
+   if(auth){
         
               UserButtons= 
               <>
