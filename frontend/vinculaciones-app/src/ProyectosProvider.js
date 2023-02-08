@@ -20,22 +20,22 @@ export const useSingProyectosPaginationContext=()=>{
     return useContext(ProyectosPaginationContext);
 }
 
-export function LoginProvider( {children } ){
+export function ProyectosProvider( {children } ){
           
-    const [proyectos, setProyectos] = useState(null)
+    const [proyectos, setProyectos] = useState([ ])
 /*     const navigate = useNavigate(); */
      
      ///////////////// Get Projects /////////////////////////////////
             const Proyectos= ()=> {
                 Axios.get('http://127.0.0.1:8000/api/proyects')
                 .then(response => {
-                    setProyectos(response.data)
+                    setProyectos(response.data.data)
                 })
                 .catch(function (error) {
                     console.log(error);
                     Swal.fire ({ icon: 'warning', title: 'Proyectos no encontrados',  timer: 2000 });
                 })
-                console.log('cartel dentro del get proyectos',proyectos)
+                console.log('dentro de la funcion',proyectos)    
                 return proyectos;
       
             }       
@@ -43,8 +43,8 @@ export function LoginProvider( {children } ){
       
     return(
         <ProyectosContext.Provider value={Proyectos}>
-            <MisProyectosContext.Provider value={Proyectos}>
-                <ProyectosPaginationContext.Provider>
+            <MisProyectosContext.Provider value={Proyectos} >
+                <ProyectosPaginationContext.Provider value={Proyectos} >
                         {children}
                 </ProyectosPaginationContext.Provider>
             </MisProyectosContext.Provider>    
