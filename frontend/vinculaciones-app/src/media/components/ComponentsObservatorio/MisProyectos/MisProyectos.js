@@ -7,12 +7,13 @@ import "./proyecto.css"
 
 function MisProyectos () {
 
-   const [proyecto, setProyecto] = useState(null)
-   const  proyectos=useProyectosContext(null)
-    console.log(proyecto)
+    const [listaproyectos, setListaProyecto] = useState()
+    const  proyectos=useProyectosContext()
+
     useEffect(() => {
-        setProyecto(proyectos)
-    }, [proyectos])
+        setListaProyecto(proyectos())
+    }, [listaproyectos])
+    
 
     return(
         <>
@@ -21,11 +22,11 @@ function MisProyectos () {
        
            <Container className="proyecto">
                 {
-                     proyecto?.map((proyecto) => {
+                   /*   proyecto?.map((proyecto) => {
                             return(
                             <ProyectoCard proyecto={proyecto} ></ProyectoCard>
                         )
-                        }) 
+                        })  */
                 }
             </Container> 
         </Container>   

@@ -43,20 +43,20 @@ function App() {
   <Router>
             <LoginProvider>
                 <ProyectosProvider>
-                    <Layout>
-                      <Routes>
-                        <Route exact path="/" element={<Home />} />
-                        <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
-                        <Route exact path="/ObservatorioPage"  element={<Observatorio /> }/>            
-                        <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
-                        <Route exact path="/LoginPage" element={<LoginPage />} />
-                        <Route exact path="/SingUpPage" element={<SingUpPage />} />
-                        <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
-                        <Route exact path="/CrearProyectoPage"  element={<CrearProyectoPage/>}/>
-                        <Route exact path="/RestablecerPage"  element={<Restablecer/>}/>
-                        <Route exact path=" * " element={<NotFoundPage />} />
-                      </Routes>
-                    </Layout>  
+                      <Layout>
+                        <Routes>
+                            <Route exact path="/" element={<Home />} />
+                            <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
+                            <Route exact path="/ObservatorioPage"  element={<Observatorio /> }/>            
+                            <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
+                            <Route exact path="/LoginPage" element={<LoginPage />} />
+                            <Route exact path="/SingUpPage" element={<SingUpPage />} />
+                            <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />
+                            <Route exact path="/CrearProyectoPage"  element={<CrearProyectoPage/>}/>
+                            <Route exact path="/RestablecerPage"  element={<Restablecer/>}/>
+                            <Route exact path=" * " element={<NotFoundPage />} />
+                        </Routes>
+                      </Layout>  
                 </ProyectosProvider>  
             </LoginProvider>  
   </Router>

@@ -16,20 +16,36 @@ export const useMisProyectosContext= ()=>{
 export const useProyectosContext= ()=>{
     return useContext (ProyectosContext );
 }
-export const useSingProyectosPaginationContext=()=>{
+export const useProyectosPerPageContext=()=>{
     return useContext(ProyectosPaginationContext);
 }
 
 export function ProyectosProvider( {children } ){
           
-    const [proyectos, setProyectos] = useState([ ])
+    const [proyectos, setProyectos] = useState(null)
 /*     const navigate = useNavigate(); */
      
      ///////////////// Get Projects /////////////////////////////////
             const Proyectos= ()=> {
                 Axios.get('http://127.0.0.1:8000/api/proyects')
+                .then( (response) => {
+                    
+                    setProyectos(response.data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    Swal.fire ({ icon: 'warning', title: 'Proyectos no encontrados',  timer: 2000 });
+                })
+        
+                return proyectos;
+      
+            }       
+     /////////////////////////////////////////////////////////////
+    ///////////////// Get  Porjects PerPage /////////////////////////////////
+            const ProyectosPerPage= ()=> {
+                Axios.get('http://127.0.0.1:8000/api/proyects?page=1&to=1')
                 .then(response => {
-                    setProyectos(response.data.data)
+                    setProyectos(response.data)
                 })
                 .catch(function (error) {
                     console.log(error);
