@@ -36,7 +36,6 @@ export function LoginProvider( {children } ){
                         Axios.get('http://127.0.0.1:8000/api/checkAuth' )
                         .then((response) => {
                             console.log(response)
-                            
                             setAuth(true);
                         })
                         .catch((error)=> {

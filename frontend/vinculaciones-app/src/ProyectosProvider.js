@@ -2,7 +2,7 @@ import React  from "react";
 import { useState,useContext} from "react";
 import Axios  from "axios";
 
-import Swal from 'sweetalert2'
+
 /* import { useNavigate } from 'react-router-dom'; */
 
 const MisProyectosContext =React.createContext();
@@ -22,40 +22,37 @@ export const useProyectosPerPageContext=()=>{
 
 export function ProyectosProvider( {children } ){
           
-    const [proyectos, setProyectos] = useState(null)
+    const [proyectos, setProyectos] = useState([])
 /*     const navigate = useNavigate(); */
      
      ///////////////// Get Projects /////////////////////////////////
-            const Proyectos= ()=> {
-                Axios.get('http://127.0.0.1:8000/api/proyects')
-                .then( (response) => {
-                    
-                    setProyectos(response.data)
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    Swal.fire ({ icon: 'warning', title: 'Proyectos no encontrados',  timer: 2000 });
-                })
-        
+            /* const Proyectos( async()=>{
+                Await Axios.get('http://127.0.0.1:8000/api/proyects?page=1&to=1').then( (response)=> {                     
+                        setProyectos(response.data)
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        Swal.fire ({ icon: 'warning', title: 'Proyectos no encontrados',  timer: 2000 });
+                    })
+                console.log('cartel deltro del provider 1',proyectos)
                 return proyectos;
       
-            }       
-     /////////////////////////////////////////////////////////////
-    ///////////////// Get  Porjects PerPage /////////////////////////////////
-            const ProyectosPerPage= ()=> {
-                Axios.get('http://127.0.0.1:8000/api/proyects?page=1&to=1')
-                .then(response => {
+            })     */   
+
+            const  Proyectos = async () => {
+                try {
+                    const response = await Axios.get('http://127.0.0.1:8000/api/proyects?page=1&to=1');
+                   
                     setProyectos(response.data)
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    Swal.fire ({ icon: 'warning', title: 'Proyectos no encontrados',  timer: 2000 });
-                })
-                console.log('dentro de la funcion',proyectos)    
-                return proyectos;
-      
-            }       
+                     console.log('Cartel deltro del try',proyectos);
+
+                } catch (err) {
+                    console.error(err);
+                }
+            };
      /////////////////////////////////////////////////////////////
+
+
       
     return(
         <ProyectosContext.Provider value={Proyectos}>
