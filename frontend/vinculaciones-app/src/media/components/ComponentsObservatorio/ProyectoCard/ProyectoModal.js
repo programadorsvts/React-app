@@ -3,8 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 
 import './modal.css';
 
-function ProyectoModal(props) {
-  
+function ProyectoModal(props ) {
+  console.log(props)
   return (
         <>
         <Modal
@@ -15,7 +15,7 @@ function ProyectoModal(props) {
             >
             <Modal.Header closeButton>
                 <Modal.Title className='text-1 text-deg text-capitalize' id="contained-modal-title-vcenter">
-                {props.proyecto.area}
+                {props.proyecto.area_name}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -28,8 +28,6 @@ function ProyectoModal(props) {
                 <p className='text-2 mb-4'>{props.proyecto.address}</p>
                 <p className='text-1 mb-1'>DESCRIPCIÓN:</p>
                 <p className='text-2 mb-1'>{props.proyecto.description}</p>
-                <p className='text-2 mb-1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros miaaaaaasd asd asd asdasd asdasd asdasd asd a,</p>
-                <p className='text-2 mb-1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros mi,</p>
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Cerrar</Button>
