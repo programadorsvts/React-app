@@ -10,11 +10,13 @@ function ProyectosPublicados () {
 
 
 const [proyectos, setProyectos] = useState([])
+const [currentPage,setCurrentPage]=useState([])
 
     useEffect(()=>{
          const getData = async () =>{
                  await Axios.get('http://127.0.0.1:8000/api/proyects?page=1&to=10').then((response)=>{
                 setProyectos([...response.data.data])
+                console.log('--',response.data.data)
                 }) 
                 .catch((error)=> {
                     console.log(error.messages);
@@ -22,7 +24,7 @@ const [proyectos, setProyectos] = useState([])
          }
     getData();      
     },[])
-  
+
     return(
         <>
             <Container>
