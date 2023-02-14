@@ -16,7 +16,7 @@ const [postPerPage,setpostPerPage]=useState([])
 
     useEffect(()=>{
          const getData = async () =>{
-                 await Axios.get('http://127.0.0.1:8000/api/proyects?page=2&to=10').then((response)=>{
+                 await Axios.get('http://127.0.0.1:8000/api/proyects').then((response)=>{
                    /*  http://127.0.0.1:8000/api/proyects?page=1&to=10 */
                     setProyectos([...response.data.data])
                     setPaginationData([response.data])
