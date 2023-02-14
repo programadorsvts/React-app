@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react';
+import ReactPaginate from 'react-paginate';
 import Container from 'react-bootstrap/Container';
 import Axios from 'axios'
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
@@ -7,12 +8,17 @@ import '../Proyecto/proyecto.css'
 
 
 function ProyectosPublicados () {
-
-
 const [proyectos, setProyectos] = useState([])
 const [paginationData,setPaginationData]=useState([])
-const [currentPage,setCurrentPage]=useState([]) 
-const [postPerPage,setpostPerPage]=useState([])
+/* const [currentPage,setCurrentPage]=useState([]) 
+const [postPerPage,setpostPerPage]=useState([]) */
+
+const [itemOffset, setItemOffset] = useState(0);
+const endOffset = itemOffset + itemsPerPage;
+console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+const currentItems = items.slice(itemOffset, endOffset);
+const pageCount = Math.ceil(items.length / itemsPerPage);
+
 
     useEffect(()=>{
          const getData = async () =>{
@@ -41,9 +47,38 @@ const [postPerPage,setpostPerPage]=useState([])
                             return(<ProyectoCard key={proyecto.id} proyecto={proyecto} ></ProyectoCard>)
                         })}  
                 </Container>
+                
+                <Items currentItems={currentItems} />
+                <ReactPaginate
+                    breakLabel="..."
+                    nextLabel="next >"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={5}
+                    pageCount={pageCount}
+                    previousLabel="< previous"
+                    renderOnZeroPageCount={null}
+                />
             </Container>   
+
+
         </>
     );
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % items.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
+
+
 }
+
+
+
+
+
+
 
  export default ProyectosPublicados
