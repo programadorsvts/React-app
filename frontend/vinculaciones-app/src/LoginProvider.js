@@ -31,12 +31,11 @@ export function LoginProvider( {children } ){
      
 
      /////////////////User Auth/////////////////////////////////
-            const AuthUser= ()=> {
+    const AuthUser= ()=> {
                 Axios.get('/sanctum/csrf-cookie' ).then(response => {
                         Axios.get('http://127.0.0.1:8000/api/checkAuth' )
                         .then((response) => {
                             console.log(response)
-                            
                             setAuth(true);
                         })
                         .catch((error)=> {
@@ -45,7 +44,7 @@ export function LoginProvider( {children } ){
                         })
                     }); 
                 return auth;
-            }       
+    }       
      /////////////////////////////////////////////////////////////
       
      ///////////////////Log In///////////////////////////////////

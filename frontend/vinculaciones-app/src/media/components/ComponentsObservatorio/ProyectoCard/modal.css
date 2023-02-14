@@ -9,6 +9,7 @@
     white-space: pre-wrap !important;
     text-align: left;
     line-break: strict;
+    justify-content: center;
     hyphens: 100px;
     overflow-wrap: break-word;
 }
