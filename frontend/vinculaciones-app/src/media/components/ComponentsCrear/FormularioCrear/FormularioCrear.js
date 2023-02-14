@@ -32,7 +32,6 @@ function FormularioCrear() {
         .then((response) => {
             console.log(response)
             setAreas(response.data)
-            console.log(areas)
         })
         .catch(error => {
             console.log(error)
@@ -64,6 +63,7 @@ function FormularioCrear() {
                     "phone_number": values.telefono,
                     "address": values.direccion,
                     "description": values.descripcion,
+                  
                 })
                 .then((response) => {
                     console.log(response)

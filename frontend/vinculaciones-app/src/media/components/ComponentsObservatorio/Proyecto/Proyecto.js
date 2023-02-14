@@ -10,13 +10,17 @@ function ProyectosPublicados () {
 
 
 const [proyectos, setProyectos] = useState([])
-const [currentPage,setCurrentPage]=useState([])
+const [paginationData,setPaginationData]=useState([])
+const [currentPage,setCurrentPage]=useState([]) 
+const [postPerPage,setpostPerPage]=useState([])
 
     useEffect(()=>{
          const getData = async () =>{
-                 await Axios.get('http://127.0.0.1:8000/api/proyects?page=1&to=10').then((response)=>{
-                setProyectos([...response.data.data])
-                console.log('--',response.data.data)
+                 await Axios.get('http://127.0.0.1:8000/api/proyects?page=2&to=10').then((response)=>{
+                   /*  http://127.0.0.1:8000/api/proyects?page=1&to=10 */
+                    setProyectos([...response.data.data])
+                    setPaginationData([response.data])
+                    
                 }) 
                 .catch((error)=> {
                     console.log(error.messages);
@@ -24,7 +28,8 @@ const [currentPage,setCurrentPage]=useState([])
          }
     getData();      
     },[])
-
+    
+    console.log('Response---',paginationData)
     return(
         <>
             <Container>

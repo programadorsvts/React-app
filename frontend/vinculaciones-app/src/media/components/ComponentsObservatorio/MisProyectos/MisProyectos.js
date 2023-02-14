@@ -2,17 +2,17 @@
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
-import {useProyectosContext} from '../../../../ProyectosProvider' 
+
 import "./proyecto.css"
 
 function MisProyectos () {
 
-    const [listaproyectos, setListaProyecto] = useState()
-    const  proyectos=useProyectosContext()
+    const [proyectos, setProyectos] = useState()
+ 
 
     useEffect(() => {
-        setListaProyecto(proyectos())
-    }, [listaproyectos])
+       
+    }, [])
     
 
     return(
