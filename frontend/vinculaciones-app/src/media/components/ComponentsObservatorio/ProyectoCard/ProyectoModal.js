@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import './modal.css';
 
 function ProyectoModal(props ) {
-  console.log(props)
+  
   return (
         <>
         <Modal
