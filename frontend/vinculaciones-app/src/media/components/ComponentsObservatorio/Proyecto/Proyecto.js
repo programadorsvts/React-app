@@ -18,7 +18,7 @@ function ProyectosPublicados () {
   const itemsPerPage=4 //Cantidad de  items a mostrar por pagina 
   const endOffset = itemOffset + itemsPerPage; //Indiex final de la paginacion 
 
-  
+
     useEffect(()=>{
          const getData = async () =>{
                  await Axios.get('http://127.0.0.1:8000/api/proyects?to=5').then((response)=>{
@@ -34,12 +34,16 @@ function ProyectosPublicados () {
       getData();      
     },[endOffset,itemOffset,itemsPerPage,proyectos]);
 
+    ////////////////////////Funcion Click/////////////////////////////
       const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % proyectos.length;
         setItemOffset(newOffset);
       };
-     /*  console.log('-----Proyectos---',proyectos)
-      console.log('-----CurrentItems---',currentItems) */
+    ///////////////////////////////////////////////////////////////////
+
+
+      /* console.log('-----Proyectos---',proyectos) */
+      /* console.log('-----CurrentItems---',currentItems) */ 
     return(
         <>
             <Container>
@@ -62,16 +66,6 @@ function ProyectosPublicados () {
             </Container>   
         </>
     );
-
-  
-
-
 }
-
-
-
-
-
-
 
  export default ProyectosPublicados
