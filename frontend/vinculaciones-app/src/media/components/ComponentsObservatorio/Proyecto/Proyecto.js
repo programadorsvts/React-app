@@ -8,26 +8,28 @@ import '../Proyecto/proyecto.css'
 import '../Proyecto/pagination.css'
 
 
+
 function ProyectosPublicados () {
 
   const [proyectos, setProyectos] = useState([]) //Proyectos del backend variable llamada 'proyectos'
   const [currentItems,setCurrentItems]=useState([]) //La cantidad de items que se asigna para poder ser mapeados luego 'currentItems'
   const [pageCount,setPageCount]=useState(0) //Contador de la cantidad de paginas  que se tiene que utilizar 
   const [itemOffset,setItemOffset]=useState(0) // Contador de items fuera de la pagina 
-  const itemsPerPage=3 //Cantidad de  items a mostrar por pagina 
+  const itemsPerPage=4 //Cantidad de  items a mostrar por pagina 
   const endOffset = itemOffset + itemsPerPage; //Indiex final de la paginacion 
 
   
     useEffect(()=>{
          const getData = async () =>{
                  await Axios.get('http://127.0.0.1:8000/api/proyects?to=5').then((response)=>{
-                   /*  http://127.0.0.1:8000/api/proyects?page=1&to=10 */
-                    setProyectos([...response.data.data])     
+                   /*  http://127.0.0.1:8000/api/proyects?page=1&to=5 */
+                    setProyectos([...response.data.data])  
+                    console.log('-----Response---',response.data)   
                 }) 
                 .catch((error)=> {
                     console.log(error.messages);
                 })     
-           setCurrentItems( proyectos.slice(itemOffset, endOffset));
+           setCurrentItems(proyectos.slice(itemOffset, endOffset));
            setPageCount( Math.ceil(proyectos.length / itemsPerPage));
          }
       getData();      
@@ -37,7 +39,8 @@ function ProyectosPublicados () {
         const newOffset = (event.selected * itemsPerPage) % proyectos.length;
         setItemOffset(newOffset);
       };
-      
+      console.log('-----Proyectos---',proyectos)
+      console.log('-----CurrentItems---',currentItems)
     return(
         <>
             <Container>
