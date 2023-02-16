@@ -23,8 +23,7 @@ function ProyectosPublicados () {
          const getData = async () =>{
                  await Axios.get('http://127.0.0.1:8000/api/proyects?to=5').then((response)=>{
                    /*  http://127.0.0.1:8000/api/proyects?page=1&to=5 */
-                    setProyectos([...response.data.data])  
-                    console.log('-----Response---',response.data)   
+                    setProyectos([...response.data.data])   
                 }) 
                 .catch((error)=> {
                     console.log(error.messages);
@@ -39,8 +38,8 @@ function ProyectosPublicados () {
         const newOffset = (event.selected * itemsPerPage) % proyectos.length;
         setItemOffset(newOffset);
       };
-      console.log('-----Proyectos---',proyectos)
-      console.log('-----CurrentItems---',currentItems)
+     /*  console.log('-----Proyectos---',proyectos)
+      console.log('-----CurrentItems---',currentItems) */
     return(
         <>
             <Container>
