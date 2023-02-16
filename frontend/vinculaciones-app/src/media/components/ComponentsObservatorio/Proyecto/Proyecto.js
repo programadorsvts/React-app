@@ -5,40 +5,40 @@ import Container from 'react-bootstrap/Container';
 import Axios from 'axios'
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
 import '../Proyecto/proyecto.css'
+import '../Proyecto/pagination.css'
 
 
 function ProyectosPublicados () {
 
-  const [proyectos, setProyectos] = useState([])
-  const [currentItems,setCurrentItems]=useState([])
-  const [pageCount,setPageCount]=useState(0)
-  const [itemOffset,setItemOffset]=useState(0)
-  const itemsPerPage=2
+  const [proyectos, setProyectos] = useState([]) //Proyectos del backend variable llamada 'proyectos'
+  const [currentItems,setCurrentItems]=useState([]) //La cantidad de items que se asigna para poder ser mapeados luego 'currentItems'
+  const [pageCount,setPageCount]=useState(0) //Contador de la cantidad de paginas  que se tiene que utilizar 
+  const [itemOffset,setItemOffset]=useState(0) // Contador de items fuera de la pagina 
+  const itemsPerPage=3 //Cantidad de  items a mostrar por pagina 
+  const endOffset = itemOffset + itemsPerPage; //Indiex final de la paginacion 
+
   
     useEffect(()=>{
-     
-
          const getData = async () =>{
-                 await Axios.get('http://127.0.0.1:8000/api/proyects?to=5').then((response)=>{
+                 await Axios.get('http://127.0.0.1:8000/api/proyects?to=10').then((response)=>{
                    /*  http://127.0.0.1:8000/api/proyects?page=1&to=10 */
                     setProyectos([...response.data.data])    
                 }) 
                 .catch((error)=> {
                     console.log(error.messages);
                 })     
-           const endOffset = itemOffset + itemsPerPage;
+           
            setCurrentItems( proyectos.slice(itemOffset, endOffset));
            setPageCount( Math.ceil(proyectos.length / itemsPerPage));
-          
          }
-    getData();      
-    },[itemOffset,itemsPerPage,proyectos])
+      getData();      
+    },[endOffset,itemOffset,itemsPerPage,proyectos]);
 
-        const handlePageClick = (event) => {
-          const newOffset = (event.selected * itemsPerPage) % proyectos.length;
-          setItemOffset(newOffset);
-        };
-
+      const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % proyectos.length;
+        setItemOffset(newOffset);
+      };
+      
     return(
         <>
             <Container>
@@ -53,7 +53,8 @@ function ProyectosPublicados () {
                   </Container>
             </Container>   
                          
-                <ReactPaginate
+                <ReactPaginate 
+                        className='pagination'
                         breakLabel="..."
                         nextLabel="siguiente >"
                         onPageChange={handlePageClick}
