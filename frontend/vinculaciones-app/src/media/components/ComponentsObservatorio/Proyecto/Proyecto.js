@@ -20,8 +20,8 @@ function ProyectosPublicados () {
 
 
     useEffect(()=>{
-         const getData = async () =>{
-                 await Axios.get('http://127.0.0.1:8000/api/proyects?to=5').then((response)=>{
+        
+                Axios.get('http://127.0.0.1:8000/api/proyects?page=1&to=5').then((response)=>{
                    /*  http://127.0.0.1:8000/api/proyects?page=1&to=5 */
                     setProyectos([...response.data.data])   
                 }) 
@@ -30,8 +30,7 @@ function ProyectosPublicados () {
                 })     
            setCurrentItems(proyectos.slice(itemOffset, endOffset));
            setPageCount( Math.ceil(proyectos.length / itemsPerPage));
-         }
-      getData();      
+  
     },[endOffset,itemOffset,itemsPerPage,proyectos]);
 
     ////////////////////////Funcion Click/////////////////////////////
