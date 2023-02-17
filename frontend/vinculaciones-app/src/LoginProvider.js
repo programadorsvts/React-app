@@ -35,11 +35,11 @@ export function LoginProvider( {children } ){
                 Axios.get('/sanctum/csrf-cookie' ).then(response => {
                         Axios.get('http://127.0.0.1:8000/api/checkAuth' )
                         .then((response) => {
-                            console.log(response)
+                            console.log(response.data.message)
                             setAuth(true);
                         })
                         .catch((error)=> {
-                            console.log(error.messages);
+                            console.log(error.response.data.message);
                             setAuth(false);
                         })
                     }); 
@@ -62,7 +62,7 @@ export function LoginProvider( {children } ){
                  console.log(error);
                 Swal.fire({
                     icon: 'error',
-                    text: error  ,
+                    text: error.response.data.message  ,
                 })
                 setErrorSubmit(error)
             })
@@ -84,7 +84,7 @@ export function LoginProvider( {children } ){
               })
               .catch((error)=> {
                  console.log(error);
-                Swal.fire({ icon: 'error', text: error })
+                Swal.fire({ icon: 'error', text: error.response.data.message })
                 setErrorSubmit(error)
               })
         });     

@@ -22,8 +22,6 @@ function restablecerform() {
                   email:'',
               } }
               onSubmit={values => {
-                // HACER PETICION A: Enviar reestablecimiento de contraseña
-                // VALIDAR ACÁ si es unsl.edu.ar o email.unsl.edu.ar
               alert(JSON.stringify(values, null, 2));
               }}
               >    
