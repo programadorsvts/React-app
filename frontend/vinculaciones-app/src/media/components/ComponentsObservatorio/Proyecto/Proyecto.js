@@ -18,7 +18,7 @@ function ProyectosPublicados() {
         setNextUrl(response.data.next_page_url);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.response.data.message);
       });
   }, []);
 
