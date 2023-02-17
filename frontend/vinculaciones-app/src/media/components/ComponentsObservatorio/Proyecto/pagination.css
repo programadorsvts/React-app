@@ -1,25 +1,5 @@
-.pagination li {
+.pagination{
     display: flex;
     justify-content: center;
-    margin: 10px;
-}
-.pagination li a,
-.pagination li span {
-    padding: 15px 40px;
-    background-color: var(--bg-color-card);
-    border-radius: 25px;
-}
-.pagination li a:hover {
-    transform: scale(1.03);
-    background-color: #dff4ff83;
-}
-.pagination li:first-child a,
-.pagination li:first-child span {
-    border-radius: 20px;
-    padding: 15px 36px;
-}
-.pagination li:last-child a,
-.pagination li:last-child span {
-    border-radius: 20px;
-    padding: 15px 36px;
+    margin-top: 30px;
 }
