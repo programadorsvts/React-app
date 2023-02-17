@@ -30,13 +30,12 @@ function FormularioCrear() {
       
         Axios.get("/api/area")
         .then((response) => {
-            console.log(response)
+            console.log(response.data)
             setAreas(response.data)
         })
         .catch(error => {
-            console.log(error)
+            console.log(error.response.data.message)
         })
-    
     }, [])
     
 
@@ -141,10 +140,7 @@ function FormularioCrear() {
                     isValid={touched.area && !errors.area}
                     isInvalid={touched.area && errors.area}>
                         <option value={0}>Seleccione área tematica</option>
-                        <option value={1}>Salud</option>
-                        <option value={2}>Alimentos</option>
-                        <option value={3}>Tecnologia</option>
-                        <option value={4}>Ciencia</option>
+                 
                         { 
                         areas.map((area) => {
                             return(
