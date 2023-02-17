@@ -18,7 +18,7 @@ function ProyectosPublicados() {
         setNextUrl(response.data.next_page_url);
       })
       .catch((error) => {
-        console.log(error.messages);
+        console.log(error);
       });
   }, []);
 
@@ -36,7 +36,7 @@ function ProyectosPublicados() {
       setNextUrl(response.data.next_page_url);
     });
   };
-
+  
   return (
     <>
       <Container>
