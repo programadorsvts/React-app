@@ -48,8 +48,16 @@ function ProyectosPublicados() {
             return <ProyectoCard key={item.id} proyecto={item}></ProyectoCard>;
           })}
         </Container>
-        <button onClick={() => prevPage(prevUrl)}>Volver</button>
-        <button onClick={() => nextPage(nextUrl)}>Siguiente</button>
+        {prevUrl ? (
+          <button onClick={() => prevPage(prevUrl)}>Volver</button>
+        ) : (
+          ""
+        )}
+        {nextUrl ? (
+          <button onClick={() => nextPage(nextUrl)}>Siguiente</button>
+        ) : (
+          ""
+        )}
       </Container>
     </>
   );
