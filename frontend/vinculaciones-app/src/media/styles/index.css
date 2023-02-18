@@ -126,10 +126,13 @@ a:hover{
 }
 
 /* Esto lo agrege para que el area de texto tenga una scroll bar y no lo puedan redimenzionar  */
-
 textarea {
     resize: none;
     overflow-y: auto;
+    
+}
+
+.loader{
     
 }
 
