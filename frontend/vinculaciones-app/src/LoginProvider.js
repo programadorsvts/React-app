@@ -4,6 +4,8 @@ import Axios  from "axios";
 
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
+import Loader from './media/components/Loader/Loader'
+
 
 const LoginContext =React.createContext();
 const LogOutContext =React.createContext();
@@ -63,6 +65,9 @@ export function LoginProvider( {children } ){
                 Swal.fire({
                     icon: 'error',
                     text: error.response.data.message  ,
+                })
+                .finally(()=>{
+                    <Loader></Loader>
                 })
                 setErrorSubmit(error)
             })

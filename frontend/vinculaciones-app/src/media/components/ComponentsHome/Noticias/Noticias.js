@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from './Card'
-
+import Loader from '../../Loader/Loader'
 function noticias() {
         
         const noticia1= {
@@ -31,7 +31,7 @@ function noticias() {
         <>
                 <h3 className="encabezado-2  mt-5 d-flex justify-content-center">Noticias</h3>
                 <Container fluid className='container-noticias mt-5'>
-                        
+                       
                         <Row className='d-flex justift-content-center'>
                                 <Col className=''>
                                         <Card info={noticia1}></Card>

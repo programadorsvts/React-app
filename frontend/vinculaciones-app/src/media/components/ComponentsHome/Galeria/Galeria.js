@@ -4,6 +4,8 @@ import './galeria.css';
 
 
 
+
+
 function galeria() {
   return (
     <Container className='galeria mt-5 mb-5'>

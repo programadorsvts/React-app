@@ -44,6 +44,7 @@ function App() {
             <LoginProvider>
                       <Layout>
                           <Routes>
+
                                 <Route exact path="/" element={<Home />} />
                                 <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
                                 <Route exact path="/ObservatorioPage"  element={<Observatorio /> }/>            
