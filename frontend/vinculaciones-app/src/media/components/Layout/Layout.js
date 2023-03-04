@@ -1,14 +1,16 @@
 import NavBar from "../ComponentsHome/NavBar/NavBar"
 import Footer from '../ComponentsHome/Footer/Footer'
- 
- const layout =({children})=>{
+
+
+ const Layout =({children})=>{
+
    return(
     <>
-        <NavBar/>
-            {children}
-        <Footer/>
+             <NavBar/>
+                {children}
+            <Footer/>
     </>
     )
  }
  
- export default layout
+ export default Layout

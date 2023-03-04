@@ -1,9 +1,9 @@
-import React  from "react";
-import { useState,useContext} from "react";
-import Axios  from "axios";
-
+import React  from "react"
+import { useState,useContext} from "react"
+import Axios  from "axios"
+import { useEffect } from "react"
 import Swal from 'sweetalert2'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 import Loader from './media/components/Loader/Loader'
 
 
@@ -27,10 +27,15 @@ export const useAuthUserContext= ()=>{
 export function LoginProvider( {children } ){
           
 
-     const [auth, setAuth] = useState(null);
-      const [errorSubmit, setErrorSubmit] = useState("");
-     const navigate = useNavigate();
-     
+    const [auth, setAuth] = useState(null);
+    const [errorSubmit, setErrorSubmit] = useState("");
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        setTimeout(() => {
+            <Loader/>
+        }, 3000);
+    }, [])
 
      /////////////////User Auth/////////////////////////////////
     const AuthUser= ()=> {
