@@ -1,7 +1,6 @@
 import React  from "react"
 import { useState,useContext} from "react"
 import Axios  from "axios"
-import { useEffect } from "react"
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 import Loader from './media/components/Loader/Loader'
@@ -30,12 +29,11 @@ export function LoginProvider( {children } ){
     const [auth, setAuth] = useState(null);
     const [errorSubmit, setErrorSubmit] = useState("");
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
-        setTimeout(() => {
-            <Loader/>
-        }, 3000);
-    }, [])
+    
+       
+        
 
      /////////////////User Auth/////////////////////////////////
     const AuthUser= ()=> {
@@ -56,24 +54,22 @@ export function LoginProvider( {children } ){
       
      ///////////////////Log In///////////////////////////////////
      const LogUser = (email,password) => {
-    
+            setLoading(true)
             Axios.post('/api/login', { "email":email,"password": password})
             .then((response) => {
                 console.log(response);
                 localStorage.setItem('local-email', email);
                 localStorage.setItem('local-token', response.data.token);
+                setLoading(false)
                 Swal.fire ({ icon: 'success', title: 'Sesion Iniciada Correctamente', showConfirmButton: false, timer: 2000 });
                 navigate("/");
             })
             .catch((error) => {
-                 console.log(error);
-                Swal.fire({
-                    icon: 'error',
-                    text: error.response.data.message  ,
-                })
-                .finally(()=>{
-                    <Loader></Loader>
-                })
+                    console.log(error);
+                    Swal.fire({
+                        icon: 'error',
+                        text: error.response.data.message  ,
+                    })
                 setErrorSubmit(error)
             })
          return errorSubmit
@@ -83,6 +79,7 @@ export function LoginProvider( {children } ){
       ///////////////////Sing Up///////////////////////////////////
      const SingUpUser = (email,password,confir) => {
         Axios.get('/sanctum/csrf-cookie' ).then((response) => {
+                setLoading(true)
               Axios.post("/api/register",{
                 "email": email,
                 "password": password,
@@ -90,6 +87,7 @@ export function LoginProvider( {children } ){
               })
               .then( (response ) => {
                 console.log(response)
+                setLoading(false)
                 navigate("/RegistroExitosoPage")
               })
               .catch((error)=> {
@@ -104,16 +102,19 @@ export function LoginProvider( {children } ){
      /////////////////Login Out/////////////////////////////////
     const LogOutUser = (sumiterror) => { 
         Axios.get('/sanctum/csrf-cookie' ).then(response => {
-            Axios.post("http://127.0.0.1:8000/api/logout").then((response) => {
-            localStorage.removeItem("local-token")
-            localStorage.removeItem("local-email")
-            setAuth(false);
-            Swal.fire ({ icon: 'warning', title: 'Sesion Cerrada', showConfirmButton: false, timer: 2000 });
-            navigate("/LoginPage");
+            setLoading(true)
+            Axios.post("http://127.0.0.1:8000/api/logout")
+            .then((response) => {
+                localStorage.removeItem("local-token")
+                localStorage.removeItem("local-email")
+                setAuth(false);
+                setLoading(false)
+                Swal.fire ({ icon: 'warning', title: 'Sesion Cerrada', showConfirmButton: false, timer: 2000 });
+                navigate("/LoginPage");
             })
             .catch((error) => {
-            console.log(error)
-            Swal.fire({ icon: 'error', text: error })
+                console.log(error)
+                Swal.fire({ icon: 'error', text: error })
             })    
         });    
     }
@@ -124,6 +125,7 @@ export function LoginProvider( {children } ){
             <SingUpUserContext.Provider value={SingUpUser}>
                 <AuthUserContext.Provider value={AuthUser}>
                     <LogOutContext.Provider value={LogOutUser}>
+                         {loading && <Loader/>}
                                  {children}
                     </LogOutContext.Provider>
                 </AuthUserContext.Provider>

@@ -26,7 +26,6 @@ function NavBar() {
 
   
    if(auth){
-        
               UserButtons= 
               <>
                 <Button onClick={() => {  navigate("/MisProyectosPage")  ;  }} >Mis proyectos</Button>
@@ -34,7 +33,6 @@ function NavBar() {
               </>
       }
       else {
-        
               UserButtons=
               <>
                 <Button onClick={() => {  navigate("/LoginPage")  ;   }} >Iniciar sesión</Button>
