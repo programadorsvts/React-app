@@ -1,5 +1,6 @@
 import Obi from "../components/ComponentsObi/Obi";
-import Container from 'react-bootstrap/container'
+import '../components/ComponentsObi/obi.css'
+import {Container} from 'react-bootstrap';
 
 
 function obipage(){

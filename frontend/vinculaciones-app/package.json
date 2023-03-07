@@ -17,7 +17,7 @@
     "formik": "^2.2.9",
     "leaflet": "^1.9.3",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.7.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-leaflet": "^4.2.0",
