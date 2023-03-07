@@ -1,6 +1,5 @@
 {
   "name": "vinculaciones-app",
-  
   "version": "0.1.0",
   "engines": {
     "node": "16.x",
@@ -20,6 +19,7 @@
     "emailjs": "^4.0.1",
     "formik": "^2.2.9",
     "leaflet": "^1.9.3",
+    "nvm": "^0.0.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
