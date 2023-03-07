@@ -1,6 +1,6 @@
 {
   "name": "vinculaciones-app",
-  "homepage": "https://Batvizz.github.io/",
+  "engines": { "node": "16.x"},
   "version": "0.1.0",
   "private": true,
   "dependencies": {
