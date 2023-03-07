@@ -1,7 +1,11 @@
 {
   "name": "vinculaciones-app",
-  "engines": { "node": "16.x"},
+  
   "version": "0.1.0",
+  "engines": {
+    "node": "16.x",
+    "npm": "^8.14.0"
+  },
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
