@@ -23,16 +23,16 @@ function gestion() {
         <section className='container d-flex align-items-center flex-column'>
                 <h2 className="encabezado-1 text-center my-5">Gestión</h2>
                 <Row className='d-flex align-items-center' >
-                <Col className='d-flex justify-content-center'>
-                        <GestionCard info={ gestion1}></GestionCard>
-                </Col>
-                <Col className='d-flex justify-content-center'>
-                        <GestionCard info={ gestion2}></GestionCard>
-                </Col>
-                <Col className='d-flex justify-content-center'>
-                        <GestionCard info={ gestion3}></GestionCard>
-                </Col>
-        </Row>
+                        <Col className='d-flex justify-content-center'>
+                                <GestionCard info={ gestion1}></GestionCard>
+                        </Col>
+                        <Col className='d-flex justify-content-center'>
+                                <GestionCard info={ gestion2}></GestionCard>
+                        </Col>
+                        <Col className='d-flex justify-content-center'>
+                                <GestionCard info={ gestion3}></GestionCard>
+                        </Col>
+                </Row>
     </section>
 
 
