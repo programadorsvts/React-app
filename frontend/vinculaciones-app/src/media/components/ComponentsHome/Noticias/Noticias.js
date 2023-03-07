@@ -1,4 +1,4 @@
-import Container from 'react-bootstrap/Container';
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from './Card'
@@ -28,24 +28,24 @@ function noticias() {
 
         return (
 
-        <>
+       <>
                 <h3 className="encabezado-2  mt-5 d-flex justify-content-center">Noticias</h3>
-                        <section className='mt-5'>
-                                <Row className=''>
-                                        <Col className=' d-fex justify-content-center '>
-                                                <Card info={noticia1}></Card>
-                                        </Col>
-                                        <Col className=' '>
-                                                <Card info={noticia2}></Card>
-                                        </Col>
-                                        <Col className=' '>
-                                                <Card info={noticia3}></Card>
-                                        </Col>
-                                        <Col className=' '>
-                                                <Card info={noticia4}></Card>
-                                        </Col>
-                                </Row>
-                        </section>
+                <section className='container d-flex align-items-center flex-column mt-5'>
+                        <Row className=''>
+                                <Col className='d-flex justify-content-center'>
+                                        <Card info={noticia1}></Card>
+                                </Col>
+                                <Col className='d-flex justify-content-center'>
+                                        <Card info={noticia2}></Card>
+                                </Col>
+                                <Col className='d-flex justify-content-center'>
+                                        <Card info={noticia3}></Card>
+                                </Col>
+                                <Col className='d-flex justify-content-center'>
+                                        <Card info={noticia4}></Card>
+                                </Col>
+                        </Row>
+                </section>
         </>
 
         );
