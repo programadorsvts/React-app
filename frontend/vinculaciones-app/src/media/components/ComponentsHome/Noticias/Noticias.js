@@ -30,18 +30,18 @@ function noticias() {
 
         <>
                 <h3 className="encabezado-2  mt-5 d-flex justify-content-center">Noticias</h3>
-                <Container fluid className='container-noticias mt-5'>
-                        <Row className='d-flex justift-content-center'>
-                                <Col className=''>
+                <Container  className='container-noticias mt-5'>
+                        <Row className=''>
+                                <Col className='d-flex justift-content-center'>
                                         <Card info={noticia1}></Card>
                                 </Col>
-                                <Col className=''>
+                                <Col className='d-flex justift-content-center'>
                                         <Card info={noticia2}></Card>
                                 </Col>
-                                <Col className=''>
+                                <Col className='d-flex justift-content-center'>
                                         <Card info={noticia3}></Card>
                                 </Col>
-                                <Col className=''>
+                                <Col className='d-flex justift-content-center'>
                                         <Card info={noticia4}></Card>
                                 </Col>
                         </Row>

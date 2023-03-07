@@ -5,7 +5,7 @@ import Axios from "axios";
 ///////////////////////Pages/////////////////////////////////////////
 import Observatorio from './media/pages/ObservatorioPage'
 import RevistaDigital from './media/pages/RevistaDigitalPage'
-import Home from './media/pages/Home'
+import Home from './media/pages/home'
 import LoginPage from './media/pages/LoginPage'
 import SingUpPage from './media/pages/SingUpPage'
 import NotFoundPage from './media/pages/NotFoundPage'
