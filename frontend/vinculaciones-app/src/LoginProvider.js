@@ -66,6 +66,7 @@ export function LoginProvider( {children } ){
             })
             .catch((error) => {
                     console.log(error);
+                    setLoading(false)
                     Swal.fire({
                         icon: 'error',
                         text: error.response.data.message  ,
@@ -92,6 +93,7 @@ export function LoginProvider( {children } ){
               })
               .catch((error)=> {
                  console.log(error);
+                 setLoading(false)
                 Swal.fire({ icon: 'error', text: error.response.data.message })
                 setErrorSubmit(error)
               })
@@ -114,6 +116,7 @@ export function LoginProvider( {children } ){
             })
             .catch((error) => {
                 console.log(error)
+                setLoading(false)
                 Swal.fire({ icon: 'error', text: error })
             })    
         });    
