@@ -1,4 +1,5 @@
-import Container from 'react-bootstrap/container'
+
+import Container from 'react-bootstrap/Container';
 import './principalobservatorio.css' ;
 
 function principalobservatorio({titulo}) {
