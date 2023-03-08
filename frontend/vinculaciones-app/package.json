@@ -29,10 +29,10 @@
     "yup": "^1.0.2"
   },
   "scripts": {
-     "start": "react-scripts --max_old_space_size=4096 start",
-      "build": "react-scripts --max_old_space_size=4096 build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "predeploy": "yarn run build",
      "build:digitalocean": "yarn install --production=false && yarn run build && yarn ci"
   },
