@@ -2,7 +2,8 @@
   "name": "vinculaciones-app",
   "version": "0.1.0",
   "engines": {
-    "node": "^14.15.0 || ^16.10.0 || >=18.0.0"
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=8.11.0"
   },
   "private": true,
   "dependencies": {
