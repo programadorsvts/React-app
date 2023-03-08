@@ -1,10 +1,6 @@
 {
   "name": "vinculaciones-app",
   "version": "0.1.0",
-  "engines": {
-    "node": ">=12.x.x <=16.x.x",
-    "npm": ">=9.6.1"
-  },
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
@@ -37,8 +33,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-     "build:digitalocean": "npm install --production=false && npm run build && npm ci"
+    "predeploy": "yarn run build",
+     "build:digitalocean": "yarn install --production=false && yarn run build && yarn ci"
   },
   "eslintConfig": {
     "extends": [
