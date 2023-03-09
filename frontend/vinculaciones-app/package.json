@@ -24,6 +24,7 @@
     "react-paginate": "^8.1.4",
     "react-router-dom": "^6.8.2",
     "react-scripts": "^5.0.1",
+    "serve": "^14.2.0",
     "sweetalert2": "^11.7.3",
     "web-vitals": "^3.1.1",
     "yup": "^1.0.2"
@@ -34,7 +35,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
-     "build:digitalocean": "yarn install --production=false && yarn run build"
+    "build:digitalocean": "yarn install --production=false && yarn run build"
   },
   "eslintConfig": {
     "extends": [
