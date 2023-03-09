@@ -34,7 +34,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
-     "build:digitalocean": "yarn install --production=false && yarn run build && yarn ci"
+     "build:digitalocean": "yarn install --production=false && yarn run build"
   },
   "eslintConfig": {
     "extends": [
