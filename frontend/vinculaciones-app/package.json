@@ -30,7 +30,7 @@
     "yup": "^1.0.2"
   },
   "scripts": {
-    "dev": "react-scripts serve -s build",
+    "dev": " serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
