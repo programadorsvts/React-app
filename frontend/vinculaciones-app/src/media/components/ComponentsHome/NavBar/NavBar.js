@@ -22,11 +22,11 @@ function NavBar() {
           setAuth(AuthUser()); 
   }, [AuthUser])
 
-const [menuOpen, setMenuOpen] = useState(false)
+/* const [menuOpen, setMenuOpen] = */ useState(false)
   /* const toggleMenu = () => {
   setMenuOpen(!menuOpen)
  } */
-  const handleClose = () => setMenuOpen(false) 
+ /*  const handleClose = () => setMenuOpen(false)  */
   const offCanvasRef = useRef();
   const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
   
