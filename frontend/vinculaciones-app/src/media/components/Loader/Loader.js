@@ -8,7 +8,6 @@ function BasicExample() {
             <div></div>
             <div></div>
             <div></div>
-            
             <div></div>
             <div></div>
             <div></div>
