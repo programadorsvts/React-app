@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "SVTS App",
   "name": "SVTS Web App",
   "icons": [
     {
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "seu.png.png",
+      "src": "seu.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "seu.png.png",
+      "src": "seu.png",
       "type": "image/png",
       "sizes": "512x512"
     }
