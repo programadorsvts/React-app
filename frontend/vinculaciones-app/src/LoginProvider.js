@@ -124,16 +124,18 @@ export function LoginProvider( {children } ){
     ///////////////////////////////////////////////////////////
 
     return(
-        <LoginContext.Provider value={LogUser}>
-            <SingUpUserContext.Provider value={SingUpUser}>
-                <AuthUserContext.Provider value={AuthUser}>
-                    <LogOutContext.Provider value={LogOutUser}>
-                         {loading && <Loader/>}
-                                 {children}
-                    </LogOutContext.Provider>
-                </AuthUserContext.Provider>
-            </SingUpUserContext.Provider>    
-        </LoginContext.Provider>
+        <>
+            {loading && <Loader/>}
+            <LoginContext.Provider value={LogUser}>
+                <SingUpUserContext.Provider value={SingUpUser}>
+                    <AuthUserContext.Provider value={AuthUser}>
+                        <LogOutContext.Provider value={LogOutUser}>
+                                    {children}
+                        </LogOutContext.Provider>
+                    </AuthUserContext.Provider>
+                </SingUpUserContext.Provider>    
+            </LoginContext.Provider>
+      </>  
     );
   }
 
