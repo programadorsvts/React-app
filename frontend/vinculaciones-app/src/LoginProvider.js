@@ -38,7 +38,7 @@ export function LoginProvider( {children } ){
      /////////////////User Auth/////////////////////////////////
     const AuthUser= ()=> {
                 Axios.get('/sanctum/csrf-cookie' ).then(response => {
-                        Axios.get('http://127.0.0.1:8000/api/checkAuth' )
+                        Axios.get('/api/checkAuth' )
                         .then((response) => {
                             console.log(response.data.message)
                             setAuth(true);
@@ -105,7 +105,7 @@ export function LoginProvider( {children } ){
     const LogOutUser = (sumiterror) => { 
         Axios.get('/sanctum/csrf-cookie' ).then(response => {
             setLoading(true)
-            Axios.post("http://127.0.0.1:8000/api/logout")
+            Axios.post("/api/logout")
             .then((response) => {
                 localStorage.removeItem("local-token")
                 localStorage.removeItem("local-email")

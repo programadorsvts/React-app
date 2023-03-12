@@ -11,7 +11,7 @@ function ProyectosPublicados() {
   const [nextUrl, setNextUrl] = useState(""); //Proyectos del backend variable llamada 'proyectos'
 
   useEffect(() => {
-    Axios.get("http://127.0.0.1:8000/api/proyects?page=1&to=5")
+    Axios.get("/api/proyects?page=1&to=5")
       .then((response) => {
         setProyectos(response.data.data);
         setPrevUrl(response.data.prev_page_url);
