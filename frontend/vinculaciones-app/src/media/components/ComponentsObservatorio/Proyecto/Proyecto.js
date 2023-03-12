@@ -11,14 +11,14 @@ function ProyectosPublicados() {
   const [nextUrl, setNextUrl] = useState(""); //Proyectos del backend variable llamada 'proyectos'
 
   useEffect(() => {
-    Axios.get("https://laravel-api-app-iy9ff.ondigitalocean.app//api/proyects?page=1&to=5")
+    Axios.get("https://laravel-api-app-iy9ff.ondigitalocean.app/api/proyects?page=1&to=5")
       .then((response) => {
         setProyectos(response.data.data);
         setPrevUrl(response.data.prev_page_url);
         setNextUrl(response.data.next_page_url);
       })
       .catch((error) => {
-        console.log(error.response.data);
+        console.log(error.response.data.message);
       });
   }, []);
 
