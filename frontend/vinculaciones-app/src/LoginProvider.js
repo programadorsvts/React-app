@@ -38,7 +38,7 @@ export function LoginProvider( {children } ){
      /////////////////User Auth/////////////////////////////////
     const AuthUser= ()=> {
                 Axios.get('/sanctum/csrf-cookie' ).then(response => {
-                        Axios.get('/api/checkAuth' )
+                        Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/api/checkAuth' )
                         .then((response) => {
                             console.log(response.data.message)
                             setAuth(true);
@@ -55,7 +55,7 @@ export function LoginProvider( {children } ){
      ///////////////////Log In///////////////////////////////////
      const LogUser = (email,password) => {
             setLoading(true)
-            Axios.post('/api/login', { "email":email,"password": password})
+            Axios.post('https://laravel-api-app-iy9ff.ondigitalocean.app/api/login', { "email":email,"password": password})
             .then((response) => {
                 console.log(response);
                 localStorage.setItem('local-email', email);
@@ -79,9 +79,9 @@ export function LoginProvider( {children } ){
 
       ///////////////////Sing Up///////////////////////////////////
      const SingUpUser = (email,password,confir) => {
-        Axios.get('/sanctum/csrf-cookie' ).then((response) => {
+        Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/sanctum/csrf-cookie' ).then((response) => {
                 setLoading(true)
-              Axios.post("/api/register",{
+              Axios.post("https://laravel-api-app-iy9ff.ondigitalocean.app/api/register",{
                 "email": email,
                 "password": password,
                 "confirm_password": confir,
@@ -105,7 +105,7 @@ export function LoginProvider( {children } ){
     const LogOutUser = (sumiterror) => { 
         Axios.get('/sanctum/csrf-cookie' ).then(response => {
             setLoading(true)
-            Axios.post("/api/logout")
+            Axios.post("https://laravel-api-app-iy9ff.ondigitalocean.app/api/logout")
             .then((response) => {
                 localStorage.removeItem("local-token")
                 localStorage.removeItem("local-email")
