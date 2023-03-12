@@ -37,7 +37,6 @@ const SingUpForm =() => {
                 <h1 className="encabezado-3 title">Registrarse</h1>
                 <Form.Group className="mb-3" controlId="CorreoSingUp" >
                   <Form.Label className="encabezado-4 label" >Correo Electrónico:</Form.Label>
-                  <p className="text-5 label-secundary">debe ser de formato unsl.edu.ar o email.unsl.edu.ar</p>
                   <Form.Control  
                       type="email"
                       name='email'
