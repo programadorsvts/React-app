@@ -37,7 +37,7 @@ export function LoginProvider( {children } ){
 
      /////////////////User Auth/////////////////////////////////
     const AuthUser= ()=> {
-                Axios.get('/sanctum/csrf-cookie' ).then(response => {
+                Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/sanctum/csrf-cookie' ).then(response => {
                         Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/api/checkAuth' )
                         .then((response) => {
                             console.log(response.data.message)
@@ -79,7 +79,7 @@ export function LoginProvider( {children } ){
 
       ///////////////////Sing Up///////////////////////////////////
      const SingUpUser = (email,password,confir) => {
-        Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/sanctum/csrf-cookie' ).then((response) => {
+        Axios.get('/sanctum/csrf-cookie' ).then((response) => {
                 setLoading(true)
               Axios.post("https://laravel-api-app-iy9ff.ondigitalocean.app/api/register",{
                 "email": email,
