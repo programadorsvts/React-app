@@ -41,6 +41,7 @@ function LoginForm() {
           <h1 className='encabezado-3 title'>Iniciar Sesión</h1>
           <Form.Group className="mb-3" controlId="correologin1" >
             <Form.Label className="encabezado-4 label">Correo Electrónico:</Form.Label>
+            <p className="text-5 label-secundary">debe ser de formato unsl.edu.ar o email.unsl.edu.ar</p>
             <Form.Control 
               name='email'
               type="text"
