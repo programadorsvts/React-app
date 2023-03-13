@@ -36,7 +36,7 @@ function revista(){
         }
         const revista5=
         {  
-                imagen:'assets/revistadigital/revista5.jpg',  
+                imagen:'assets/revistadigital/revista5.jpeg',  
                 link:'assets/revistadigital/revistapdf/Revista-5.pdf',                            
                 titulo:'Volumen 2 - Numero 5' ,    
                 fecha:'Diciembre 2021 ' , 
