@@ -35,15 +35,15 @@ function NavBar() {
    if(auth){
               UserButtons= 
               <>
-                <Button id="btn1" onClick={() => {  navigate("/MisProyectosPage") ;closeOffCanvas() }} >Mis proyectos</Button>
-                <Button  id="btn2" onClick={() => {  logout() ; closeOffCanvas() }} >Cerrar sesion</Button>
+                <Button onClick={() => {  navigate("/MisProyectosPage") ;closeOffCanvas() }} >Mis proyectos</Button>
+                <Button onClick={() => {  logout() ; closeOffCanvas() }} >Cerrar sesion</Button>
               </>
       }
       else {
               UserButtons=
               <>
-                <Button id="btn3" onClick={() => {  navigate("/LoginPage")  ; ;closeOffCanvas()  }} >Iniciar sesión</Button>
-                <Button id="btn4" onClick={() => {  navigate("/SingUpPage")  ; ;closeOffCanvas() }} >Registrarse</Button>
+                <Button onClick={() => {  navigate("/LoginPage")  ; ;closeOffCanvas()  }} >Iniciar sesión</Button>
+                <Button onClick={() => {  navigate("/SingUpPage")  ; ;closeOffCanvas() }} >Registrarse</Button>
               </>
       }  
 
@@ -63,13 +63,13 @@ function NavBar() {
               </Offcanvas.Header>
 
               <Offcanvas.Body >
-                <Nav className="justify-content-start flex-grow-1" >
+                <Nav className="justify-content-start flex-grow-1"  id="btnopt">
                   <NavLink to="/" className="text-3" id="inicio" onClick={closeOffCanvas} >inicio</ NavLink >
                   <NavLink to="/RevistaDigitalPage" className="text-3" id="revista" onClick={closeOffCanvas} >Revista Digital</NavLink >
                   <NavLink to="/ObiPage"  className="text-3" id="obi"  onClick={closeOffCanvas} >Ubi </NavLink >  
                   <NavLink to="/ObservatorioPage"   className="text-3" id="observatorio" onClick={closeOffCanvas} >Observatorio</NavLink >   
                 </Nav>
-                <Nav className="navbar-buttons">
+                <Nav className="navbar-buttons" id="btnuser" >
                   { UserButtons}
                   <img src='assets/svgs/Escudo-UNSL-Blanco.svg'  width="100" height="50" className="d-inline-block " alt=""/>
                 </Nav>
