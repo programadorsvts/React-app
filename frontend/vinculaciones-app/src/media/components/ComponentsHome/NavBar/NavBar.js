@@ -35,15 +35,15 @@ function NavBar() {
    if(auth){
               UserButtons= 
               <>
-                <Button onClick={() => {  navigate("/MisProyectosPage") ;closeOffCanvas() }} >Mis proyectos</Button>
-                <Button onClick={() => {  logout() ; closeOffCanvas() }} >Cerrar sesion</Button>
+                <Button id="btn1" onClick={() => {  navigate("/MisProyectosPage") ;closeOffCanvas() }} >Mis proyectos</Button>
+                <Button  id="btn2" onClick={() => {  logout() ; closeOffCanvas() }} >Cerrar sesion</Button>
               </>
       }
       else {
               UserButtons=
               <>
-                <Button onClick={() => {  navigate("/LoginPage")  ; ;closeOffCanvas()  }} >Iniciar sesión</Button>
-                <Button onClick={() => {  navigate("/SingUpPage")  ; ;closeOffCanvas() }} >Registrarse</Button>
+                <Button id="btn3" onClick={() => {  navigate("/LoginPage")  ; ;closeOffCanvas()  }} >Iniciar sesión</Button>
+                <Button id="btn4" onClick={() => {  navigate("/SingUpPage")  ; ;closeOffCanvas() }} >Registrarse</Button>
               </>
       }  
 
@@ -64,10 +64,10 @@ function NavBar() {
 
               <Offcanvas.Body >
                 <Nav className="justify-content-start flex-grow-1" >
-                  <NavLink to="/" className="text-3" onClick={closeOffCanvas} >inicio</ NavLink >
-                  <NavLink to="/RevistaDigitalPage" className="text-3" onClick={closeOffCanvas} >Revista Digital</NavLink >
-                  <NavLink to="/ObiPage"  className="text-3" onClick={closeOffCanvas} >Ubi </NavLink >  
-                  <NavLink to="/ObservatorioPage" c  className="text-3" onClick={closeOffCanvas} >Observatorio</NavLink >   
+                  <NavLink to="/" className="text-3" id="inicio" onClick={closeOffCanvas} >inicio</ NavLink >
+                  <NavLink to="/RevistaDigitalPage" className="text-3" id="revista" onClick={closeOffCanvas} >Revista Digital</NavLink >
+                  <NavLink to="/ObiPage"  className="text-3" id="obi"  onClick={closeOffCanvas} >Ubi </NavLink >  
+                  <NavLink to="/ObservatorioPage"   className="text-3" id="observatorio" onClick={closeOffCanvas} >Observatorio</NavLink >   
                 </Nav>
                 <Nav className="navbar-buttons">
                   { UserButtons}
