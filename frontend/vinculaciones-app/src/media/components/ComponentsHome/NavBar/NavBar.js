@@ -35,8 +35,8 @@ function NavBar() {
    if(auth){
               UserButtons= 
               <>
-                <Button onClick={() => {  navigate("/MisProyectosPage") ;closeOffCanvas() }} >Mis proyectos</Button>
-                <Button onClick={() => {  logout() ; closeOffCanvas() }} >Cerrar sesion</Button>
+                <Button onClick={() => {  navigate("/MisProyectosPage") ;;closeOffCanvas() }} >Mis proyectos</Button>
+                <Button onClick={() => {  logout() ; ;closeOffCanvas() }} >Cerrar sesion</Button>
               </>
       }
       else {

@@ -103,7 +103,7 @@ export function LoginProvider( {children } ){
 
      /////////////////Login Out/////////////////////////////////
     const LogOutUser = (sumiterror) => { 
-        Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app//sanctum/csrf-cookie' ).then(response => {
+        Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/sanctum/csrf-cookie' ).then(response => {
             setLoading(true)
             Axios.post("https://laravel-api-app-iy9ff.ondigitalocean.app/api/logout")
             .then((response) => {
