@@ -28,7 +28,7 @@ function FormularioCrear() {
 
     useEffect(() => {
       
-        Axios.get("https://walrus-app-kiss6.ondigitalocean.app/api/area")
+        Axios.get("https://laravel-api-app-iy9ff.ondigitalocean.app/api/area")
         .then((response) => {
             console.log(response.data)
             setAreas(response.data)
@@ -53,7 +53,7 @@ function FormularioCrear() {
                 descripcion:'',
             } }
             onSubmit={values => {
-                Axios.post("https://walrus-app-kiss6.ondigitalocean.app/api/proyects", {
+                Axios.post("https://laravel-api-app-iy9ff.ondigitalocean.app/api/proyects", {
                     "title": values.titulo,
                     "director_name": values.director,
                     "area_id": values.area,
