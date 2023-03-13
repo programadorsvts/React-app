@@ -28,7 +28,7 @@ function NavBar() {
  } */
  /*  const handleClose = () => setMenuOpen(false)  */
   const offCanvasRef = useRef();
-  const closeOffCanvas = () => offCanvasRef.current.backdrop.onClick() ;
+  const closeOffCanvas = () => offCanvasRef.current.backdrop.click() ;
   
 
   
