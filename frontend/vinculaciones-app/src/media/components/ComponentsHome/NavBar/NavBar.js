@@ -28,7 +28,7 @@ function NavBar() {
  } */
  /*  const handleClose = () => setMenuOpen(false)  */
   const offCanvasRef = useRef();
-  const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
+  const closeOffCanvas = () => offCanvasRef.current.backdrop.onClick() ;
   
 
   
@@ -42,8 +42,8 @@ function NavBar() {
       else {
               UserButtons=
               <>
-                <Button onClick={() => {  navigate("/LoginPage")  ; ;closeOffCanvas()  }} >Iniciar sesión</Button>
-                <Button onClick={() => {  navigate("/SingUpPage")  ; ;closeOffCanvas() }} >Registrarse</Button>
+                <Button onClick={() => {  navigate("/LoginPage")  ;closeOffCanvas()  }} >Iniciar sesión</Button>
+                <Button onClick={() => {  navigate("/SingUpPage")  ;closeOffCanvas() }} >Registrarse</Button>
               </>
       }  
 
