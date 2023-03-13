@@ -30,11 +30,10 @@ function FormularioCrear() {
       
         Axios.get("https://laravel-api-app-iy9ff.ondigitalocean.app/api/area")
         .then((response) => {
-            console.log(response.data)
             setAreas(response.data)
         })
         .catch(error => {
-            console.log(error.response.data.message)
+            console.log(error.response.data)
         })
     }, [])
     
