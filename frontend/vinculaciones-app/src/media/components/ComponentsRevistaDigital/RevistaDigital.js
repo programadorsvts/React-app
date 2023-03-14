@@ -28,7 +28,7 @@ function revista(){
         }
         const revista4=
         { 
-                imagen:'assets/images/revista4.jpg',   
+                imagen:'assets/images/revista4.jpeg',   
                 link:'assets/revistadigital/revistapdf/Revista-4.pdf ',    
                 titulo:'Volumen 2 - Numero 4',      
                 fecha:'Junio 2021 ' , 
