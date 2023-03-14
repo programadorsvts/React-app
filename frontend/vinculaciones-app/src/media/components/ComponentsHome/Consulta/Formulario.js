@@ -24,9 +24,8 @@ import Swal from 'sweetalert2'
   const form = useRef();
   
    const SendEmail = (e) => {
-   
     e.preventDefault();
-    emailjs.sendForm('service_ldsbw9j', 'template_zjx272g', form.current, 'template_zjx272g')
+    emailjs.sendForm('service_vd3tb4o', 'service_vd3tb4o', form.current, 'A9urjmdZT3uPy4bs2')
       .then((result) => {
           console.log(result.text);
           Swal.fire({
