@@ -4,7 +4,7 @@ import RevistaCard from '../ComponentsRevistaDigital/RevistaCard';
 function revista(){
         const revista1=
         { 
-                imagen:'assets/revistadigital/revista1.jpg',   
+                imagen:'assets/images/revista1.jpg',   
                 link:'assets/revistadigital/revistapdf/Revista-1.pdf ',                                   
                 titulo:'Volumen 1 - Numero 1 ',    
                 fecha:'Junio 2020 ' , 
@@ -12,7 +12,7 @@ function revista(){
         }
         const revista2=
         { 
-                imagen:'assets/revistadigital/revista2.jpg',   
+                imagen:'assets/images/revista2.jpg',   
                 link:'assets/revistadigital/revistapdf/Revista-2.pdf ',                 
                 titulo:'Volumen 1 - Numero 2',      
                 fecha:'septiembre 2020' , 
@@ -20,7 +20,7 @@ function revista(){
         }
         const revista3=
         { 
-                imagen:'assets/revistadigital/revista3.jpg',   
+                imagen:'assets/images/revista3.jpg',   
                 link:'assets/revistadigital/revistapdf/Revista-3.pdf',                                      
                 titulo:'Volumen 1 - Numero 3',      
                 fecha:'diciembre 2020 ' , 
@@ -28,7 +28,7 @@ function revista(){
         }
         const revista4=
         { 
-                imagen:'assets/revistadigital/revista4.jpg',   
+                imagen:'assets/images/revista4.jpg',   
                 link:'assets/revistadigital/revistapdf/Revista-4.pdf ',    
                 titulo:'Volumen 2 - Numero 4',      
                 fecha:'Junio 2021 ' , 
@@ -36,7 +36,7 @@ function revista(){
         }
         const revista5=
         {  
-                imagen:'assets/revistadigital/revista5.jpeg',  
+                imagen:'assets/images/revista5.jpeg',  
                 link:'assets/revistadigital/revistapdf/Revista-5.pdf',                            
                 titulo:'Volumen 2 - Numero 5' ,    
                 fecha:'Diciembre 2021 ' , 
@@ -44,7 +44,7 @@ function revista(){
         }
           const revista6=
         {  
-                imagen:'assets/revistadigital/revista6.jpg',  
+                imagen:'assets/images/revista6.jpg',  
                 link:'assets/revistadigital/revistapdf/Revista-6.pdf',                            
                 titulo:'Volumen 3 - Numero 6' ,    
                 fecha:'Diciembre 2022 ' , 

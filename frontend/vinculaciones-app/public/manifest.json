@@ -8,18 +8,18 @@
       "type": "image/x-icon"
     },
     {
-      "src": "seu.png",
+      "src": "Logo-ObservaSVTS-blanco.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "seu.png",
+      "src": "Logo-ObservaSVTS-blanco.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#DFF4FF",
+  "background_color": "#1F2937"
 }
