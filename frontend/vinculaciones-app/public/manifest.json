@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://walrus-app-kiss6.ondigitalocean.app/",
   "display": "standalone",
   "theme_color": "#DFF4FF",
   "background_color": "#1F2937"
