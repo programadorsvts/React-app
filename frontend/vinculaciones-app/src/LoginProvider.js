@@ -89,7 +89,9 @@ export function LoginProvider( {children } ){
               .then( (response ) => {
                 console.log(response)
                 setLoading(false)
-                navigate("/RegistroExitosoPage")
+                Swal.fire ({ icon: 'success', title: 'Registro Exitoso - Enviamos un mail de verificacion de cuenta', showConfirmButton: true, timer: 6000 });
+                navigate("/");
+           
               })
               .catch((error)=> {
                  console.log(error);
