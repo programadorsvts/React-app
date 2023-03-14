@@ -20,7 +20,7 @@ function MisProyectos () {
         setNextUrl(response.data.next_page_url);
       })
       .catch((error) => {
-        console.log(error.response.data.message);
+        console.log(error.response.data);
       });
   }, []);
 

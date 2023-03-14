@@ -4,8 +4,8 @@ import * as Yup from 'yup';
 import { Formik} from 'formik';
 import '../../styles/form.css';
 import  {useSingUpUserContext}  from '../../../LoginProvider';
-const SingUpForm =() => {
 
+const SingUpForm =() => {
 
   let errorSubmit=' '
   const schema = Yup.object().shape({

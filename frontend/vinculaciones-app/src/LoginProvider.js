@@ -89,14 +89,14 @@ export function LoginProvider( {children } ){
               .then( (response ) => {
                 console.log(response)
                 setLoading(false)
-                Swal.fire ({ icon: 'success', title: 'Registro Exitoso - Enviamos un mail de verificacion de cuenta', showConfirmButton: true, timer: 6000 });
+                Swal.fire ({ icon: 'success', title: 'Registro Exitoso - Enviamos un mail de verificacion de cuenta', showConfirmButton: true, timer: 6000 })
                 navigate("/");
            
               })
               .catch((error)=> {
                  console.log(error);
                  setLoading(false)
-                Swal.fire({ icon: 'error', text: error.response.data.message })
+                Swal.fire({ icon: 'error', text: error.response.data})
                 setErrorSubmit(error)
               })
         });     

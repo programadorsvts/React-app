@@ -26,7 +26,7 @@ import Swal from 'sweetalert2'
    const SendEmail = (e) => {
    
     e.preventDefault();
-    emailjs.sendForm('service_vd3tb4o', 'template_zjx272g', form.current, 'A9urjmdZT3uPy4bs2')
+    emailjs.sendForm('service_ldsbw9j', 'template_zjx272g', form.current, 'template_zjx272g')
       .then((result) => {
           console.log(result.text);
           Swal.fire({
@@ -36,6 +36,11 @@ import Swal from 'sweetalert2'
           })
       }, (error) => {
           console.log(error.text);
+            Swal.fire({
+            icon: 'error',
+            title: 'Tuvimos un problema para enviar tu consulta',
+            timer: 2500
+          })
       });
   };
     
