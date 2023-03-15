@@ -44,7 +44,7 @@ function MisProyectos () {
       <Container>
         <Container className="proyecto">
           {proyectos.map((item) => {
-            return <ProyectoCard key={item.area_id} proyecto={item}></ProyectoCard>;
+            return <ProyectoCard key={item.id} proyecto={item}></ProyectoCard>;
           })}
         </Container>
         {prevUrl ? (

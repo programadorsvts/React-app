@@ -8,7 +8,9 @@ function buscador (){
     <>
         <Container className="d-flex justify-content-center mt-5">
             <Form className="form buscador-form mb-5 w-75">
+                <Form.Label className="encabezado-4 label" >*el buscador aun esta desabilitado para los usuarios*</Form.Label>
                 <Form.Group className="mb-3" controlId="buscador1">
+                    
                     <Form.Label className="encabezado-4 label" >Buscador</Form.Label>
                     <Form.Control type="text" placeholder="ingrese titulo" />
                 </Form.Group>

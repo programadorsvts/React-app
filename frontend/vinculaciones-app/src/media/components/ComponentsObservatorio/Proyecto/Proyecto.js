@@ -45,8 +45,7 @@ function ProyectosPublicados() {
         </h1>
         <Container className="proyecto">
           {proyectos.map((item) => {
-            {console.log('La informacion del Item - ',item)}
-            return <ProyectoCard key={item.area_id} proyecto={item}></ProyectoCard>;
+            return <ProyectoCard key={item.id} proyecto={item}></ProyectoCard>;
           })}
         </Container>
         <Container className='pagination'>

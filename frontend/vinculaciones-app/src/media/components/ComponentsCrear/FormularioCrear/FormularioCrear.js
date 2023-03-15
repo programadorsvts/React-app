@@ -6,6 +6,7 @@ import './form-crear.css';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2'
 
 const regExp = {
     telefono: /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -30,7 +31,6 @@ function FormularioCrear() {
       
         Axios.get("https://laravel-api-app-iy9ff.ondigitalocean.app/api/area")
         .then((response) => {
-            /* console.log('Unformacion de la peticion Get - ',response) */
             setAreas(response.data)
         })
         .catch(error => {
@@ -66,6 +66,7 @@ function FormularioCrear() {
                 })
                 .then((response) => {
                     console.log(response)
+                     Swal.fire ({ icon: 'success', title: 'Proyecto creado exitosamente', showConfirmButton: true, timer: 6000 })
                     navigate("/MisProyectosPage")
                 })
                 .catch((error) => {
