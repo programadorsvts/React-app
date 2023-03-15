@@ -31,6 +31,7 @@ function FormularioCrear() {
       
         Axios.get("https://laravel-api-app-iy9ff.ondigitalocean.app/api/area")
         .then((response) => {
+            console.log(response)
             setAreas(response.data)
         })
         .catch(error => {
@@ -141,7 +142,6 @@ function FormularioCrear() {
                     isValid={touched.area && !errors.area}
                     isInvalid={touched.area && errors.area}>
                         <option value={0}>Seleccione área tematica</option>
-                 
                         { 
                         areas.map((area) => {
                             return(
