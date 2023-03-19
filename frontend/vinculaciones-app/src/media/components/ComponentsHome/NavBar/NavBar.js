@@ -61,12 +61,12 @@ function NavBar() {
                       <Offcanvas.Header closeButton >
                         <Offcanvas.Title>Tocar fuera del menu para volver</Offcanvas.Title>
                       </Offcanvas.Header>
-                      <Offcanvas.Body onClick={closeOffCanvas}>
+                      <Offcanvas.Body >
                         <Nav className="justify-content-start flex-grow-1"  id="navbtns">
-                          <NavLink to="/" className="text-3" onClick={closeOffCanvas} id="inicio" >inicio</NavLink>
-                          <NavLink to="/RevistaDigitalPage" onClick={closeOffCanvas} className="text-3" id="revista">Revista Digital</NavLink>
-                          <NavLink to="/ObiPage"  onClick={closeOffCanvas} className="text-3" id="obi">Ubi </NavLink>  
-                          <NavLink to="/ObservatorioPage"  onClick={closeOffCanvas}  className="text-3" id="observatorio">Observatorio</NavLink>   
+                          <NavLink to="/" className="text-3"  id="inicio" >inicio</NavLink>
+                          <NavLink to="/RevistaDigitalPage"className="text-3" id="revista">Revista Digital</NavLink>
+                          <NavLink to="/ObiPage" className="text-3" id="obi">Ubi </NavLink>  
+                          <NavLink to="/ObservatorioPage"className="text-3" id="observatorio">Observatorio</NavLink>   
                         </Nav>
                         <Nav className="navbar-buttons" id="btnuser" >
                           { UserButtons}
