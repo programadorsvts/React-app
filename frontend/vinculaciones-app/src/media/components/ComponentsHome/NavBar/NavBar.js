@@ -43,8 +43,8 @@ function NavBar() {
       else {
               UserButtons=
               <>
-                <Button onClick={() => {  navigate("/LoginPage") ; closeOffCanvas() }} >Iniciar sesión</Button>
-                <Button onClick={() => {  navigate("/SingUpPage");closeOffCanvas()   }} >Registrarse</Button>
+                <Button onClick={() => {  navigate("/LoginPage") }} >Iniciar sesión</Button>
+                <Button onClick={() => {  navigate("/SingUpPage")}} >Registrarse</Button>
               </>
       }  
 
@@ -80,7 +80,6 @@ function NavBar() {
 
 
      {/*  {['lg' ].map((expand) => (
-        
         <Navbar id="navbar" key={expand} expand={expand} className="navbar" sticky="top" >
           <Container fluid id="container" >
             <NavLink to="/" id="navlogo" >
@@ -91,7 +90,6 @@ function NavBar() {
               <Offcanvas.Header closeButton >
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}></Offcanvas.Title>
               </Offcanvas.Header>
-
               <Offcanvas.Body >
                 <Nav className="justify-content-start flex-grow-1"  id="navbtns">
                   <NavLink to="/" className="text-3" id="inicio" onClick={closeOffCanvas}>inicio</NavLink>
