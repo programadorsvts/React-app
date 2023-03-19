@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import ProyectoCard from '../ProyectoCard/ProyectoCard';
 
 import "./proyecto.css"
+import { API_URL } from '../../../../config/env';
 
 function MisProyectos () {
 
@@ -13,7 +14,7 @@ function MisProyectos () {
   const [nextUrl, setNextUrl] = useState(""); //Proyectos del backend variable llamada 'proyectos'
 
   useEffect(() => {
-    Axios.get("https://laravel-api-app-iy9ff.ondigitalocean.app/api/proyects?page=1&to=5")
+    Axios.get(API_URL + "/api/proyects?page=1&to=20")
       .then((response) => {
         setProyectos(response.data.data);
         setPrevUrl(response.data.prev_page_url);
@@ -25,14 +26,14 @@ function MisProyectos () {
   }, []);
 
   const nextPage = (url) => {
-    Axios.get(url + "&to=5").then((response) => {
+    Axios.get(url + "&to=20").then((response) => {
       setProyectos((state) => response.data.data);
       setPrevUrl(response.data.prev_page_url);
       setNextUrl(response.data.next_page_url);
     });
   };
   const prevPage = (url) => {
-    Axios.get(url + "&to=5").then((response) => {
+    Axios.get(url + "&to=20").then((response) => {
       setProyectos((state) => response.data.data);
       setPrevUrl(response.data.prev_page_url);
       setNextUrl(response.data.next_page_url);

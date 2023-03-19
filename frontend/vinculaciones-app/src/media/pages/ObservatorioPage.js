@@ -9,7 +9,6 @@ function observatorio ( ){
                 <>
                     <PrincipalObservatorio></PrincipalObservatorio>
                     <CrearProyecto></CrearProyecto>
-                    <Buscador></Buscador>
                     <Proyecto></Proyecto>
                 </>
         );

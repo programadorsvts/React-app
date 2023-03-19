@@ -4,7 +4,7 @@ import Axios  from "axios"
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 import Loader from './media/components/Loader/Loader'
-
+import { API_URL } from "./config/env"
 
 const LoginContext =React.createContext();
 const LogOutContext =React.createContext();
@@ -37,14 +37,12 @@ export function LoginProvider( {children } ){
 
      /////////////////User Auth/////////////////////////////////
     const AuthUser= ()=> {
-                Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/sanctum/csrf-cookie' ).then(response => {
-                        Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/api/checkAuth' )
+                Axios.get(API_URL + 'sanctum/csrf-cookie' ).then(response => {
+                        Axios.get(API_URL + 'api/checkAuth' )
                         .then((response) => {
-                            console.log(response.data.message)
                             setAuth(true);
                         })
                         .catch((error)=> {
-                            console.log(error.response.data.message);
                             setAuth(false);
                         })
                     }); 
@@ -55,9 +53,8 @@ export function LoginProvider( {children } ){
      ///////////////////Log In///////////////////////////////////
      const LogUser = (email,password) => {
             setLoading(true)
-            Axios.post('https://laravel-api-app-iy9ff.ondigitalocean.app/api/login', { "email":email,"password": password})
+            Axios.post(API_URL + 'api/login', { "email":email,"password": password})
             .then((response) => {
-                console.log(response);
                 localStorage.setItem('local-email', email);
                 localStorage.setItem('local-token', response.data.token);
                 setLoading(false)
@@ -65,7 +62,6 @@ export function LoginProvider( {children } ){
                 navigate("/");
             })
             .catch((error) => {
-                    console.log(error);
                     setLoading(false)
                     Swal.fire({
                         icon: 'error',
@@ -79,22 +75,20 @@ export function LoginProvider( {children } ){
 
       ///////////////////Sing Up///////////////////////////////////
      const SingUpUser = (email,password,confir) => {
-        Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/sanctum/csrf-cookie' ).then((response) => {
+        Axios.get(API_URL + 'sanctum/csrf-cookie' ).then((response) => {
                 setLoading(true)
-              Axios.post("https://laravel-api-app-iy9ff.ondigitalocean.app/api/register",{
+              Axios.post(API_URL + "api/register",{
                 "email": email,
                 "password": password,
                 "confirm_password": confir,
               })
               .then( (response ) => {
-                console.log(response)
                 setLoading(false)
                 Swal.fire ({ icon: 'success', title: 'Registro Exitoso - Enviamos un mail de verificacion de cuenta', showConfirmButton: true, timer: 6000 })
                 navigate("/");
            
               })
               .catch((error)=> {
-                 console.log(error);
                  setLoading(false)
                 Swal.fire({ icon: 'error', text: error.response.data.message})
                 setErrorSubmit(error)
@@ -105,9 +99,9 @@ export function LoginProvider( {children } ){
 
      /////////////////Login Out/////////////////////////////////
     const LogOutUser = (sumiterror) => { 
-        Axios.get('https://laravel-api-app-iy9ff.ondigitalocean.app/sanctum/csrf-cookie' ).then(response => {
+        Axios.get(API_URL + 'sanctum/csrf-cookie' ).then(response => {
             setLoading(true)
-            Axios.post("https://laravel-api-app-iy9ff.ondigitalocean.app/api/logout")
+            Axios.post(API_URL + "api/logout")
             .then((response) => {
                 localStorage.removeItem("local-token")
                 localStorage.removeItem("local-email")
@@ -117,7 +111,6 @@ export function LoginProvider( {children } ){
                 navigate("/LoginPage");
             })
             .catch((error) => {
-                console.log(error)
                 setLoading(false)
                 Swal.fire({ icon: 'error', text: error })
             })    
