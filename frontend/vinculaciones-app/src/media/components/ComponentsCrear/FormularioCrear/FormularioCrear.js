@@ -7,6 +7,7 @@ import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
+import { API_URL } from '../../../../config/env';
 
 const regExp = {
     telefono: /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -29,7 +30,7 @@ function FormularioCrear() {
 
     useEffect(() => {
       
-        Axios.get("https://laravel-api-app-iy9ff.ondigitalocean.app/api/area")
+        Axios.get(API_URL + "api/area")
         .then((response) => {
             console.log(response)
             setAreas(response.data)
@@ -54,7 +55,7 @@ function FormularioCrear() {
                 descripcion:'',
             } }
             onSubmit={values => {
-                Axios.post("https://laravel-api-app-iy9ff.ondigitalocean.app/api/proyects", {
+                Axios.post(API_URL + "api/proyects", {
                     "title": values.titulo,
                     "director_name": values.director,
                     "area_id": values.area,
