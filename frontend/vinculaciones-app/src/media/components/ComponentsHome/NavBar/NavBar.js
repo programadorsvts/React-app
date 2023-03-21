@@ -22,11 +22,7 @@ function NavBar() {
           setAuth(AuthUser()); 
   }, [AuthUser])
 
-  const [show, setShow] = useState(true);
-
-  const closeOffCanvas = () => {
-    setShow((show) => !show);
-  };
+  
   
    if(auth){
               UserButtons= 
@@ -50,9 +46,9 @@ function NavBar() {
                      <NavLink to="/" id="navlogo" >
                       <img src='assets/svgs/Solo-LogoSVTS.svg' width="100" height="50" className="d-inline-block " alt="logo1" id="imglogo"/>
                     </ NavLink >
-                <Navbar.Toggle  className='navbar-toggler' aria-controls="offcanvasNavbar"  onClick={closeOffCanvas}/>
+                <Navbar.Toggle  className='navbar-toggler' aria-controls="offcanvasNavbar" />
                 <Navbar.Collapse id="basic-navbar-nav" >
-                   <Navbar.Offcanvas className='menu-toggle' placement="end" restoreFocus={false} show={show} onHide={closeOffCanvas}>
+                   <Navbar.Offcanvas className='menu-toggle' placement="end" restoreFocus={false}>
                       <Offcanvas.Header closeButton >
                         <Offcanvas.Title>Tocar fuera del menu para volver</Offcanvas.Title>
                       </Offcanvas.Header>
