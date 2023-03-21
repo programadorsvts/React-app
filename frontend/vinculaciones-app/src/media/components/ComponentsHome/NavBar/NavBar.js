@@ -50,7 +50,7 @@ function NavBar() {
                 <Navbar.Collapse id="basic-navbar-nav" >
                    <Navbar.Offcanvas className='menu-toggle' placement="end" restoreFocus={false}>
                       <Offcanvas.Header closeButton >
-                        <Offcanvas.Title>Tocar fuera del menu para volver</Offcanvas.Title>
+                        <Offcanvas.Title></Offcanvas.Title>
                       </Offcanvas.Header>
                       <Offcanvas.Body >
                         <Nav className="justify-content-start flex-grow-1"  id="navbtns">
