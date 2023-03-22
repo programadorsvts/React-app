@@ -13,7 +13,7 @@ function MisProyectos () {
 
 
   useEffect(() => {
-    Axios.get(API_URL + "api/user/proyects")
+    Axios.get(API_URL + "api/proyects")
       .then((response) => {
         setProyectos(response.data.data);
       })
