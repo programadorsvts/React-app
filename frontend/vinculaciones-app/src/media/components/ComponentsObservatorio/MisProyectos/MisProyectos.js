@@ -9,30 +9,28 @@ import { API_URL } from '../../../../config/env';
 
 function MisProyectos () {
 
-  const [proyectos, setProyectos] = useState([]); //Proyectos del backend variable llamada 'proyectos'
+    const [proyectos, setProyectos] = useState([]); //Proyectos del backend variable llamada 'proyectos'
 
-
-  useEffect(() => {
-    Axios.get(API_URL + "api/proyects")
-      .then((response) => {
-        setProyectos(response.data);
-      })
-      .catch((error) => {
-        console.log(error.response.data);
-      });
-  }, []);
-  };
+    useEffect(() => {
+      Axios.get(API_URL + "api/proyects")
+        .then((response) => {
+          setProyectos(response.data);
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
+    }, []);
   
-  return (
-    <>
-        <Container className="proyecto">
-          {proyectos.map((item) => {
-            return <ProyectoCard key={item.id} proyecto={item}></ProyectoCard>;
-          })}
-        </Container>
+      return (
+        <>
+            <Container className="proyecto">
+              {proyectos.map((item) => {
+                return <ProyectoCard key={item.id} proyecto={item}></ProyectoCard>;
+              })}
+            </Container>
 
-    </>
-  );
-
+        </>
+      );
+}
 
  export default MisProyectos
