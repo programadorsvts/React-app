@@ -12,9 +12,9 @@ function MisProyectos () {
     const [proyectos, setProyectos] = useState([]); //Proyectos del backend variable llamada 'proyectos'
 
     useEffect(() => {
-      Axios.get(API_URL + "api/proyects")
+      Axios.get(API_URL + "api/user/proyects")
         .then((response) => {
-          setProyectos(response.data);
+          setProyectos(response.data.proyects);
         })
         .catch((error) => {
           console.log(error.response.data);
