@@ -13,7 +13,7 @@ function Home() {
   return (
     <>
       <Principal></Principal>
-      <Noticias></Noticias>
+      {/* <Noticias></Noticias> */}
       <Gestion></Gestion>
       <Stan></Stan>
       <Convocatorias></Convocatorias>

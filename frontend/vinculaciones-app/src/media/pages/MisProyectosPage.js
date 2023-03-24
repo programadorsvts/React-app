@@ -8,8 +8,8 @@ const MisProyectosPage = () => {
   return (
     <>
       <PrincipalObservatorio titulo="Mis Proyectos"></PrincipalObservatorio>
-      <MisProyectos/>
       <CrearProyecto></CrearProyecto>
+      <MisProyectos/>
     </>
   )
 }
