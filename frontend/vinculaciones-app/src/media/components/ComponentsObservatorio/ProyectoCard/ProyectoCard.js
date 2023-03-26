@@ -15,7 +15,7 @@ function ProyectoCard({ proyecto }) {
             {proyecto.title}
           </Card.Text>
           <Card.Title className="text-1 text-deg text-capitalize">
-            {proyecto.area}
+            {proyecto.area.name}
           </Card.Title>
         </Card.Body>
       </Card>
