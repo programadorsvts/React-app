@@ -16,7 +16,7 @@ function ProyectosPublicados() {
   const [areas, setAreas] = useState([]);
   const [nameToSearch, setnameToSearch] = useState("");
   const [areaToSearch, setareaToSearch] = useState(0);
-  
+
 
   const handleInputName = (e) => {
     setnameToSearch(e.target.value)
@@ -29,11 +29,11 @@ function ProyectosPublicados() {
 
   const handleSubmit = () => {
     let params = ""
-    if(nameToSearch)
+    if (nameToSearch)
       params += `&search=${nameToSearch}`
-    if(areaToSearch && areaToSearch !== "0")
+    if (areaToSearch && areaToSearch !== "0")
       params += `&area_id=${areaToSearch}`
-    
+
     Axios.get(API_URL + `api/proyects?to=20${params}`).then(response => {
       setProyectos(response.data.data);
       setPrevUrl(response.data.prev_page_url);
@@ -68,15 +68,16 @@ function ProyectosPublicados() {
   };
   const prevPage = (url) => {
     Axios.get(url + "&to=20").then((response) => {
+
       setProyectos((state) => response.data.data);
       setPrevUrl(response.data.prev_page_url);
       setNextUrl(response.data.next_page_url);
     });
   };
-  
+
   return (
     <>
-    <Container className="d-flex justify-content-center mt-5">
+      <Container className="d-flex justify-content-center mt-5">
         <Form className="form buscador-form mb-5 w-75" >
           <Form.Group className="mb-3" controlId="buscador1">
             <Form.Label className="encabezado-4 label">Buscador</Form.Label>
@@ -125,7 +126,7 @@ function ProyectosPublicados() {
             ""
           )}
         </Container>
-           
+
       </Container>
     </>
   );
