@@ -15,7 +15,7 @@ function ProyectoModal(props) {
             >
                 <Modal.Header closeButton>
                     <Modal.Title className='text-1 text-deg text-capitalize' id="contained-modal-title-vcenter">
-                        {props.proyecto.area_id}
+                        {props.proyecto.area.name}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='text-description'>
