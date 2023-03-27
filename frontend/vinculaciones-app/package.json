@@ -30,6 +30,7 @@
     "yup": "^1.0.2"
   },
   "scripts": {
+    "start": "react-scripts start",
     "dev": " serve -s build",
     "dev webpack": "webpack serve --config ./webpack.config.js --mode development",
     "build": "react-scripts build",

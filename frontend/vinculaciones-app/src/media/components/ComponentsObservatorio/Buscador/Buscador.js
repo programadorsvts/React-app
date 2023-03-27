@@ -10,7 +10,7 @@ const Buscador = () => {
   const [areas, setAreas] = useState([]);
   const [nameToSearch, setnameToSearch] = useState("");
   const [areaToSearch, setareaToSearch] = useState(0);
-  
+
   useEffect(() => {
     Axios.get(API_URL + "api/area")
       .then((response) => {
@@ -28,16 +28,16 @@ const Buscador = () => {
     console.log(areaToSearch)
   }
 
-  const handleSubmit = () => {
-    let params = "&"
-    if(nameToSearch)
-      params += `search=${nameToSearch}`
-    if(areaToSearch)
-      params += `area_id=${nameToSearch}`
-    // Axios.get(API_URL +  `api/proyects?${params}`).then(response => {
-
-    // })
-  }
+  /*  const handleSubmit = () => {
+     let params = "&"
+     if(nameToSearch)
+       params += `search=${nameToSearch}`
+     if(areaToSearch)
+       params += `area_id=${nameToSearch}`
+     // Axios.get(API_URL +  `api/proyects?${params}`).then(response => {
+ 
+     // })
+   } */
 
   return (
     <>

@@ -111,7 +111,7 @@ function ProyectosPublicados() {
         </h1>
         <Container className="proyecto">
           {proyectos.map((item) => {
-            return <ProyectoCard key={item.id} area={areas.name} proyecto={item}></ProyectoCard>;
+            return <ProyectoCard key={item.id} /* area={ } */ proyecto={item}></ProyectoCard>;
           })}
         </Container>
         <Container className='pagination'>

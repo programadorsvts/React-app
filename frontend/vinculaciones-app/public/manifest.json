@@ -4,21 +4,24 @@
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "512x512",
+      "type": "images/ico",
+      "purpose": "maskable"
     },
     {
       "src": "Logo-ObservaSVTS-negro.svg",
-      "type": "image/svg",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "type": "images/png",
+      "purpose": "maskable"
     },
     {
       "src": "Logo-ObservaSVTS-negro.svg",
-      "type": "image/svg",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "type": "images/png",
+      "purpose": "maskable"
     }
   ],
-  "start_url": "https://walrus-app-kiss6.ondigitalocean.app/",
+  "start_url": "https://react-app-swboe.ondigitalocean.app/",
   "display": "standalone",
   "theme_color": "#DFF4FF",
   "background_color": "#1F2937"
