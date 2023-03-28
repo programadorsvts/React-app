@@ -3,10 +3,17 @@ import "./proyectocard.css";
 import { useState } from "react";
 
 import ProyectoModal from "../ProyectoCard/ProyectoModal";
-
+ const [areas, setAreas] = useState([]);
+        
 function ProyectoCard({ proyecto }) {
   const [modalShow, setModalShow] = useState(false);
-
+  useEffect(() => {
+    Axios.get(API_URL + "api/area")
+      .then((response) => {
+        setAreas(response.data);
+      })
+      .catch((err) => console.error(err));
+    
   return (
     <>
       <Card className="card" onClick={() => setModalShow(true)}>
