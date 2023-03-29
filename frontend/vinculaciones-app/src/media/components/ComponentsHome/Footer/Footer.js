@@ -21,7 +21,7 @@ function footer() {
                 <p>Ubicación: 1er Piso - Ala B</p>
                 <p>Telefono: +54 (0266) 4520300</p>
                 <p>Interno: 5159</p>
-                <p>Email: svts.unsl@gmail.com</p>
+                <p>Email: svtsInterno@gmail.com</p>
             </div>
             <div className="text-center"xs={12} md={4}>
                 <h6 className="text-1">Redes</h6>
