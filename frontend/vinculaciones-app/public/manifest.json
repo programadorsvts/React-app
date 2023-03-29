@@ -3,19 +3,19 @@
   "name": "SVTS Web App",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "Logo Svts_corto.png",
       "sizes": "512x512",
       "type": "images/ico",
       "purpose": "maskable"
     },
     {
-      "src": "Logo-ObservaSVTS-negro.svg",
+      "src": "Logo Svts.png",
       "sizes": "192x192",
       "type": "images/png",
       "purpose": "maskable"
     },
     {
-      "src": "Logo-ObservaSVTS-negro.svg",
+      "src": "Logo Svts.png",
       "sizes": "512x512",
       "type": "images/png",
       "purpose": "maskable"
