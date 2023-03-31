@@ -24,7 +24,7 @@ function RestablecerForm() {
     const ResetPassword=(email)=>{
        
               Axios.post(API_URL+'api/sendresetpassword',{"email":email })
-              .then(response =>{
+              .then((response) =>{
                   Swal.fire ({ icon: 'success', title: 'Se envio el email de restablecimiento exitosamente', showConfirmButton: true, timer: 6000 })
                   navigate("/");
               })
