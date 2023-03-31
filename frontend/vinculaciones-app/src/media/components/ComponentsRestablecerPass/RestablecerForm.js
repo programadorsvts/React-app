@@ -27,11 +27,11 @@ function RestablecerForm() {
               .then((response) =>{
                 console.log(response)
                   Swal.fire ({ icon: 'success', title: response.data.message, showConfirmButton: true, timer: 6000 })
-             /*      navigate("/"); */
+                  navigate("/"); 
               })
               .catch((error) =>{
                   console.log(error)
-                  Swal.fire({ icon: 'error',title: 'Tuvimos un problema en encontrar el email del restablecimiento', text: error.response.data.message })
+                  Swal.fire({ icon: 'error',title: 'Tuvimos un problema en encontrar el email del restablecimiento', text: error })
                   navigate("/RestablecerPage");
               })  
     }
