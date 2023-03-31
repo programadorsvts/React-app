@@ -25,12 +25,13 @@ function RestablecerForm() {
        
               Axios.post(API_URL+'api/sendresetpassword',{"email":email })
               .then((response) =>{
-                  Swal.fire ({ icon: 'success', title: 'Se envio el email de restablecimiento exitosamente', showConfirmButton: true, timer: 6000 })
-                  navigate("/");
+                console.log(response)
+                  Swal.fire ({ icon: 'success', title: response.data.message, showConfirmButton: true, timer: 6000 })
+             /*      navigate("/"); */
               })
               .catch((error) =>{
                   console.log(error)
-                  Swal.fire({ icon: 'error',title: 'Tuvimos un problema en encontrar el email del restablecimiento', text: error })
+                  Swal.fire({ icon: 'error',title: 'Tuvimos un problema en encontrar el email del restablecimiento', text: error.response.data.message })
                   navigate("/RestablecerPage");
               })  
     }
