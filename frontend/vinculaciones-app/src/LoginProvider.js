@@ -10,31 +10,29 @@ const LoginContext =React.createContext();
 const LogOutContext =React.createContext();
 const AuthUserContext =React.createContext();
 const SingUpUserContext=React.createContext();
+
  
-export const useLoginContext= ()=>{
+export const useLoginContext=()=>{
     return useContext (LoginContext );
 }
-export const useLogOutContext= ()=>{
+export const useLogOutContext=()=>{
     return useContext (LogOutContext );
 }
 export const useSingUpUserContext=()=>{
     return useContext(SingUpUserContext);
 }
-export const useAuthUserContext= ()=>{
+export const useAuthUserContext=()=>{
     return useContext (AuthUserContext );
 }
-export function LoginProvider( {children } ){
-          
 
+export function LoginProvider( {children } ){
+    
     const [auth, setAuth] = useState(null);
     const [errorSubmit, setErrorSubmit] = useState("");
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false)
 
     
-       
-        
-
      /////////////////User Auth/////////////////////////////////
     const AuthUser= ()=> {
                 Axios.get(API_URL + 'sanctum/csrf-cookie' ).then(response => {
@@ -73,7 +71,7 @@ export function LoginProvider( {children } ){
     }
      /////////////////////////////////////////////////////////////
 
-      ///////////////////Sing Up///////////////////////////////////
+    ///////////////////Sing Up///////////////////////////////////
      const SingUpUser = (email,password,confir) => {
         Axios.get(API_URL + 'sanctum/csrf-cookie' ).then((response) => {
                 setLoading(true)
@@ -97,7 +95,7 @@ export function LoginProvider( {children } ){
     }
      /////////////////////////////////////////////////////////////
 
-     /////////////////Login Out/////////////////////////////////
+    /////////////////Login Out/////////////////////////////////
     const LogOutUser = (sumiterror) => { 
         Axios.get(API_URL + 'sanctum/csrf-cookie' ).then(response => {
             setLoading(true)
@@ -118,15 +116,16 @@ export function LoginProvider( {children } ){
     }
     ///////////////////////////////////////////////////////////
 
+
     return(
         <>
             {loading && <Loader/>}
             <LoginContext.Provider value={LogUser}>
                 <SingUpUserContext.Provider value={SingUpUser}>
                     <AuthUserContext.Provider value={AuthUser}>
-                        <LogOutContext.Provider value={LogOutUser}>
-                                    {children}
-                        </LogOutContext.Provider>
+                    <LogOutContext.Provider value={LogOutUser}>
+                                 {children}
+                    </LogOutContext.Provider>
                     </AuthUserContext.Provider>
                 </SingUpUserContext.Provider>    
             </LoginContext.Provider>

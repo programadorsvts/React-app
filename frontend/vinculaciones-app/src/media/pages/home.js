@@ -13,7 +13,6 @@ function Home() {
   return (
     <>
       <Principal></Principal>
-      {/*    <Galeria></Galeria> */}
       <Noticias></Noticias>
       <Gestion></Gestion>
       <Stan></Stan>
