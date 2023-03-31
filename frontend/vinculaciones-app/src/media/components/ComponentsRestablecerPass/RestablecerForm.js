@@ -29,6 +29,7 @@ function RestablecerForm() {
                   navigate("/");
               })
               .catch((error) =>{
+                  console.log(error)
                   Swal.fire({ icon: 'error',title: 'Tuvimos un problema en encontrar el email del restablecimiento', text: error })
                   navigate("/RestablecerPage");
               })  
