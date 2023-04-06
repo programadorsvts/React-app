@@ -21,7 +21,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "./",
+  "start_url": "https://react-app-swboe.ondigitalocean.app/",
   "display": "standalone",
   "theme_color": "#DFF4FF",
   "background_color": "#1F2937"
