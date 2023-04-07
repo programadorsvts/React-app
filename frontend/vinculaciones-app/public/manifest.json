@@ -3,19 +3,19 @@
   "name": "SVTS Web App",
   "icons": [
     {
-      "src": "./PWA/observatorio-512.png",
+      "src": "./PWA/observatorio-negro-1024.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./PWA/observatorio-192.png",
+      "src": "./PWA/observatorio-negro-1024.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./PWA/observatorio-144.png",
+      "src": "./PWA/observatorio-negro-1024.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
