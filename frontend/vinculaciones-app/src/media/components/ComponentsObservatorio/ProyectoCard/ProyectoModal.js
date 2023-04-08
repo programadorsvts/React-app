@@ -11,7 +11,7 @@ function ProyectoModal(props) {
         <>
             <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Header closeButton>
-                    <Modal.Title>
+                    <Modal.Title className="text-1 text-deg text-capitalize">
                         {props.proyecto.area_name}
                     </Modal.Title>
                 </Modal.Header>

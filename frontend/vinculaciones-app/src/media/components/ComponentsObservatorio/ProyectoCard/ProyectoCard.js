@@ -1,12 +1,11 @@
 import { Card } from "react-bootstrap";
 import "./proyectocard.css";
 import { useState } from "react";
-
-
 import ProyectoModal from "../ProyectoCard/ProyectoModal";
 
 function ProyectoCard({ proyecto }) {
   const [modalShow, setModalShow] = useState(false);
+
 
   return (
     <>
@@ -15,7 +14,9 @@ function ProyectoCard({ proyecto }) {
           <Card.Text className="encabezado-4 text-lowercase">
             {proyecto.title}
           </Card.Text>
-          {proyecto.area_name}
+          <Card.Title className="text-1 text-deg text-capitalize">
+            {proyecto.area_name}
+          </Card.Title>
         </Card.Body>
       </Card>
       <ProyectoModal
