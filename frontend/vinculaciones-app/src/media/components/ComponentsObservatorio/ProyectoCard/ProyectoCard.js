@@ -11,22 +11,23 @@ function ProyectoCard({ proyecto }) {
   const [modalShow, setModalShow] = useState(false);
   const [areas, setAreas] = useState([]);
 
-    useEffect(() => {
-      Axios.get(API_URL + "api/area")
-        .then((response) => {
-          setAreas(response.data);
-        })
-        .catch((err) => console.error(err));
-    }, []);
-        
+  useEffect(() => {
+    Axios.get(API_URL + "api/area")
+      .then((response) => {
+        setAreas(response.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <>
-        <Card className="card" onClick={() => setModalShow(true)}>
-          <Card.Body>
-            <Card.Text className="encabezado-4 text-lowercase">
-              {proyecto.title}
-            </Card.Text>
-              {areas.map((area) => {
+      <Card className="card" onClick={() => setModalShow(true)}>
+        <Card.Body>
+          <Card.Text className="encabezado-4 text-lowercase">
+            {proyecto.title}
+          </Card.Text>
+          {proyecto.area_name}
+          {/*  {areas.map((area) => {
                     if (area.id===proyecto.area_id)
                     {
                          return(
@@ -35,14 +36,14 @@ function ProyectoCard({ proyecto }) {
                            </Card.Title>
                         ); 
                     } else{return null}
-              })}
-          </Card.Body>
-        </Card>
-        <ProyectoModal
-          proyecto={proyecto}
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-        />
+              })} */}
+        </Card.Body>
+      </Card>
+      <ProyectoModal
+        proyecto={proyecto}
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </>
   );
 }
