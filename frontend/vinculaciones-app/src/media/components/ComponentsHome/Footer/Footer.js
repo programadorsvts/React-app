@@ -25,10 +25,10 @@ function footer() {
                 </div>
                 <div className="text-center" xs={12} md={4}>
                     <h6 className="text-1">Redes</h6>
-                    <NavLink className="m-2 icon" to="https://twitter.com/svts72071168"><BsTwitter /></NavLink>
-                    <NavLink className="m-2 icon" to="https://www.facebook.com/profile.php?id=100063927434371"><BsFacebook /></NavLink>
-                    <NavLink className="m-2 icon" to="https://www.instagram.com/svts.unsl/?hl=es-la"><BsInstagram /></NavLink>
-                    <NavLink className="m-2 icon" to="https://www.youtube.com/channel/UCXgAUfOL-tRfk4Wt_5bbnZQ"><BsYoutube /></NavLink>
+                    <NavLink className="m-2 icon" to="https://twitter.com/svts72071168" target="_blank"><BsTwitter /></NavLink>
+                    <NavLink className="m-2 icon" to="https://www.facebook.com/profile.php?id=100063927434371" target="_blank"><BsFacebook /></NavLink>
+                    <NavLink className="m-2 icon" to="https://www.instagram.com/svts.unsl/?hl=es-la" target="_blank"><BsInstagram /></NavLink>
+                    <NavLink className="m-2 icon" to="https://www.youtube.com/channel/UCXgAUfOL-tRfk4Wt_5bbnZQ" target="_blank"><BsYoutube /></NavLink>
                 </div>
             </footer>
             <div className="copyright-body text-center ">
