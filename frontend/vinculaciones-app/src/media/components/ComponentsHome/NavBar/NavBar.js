@@ -42,8 +42,8 @@ function NavBar() {
     <>
       <Navbar expand="lg" className="navbar" sticky="top"  >
         <Container fluid>
-          <NavLink to="/" id="navlogo" >
-            <img src='assets/svgs/Solo-LogoSVTS.svg' width="100" height="50" className="d-inline-block " alt="logo1" id="imglogo" />
+          <NavLink to="/" >
+            <img src='assets/svgs/Solo-LogoSVTS.svg' width="100" height="50" className="d-inline-block " alt="logo1" />
           </ NavLink >
           <Navbar.Toggle className='navbar-toggler' aria-controls="offcanvasNavbar" />
           <Navbar.Collapse id="basic-navbar-nav" >
@@ -53,7 +53,7 @@ function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body >
                 <Nav className="justify-content-start flex-grow-1" onClick={closeOffCanvas}>
-                  <NavLink to="/" className="text-3" id="inicio" onClick={closeOffCanvas} >inicio</NavLink>
+                  <NavLink to="/" className="text-3" onClick={closeOffCanvas} >inicio</NavLink>
                   <NavLink to="/RevistaDigitalPage" className="text-3" onClick={closeOffCanvas}>Revista Digital</NavLink>
                   <NavLink to="/ObiPage" className="text-3" onClick={closeOffCanvas}>Ubi </NavLink>
                   <NavLink to="/ObservatorioPage" className="text-3" onClick={closeOffCanvas}>Observatorio</NavLink>
