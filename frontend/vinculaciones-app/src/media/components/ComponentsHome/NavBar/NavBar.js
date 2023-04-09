@@ -6,13 +6,12 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useNavigate, NavLink } from "react-router-dom";
 import './navbar.css';
 import { useAuthUserContext, useLogOutContext } from '../../../../LoginProvider';
-import { useState, useEffect } from 'react';
-
-
+import { useState, useEffect, useRef } from 'react';
 
 
 function NavBar() {
-
+  const offCanvasRef = useRef();
+  const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
   const navigate = useNavigate();
   const logout = useLogOutContext();
   const AuthUser = useAuthUserContext();
@@ -27,15 +26,15 @@ function NavBar() {
   if (auth) {
     UserButtons =
       <>
-        <Button onClick={() => { navigate("/MisProyectosPage") }} >Mis proyectos</Button>
-        <Button onClick={() => { logout() }} >Cerrar sesion</Button>
+        <Button onClick={() => { navigate("/MisProyectosPage"); closeOffCanvas() }} >Mis proyectos</Button>
+        <Button onClick={() => { logout(); closeOffCanvas() }} >Cerrar sesion</Button>
       </>
   }
   else {
     UserButtons =
       <>
-        <Button onClick={() => { navigate("/LoginPage") }} >Iniciar sesión</Button>
-        <Button onClick={() => { navigate("/SingUpPage") }} >Registrarse</Button>
+        <Button onClick={() => { navigate("/LoginPage"); closeOffCanvas() }} >Iniciar sesión</Button>
+        <Button onClick={() => { navigate("/SingUpPage"); closeOffCanvas() }} >Registrarse</Button>
       </>
   }
 
@@ -48,16 +47,16 @@ function NavBar() {
           </ NavLink >
           <Navbar.Toggle className='navbar-toggler' aria-controls="offcanvasNavbar" />
           <Navbar.Collapse id="basic-navbar-nav" >
-            <Navbar.Offcanvas className='menu-toggle' placement="end" restoreFocus={false}>
+            <Navbar.Offcanvas className='menu-toggle' placement="end" restoreFocus={false} ref={offCanvasRef}>
               <Offcanvas.Header closeButton >
                 <Offcanvas.Title></Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body >
-                <Nav className="justify-content-start flex-grow-1" id="navbtns">
-                  <NavLink to="/" className="text-3" id="inicio" >inicio</NavLink>
-                  <NavLink to="/RevistaDigitalPage" className="text-3" id="revista">Revista Digital</NavLink>
-                  <NavLink to="/ObiPage" className="text-3" id="obi">Ubi </NavLink>
-                  <NavLink to="/ObservatorioPage" className="text-3" id="observatorio">Observatorio</NavLink>
+                <Nav className="justify-content-start flex-grow-1" onClick={closeOffCanvas}>
+                  <NavLink to="/" className="text-3" id="inicio" onClick={closeOffCanvas} >inicio</NavLink>
+                  <NavLink to="/RevistaDigitalPage" className="text-3" onClick={closeOffCanvas}>Revista Digital</NavLink>
+                  <NavLink to="/ObiPage" className="text-3" onClick={closeOffCanvas}>Ubi </NavLink>
+                  <NavLink to="/ObservatorioPage" className="text-3" onClick={closeOffCanvas}>Observatorio</NavLink>
                 </Nav>
                 <Nav className="navbar-buttons" id="btnuser" >
                   {UserButtons}
