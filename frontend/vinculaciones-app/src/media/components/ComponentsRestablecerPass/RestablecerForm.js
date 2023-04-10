@@ -41,6 +41,7 @@ function RestablecerForm() {
 
   return (
     <>
+      {loading && <Loader />}
       <Formik
         validationSchema={schema}
         initialValues={{
