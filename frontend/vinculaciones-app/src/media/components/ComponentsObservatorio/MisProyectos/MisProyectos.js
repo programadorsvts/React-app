@@ -7,30 +7,31 @@ import ProyectoCard from '../ProyectoCard/ProyectoCard';
 import "./proyecto.css"
 import { API_URL } from '../../../../config/env';
 
-function MisProyectos () {
+function MisProyectos() {
 
-    const [proyectos, setProyectos] = useState([]); //Proyectos del backend variable llamada 'proyectos'
+  const [proyectos, setProyectos] = useState([]); //Proyectos del backend variable llamada 'proyectos'
 
-    useEffect(() => {
-      Axios.get(API_URL + "api/user/proyects")
-        .then((response) => {
-          setProyectos(response.data.proyects);
-        })
-        .catch((error) => {
-          console.log(error.response.data);
-        });
-    }, []);
-  
-      return (
-        <>
-            <Container className="proyecto">
-              {proyectos.map((item) => {
-                return <ProyectoCard key={item.id} proyecto={item}></ProyectoCard>;
-              })}
-            </Container>
+  useEffect(() => {
+    Axios.get(API_URL + "api/user/proyects")
+      .then((response) => {
+        setProyectos(response.data.proyects);
+        console.log('Informacion del response- ', response)
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+  }, []);
 
-        </>
-      );
+  return (
+    <>
+      <Container className="proyecto">
+        {proyectos.map((item) => {
+          return <ProyectoCard key={item.id} proyecto={item}></ProyectoCard>;
+        })}
+      </Container>
+
+    </>
+  );
 }
 
- export default MisProyectos
+export default MisProyectos
