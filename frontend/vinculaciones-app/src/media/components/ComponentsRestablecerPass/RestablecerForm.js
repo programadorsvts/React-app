@@ -2,18 +2,17 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Axios from "axios"
 import Swal from 'sweetalert2'
-import Loader from '../Loader/Loader'
 import '../Loader/loader.css'
 import { useNavigate } from 'react-router-dom'
 import { API_URL } from "../../../config/env"
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { useState } from 'react'
+
 
 import '../../styles/form.css';
 
 function RestablecerForm() {
-  const [loading, setLoading] = useState(false)
+
   const navigate = useNavigate();
   const schema = Yup.object().shape({
     email: Yup.string()
@@ -23,17 +22,17 @@ function RestablecerForm() {
   });
 
   const ResetPassword = (email) => {
-    setLoading(true)
+
     Axios.post(API_URL + 'api/sendresetpassword', { "email": email })
       .then((response) => {
         console.log(response)
-        setLoading(false)
+
         Swal.fire({ icon: 'success', title: response.data.message, showConfirmButton: true, timer: 6000 })
         navigate("/");
       })
       .catch((error) => {
         console.log(error)
-        setLoading(false)
+
         Swal.fire({ icon: 'error', title: 'Tuvimos un problema en encontrar el email del restablecimiento', text: error })
         navigate("/RestablecerPage");
       })
@@ -41,7 +40,7 @@ function RestablecerForm() {
 
   return (
     <>
-      {loading && <Loader />}
+
       <Formik
         validationSchema={schema}
         initialValues={{
@@ -68,7 +67,6 @@ function RestablecerForm() {
                 isValid={touched.email && !errors.email}
                 isInvalid={touched.email && errors.email}
               />
-
               <Form.Control.Feedback type='invalid'>
                 {errors.email}
               </Form.Control.Feedback>
