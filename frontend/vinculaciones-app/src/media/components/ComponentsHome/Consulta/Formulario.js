@@ -6,7 +6,6 @@ import { Formik, } from 'formik';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
-import { useState } from 'react';
 import Loader from '../../Loader/Loader'
 import '../../Loader/loader.css'
 
