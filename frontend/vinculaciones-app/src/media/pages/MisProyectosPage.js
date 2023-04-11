@@ -5,11 +5,12 @@ import CrearProyecto from '../components/ComponentsObservatorio/CrearProyecto/Cr
 import MisProyectos from '../components/ComponentsObservatorio/MisProyectos/MisProyectos';
 
 const MisProyectosPage = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   return (
     <>
       <PrincipalObservatorio titulo="Mis Proyectos"></PrincipalObservatorio>
       <CrearProyecto></CrearProyecto>
-      <MisProyectos/>
+      <MisProyectos />
     </>
   )
 }

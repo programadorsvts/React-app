@@ -3,16 +3,16 @@ import RegistroExitoso from '../components/RegistroExitoso/RegistroExitoso'
 import { useParams } from 'react-router-dom';
 
 const RegistroExitosoPage = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  let { userId } = useParams()
 
-    let {userId} = useParams()
+  useEffect(() => {
+    console.log(userId)
+  }, [userId])
 
-    useEffect(() => {
-      console.log(userId)
-    }, [userId])
-    
   return (
     <>
-        <RegistroExitoso></RegistroExitoso>
+      <RegistroExitoso></RegistroExitoso>
     </>
   )
 }

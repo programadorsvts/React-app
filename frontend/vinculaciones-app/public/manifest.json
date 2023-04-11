@@ -3,22 +3,22 @@
   "name": "SVTS Web App",
   "icons": [
     {
-      "src": "LogoSvts.png",
+      "src": "./PWA/observatorio-negro-1024.png",
       "sizes": "512x512",
-      "type": "images/ico",
-      "purpose": "maskable"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "LogoSvts.png",
+      "src": "./PWA/observatorio-negro-1024.png",
       "sizes": "192x192",
-      "type": "images/png",
-      "purpose": "maskable"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "LogoSvts.png",
-      "sizes": "512x512",
-      "type": "images/png",
-      "purpose": "maskable"
+      "src": "./PWA/observatorio-negro-1024.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "https://react-app-swboe.ondigitalocean.app/",

@@ -2,15 +2,14 @@ import RestablecerForm from '../components/ComponentsRestablecerPass/Restablecer
 
 
 
-function restablecerpage (){
-    return(
-            <>
-           
-                <RestablecerForm></RestablecerForm>
-           
-            </>
+function restablecerpage() {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    return (
+        <>
+            <RestablecerForm></RestablecerForm>
+        </>
     );
 }
 
 
- export default restablecerpage
+export default restablecerpage
