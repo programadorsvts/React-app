@@ -1,6 +1,6 @@
 {
   "short_name": "svts app",
-  "name": "SVTS Web App",
+  "name": "SVTS App",
   "icons": [
     {
       "src": "./PWA/svts-logo.png",
