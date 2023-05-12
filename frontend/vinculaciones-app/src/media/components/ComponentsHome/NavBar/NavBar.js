@@ -47,16 +47,16 @@ function NavBar() {
           </ NavLink >
           <Navbar.Toggle className='navbar-toggler' aria-controls="offcanvasNavbar" />
           <Navbar.Collapse id="basic-navbar-nav" >
-            <Navbar.Offcanvas className='menu-toggle' placement="end" restoreFocus={false} ref={offCanvasRef}>
+            <Navbar.Offcanvas className='menu-toggle' placement="end" restoreFocus={false}>
               <Offcanvas.Header closeButton >
                 <Offcanvas.Title></Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body >
-                <Nav className="justify-content-start flex-grow-1" onClick={closeOffCanvas}>
-                  <NavLink to="/" className="text-3" onClick={closeOffCanvas} >inicio</NavLink>
-                  <NavLink to="/RevistaDigitalPage" className="text-3" onClick={closeOffCanvas}>Revista Digital</NavLink>
-                  <NavLink to="/ObiPage" className="text-3" onClick={closeOffCanvas}>Ubi </NavLink>
-                  <NavLink to="/ObservatorioPage" className="text-3" onClick={closeOffCanvas}>Observatorio</NavLink>
+                <Nav className="justify-content-start flex-grow-1">
+                  <NavLink to="/" className="text-3">inicio</NavLink>
+                  <NavLink to="/RevistaDigitalPage" className="text-3">Revista Digital</NavLink>
+                  <NavLink to="/ObiPage" className="text-3">Ubi </NavLink>
+                  <NavLink to="/ObservatorioPage" className="text-3">Observatorio</NavLink>
                 </Nav>
                 <Nav className="navbar-buttons" id="btnuser" >
                   {UserButtons}
