@@ -1,0 +1,30 @@
+.modal-content {
+    background: #1F2937;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.text-description {
+    width: 100%;
+    white-space: pre-wrap !important;
+    text-align: left;
+    line-break: strict;
+    justify-content: center;
+    hyphens: 100px;
+    overflow-wrap: break-word;
+}
+.modal-header,
+.modal-footer {
+    border: none;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .modal-content{
+        padding: .5rem;
+    }
+    div .fade .modal .show {
+        padding-left: 50px;
+    }
+}
