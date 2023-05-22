@@ -4,7 +4,7 @@ import GaleriaModal from './GaleriaModal'
 import { useState } from 'react';
 
 function Galeria() {
-  const [modalShow, setModalShow] = useState(true);
+  const [modalShow, setModalShow] = useState(false);
   return (
     <Container className='galeria mt-5 mb-5'>
       <img src='assets/images/galeria-1.webp' alt='imagen-1'></img>
