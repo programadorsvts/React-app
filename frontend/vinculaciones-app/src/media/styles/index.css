@@ -98,7 +98,9 @@ a:hover{
     border-color: var(--bg-color-dark);
     border-radius: 20px;
 }
+/* HTML element you want to apply the animation to */
 
+  
 .btn:hover{
     color: var(--bg-color-dark);
     background-color: var(--text-color-third);

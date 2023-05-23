@@ -17,8 +17,25 @@
 .modal-footer {
     border: none;
 }
+.card-element {
+    transition: all 0.3s ease;
+  }
+  
+  /* Animation styles on hover */
+  .card-element:hover {
+    transform: scale(1.1); 
+    cursor: pointer;
+  }
 
-
+.contenedorModal{
+    width: 10px;
+    height: 10px;
+}
+.imgModal1{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
 
 @media screen and (max-width: 768px) {
     .modal-content{
