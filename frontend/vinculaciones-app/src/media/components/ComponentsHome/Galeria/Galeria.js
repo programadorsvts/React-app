@@ -7,7 +7,7 @@ function Galeria() {
   const [modalShow, setModalShow] = useState(false);
   return (
     <Container className='galeria mt-5 mb-5'>
-      <img className='card-element'src='assets/images/galeria-1.webp' alt='imagen-1' onClick={() => setModalShow(true)}></img>
+      <img className='card-element'src='assets/images/galeria-7.webp' alt='imagen-1' onClick={() => setModalShow(true)}></img>
       <img src='assets/images/galeria-2.jpg' alt='imagen-2'></img>
       <GaleriaModal show={modalShow} onHide={() => setModalShow(false)} />
       <img src='assets/images/galeria-3.webp' alt='imagen-2'></img>
