@@ -21,7 +21,6 @@ function galeriamodal(props) {
                    
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={props.onHide} >Ingresar</Button>
                     <Button onClick={props.onHide} >Cerrar</Button>
                 </Modal.Footer>
             </Modal>
