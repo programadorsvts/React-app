@@ -3,13 +3,10 @@ import React from "react";
 export const Cronograma = () => {
     return( 
     <>
-        <h1>CRONOGRAMA DE ACTIVIDADES JORNADA “ LA UNIVERSIDAD Y SU VINCULACIÓN EN EL FORTALECIMIENTO AL SECTOR EMPRENDEDOR”</h1>
-
-        <p className="text-2">   
-            Día: 6 de junio 2023
-            Apertura: 8:30 horas.
-            Lugar: Centro Municipal de Convenciones “Enrique Angelelli”.
-        </p>
+        <h4 className='encabezado-2 text-deg mb-5 text-center'>{'LA UNIVERSIDAD Y SU VINCULACIÓN EN EL FORTALECIMIENTO AL SECTOR EMPRENDEDOR'}</h4>
+         <p className=' mb-1 mt-3  '><b className="text-1">Día:</b> 6 de junio 2023</p>
+         <p className='text-1 mb-1  '> {'Apertura: 8:30 horas.'}</p>
+         <p className='text-1 mb-1  '> {'Lugar: Centro Municipal de Convenciones “Enrique Angelelli”.'}</p>
 
 
 

@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 
 import './modal.css';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Cronograma } from './Cronograma';
+import { Cronograma } from './Cronograma.js';
 
 
 function galeriamodal(props) {  
@@ -12,11 +12,10 @@ function galeriamodal(props) {
         <>
             <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Header closeButton>
-                    <Modal.Title className="text-1 text-deg text-capitalize">{'EVENTOS '}</Modal.Title>
+                    <Modal.Title className="text-1 text-deg text-capitalize">{'CRONOGRAMA DE ACTIVIDADES JORNADA '}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='text-description' >
-                    <h4 className='encabezado-2 mb-3 text-center'>{'props.proyecto.title'}</h4>
-                    <p className='text-1 mb-1  '>Organización {'prop'}</p>
+
                     <Cronograma> </Cronograma>
                     
                    
