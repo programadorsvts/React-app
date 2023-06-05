@@ -35,7 +35,8 @@ export const Cronograma = () => {
       <p className='mb-1 mt-3   text-1'><b>12:10 A 12:30 HORAS</b></p>
       <p>Guillermo Catuogno diserta sobre cómo gestiona sus proyectos y se vincula con la sociedad.</p>
       {/* --------------------------------------------------------------------------------------------------------------------------- */}
-      <p className='mb-1 mt-3  text-1'><b>12:30 HORAS – AGRADECIMIENTOS Y SALUDO FINAL FIN DE JORNADA</b></p>
+      <p className='mb-1 mt-3  text-1'><b>12:30 HORAS</b></p>
+      <p className="text-1">AGRADECIMIENTOS Y SALUDO FINAL FIN DE JORNADA</p>
     </>
   );
 }
