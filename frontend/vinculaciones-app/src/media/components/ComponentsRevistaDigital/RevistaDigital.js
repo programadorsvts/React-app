@@ -53,7 +53,7 @@ function revista() {
         const revista7 =
         {
                 imagen: 'assets/images/revista7.webp',
-                link: 'assets/revistadigital/revistapdf/Revista-6.pdf',
+                link: 'assets/revistadigital/revistapdf/Revista7.pdf',
                 titulo: 'Volumen 4 - Número 7',
                 fecha: 'Septiembre 2023 ',
                 isbn: ''

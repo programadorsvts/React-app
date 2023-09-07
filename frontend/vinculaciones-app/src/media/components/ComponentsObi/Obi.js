@@ -174,7 +174,7 @@ function herramienta(){
                 img:'assets/images/herramienta.png',   
                 href:'https://portaltramites.inpi.gob.ar/PatenteConsultas/BusquedaDominioPublico' ,
                 titulo:'Buscador de patentes INPI',                                    
-                texto:'',   
+                texto:'El Instituto Nacional de la Propiedad Industrial (INPI) es un ente autárquico en el ámbito del Ministerio de Economía – Secretaria de Industria y Desarrollo Productivo y es la autoridad de aplicación de las leyes de protección de los derechos de propiedad industrial.',   
         }
 
 
