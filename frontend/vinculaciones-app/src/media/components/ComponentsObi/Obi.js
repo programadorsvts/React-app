@@ -170,6 +170,12 @@ function herramienta(){
                 titulo:'Wiley Online Library',                                    
                 texto:'Firmly established as the worlds leading society publisher, Wiley offers an exceptional portfolio of over 8 million articles from 1,600 journals. Half of which are published in partnership with prestigious international scholarly and professional societies. Our titles cover the full spectrum of life, health and physical sciences, social science and the humanities, and include many titles ranked at the forefront of their field. ',   
         }
+        const herramienta25={      
+                img:'assets/images/herramienta.png',   
+                href:'https://portaltramites.inpi.gob.ar/PatenteConsultas/BusquedaDominioPublico' ,
+                titulo:'Buscador de patentes INPI',                                    
+                texto:'',   
+        }
 
 
 
@@ -272,6 +278,11 @@ function herramienta(){
                                         </Col>
                                          <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta24}></ObiCard> 
+                                        </Col>
+                                </Row>
+                                <Row className=''>                         
+                                        <Col className='mt-5 d-flex justify-content-center'>
+                                                <ObiCard data={herramienta25}></ObiCard> 
                                         </Col>
                                 </Row>
                         </Container>   
