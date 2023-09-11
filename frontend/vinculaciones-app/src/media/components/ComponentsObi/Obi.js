@@ -89,13 +89,6 @@ function herramienta(){
                 texto:'ACS Publications’ commitment to publishing high-quality content continues to attract impactful research that addresses the world’s most important challenges.',   
                 parrafo:'',
         }
-        const herramienta13={      
-                img:'assets/images/herramienta.png',   
-                href:'https://www.trademap.org/Index.aspx' ,
-                titulo:'Trade Map',                                    
-                texto:'Trade Map proporciona, en forma de tablas, gráficos y mapas, indicadores sobre el desempeño de las exportaciones, la demanda internacional, mercados alternativos y mercados competitivos, así como un directorio de empresas importadoras y exportadoras.',   
-                parrafo:'',
-        }
            const herramienta14={      
                 img:'assets/images/herramienta.png',   
                 href:'https://www.springer.com/gp/' ,
@@ -233,54 +226,45 @@ function herramienta(){
                                         </Col>
                                 </Row>
                                   <Row className=''>
-                                                         
-                                        <Col className='mt-5 d-flex justify-content-center'>
-                                                <ObiCard data={herramienta13}></ObiCard> 
-                                        </Col>
                                          <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta14}></ObiCard> 
                                         </Col>
                                          <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta15}></ObiCard> 
                                         </Col>
-                                </Row>
-                                <Row className=''>
-                                                         
                                         <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta16}></ObiCard> 
                                         </Col>
+                                </Row>
+                                <Row className=''>
                                          <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta17}></ObiCard> 
                                         </Col>
                                          <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta18}></ObiCard> 
                                         </Col>
-                                </Row>
-                                <Row className=''>
-                                                         
                                         <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta19}></ObiCard> 
                                         </Col>
+                                </Row>
+                                <Row className=''>
                                          <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta20}></ObiCard> 
                                         </Col>
                                          <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta21}></ObiCard> 
                                         </Col>
-                                </Row>
-                                <Row className=''>
-                                                         
                                         <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta22}></ObiCard> 
                                         </Col>
+                                </Row>
+                                <Row className=''>
                                          <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta23}></ObiCard> 
                                         </Col>
                                          <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta24}></ObiCard> 
                                         </Col>
-                                </Row>
-                                <Row className=''>                         
                                         <Col className='mt-5 d-flex justify-content-center'>
                                                 <ObiCard data={herramienta25}></ObiCard> 
                                         </Col>
