@@ -24,7 +24,32 @@ export const useSingUpUserContext=()=>{
 export const useAuthUserContext=()=>{
     return useContext (AuthUserContext );
 }
+export function LoginDebug(){
+    const navigate = useNavigate();
+    localStorage.setItem('local-email', 'local-email');
+    localStorage.setItem('local-token', 'local-email');
+    Swal.fire ({ icon: 'success', title: 'Sesion Iniciada Correctamente', showConfirmButton: false, timer: 2000 });
+    navigate("/");
+///////////////////////////////////////////////////////////
 
+
+    return(
+        <>
+            {<Loader/>}
+            <LoginContext.Provider value={null}>
+                <SingUpUserContext.Provider value={null}>
+                    <AuthUserContext.Provider value={true}>
+                    <LogOutContext.Provider value={null}>
+                                 {null}
+                    </LogOutContext.Provider>
+                    </AuthUserContext.Provider>
+                </SingUpUserContext.Provider>    
+            </LoginContext.Provider>
+      </>  
+    );
+    
+
+}
 export function LoginProvider( {children } ){
     
     const [auth, setAuth] = useState(null);

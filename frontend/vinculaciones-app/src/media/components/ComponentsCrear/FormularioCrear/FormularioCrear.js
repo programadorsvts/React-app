@@ -29,12 +29,15 @@ const schema = Yup.object().shape({
 function FormularioCrear() {
     const navigate = useNavigate()
     const [areas, setAreas] = useState([])
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [previewSrc, setPreviewSrc] = useState('');
     const { getRootProps, getInputProps } = useDropzone({
         accept: 'image/*',
         maxFiles: 1,
         onDrop: acceptedFiles => {
-            // Aquí puedes manejar la imagen seleccionada si es necesario
-        }
+            setSelectedImage(acceptedFiles[0]);  
+            setPreviewSrc(URL.createObjectURL(acceptedFiles[0]));  
+            }
     });
 
     useEffect(() => {
@@ -232,12 +235,15 @@ function FormularioCrear() {
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label className="encabezado-4 label">Subir Imagen:</Form.Label>
-                            <div {...getRootProps()} className="dropzone">
+                            <div {...getRootProps()} className="dropzone" style={{ border: '2px dashed #cccccc', padding: '20px', textAlign: 'center', cursor: 'pointer' }}>
                                 <input {...getInputProps()} onChange={(event) => {
                                     setFieldValue('imagen', event.currentTarget.files[0]);
+                                    setSelectedImage(event.currentTarget.files[0]);
+                                    setPreviewSrc(URL.createObjectURL(event.currentTarget.files[0]));
                                 }} />
-                                <p>Arrastra y suelta una imagen aquí, o haz clic para seleccionar una</p>
+                                {previewSrc ? <img src={previewSrc} alt="Vista previa" style={{ width: '100%', height: 'auto', marginTop: '10px' }} /> : <p>Arrastra y suelta una imagen aquí, o haz clic para seleccionar una</p>}
                             </div>
+                            {selectedImage && <p>{selectedImage.name}</p>}
                             {errors.imagen && touched.imagen && <div className="error">{errors.imagen}</div>}
                         </Form.Group>
 
