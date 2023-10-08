@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
 import { API_URL } from '../../../../config/env';
-import { useDropzone } from 'react-dropzone';
 
 const regExp = {
     telefono: /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -23,22 +22,11 @@ const schema = Yup.object().shape({
     telefono: Yup.string().matches(regExp.telefono, "El valor ingresado no es un telefono").max(15),
     direccion: Yup.string().max(254, "La dirección es demasiado larga"),
     description: Yup.string().min(2, 'La descripción es demasiado corta').max(4000, 'La descripción es demasiado larga'),
-    imagen: Yup.mixed().required('La imagen es obligatoria'),
 });
 
 function FormularioCrear() {
     const navigate = useNavigate()
     const [areas, setAreas] = useState([])
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [previewSrc, setPreviewSrc] = useState('');
-    const { getRootProps, getInputProps } = useDropzone({
-        accept: 'image/*',
-        maxFiles: 1,
-        onDrop: acceptedFiles => {
-            setSelectedImage(acceptedFiles[0]);  
-            setPreviewSrc(URL.createObjectURL(acceptedFiles[0]));  
-            }
-    });
 
     useEffect(() => {
 
@@ -65,7 +53,6 @@ function FormularioCrear() {
                 telefono: '',
                 direccion: '',
                 descripcion: '',
-                imagen: null,
             }}
             onSubmit={values => {
                 Axios.post(API_URL + "api/proyects", {
@@ -92,7 +79,7 @@ function FormularioCrear() {
             }}
         >
 
-            {({ handleChange, handleSubmit, handleBlur,setFieldValue, values, touched, errors }) => (
+            {({ handleChange, handleSubmit, handleBlur, values, touched, errors }) => (
                 <Container className='mt-5 d-flex justify-content-center '>
                     <Form className="form form-crear">
                         <h1 className="encabezado-2 title">Crear Nuevo Proyecto</h1>
@@ -233,19 +220,6 @@ function FormularioCrear() {
                                 {errors.description}
                             </Form.Control.Feedback>
                         </Form.Group>
-                        {/*<Form.Group className="mb-3">
-                            <Form.Label className="encabezado-4 label">Subir Imagen:</Form.Label>
-                            <div {...getRootProps()} className="dropzone" style={{ border: '2px dashed #cccccc', padding: '20px', textAlign: 'center', cursor: 'pointer' }}>
-                                <input {...getInputProps()} onChange={(event) => {
-                                    setFieldValue('imagen', event.currentTarget.files[0]);
-                                    setSelectedImage(event.currentTarget.files[0]);
-                                    setPreviewSrc(URL.createObjectURL(event.currentTarget.files[0]));
-                                }} />
-                                {previewSrc ? <img src={previewSrc} alt="Vista previa" style={{ width: '100%', height: 'auto', marginTop: '10px' }} /> : <p>Arrastra y suelta una imagen aquí, o haz clic para seleccionar una</p>}
-                            </div>
-                            {selectedImage && <p>{selectedImage.name}</p>}
-                            {errors.imagen && touched.imagen && <div className="error">{errors.imagen}</div>}
-                        </Form.Group>*/}
 
                         <Button className="btn btn-form mt-5" type='submit' onClick={handleSubmit}>Crear Proyecto</Button>
                     </Form>
