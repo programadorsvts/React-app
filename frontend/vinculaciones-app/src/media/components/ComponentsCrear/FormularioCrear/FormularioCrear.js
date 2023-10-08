@@ -233,7 +233,7 @@ function FormularioCrear() {
                                 {errors.description}
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="mb-3">
+                        {/*<Form.Group className="mb-3">
                             <Form.Label className="encabezado-4 label">Subir Imagen:</Form.Label>
                             <div {...getRootProps()} className="dropzone" style={{ border: '2px dashed #cccccc', padding: '20px', textAlign: 'center', cursor: 'pointer' }}>
                                 <input {...getInputProps()} onChange={(event) => {
@@ -245,7 +245,7 @@ function FormularioCrear() {
                             </div>
                             {selectedImage && <p>{selectedImage.name}</p>}
                             {errors.imagen && touched.imagen && <div className="error">{errors.imagen}</div>}
-                        </Form.Group>
+                        </Form.Group>*/}
 
                         <Button className="btn btn-form mt-5" type='submit' onClick={handleSubmit}>Crear Proyecto</Button>
                     </Form>
