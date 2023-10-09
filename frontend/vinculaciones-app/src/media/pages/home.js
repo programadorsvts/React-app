@@ -6,7 +6,7 @@ import Principal from "../components/ComponentsHome/Principal/Principal";
 import Redes from "../components/ComponentsHome/Redes/Redes";
 import Vinculaciones from "../components/ComponentsHome/Vinculaciones/Vinculaciones";
 import Stan from "../components/ComponentsHome/Stan/Stan";
-import Banner from "./Banner";
+import Banner from "../components/ComponentsHome/Banner/Banner";
 
 
 function Home() {
@@ -15,8 +15,7 @@ function Home() {
     <>
       <Banner></Banner>
       <Principal></Principal>
-
-      {/* <Noticias></Noticias> */}
+      {/*<Noticias></Noticias>*/}
       <Gestion></Gestion>
       <Stan></Stan>
       <Convocatorias></Convocatorias>
