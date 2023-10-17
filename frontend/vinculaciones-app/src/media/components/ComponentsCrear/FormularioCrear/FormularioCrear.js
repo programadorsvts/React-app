@@ -54,6 +54,25 @@ function FormularioCrear() {
     setPreviewSrc(URL.createObjectURL(file));
   };
 
+  const handleUpload = () => {
+    const formData = new FormData();
+    formData.append("imagen", selectedImage);
+
+    Axios
+      .post(API_URL + "/api/subir-imagen", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        // Maneja la respuesta del servidor aquí, por ejemplo, muestra un mensaje de éxito.
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Maneja los errores, por ejemplo, muestra un mensaje de error.
+        console.error(error);
+      });
+  };
   ////////////////////////////////////////////////////////////////
   const navigate = useNavigate();
   const [areas, setAreas] = useState([]);
@@ -91,18 +110,20 @@ function FormularioCrear() {
         descripcion: "",
       }}
       onSubmit={(values) => {
-        Axios.get(API_URL + "sanctum/csrf-cookie")
-          .then((response) => {
-            Axios.post("api/proyects", {
-              title: values.titulo,
-              director_name: values.director,
-              area_id: values.area,
-              organization: values.organizacion,
-              email: values.email,
-              phone_number: values.telefono,
-              address: values.direccion,
-              description: values.descripcion,
-            });
+        Axios.get(API_URL + 'sanctum/csrf-cookie' ).then(response => {
+            Axios.post(
+             "api/proyects",
+              {
+                title: values.titulo,
+                director_name: values.director,
+                area_id: values.area,
+                organization: values.organizacion,
+                email: values.email,
+                phone_number: values.telefono,
+                address: values.direccion,
+                description: values.descripcion,
+              },
+            );
           })
           .then((response) => {
             console.log(response);
@@ -297,39 +318,6 @@ function FormularioCrear() {
                 {errors.description}
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label className="encabezado-4 label">
-                Subir Imagen:
-              </Form.Label>
-              <div
-                className="dropzone"
-                style={{
-                  border: "2px dashed #cccccc",
-                  padding: "20px",
-                  textAlign: "center",
-                  cursor: "pointer",
-                }}
-              >
-                <input type="file" onChange={handleFileChange} />
-                {previewSrc ? (
-                  <img
-                    src={previewSrc}
-                    alt="Vista previa"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      marginTop: "10px",
-                    }}
-                  />
-                ) : (
-                  <p>
-                    Arrastra y suelta una imagen aquí, o haz clic para
-                    seleccionar una
-                  </p>
-                )}
-              </div>
-              {selectedImage && <p>{selectedImage.name}</p>}
-            </Form.Group>
             <Button
               className="btn btn-form mt-5"
               type="submit"
@@ -337,9 +325,52 @@ function FormularioCrear() {
             >
               Crear Proyecto
             </Button>
-            {
-              ////////////////////////////////////////////////////
+            {////////////////////////////////////////////////////
             }
+
+            <Form>
+              <Form.Group className="mb-3">
+                <Form.Label className="encabezado-4 label">
+                  Subir Imagen:
+                </Form.Label>
+                <div
+                  className="dropzone"
+                  style={{
+                    border: "2px dashed #cccccc",
+                    padding: "20px",
+                    textAlign: "center",
+                    cursor: "pointer",
+                  }}
+                >
+                  <input type="file" onChange={handleFileChange} />
+                  {previewSrc ? (
+                    <img
+                      src={previewSrc}
+                      alt="Vista previa"
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        marginTop: "10px",
+                      }}
+                    />
+                  ) : (
+                    <p>
+                      Arrastra y suelta una imagen aquí, o haz clic para
+                      seleccionar una
+                    </p>
+                  )}
+                </div>
+                {selectedImage && <p>{selectedImage.name}</p>}
+              </Form.Group>
+
+              <Button
+                className="btn btn-form mt-5"
+                type="button"
+                onClick={handleUpload}
+              >
+                Subir Imagen
+              </Button>
+            </Form>
           </Form>
         </Container>
       )}
