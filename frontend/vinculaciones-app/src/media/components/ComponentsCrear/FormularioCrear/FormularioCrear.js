@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { API_URL } from "../../../../config/env";
-import { useDropzone } from "react-dropzone";
 
 const regExp = {
   telefono:
@@ -40,50 +39,11 @@ const schema = Yup.object().shape({
   description: Yup.string()
     .min(2, "La descripción es demasiado corta")
     .max(4000, "La descripción es demasiado larga"),
-  imagen: Yup.mixed().required("La imagen es obligatoria"),
 });
 
 function FormularioCrear() {
-  //////////////////////////////////////////////////////////////
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [previewSrc, setPreviewSrc] = useState(null);
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setSelectedImage(file);
-    setPreviewSrc(URL.createObjectURL(file));
-  };
-
-  const handleUpload = () => {
-    const formData = new FormData();
-    formData.append("imagen", selectedImage);
-
-    Axios
-      .post(API_URL + "/api/subir-imagen", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((response) => {
-        // Maneja la respuesta del servidor aquí, por ejemplo, muestra un mensaje de éxito.
-        console.log(response.data);
-      })
-      .catch((error) => {
-        // Maneja los errores, por ejemplo, muestra un mensaje de error.
-        console.error(error);
-      });
-  };
-  ////////////////////////////////////////////////////////////////
   const navigate = useNavigate();
   const [areas, setAreas] = useState([]);
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/*",
-    maxFiles: 1,
-    onDrop: (acceptedFiles) => {
-      setSelectedImage(acceptedFiles[0]);
-      setPreviewSrc(URL.createObjectURL(acceptedFiles[0]));
-    },
-  });
 
   useEffect(() => {
     Axios.get(API_URL + "api/area")
@@ -318,6 +278,7 @@ function FormularioCrear() {
                 {errors.description}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Button
               className="btn btn-form mt-5"
               type="submit"
@@ -325,52 +286,6 @@ function FormularioCrear() {
             >
               Crear Proyecto
             </Button>
-            {////////////////////////////////////////////////////
-            }
-
-            <Form>
-              <Form.Group className="mb-3">
-                <Form.Label className="encabezado-4 label">
-                  Subir Imagen:
-                </Form.Label>
-                <div
-                  className="dropzone"
-                  style={{
-                    border: "2px dashed #cccccc",
-                    padding: "20px",
-                    textAlign: "center",
-                    cursor: "pointer",
-                  }}
-                >
-                  <input type="file" onChange={handleFileChange} />
-                  {previewSrc ? (
-                    <img
-                      src={previewSrc}
-                      alt="Vista previa"
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        marginTop: "10px",
-                      }}
-                    />
-                  ) : (
-                    <p>
-                      Arrastra y suelta una imagen aquí, o haz clic para
-                      seleccionar una
-                    </p>
-                  )}
-                </div>
-                {selectedImage && <p>{selectedImage.name}</p>}
-              </Form.Group>
-
-              <Button
-                className="btn btn-form mt-5"
-                type="button"
-                onClick={handleUpload}
-              >
-                Subir Imagen
-              </Button>
-            </Form>
           </Form>
         </Container>
       )}
