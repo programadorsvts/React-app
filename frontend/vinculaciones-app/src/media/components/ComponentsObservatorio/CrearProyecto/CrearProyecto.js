@@ -9,18 +9,18 @@ function CrearProyecto() {
   const AuthUser=useAuthUserContext();
   const [auth,setAuth]=useState(null);
 
-  useEffect(() => {
+/*   useEffect(() => {
     setAuth(AuthUser());
-  }, [AuthUser])
+  }, [AuthUser]) */
   
   return (
 
     <Container className="d-flex justify-content-center mt-5">
-      {
-        auth ?
+{/*       {
+        auth ? */}
           <Button className='btn btn-deg w-75' onClick={() => navigate("/CrearProyectoPage")}>Crear nuevo proyecto</Button>
-        : <span></span>
-        }
+       : <span></span>
+
  
     </Container>
   );
