@@ -55,6 +55,7 @@ function FormularioCrear() {
                 descripcion: '',
             }}
             onSubmit={values => {
+                Axios.get(API_URL + 'sanctum/csrf-cookie' ).then(response => {
                 Axios.post(API_URL + "api/proyects", {
                     "title": values.titulo,
                     "director_name": values.director,
@@ -65,7 +66,7 @@ function FormularioCrear() {
                     "address": values.direccion,
                     "description": values.descripcion,
 
-                })
+                })})
                     .then((response) => {
                         console.log(response)
                         Swal.fire({ icon: 'success', title: 'Proyecto creado exitosamente', showConfirmButton: true, timer: 6000 })
