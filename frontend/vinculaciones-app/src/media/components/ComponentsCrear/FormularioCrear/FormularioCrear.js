@@ -15,33 +15,43 @@ const regExp = {
 };
 
 const schema = Yup.object().shape({
-  titulo: Yup.string()
-    .min(5, "El titulo ingresado es demasiado corto")
-    .max(150, "El Titulo ingresado es demasiado largo")
-    .required("El Título es obligatorio"),
-  director: Yup.string()
-    .min(2, "El Nombre ingresado es demasiado corto")
-    .required("El Director es obligatorio"),
-  organizacion: Yup.number()
-    .min(1, "Debe seleccionar un tipo de organización")
-    .required("Debe seleccionar un tipo de organización"),
-  area: Yup.number()
-    .min(1, "Debe seleccionar un tipo de área tematica")
-    .required("Debe seleccionar un tipo de área tematica"),
-  email: Yup.string()
-    .email("El valor ingresado no es un email")
-    .required("el email es obligatorio")
-    .trim("El email no permite espacios en blanco"),
-  telefono: Yup.string()
-    .matches(regExp.telefono, "El valor ingresado no es un telefono")
-    .max(15),
-  direccion: Yup.string().max(254, "La dirección es demasiado larga"),
-  description: Yup.string()
-    .min(2, "La descripción es demasiado corta")
-    .max(4000, "La descripción es demasiado larga"),
-});
-
-function FormularioCrear() {
+    titulo: Yup.string()
+      .min(5, "El titulo ingresado es demasiado corto")
+      .max(150, "El Titulo ingresado es demasiado largo")
+      .required("El Título es obligatorio"),
+    director: Yup.string()
+      .min(2, "El Nombre ingresado es demasiado corto")
+      .required("El Director es obligatorio"),
+    organizacion: Yup.number()
+      .min(1, "Debe seleccionar un tipo de organización")
+      .required("Debe seleccionar un tipo de organización"),
+    area: Yup.number()
+      .min(1, "Debe seleccionar un tipo de área tematica")
+      .required("Debe seleccionar un tipo de área tematica"),
+    email: Yup.string()
+      .email("El valor ingresado no es un email")
+      .required("el email es obligatorio")
+      .trim("El email no permite espacios en blanco"),
+    telefono: Yup.string()
+      .matches(regExp.telefono, "El valor ingresado no es un telefono")
+      .max(15),
+    direccion: Yup.string().max(254, "La dirección es demasiado larga"),
+    description: Yup.string()
+      .min(2, "La descripción es demasiado corta")
+      .max(4000, "La descripción es demasiado larga"),
+    imagen: Yup.mixed().required("La imagen es obligatoria"),
+  });
+  
+  function FormularioCrear() {
+    //////////////////////////////////////////////////////////////
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [previewSrc, setPreviewSrc] = useState(null);
+  
+    const handleFileChange = (event) => {
+      const file = event.target.files[0];
+      setSelectedImage(file);
+      setPreviewSrc(URL.createObjectURL(file));
+    };
   const navigate = useNavigate();
   const [areas, setAreas] = useState([]);
 
