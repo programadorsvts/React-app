@@ -3,18 +3,22 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import "../../../styles/form.css";
 import "./form-crear.css";
+import FileUpload from "./FileUpload";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import { API_URL } from "../../../../config/env";
 
-const regExp = {
-  telefono:
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-};
+function FormularioCrear() {
+  const bannerRef = useRef(null);
 
-const schema = Yup.object().shape({
+  const regExp = {
+    telefono:
+      /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+  };
+
+  const schema = Yup.object().shape({
     titulo: Yup.string()
       .min(5, "El titulo ingresado es demasiado corto")
       .max(150, "El Titulo ingresado es demasiado largo")
@@ -39,19 +43,42 @@ const schema = Yup.object().shape({
     description: Yup.string()
       .min(2, "La descripción es demasiado corta")
       .max(4000, "La descripción es demasiado larga"),
-    imagen: Yup.mixed().required("La imagen es obligatoria"),
+    banner: Yup.mixed()
+      .test("is-file-too-big", "File exceeds 10MB", () => {
+        let valid = true;
+        const files = bannerRef?.current?.files;
+        if (files) {
+          const fileArr = Array.from(files);
+          fileArr.forEach((file) => {
+            const size = file.size / 1024 / 1024;
+            if (size > 10) {
+              valid = false;
+            }
+          });
+        }
+        return valid;
+      })
+      .test("is-file-of-correct-type", "File is not of supported type", () => {
+        let valid = true;
+        const files = bannerRef?.current?.files;
+        if (files) {
+          const fileArr = Array.from(files);
+          fileArr.forEach((file) => {
+            const type = file.type.split("/")[1];
+            const validTypes = ["jpeg", "png", "jpg", "gif"];
+            if (!validTypes.includes(type)) {
+              valid = false;
+            }
+          });
+        }
+        return valid;
+      }),
   });
+  //////////////////////////////////////////////////////////////
+
+  const [previewSrc, setPreviewSrc] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
   
-  function FormularioCrear() {
-    //////////////////////////////////////////////////////////////
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [previewSrc, setPreviewSrc] = useState(null);
-  
-    const handleFileChange = (event) => {
-      const file = event.target.files[0];
-      setSelectedImage(file);
-      setPreviewSrc(URL.createObjectURL(file));
-    };
   const navigate = useNavigate();
   const [areas, setAreas] = useState([]);
 
@@ -78,43 +105,42 @@ const schema = Yup.object().shape({
         telefono: "",
         direccion: "",
         descripcion: "",
+        banner: "",
       }}
       onSubmit={(values) => {
-        Axios.get(API_URL + 'sanctum/csrf-cookie' ).then(response => {
-            Axios.post(
-             "api/proyects",
-              {
-                title: values.titulo,
-                director_name: values.director,
-                area_id: values.area,
-                organization: values.organizacion,
-                email: values.email,
-                phone_number: values.telefono,
-                address: values.direccion,
-                description: values.descripcion,
-              },
-            );
+        Axios.get(API_URL + "sanctum/csrf-cookie").then((response) => {
+          Axios.post("api/proyects", {
+            title: values.titulo,
+            director_name: values.director,
+            area_id: values.area,
+            organization: values.organizacion,
+            email: values.email,
+            phone_number: values.telefono,
+            address: values.direccion,
+            description: values.descripcion,
+            banner: bann,
           })
-          .then((response) => {
-            console.log(response);
-            Swal.fire({
-              icon: "success",
-              title: "Proyecto creado exitosamente",
-              showConfirmButton: true,
-              timer: 6000,
+            .then((response) => {
+              console.log(response);
+              Swal.fire({
+                icon: "success",
+                title: "Proyecto creado exitosamente",
+                showConfirmButton: true,
+                timer: 6000,
+              });
+              navigate("/MisProyectosPage");
+            })
+            .catch((error) => {
+              console.log(error);
+              Swal.fire({
+                icon: "error",
+                title: "Problemas al crear el Proyecto",
+                showConfirmButton: true,
+                timer: 6000,
+              });
+              navigate("/");
             });
-            navigate("/MisProyectosPage");
-          })
-          .catch((error) => {
-            console.log(error);
-            Swal.fire({
-              icon: "error",
-              title: "Problemas al crear el Proyecto",
-              showConfirmButton: true,
-              timer: 6000,
-            });
-            navigate("/");
-          });
+        });
       }}
     >
       {({
@@ -288,7 +314,46 @@ const schema = Yup.object().shape({
                 {errors.description}
               </Form.Control.Feedback>
             </Form.Group>
-
+            <Form.Group className="mb-3">
+              <Form.Label className="encabezado-4 label">
+                Subir Imagen:
+              </Form.Label>
+              <div
+                className="dropzone"
+                style={{
+                  border: "2px dashed #cccccc",
+                  padding: "20px",
+                  textAlign: "center",
+                  cursor: "pointer",
+                }}
+              >
+                <input
+                  type="file"
+                  name="banner"
+                  accept="image/*"
+                  onChange={(e) =>
+                    Formik.setFieldValue("banner", e.currentTarget.files[0])
+                  }
+                />
+                {previewSrc ? (
+                  <img
+                    src={previewSrc}
+                    alt="Vista previa"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      marginTop: "10px",
+                    }}
+                  />
+                ) : (
+                  <p>
+                    Arrastra y suelta una imagen aquí, o haz clic para
+                    seleccionar una
+                  </p>
+                )}
+              </div>
+              {selectedImage && <p>{selectedImage.name}</p>}
+            </Form.Group>
             <Button
               className="btn btn-form mt-5"
               type="submit"
@@ -304,3 +369,37 @@ const schema = Yup.object().shape({
 }
 
 export default FormularioCrear;
+
+{
+  /*
+  <div
+                  className="dropzone"
+                  style={{
+                    border: "2px dashed #cccccc",
+                    padding: "20px",
+                    textAlign: "center",
+                    cursor: "pointer",
+                  }}
+                >
+
+                  {previewSrc ? (
+                    <img
+                      src={previewSrc}
+                      alt="Vista previa"
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        marginTop: "10px",
+                      }}
+                    />
+                  ) : (
+                    <p>
+                      Arrastra y suelta una imagen aquí, o haz clic para
+                      seleccionar una
+                    </p>
+                  )}
+                </div>
+                {selectedImage && <p>{selectedImage.name}</p>}
+
+*/
+}
