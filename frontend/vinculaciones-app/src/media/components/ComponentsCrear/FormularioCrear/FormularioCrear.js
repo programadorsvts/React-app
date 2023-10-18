@@ -78,7 +78,7 @@ function FormularioCrear() {
 
   const [previewSrc, setPreviewSrc] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
-  
+
   const navigate = useNavigate();
   const [areas, setAreas] = useState([]);
 
@@ -108,6 +108,7 @@ function FormularioCrear() {
         banner: "",
       }}
       onSubmit={(values) => {
+        console.log(values.banner);
         Axios.get(API_URL + "sanctum/csrf-cookie").then((response) => {
           Axios.post("api/proyects", {
             title: values.titulo,
@@ -118,7 +119,7 @@ function FormularioCrear() {
             phone_number: values.telefono,
             address: values.direccion,
             description: values.descripcion,
-            banner: bann,
+            banner: values.banner,
           })
             .then((response) => {
               console.log(response);
