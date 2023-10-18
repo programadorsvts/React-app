@@ -341,6 +341,12 @@ function FormularioCrear() {
                   type="file"
                   name="banner"
                   onChange={(e) =>{
+                    const file = e.currentTarget.files[0];
+                    console.log({ 
+                      fileName: file.name, 
+                      type: file.type,
+                      size: `${file.size} bytes`
+                    })
                     handleFileUpload(e);
                     setFieldValue("banner", e.currentTarget.files[0]);
                     }
