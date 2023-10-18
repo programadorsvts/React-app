@@ -17,7 +17,7 @@ function ProyectoModal(props) {
                 </Modal.Header>
                 <Modal.Body className='text-description'>
                     <h4 className='encabezado-2 mb-3'>{props.proyecto.title}</h4>
-                    <p className='encabezado-4 mb-1'>{props.proyecto.director_name}</p>
+                    <p className='encabezado-4 mb-1 text-capitalize'>{props.proyecto.director_name}</p>
                     <p className='encabezado-4 mb-4'>Organización {props.proyecto.organization === 1 ? "Pública" : "Privada"}</p>
                     <p className='text-1 mb-1'>CONTACTO:</p>
                     <p className='text-2 mb-1'>{props.proyecto.email}</p>
