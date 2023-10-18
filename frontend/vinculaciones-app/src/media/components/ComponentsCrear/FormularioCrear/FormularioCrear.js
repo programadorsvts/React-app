@@ -3,7 +3,6 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import "../../../styles/form.css";
 import "./form-crear.css";
-import FileUpload from "./FileUpload";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
@@ -79,6 +78,11 @@ function FormularioCrear() {
   const [previewSrc, setPreviewSrc] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  const  handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    setSelectedImage(file);
+    setPreviewSrc(URL.createObjectURL(file));
+  };
   const navigate = useNavigate();
   const [areas, setAreas] = useState([]);
 
@@ -108,7 +112,11 @@ function FormularioCrear() {
         banner: "",
       }}
       onSubmit={(values) => {
-        console.log(values.banner);
+        console.log({ 
+            fileName: values.banner.name, 
+            type: values.banner.type,
+            size: `${values.banner.size} bytes`
+          })
         Axios.get(API_URL + "sanctum/csrf-cookie").then((response) => {
           Axios.post("api/proyects", {
             title: values.titulo,
@@ -148,6 +156,7 @@ function FormularioCrear() {
         handleChange,
         handleSubmit,
         handleBlur,
+        setFieldValue,
         values,
         touched,
         errors,
@@ -331,9 +340,10 @@ function FormularioCrear() {
                 <input
                   type="file"
                   name="banner"
-                  accept="image/*"
-                  onChange={(e) =>
-                    Formik.setFieldValue("banner", e.currentTarget.files[0])
+                  onChange={(e) =>{
+                    handleFileUpload(e);
+                    setFieldValue("banner", e.currentTarget.files[0]);
+                    }
                   }
                 />
                 {previewSrc ? (
