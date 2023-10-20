@@ -111,23 +111,29 @@ function FormularioCrear() {
         banner: "",
       }}
       onSubmit={(values) => {
+        console.log("El objeto values.banner es: ");
         console.log({ 
             fileName: values.banner.name, 
             type: values.banner.type,
             size: `${values.banner.size} bytes`
           })
-        Axios.get(API_URL + "sanctum/csrf-cookie").then((response) => {
-          Axios.post("api/proyects", {
-            title: values.titulo,
-            director_name: values.director,
-            area_id: values.area,
-            organization: values.organizacion,
-            email: values.email,
-            phone_number: values.telefono,
-            address: values.direccion,
-            description: values.descripcion,
-            banner: values.banner,
-          })
+          const formData = new FormData();
+          formData.append('title', values.titulo);
+          formData.append('director_name', values.director);
+          formData.append('area_id', values.area);
+          formData.append('organization', values.organizacion);
+          formData.append('email', values.email);
+          formData.append('phone_number', values.telefono);
+          formData.append('address', values.direccion);
+          formData.append('description', values.descripcion);
+          formData.append('banner', values.banner);
+        
+          Axios.get(API_URL + "sanctum/csrf-cookie").then((response) => {
+            Axios.post(API_URL + "api/proyects", formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+            })
             .then((response) => {
               console.log(response);
               Swal.fire({
