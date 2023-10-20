@@ -78,8 +78,7 @@ function FormularioCrear() {
   const [previewSrc, setPreviewSrc] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const  handleFileUpload = (event) => {
-    const file = event.target.files[0];
+  const  handleFileUpload = (file) => {
     setSelectedImage(file);
     setPreviewSrc(URL.createObjectURL(file));
   };
@@ -347,8 +346,8 @@ function FormularioCrear() {
                       type: file.type,
                       size: `${file.size} bytes`
                     })
-                    handleFileUpload(e);
-                    setFieldValue("banner", e.currentTarget.files[0]);
+                    handleFileUpload(file);
+                    setFieldValue("banner", file);
                     }
                   }
                 />
