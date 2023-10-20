@@ -11,7 +11,7 @@ function ProyectoCard({ proyecto }) {
   return (
     <>
       <Card className="card" onClick={() => setModalShow(true)}>
-        <Card.Img variant="top" src={bannerUrl} /> {/* Línea agregada para mostrar la imagen */}
+         {/*<Card.Img variant="top" src={bannerUrl} /> Por si quieren que la imagen se vea fuera de la tarjeta tambien */}
         <Card.Body>
           <Card.Text className="encabezado-4 text-lowercase">
             {proyecto.title}
@@ -23,6 +23,7 @@ function ProyectoCard({ proyecto }) {
       </Card>
       <ProyectoModal
         proyecto={proyecto}
+        url = {bannerUrl}
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
