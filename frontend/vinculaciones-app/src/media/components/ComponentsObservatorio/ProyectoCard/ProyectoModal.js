@@ -20,12 +20,13 @@ function ProyectoModal(props) {
         </Modal.Header>
         <Modal.Body className="text-description">
           <Container style={{ padding: '0px' }}  className="text-center">
+            {props.url ?
             <Image
               src={props.url}
               alt="imagen-4"
               fluid
               className="banner-image"
-            />
+            /> : <p></p>}
           </Container>
 
           <h4 className="encabezado-2 mb-3">{props.proyecto.title}</h4>
