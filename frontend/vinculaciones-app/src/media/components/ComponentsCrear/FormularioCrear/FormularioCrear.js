@@ -63,7 +63,12 @@ function FormularioCrear() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleFileUpload = (file) => {
-    setPreviewSrc(URL.createObjectURL(file));
+    if (file) {  // Asegurarse de que file no sea null o undefined
+      setPreviewSrc(URL.createObjectURL(file));
+    } else {
+      // Manejar el caso en el que file es null o undefined, si es necesario
+      setPreviewSrc(null);
+    }
   };
   const navigate = useNavigate();
   const [areas, setAreas] = useState([]);
