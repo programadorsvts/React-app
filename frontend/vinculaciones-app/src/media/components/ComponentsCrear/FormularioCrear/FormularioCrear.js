@@ -376,7 +376,7 @@ function FormularioCrear() {
                     }
                   }
                 />
-                {previewSrc} ? (
+                {previewSrc ? (
                   <img
                     src={previewSrc}
                     alt="Vista previa"
@@ -386,7 +386,10 @@ function FormularioCrear() {
                       marginTop: "10px",
                     }}
                   />
-                )
+                ) : (
+                  <p>
+                  </p>
+                )}
               </div>
               {selectedImage}
             </Form.Group>
