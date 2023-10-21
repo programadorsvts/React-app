@@ -2,11 +2,12 @@ import { Card } from "react-bootstrap";
 import "./proyectocard.css";
 import { useState } from "react";
 import ProyectoModal from "../ProyectoCard/ProyectoModal";
+import { API_URL } from "../../../../config/env";
 
 function ProyectoCard({ proyecto }) {
   const [modalShow, setModalShow] = useState(false);
 
-  const bannerUrl = `http://127.0.0.1:8000/banners/${proyecto.banner}`;
+  const bannerUrl = API_URL + `banners/${proyecto.banner}`;
 
   return (
     <>
