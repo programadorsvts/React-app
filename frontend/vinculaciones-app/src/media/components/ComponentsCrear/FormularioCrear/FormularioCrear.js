@@ -44,42 +44,25 @@ function FormularioCrear() {
       .min(2, "La descripción es demasiado corta")
       .max(4000, "La descripción es demasiado larga"),
     banner: Yup.mixed()
-      .test("is-file-too-big", "File pesa mas de 10MB", () => {
-        let valid = true;
-        const files = bannerRef?.current?.files;
-        if (files) {
-          const fileArr = Array.from(files);
-          fileArr.forEach((file) => {
-            const size = file.size / 1024 / 1024;
-            if (size > 10) {
-              valid = false;
-            }
-          });
-        }
-        return valid;
+      .required("Una imagen es requerida")
+      .test("FILE_SIZE", "El archivo es demasiado grande", (value) => {
+        return value && value.size <= 10 * 1024 * 1024; // 10 MB
       })
-      .test("is-file-of-correct-type", "El archivo no es un tipo compatible", () => {
-        let valid = true;
-        const files = bannerRef?.current?.files;
-        if (files) {
-          const fileArr = Array.from(files);
-          fileArr.forEach((file) => {
-            const type = file.type.split("/")[1];
-            const validTypes = ["jpeg", "png", "jpg", "gif"];
-            if (!validTypes.includes(type)) {
-              valid = false;
-            }
-          });
-        }
-        return valid;
+      .test("FILE_FORMAT", "Formato no soportado", (value) => {
+        return (
+          value &&
+          ["image/jpeg", "image/png", "image/jpg", "image/gif"].includes(
+            value.type
+          )
+        );
       }),
   });
   //////////////////////////////////////////////////////////////
 
   const [previewSrc, setPreviewSrc] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const  handleFileUpload = (file) => {
+  const handleFileUpload = (file) => {
     setSelectedImage(file);
     setPreviewSrc(URL.createObjectURL(file));
   };
@@ -113,30 +96,31 @@ function FormularioCrear() {
         banner: "",
       }}
       onSubmit={(values) => {
-        console.log("El objeto values.banner es: ");
-        console.log({ 
-            fileName: values.banner.name, 
-            type: values.banner.type,
-            size: `${values.banner.size} bytes`
+        setIsSubmitting(true); 
+        console.log("values.banner: ");
+        console.log({
+          fileName: values.banner.name,
+          type: values.banner.type,
+          size: `${values.banner.size} bytes`,
+        });
+        const formData = new FormData();
+        formData.append("title", values.titulo);
+        formData.append("director_name", values.director);
+        formData.append("area_id", values.area);
+        formData.append("organization", values.organizacion);
+        formData.append("email", values.email);
+        formData.append("phone_number", values.telefono);
+        formData.append("address", values.direccion);
+        formData.append("description", values.descripcion);
+        formData.append("convocatoria", values.convocatoria);
+        formData.append("banner", values.banner);
+
+        Axios.get(API_URL + "sanctum/csrf-cookie").then((response) => {
+          Axios.post(API_URL + "api/proyects", formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
           })
-          const formData = new FormData();
-          formData.append('title', values.titulo);
-          formData.append('director_name', values.director);
-          formData.append('area_id', values.area);
-          formData.append('organization', values.organizacion);
-          formData.append('email', values.email);
-          formData.append('phone_number', values.telefono);
-          formData.append('address', values.direccion);
-          formData.append('description', values.descripcion);
-          formData.append('convocatoria', values.convocatoria);
-          formData.append('banner', values.banner);
-        
-          Axios.get(API_URL + "sanctum/csrf-cookie").then((response) => {
-            Axios.post(API_URL + "api/proyects", formData, {
-              headers: {
-                'Content-Type': 'multipart/form-data',
-              },
-            })
             .then((response) => {
               console.log(response);
               Swal.fire({
@@ -146,6 +130,7 @@ function FormularioCrear() {
                 timer: 6000,
               });
               navigate("/MisProyectosPage");
+              setIsSubmitting(false);
             })
             .catch((error) => {
               console.log(error);
@@ -156,6 +141,7 @@ function FormularioCrear() {
                 timer: 6000,
               });
               navigate("/");
+              setIsSubmitting(false);
             });
         });
       }}
@@ -311,7 +297,9 @@ function FormularioCrear() {
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="" controlId="convocatoria">
-              <Form.Label className="encabezado-4 label">Convocatoria:</Form.Label>
+              <Form.Label className="encabezado-4 label">
+                Convocatoria:
+              </Form.Label>
               <span className="text-4 label-secundary"> (Opcional)</span>
               <Form.Control
                 type="text"
@@ -364,17 +352,11 @@ function FormularioCrear() {
                 <input
                   type="file"
                   name="banner"
-                  onChange={(e) =>{
+                  onChange={(e) => {
                     const file = e.currentTarget.files[0];
-                    console.log({ 
-                      fileName: file.name, 
-                      type: file.type,
-                      size: `${file.size} bytes`
-                    })
-                    handleFileUpload(file);
                     setFieldValue("banner", file);
-                    }
-                  }
+                    handleFileUpload(file);
+                  }}
                 />
                 {previewSrc ? (
                   <img
@@ -387,15 +369,18 @@ function FormularioCrear() {
                     }}
                   />
                 ) : (
-                  <p>
-                  </p>
+                  <p></p>
                 )}
               </div>
+              <Form.Control.Feedback type="invalid">
+                {errors.banner && touched.banner && errors.banner}
+              </Form.Control.Feedback>
             </Form.Group>
             <Button
               className="btn btn-form mt-5"
               type="submit"
               onClick={handleSubmit}
+              disabled={isSubmitting}
             >
               Crear Proyecto
             </Button>
