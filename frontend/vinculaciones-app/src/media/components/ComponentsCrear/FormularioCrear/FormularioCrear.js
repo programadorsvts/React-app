@@ -41,8 +41,8 @@ function FormularioCrear() {
     direccion: Yup.string().max(254, "La dirección es demasiado larga"),
     convocatoria: Yup.string().max(254, "La convocatoria es demasiado larga"),
     description: Yup.string()
-      .required("La descripción es obligatorio")
       .min(2, "La descripción es demasiado corta")
+      .required("La descripción es obligatoria")
       .max(4000, "La descripción es demasiado larga"),
     banner: Yup.mixed()
       .required("Una imagen es requerida")
@@ -96,7 +96,7 @@ function FormularioCrear() {
         email: "",
         telefono: "",
         direccion: "",
-        descripcion: "",
+        description: "",
         convocatoria: "",
         banner: "",
       }}
@@ -116,7 +116,7 @@ function FormularioCrear() {
         formData.append("email", values.email);
         formData.append("phone_number", values.telefono);
         formData.append("address", values.direccion);
-        formData.append("description", values.descripcion);
+        formData.append("description", values.description);
         formData.append("convocatoria", values.convocatoria);
         formData.append("banner", values.banner);
 
@@ -330,12 +330,12 @@ function FormularioCrear() {
                 as="textarea"
                 rows={10}
                 type="text"
-                name="descripcion"
+                name="description"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.descripcion}
-                isValid={touched.descripcion && !errors.descripcion}
-                isInvalid={touched.descripcion && errors.description}
+                value={values.description}
+                isValid={touched.description && !errors.description}
+                isInvalid={touched.description && errors.description}
               />
               <Form.Control.Feedback type="invalid">
                 {errors.description}
