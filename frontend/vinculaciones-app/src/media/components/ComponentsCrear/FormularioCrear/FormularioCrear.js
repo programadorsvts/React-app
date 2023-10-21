@@ -33,7 +33,7 @@ function FormularioCrear() {
       .required("Debe seleccionar un tipo de área tematica"),
     email: Yup.string()
       .email("El valor ingresado no es un email")
-      .required("el email es obligatorio")
+      .required("El email es obligatorio")
       .trim("El email no permite espacios en blanco"),
     telefono: Yup.string()
       .matches(regExp.telefono, "El valor ingresado no es un telefono")
@@ -41,6 +41,7 @@ function FormularioCrear() {
     direccion: Yup.string().max(254, "La dirección es demasiado larga"),
     convocatoria: Yup.string().max(254, "La convocatoria es demasiado larga"),
     description: Yup.string()
+      .required("La descripción es obligatorio")
       .min(2, "La descripción es demasiado corta")
       .max(4000, "La descripción es demasiado larga"),
     banner: Yup.mixed()
