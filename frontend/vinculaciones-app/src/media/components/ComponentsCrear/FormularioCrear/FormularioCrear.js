@@ -43,7 +43,7 @@ function FormularioCrear() {
     description: Yup.string()
       .min(2, "La descripción es demasiado corta")
       .max(4000, "La descripción es demasiado larga"),
-    banner: Yup.mixed()
+/*     banner: Yup.mixed()
       .test("is-file-too-big", "File pesa mas de 10MB", () => {
         let valid = true;
         const files = bannerRef?.current?.files;
@@ -72,7 +72,7 @@ function FormularioCrear() {
           });
         }
         return valid;
-      }),
+      }), */
   });
   //////////////////////////////////////////////////////////////
 
