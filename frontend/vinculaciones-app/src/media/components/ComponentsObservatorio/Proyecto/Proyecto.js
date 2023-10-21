@@ -117,7 +117,7 @@ function ProyectosPublicados() {
       </Container>
       {loading && <Loader />}
       <Container>
-        <h1 className="encabezado-2 mb-5">Catalogo de Proyectos de Inovación</h1>
+        <h1 className="encabezado-2 mb-5">Listado de Proyectos de Convocatoria</h1>
         <Container className="proyecto">
 
           {proyectos.map((item) => {

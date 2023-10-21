@@ -18,7 +18,7 @@ function Home() {
 
       {/* <Noticias></Noticias> */}
       <Gestion></Gestion>
-      <Stan></Stan>
+      {/* <Stan></Stan> */}
       <Convocatorias></Convocatorias>
       <Vinculaciones></Vinculaciones>
       <Redes></Redes>

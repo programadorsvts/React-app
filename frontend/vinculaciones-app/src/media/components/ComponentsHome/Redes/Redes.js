@@ -8,11 +8,11 @@ function gestion() {
         };
         const redes2={
                 ruta:'assets/svgs/redes-2.svg',
-                link:"http://grupomontevideo.org/sitio"
+                link:"http://grupomontevideo.org"
         };
         const redes3={
                 ruta:'assets/svgs/redes-3.svg', 
-                link: "http://grupomontevideo.org/cp/cpcienciatecnologiaeinnovacion/"
+                link: "http://redvitec.cin.edu.ar"
         };
 return (
     <section className="container my-5 d-flex flex-column align-items-center">
