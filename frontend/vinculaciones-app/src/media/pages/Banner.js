@@ -2,12 +2,12 @@ import Image from "react-bootstrap/Image";
 import { Container } from "react-bootstrap";
 function Banner() {
   return (
-    <Container fluid  style={{ padding: '0px' }} className="text-center">
+    <Container fluid style={{ padding: '0px' }} className="text-center">
       <a href={"assets/revistadigital/revistapdf/cartilla-prensa-workshop.pdf"} target="_blank" rel="noreferrer">
         <Image
-          src="assets/images/banner.png"
+          src="assets/images/banner.webp"
           alt="imagen-4"
-          
+
           fluid
           className="banner-image"
         />
