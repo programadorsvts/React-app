@@ -39,11 +39,12 @@ function FormularioCrear() {
       .matches(regExp.telefono, "El valor ingresado no es un telefono")
       .max(15),
     direccion: Yup.string().max(254, "La dirección es demasiado larga"),
+    convocatoria: Yup.string().max(254, "La convocatoria es demasiado larga"),
     description: Yup.string()
       .min(2, "La descripción es demasiado corta")
       .max(4000, "La descripción es demasiado larga"),
     banner: Yup.mixed()
-      .test("is-file-too-big", "File exceeds 10MB", () => {
+      .test("is-file-too-big", "File pesa mas de 10MB", () => {
         let valid = true;
         const files = bannerRef?.current?.files;
         if (files) {
@@ -57,7 +58,7 @@ function FormularioCrear() {
         }
         return valid;
       })
-      .test("is-file-of-correct-type", "File is not of supported type", () => {
+      .test("is-file-of-correct-type", "El archivo no es un tipo compatible", () => {
         let valid = true;
         const files = bannerRef?.current?.files;
         if (files) {
@@ -108,6 +109,7 @@ function FormularioCrear() {
         telefono: "",
         direccion: "",
         descripcion: "",
+        convocatoria: "",
         banner: "",
       }}
       onSubmit={(values) => {
@@ -126,6 +128,7 @@ function FormularioCrear() {
           formData.append('phone_number', values.telefono);
           formData.append('address', values.direccion);
           formData.append('description', values.descripcion);
+          formData.append('convocatoria', values.convocatoria);
           formData.append('banner', values.banner);
         
           Axios.get(API_URL + "sanctum/csrf-cookie").then((response) => {
@@ -307,6 +310,22 @@ function FormularioCrear() {
                 {errors.direccion}
               </Form.Control.Feedback>
             </Form.Group>
+            <Form.Group className="" controlId="convocatoria">
+              <Form.Label className="encabezado-4 label">Convocatoria:</Form.Label>
+              <span className="text-4 label-secundary"> (Opcional)</span>
+              <Form.Control
+                type="text"
+                name="convocatoria"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.convocatoria}
+                isValid={touched.convocatoria && !errors.convocatoria}
+                isInvalid={touched.convocatoria && errors.convocatoria}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.convocatoria}
+              </Form.Control.Feedback>
+            </Form.Group>
             <Form.Group
               className="mb-3 mt-4"
               controlId="exampleForm.ControlTextarea1"
@@ -357,7 +376,7 @@ function FormularioCrear() {
                     }
                   }
                 />
-                {previewSrc ? (
+                {previewSrc} ? (
                   <img
                     src={previewSrc}
                     alt="Vista previa"
@@ -367,14 +386,9 @@ function FormularioCrear() {
                       marginTop: "10px",
                     }}
                   />
-                ) : (
-                  <p>
-                    Arrastra y suelta una imagen aquí, o haz clic para
-                    seleccionar una
-                  </p>
-                )}
+                )
               </div>
-              {selectedImage && <p>{selectedImage.name}</p>}
+              {selectedImage}
             </Form.Group>
             <Button
               className="btn btn-form mt-5"

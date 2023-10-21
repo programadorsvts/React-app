@@ -15,6 +15,7 @@ function ProyectoCard({ proyecto }) {
         <Card.Body>
           <Card.Text className="encabezado-4 text-lowercase">
             {proyecto.title}
+            {proyecto.convocatoria ? `${proyecto.convocatoria}` : ""}
           </Card.Text>
           <Card.Title className="text-1 text-deg text-capitalize">
             {proyecto.area_name}

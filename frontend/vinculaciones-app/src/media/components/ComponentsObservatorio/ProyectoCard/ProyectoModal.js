@@ -33,6 +33,9 @@ function ProyectoModal(props) {
             {props.proyecto.director_name}
           </p>
           <p className="encabezado-4 mb-4">
+            {props.proyecto.convocatoria ? `Convocatoria: ${props.proyecto.convocatoria}` : ""}
+          </p>
+          <p className="encabezado-4 mb-4">
             Organización{" "}
             {props.proyecto.organization === 1 ? "Pública" : "Privada"}
           </p>

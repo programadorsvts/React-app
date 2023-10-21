@@ -24,9 +24,9 @@ const navigateAndClose = () => {
   const AuthUser = useAuthUserContext();
   const [auth, setAuth] = useState()
   let UserButtons = ''
-/*   useEffect(() => {
+  useEffect(() => {
     setAuth(AuthUser());
-  }, [AuthUser]) */
+  }, [AuthUser])
 
 
 
