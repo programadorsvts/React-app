@@ -63,7 +63,6 @@ function FormularioCrear() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleFileUpload = (file) => {
-    setSelectedImage(file);
     setPreviewSrc(URL.createObjectURL(file));
   };
   const navigate = useNavigate();
