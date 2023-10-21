@@ -23,11 +23,11 @@ function ProyectoModal(props) {
             {props.url ?
             <Image
               src={props.url}
-              alt="imagen-4"
+              alt=""
               fluid
               className="banner-image"
             /> : <p></p>}
-          </Container>
+          </Container> 
 
           <h4 className="encabezado-2 mb-3">{props.proyecto.title}</h4>
           <p className="encabezado-4 mb-1 text-capitalize">
