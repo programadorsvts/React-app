@@ -18,6 +18,7 @@ import Layout from './media/components/Layout/Layout'
 import "./media/styles/index.css"
 /////////////////Imports//////////////////////////////////
 import { LoginProvider}  from "./LoginProvider";
+import CartillaDePrensa from "./media/components/ComponentesCartilla/CartillaDePrensa";
 
 
 
@@ -48,6 +49,7 @@ function App() {
                                 <Route exact path="/RevistaDigitalPage" element={<RevistaDigital />} />
                                 <Route exact path="/ObservatorioPage"  element={<Observatorio /> }/>            
                                 <Route exact path="/ObiPage" element={<HerramientasPage/>}/>
+                                <Route exact path="/CartillaDePrensa" element={<CartillaDePrensa/>}/>
                                 <Route exact path="/LoginPage" element={<LoginPage />} />
                                 <Route exact path="/SingUpPage" element={<SingUpPage />} />
                                 <Route exact path="/MisProyectosPage" element={<MisProyectosPage/>} />

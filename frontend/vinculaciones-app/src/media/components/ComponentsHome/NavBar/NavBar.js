@@ -64,6 +64,7 @@ const navigateAndClose = () => {
                 <NavLink to="/RevistaDigitalPage" className="text-3" onClick={() => navigateAndClose()}>Revista Digital</NavLink>
                 <NavLink to="/ObiPage" className="text-3" onClick={() => navigateAndClose()}>Ubi </NavLink>
                 <NavLink to="/ObservatorioPage" className="text-3" onClick={() => navigateAndClose()}>Observatorio</NavLink>
+                <NavLink to="/CartillaDePrensa" className="text-3" onClick={() => navigateAndClose()}>WORKSHOP</NavLink>
               </Nav>
               <Nav className="navbar-buttons" id="btnuser" >
                 {UserButtons}

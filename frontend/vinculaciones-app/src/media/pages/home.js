@@ -10,6 +10,7 @@ import Banner from "./Banner";
 
 
 function Home() {
+  
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   return (
     <>
