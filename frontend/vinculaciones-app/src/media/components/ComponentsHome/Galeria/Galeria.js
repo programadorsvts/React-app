@@ -3,15 +3,17 @@ import './galeria.css';
 import GaleriaModal from './GaleriaModal';
 import { useState } from 'react';
 
-function Galeria({title, imagenes}) {
+function Galeria({ imagenes}) {
   const [modalShow, setModalShow] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [modalTitle, setModalTitle] = useState(null);
 
   return (
     <Container className='galeria mt-5 mb-5'>
       {imagenes.map((imagen, index) => (
         <img 
-          key={index} 
+          key={index}
+          className='card-element ' 
           src={imagen.src} 
           alt={imagen.alt} 
           onClick={() => {
@@ -19,10 +21,11 @@ function Galeria({title, imagenes}) {
               setModalContent(imagen.component);
               setModalShow(true);
             }
+            setModalTitle(imagen.title)
           }}
         />
       ))}
-      <GaleriaModal title={title} show={modalShow} onHide={() => setModalShow(false)}>
+      <GaleriaModal title={modalTitle} show={modalShow} onHide={() => setModalShow(false)}>
         {modalContent}
       </GaleriaModal>
     </Container>

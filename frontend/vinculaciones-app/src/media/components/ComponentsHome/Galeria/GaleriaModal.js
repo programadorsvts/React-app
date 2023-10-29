@@ -13,9 +13,9 @@ function GaleriaModal(props) {
         <Modal.Body className='text-description' >
           {props.children}
         </Modal.Body>
-        <Modal.Footer>
+{/*         <Modal.Footer>
           <Button onClick={props.onHide} >Cerrar</Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </>
   );
