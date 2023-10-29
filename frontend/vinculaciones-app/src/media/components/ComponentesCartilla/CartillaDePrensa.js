@@ -3,21 +3,22 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import Galeria from "../ComponentsHome/Galeria/Galeria";
 import "../ComponentsHome/Principal/principal.css";
+import Image from "react-bootstrap/Image";
 
 function CartillaDePrensa() {
   const imagenes = [
-    { src: "assets/workshop/stand1.webp", alt: "imagen-4" },
-    { src: "assets/workshop/stand2.webp", alt: "imagen-2" },
-    { src: "assets/workshop/stand3.webp", alt: "imagen-3" },
-    { src: "assets/workshop/stand4.webp", alt: "imagen-1" },
-    { src: "assets/workshop/stand5.webp", alt: "imagen-5" },
-    { src: "assets/workshop/stand6.webp", alt: "imagen-6" },
-    { src: "assets/workshop/stand7.webp", alt: "imagen-7", clickable: true },
+    { src: "assets/workshop/stand1.webp", alt: "imagen-4", clickable: true, component: <Image  src= "assets/workshop/stand1.webp" fluid/> },
+    { src: "assets/workshop/stand2.webp", alt: "imagen-2", clickable: true, component: <Image  src= "assets/workshop/stand2.webp" fluid/> },
+    { src: "assets/workshop/stand3.webp", alt: "imagen-3", clickable: true, component: <Image  src= "assets/workshop/stand3.webp" fluid/> },
+    { src: "assets/workshop/stand4.webp", alt: "imagen-1", clickable: true, component: <Image  src= "assets/workshop/stand4.webp" fluid/> },
+    { src: "assets/workshop/stand5.webp", alt: "imagen-5", clickable: true, component: <Image  src= "assets/workshop/stand5.webp" fluid/> },
+    { src: "assets/workshop/stand6.webp", alt: "imagen-6", clickable: true, component: <Image  src= "assets/workshop/stand6.webp" fluid/> },
+    { src: "assets/workshop/stand7.webp", alt: "imagen-7", clickable: true, component: <Image  src= "assets/workshop/stand7.webp" fluid/> },
   ];
   return (
     <Container fluid className="">
       <section className="container">
-        <Container style={{ marginTop: "50px", marginLeft: "10px" }}>
+        <Container style={{ marginTop: "50px", paddingLeft: "40px"  }}>
           <h1 className="hero text-deg">Cartilla De Prensa</h1>
           <br />
           <br />
@@ -92,7 +93,7 @@ function CartillaDePrensa() {
             </li>
           </ul>
         </Container>
-        <h3 style={{ paddingLeft: "20px" }} className="encabezado-2 mt-4">
+        <h3 style={{ paddingLeft: "40px" }} className="encabezado-2 mt-4">
           PANEL DE VINCULACIÓN Y ACTIVIDADES DE TRANSFERENCIAS:
         </h3>
         <Container style={{ fontSize: "14px", paddingLeft: "40px" }}>

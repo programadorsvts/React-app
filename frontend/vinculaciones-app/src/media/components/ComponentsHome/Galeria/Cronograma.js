@@ -40,3 +40,5 @@ export const Cronograma = () => {
     </>
   );
 }
+
+export default Cronograma;

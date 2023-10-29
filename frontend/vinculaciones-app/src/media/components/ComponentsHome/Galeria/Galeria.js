@@ -3,8 +3,9 @@ import './galeria.css';
 import GaleriaModal from './GaleriaModal';
 import { useState } from 'react';
 
-function Galeria({ imagenes }) {
+function Galeria({title, imagenes}) {
   const [modalShow, setModalShow] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   return (
     <Container className='galeria mt-5 mb-5'>
@@ -13,10 +14,17 @@ function Galeria({ imagenes }) {
           key={index} 
           src={imagen.src} 
           alt={imagen.alt} 
-          onClick={imagen.clickable ? () => setModalShow(true) : null}
+          onClick={() => {
+            if (imagen.clickable) {
+              setModalContent(imagen.component);
+              setModalShow(true);
+            }
+          }}
         />
       ))}
-      <GaleriaModal show={modalShow} onHide={() => setModalShow(false)} />
+      <GaleriaModal title={title} show={modalShow} onHide={() => setModalShow(false)}>
+        {modalContent}
+      </GaleriaModal>
     </Container>
   );
 }
