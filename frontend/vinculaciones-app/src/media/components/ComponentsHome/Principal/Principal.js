@@ -4,14 +4,16 @@ import Cronograma from '../Galeria/Cronograma.js';
 import './principal.css';
 import Image from "react-bootstrap/Image";
 
+
 function principal() {
   const imagenes = [
-    { src: 'assets/images/galeria-4.webp', alt: 'imagen-4',clickable: true, component: <Image src='assets/images/galeria-4.webp' fluid/> },
+    { href:'https://encuestas.siu.edu.ar/kollaencuestas/aplicacion.php?ai=kolla||40000174&h=232&f=232', src: 'assets/images/upa.webp', alt: 'imagen-7',clickable: false, component: <Image src='assets/images/upa.webp' fluid/> },
     { src: 'assets/images/galeria-2.jpg', alt: 'imagen-2',clickable: true, component: <Image src='assets/images/galeria-2.jpg' fluid/> },
     { src: 'assets/images/galeria-3.webp', alt: 'imagen-3',clickable: true, component: <Image src='assets/images/galeria-3.webp' fluid/> },
-    { src: 'assets/images/galeria-1.webp', alt: 'imagen-1',clickable: true, component: <Image src='assets/images/galeria-1.webp' fluid/> },
+    { src: 'assets/images/galeria-4.webp', alt: 'imagen-4',clickable: true, component: <Image src='assets/images/galeria-4.webp' fluid/> },
     { src: 'assets/images/galeria-5.webp', alt: 'imagen-5',clickable: true, component: <Image src='assets/images/galeria-5.webp' fluid/> },
     { src: 'assets/images/galeria-6.jpg', alt: 'imagen-6',clickable: true , component: <Image src='assets/images/galeria-6.jpg' fluid/>},
+    { src: 'assets/images/galeria-1.webp', alt: 'imagen-1',clickable: true , component: <Image src='assets/images/galeria-1.webp' fluid/>},
     { src: 'assets/images/galeria-7.webp',title: "CRONOGRAMA DE ACTIVIDADES JORNADA", alt: 'imagen-7',component:<Cronograma/> ,clickable: true }
   ];
   return (

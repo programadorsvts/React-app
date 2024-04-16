@@ -11,6 +11,7 @@ function Galeria({ imagenes}) {
   return (
     <Container className='galeria mt-5 mb-5'>
       {imagenes.map((imagen, index) => (
+        <a target="_blank" href='https://encuestas.siu.edu.ar/kollaencuestas/aplicacion.php?ai=kolla||40000174&h=232&f=232'>
         <img 
           key={index}
           className='card-element ' 
@@ -24,6 +25,7 @@ function Galeria({ imagenes}) {
             setModalTitle(imagen.title)
           }}
         />
+        </a>
       ))}
       <GaleriaModal title={modalTitle} show={modalShow} onHide={() => setModalShow(false)}>
         {modalContent}
