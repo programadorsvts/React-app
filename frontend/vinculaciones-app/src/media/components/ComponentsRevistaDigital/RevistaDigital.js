@@ -58,6 +58,14 @@ function revista() {
                 fecha: 'Septiembre 2023 ',
                 isbn: ''
         }
+        const revista8 =
+            {
+                    imagen: 'assets/images/revista8.jpg',
+                    link: 'assets/revistadigital/revistapdf/Revista8.pdf',
+                    titulo: 'Volumen 4 - Número 8',
+                    fecha: 'Septiembre 2023 ',
+                    isbn: ''
+            }
 
         return (
                 <>

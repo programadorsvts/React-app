@@ -20,7 +20,14 @@
 .card-element {
     transition: all 0.3s ease;
   }
-  
+/* Nuevos estilos para videos */
+.video-element {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 14px
+}
   /* Animation styles on hover */
   .card-element:hover {
     transform: scale(1.1); 
