@@ -74,6 +74,11 @@ function revista() {
                                 <Row className='mt-5'>
                                         <Col className='mt-5 d-flex justify-content-center'>
 
+                                                <RevistaCard data={revista8}></RevistaCard>
+
+                                        </Col>
+                                        <Col className='mt-5 d-flex justify-content-center'>
+
                                                 <RevistaCard data={revista7}></RevistaCard>
 
                                         </Col>
