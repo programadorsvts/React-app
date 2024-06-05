@@ -72,6 +72,7 @@ function revista() {
                         <Container>
                                 <h1 className='encabezado-2 encabezado-1 text-center mt-5'>Publicaciones</h1>
                                 <Row className='mt-5'>
+
                                         <Col className='mt-5 d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista8}></RevistaCard>
@@ -82,36 +83,36 @@ function revista() {
                                                 <RevistaCard data={revista7}></RevistaCard>
 
                                         </Col>
-                                        <Col className='mt-5 d-flex justify-content-center'>
+                                        <Col className='mt-5  d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista6}></RevistaCard>
 
                                         </Col>
-                                        <Col className='mt-5  d-flex justify-content-center'>
+                                </Row>
+                                <Row className='mt-5'>
+                                        <Col className='mt-5 d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista5}></RevistaCard>
 
                                         </Col>
-                                </Row>
-                                <Row className='mt-5'>
                                         <Col className='mt-5 d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista4}></RevistaCard>
 
                                         </Col>
-                                        <Col className='mt-5 d-flex justify-content-center'>
-
-                                                <RevistaCard data={revista3}></RevistaCard>
-
-                                        </Col>
                                         <Col className='mt-5  d-flex justify-content-center'>
 
-                                                <RevistaCard data={revista2}></RevistaCard>
+                                                <RevistaCard data={revista3}></RevistaCard>
 
                                         </Col>
                                 </Row>
                                 <Row className='mt-5'>
                                         <Col className='mt-5  d-flex justify-content-center'>
+
+                                                <RevistaCard data={revista2}></RevistaCard>
+
+                                        </Col>
+                                        <Col className='mt-5 d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista1}></RevistaCard>
 
