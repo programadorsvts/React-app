@@ -15,8 +15,8 @@ import Image from "react-bootstrap/Image";
 
 function principal() {
   const media = [
-      {src: 'assets/images/portada-revista-8.jpg', alt: 'imagen-1',clickable: false,type: 'image', component: <Image src='assets/images/portada-revista-8.jpg' fluid/> },
-      {src: 'assets/images/Flyers-svts-4-de-junio.jpg', alt: 'imagen-2', type: 'image', clickable: false, component: <Image src='assets/images/Flyers-svts-4-de-junio.jpg' fluid/> },
+      {src: 'assets/images/portada-revista-8.webp', alt: 'imagen-1',clickable: false,type: 'image', component: <Image src='assets/images/portada-revista-8.webp' fluid/> },
+      {src: 'assets/images/Flyers-svts-4-de-junio.webp', alt: 'imagen-2', type: 'image', clickable: false, component: <Image src='assets/images/Flyers-svts-4-de-junio.webp' fluid/> },
       {src: 'assets/videos/semana-FICA.mp4', alt: 'video-1',clickable: false,type: 'video', component: <video src={'assets/videos/semana-FICA.mp4'} />}
   ];
   return (
