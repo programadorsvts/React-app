@@ -62,8 +62,8 @@ function revista() {
             {
                     imagen: 'assets/images/revista8.webp',
                     link: 'assets/revistadigital/revistapdf/Revista8.pdf',
-                    titulo: 'Volumen 4 - Número 8',
-                    fecha: 'Septiembre 2023 ',
+                    titulo: 'Volumen 5 - Número 8',
+                    fecha: 'Junio 2024 ',
                     isbn: ''
             }
 
