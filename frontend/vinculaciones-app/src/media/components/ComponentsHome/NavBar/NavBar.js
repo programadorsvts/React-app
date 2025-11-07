@@ -50,7 +50,7 @@ const navigateAndClose = () => {
     <Navbar expand="lg" className="navbar" sticky="top"  >
       <Container fluid>
         <NavLink to="/" >
-          <img src='assets/svgs/Solo-LogoSVTS.svg' width="145" height="50" className="d-inline-block " alt="logo1" />
+          <img src='assets/svgs/Solo-LogoSVTS.svg' width="95" height="36" className="d-inline-block " alt="logo1" />
         </ NavLink >
         <Navbar.Toggle className='navbar-toggler' aria-controls="offcanvasNavbar" />
         <Navbar.Collapse id="basic-navbar-nav" >
