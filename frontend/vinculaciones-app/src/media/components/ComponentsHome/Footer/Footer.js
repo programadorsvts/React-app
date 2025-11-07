@@ -21,7 +21,7 @@ function footer() {
                     <p>Ubicación: 1er Piso - Ala B</p>
                     <p>Telefono: +54 (0266) 4520300</p>
                     <p>Interno: 5159</p>
-                    <p>Email: svts.unsl@gmail.com</p>
+                    <p>Email: svt.unsl@gmail.com</p>
                 </div>
                 <div className="text-center" xs={12} md={4}>
                     <h6 className="text-1">Redes</h6>
@@ -32,7 +32,7 @@ function footer() {
                 </div>
             </footer>
             <div className="copyright-body text-center ">
-                <p className="text-5">&#169; COPYRIGHT 2023 Secretaría de Vinculación Tecnológica y Social (UNSL) <br />Diseñado y desarrollado por Iván Agustín Lucero y Octavio Riccardo</p>
+                <p className="text-5">&#169; COPYRIGHT 2023 Subsecretaría de Vinculación Territorial (UNSL) <br />Diseñado y desarrollado por Iván Agustín Lucero y Octavio Riccardo</p>
             </div>
         </>
     );

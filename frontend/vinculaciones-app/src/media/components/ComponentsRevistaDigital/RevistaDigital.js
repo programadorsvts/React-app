@@ -66,13 +66,25 @@ function revista() {
                     fecha: 'Junio 2024 ',
                     isbn: ''
             }
+        const revista9 =
+            {
+                    imagen: 'assets/images/revista9.webp',
+                    link: 'assets/revistadigital/revistapdf/Revista9.pdf',
+                    titulo: 'Volumen 6 - Número 9',
+                    fecha: 'Noviembre 2025 ',
+                    isbn: ''
+            }
 
         return (
                 <>
                         <Container>
                                 <h1 className='encabezado-2 encabezado-1 text-center mt-5'>Publicaciones</h1>
                                 <Row className='mt-5'>
+                                        <Col className='mt-5 d-flex justify-content-center'>
 
+                                                <RevistaCard data={revista9}></RevistaCard>
+
+                                        </Col>
                                         <Col className='mt-5 d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista8}></RevistaCard>
@@ -83,13 +95,13 @@ function revista() {
                                                 <RevistaCard data={revista7}></RevistaCard>
 
                                         </Col>
+                                </Row>
+                                <Row className='mt-5'>
                                         <Col className='mt-5  d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista6}></RevistaCard>
 
                                         </Col>
-                                </Row>
-                                <Row className='mt-5'>
                                         <Col className='mt-5 d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista5}></RevistaCard>
@@ -100,13 +112,13 @@ function revista() {
                                                 <RevistaCard data={revista4}></RevistaCard>
 
                                         </Col>
+                                </Row>
+                                <Row className='mt-5'>
                                         <Col className='mt-5  d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista3}></RevistaCard>
 
                                         </Col>
-                                </Row>
-                                <Row className='mt-5'>
                                         <Col className='mt-5  d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista2}></RevistaCard>
