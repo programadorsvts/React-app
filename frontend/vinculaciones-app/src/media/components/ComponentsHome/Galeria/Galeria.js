@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
 import './galeria.css';
 import GaleriaModal from './GaleriaModal';
-import {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 function Galeria({ media }) {
     const [modalShow, setModalShow] = useState(false);
@@ -20,21 +20,32 @@ function Galeria({ media }) {
     }, []);
     const renderMedia = (item, index) => {
         if (item.type === 'image') {
-            return (
+            const img = (
                 <img
-                    key={index}
                     className='card-element'
                     src={item.src}
                     alt={item.alt}
                     onClick={() => {
-                        if (item.clickable) {
+                        if (item.clickable && !item.href) {
                             setModalContent(item.component);
                             setModalShow(true);
+                            setModalTitle(item.title);
+                        } else {
+                            setModalTitle(item.title);
                         }
-                        setModalTitle(item.title);
                     }}
                 />
             );
+
+            if (item.href) {
+                return (
+                    <a href={item.href} target="_blank" rel="noreferrer" key={index}>
+                        {img}
+                    </a>
+                );
+            }
+
+            return <React.Fragment key={index}>{img}</React.Fragment>;
         } else if (item.type === 'video') {
             return (
                 <video
@@ -60,7 +71,7 @@ function Galeria({ media }) {
     return (
         <Container className='galeria mt-5 mb-5'>
             {media.map((item, index) => (
-                <Container>
+                <Container key={index}>
                     {renderMedia(item, index)}
                 </Container>
             ))}
