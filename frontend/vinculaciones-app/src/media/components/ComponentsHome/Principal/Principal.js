@@ -16,18 +16,19 @@ import Image from "react-bootstrap/Image";
 */
 
 function principal() {
-    const media = [
-      {src: 'assets/images/portada-revista-10.webp', alt: 'imagen-1', clickable: false, type: 'image', href: 'assets/revistadigital/revistapdf/Revista10.pdf', component: <Image src='assets/images/portada-revista-10.webp' fluid/> },
-      {src: 'assets/images/portada-revista-9.webp', alt: 'imagen-1', clickable: false, type: 'image', href: 'assets/revistadigital/revistapdf/Revista9.pdf', component: <Image src='assets/images/portada-revista-9.webp' fluid/> },
-      {src: 'assets/images/contacto.webp', alt: 'imagen-2',clickable: false,type: 'image', component: <Image src='assets/images/contacto.webp' fluid/> },
-      //{src: 'assets/images/Flyers-svts-4-de-junio.webp', alt: 'imagen-3', type: 'image', clickable: false, component: <Image src='assets/images/Flyers-svts-4-de-junio.webp' fluid/> },
+  const media = [
+    { src: 'assets/images/portada-revista-10.webp', alt: 'imagen-1', clickable: false, type: 'image', href: 'assets/revistadigital/revistapdf/Revista10.pdf', component: <Image src='assets/images/portada-revista-10.webp' fluid /> },
+    { src: 'assets/images/finaño.webp', alt: 'imagen-2', clickable: false, type: 'image', component: <Image src='assets/images/finaño.webp' fluid /> },
+    { src: 'assets/images/portada-revista-9.webp', alt: 'imagen-3', clickable: false, type: 'image', href: 'assets/revistadigital/revistapdf/Revista9.pdf', component: <Image src='assets/images/portada-revista-9.webp' fluid /> },
+    { src: 'assets/images/contacto.webp', alt: 'imagen-4', clickable: false, type: 'image', component: <Image src='assets/images/contacto.webp' fluid /> },
+    //{src: 'assets/images/Flyers-svts-4-de-junio.webp', alt: 'imagen-3', type: 'image', clickable: false, component: <Image src='assets/images/Flyers-svts-4-de-junio.webp' fluid/> },
   ];
   return (
     <Container fluid className="bg-home">
       <section className='container principal-body'>
         <h1 className="hero text-deg">Subsecretaría de Vinculación<br />Territorial</h1>
         <p className="encabezado-3 mt-5 w-75">Promovemos la apropiación social de conocimiento generado en el ámbito de la Universidad Nacional de San Luis, impulsando la vinculación del sector científico-tecnológico con su entorno socio-productivo</p>
-        <Galeria  media={media} />
+        <Galeria media={media} />
       </section>
     </Container>
   );
