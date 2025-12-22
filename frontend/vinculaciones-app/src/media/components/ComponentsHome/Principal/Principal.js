@@ -19,7 +19,7 @@ function principal() {
   const media = [
     { src: 'assets/images/portada-revista-10.webp', alt: 'imagen-1', clickable: false, type: 'image', href: 'assets/revistadigital/revistapdf/Revista10.pdf', component: <Image src='assets/images/portada-revista-10.webp' fluid /> },
     { src: 'assets/images/finaño.webp', alt: 'imagen-2', clickable: false, type: 'image', component: <Image src='assets/images/finaño.webp' fluid /> },
-    { src: 'assets/images/portada-revista-9.webp', alt: 'imagen-3', clickable: false, type: 'image', href: 'assets/revistadigital/revistapdf/Revista9.pdf', component: <Image src='assets/images/portada-revista-9.webp' fluid /> },
+    //{ src: 'assets/images/portada-revista-9.webp', alt: 'imagen-3', clickable: false, type: 'image', href: 'assets/revistadigital/revistapdf/Revista9.pdf', component: <Image src='assets/images/portada-revista-9.webp' fluid /> },
     { src: 'assets/images/contacto.webp', alt: 'imagen-4', clickable: false, type: 'image', component: <Image src='assets/images/contacto.webp' fluid /> },
     //{src: 'assets/images/Flyers-svts-4-de-junio.webp', alt: 'imagen-3', type: 'image', clickable: false, component: <Image src='assets/images/Flyers-svts-4-de-junio.webp' fluid/> },
   ];
