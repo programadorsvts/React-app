@@ -78,7 +78,7 @@ function revista() {
             {
                     imagen: 'assets/images/revista10.webp',
                     link: 'assets/revistadigital/revistapdf/Revista10.pdf',
-                    titulo: 'Volumen 7 - Número 10',
+                    titulo: 'Volumen 6 - Número 10',
                     fecha: 'Diciembre 2025 ',
                     isbn: ''
             }
