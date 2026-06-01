@@ -5,12 +5,12 @@ import "../../../styles/form.css";
 import "./form-crear.css";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { API_URL } from "../../../../config/env";
 
 function FormularioCrear() {
-  const bannerRef = useRef(null);
+
 
   const regExp = {
     telefono:
@@ -398,36 +398,4 @@ function FormularioCrear() {
 
 export default FormularioCrear;
 
-{
-  /*
-  <div
-                  className="dropzone"
-                  style={{
-                    border: "2px dashed #cccccc",
-                    padding: "20px",
-                    textAlign: "center",
-                    cursor: "pointer",
-                  }}
-                >
 
-                  {previewSrc ? (
-                    <img
-                      src={previewSrc}
-                      alt="Vista previa"
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        marginTop: "10px",
-                      }}
-                    />
-                  ) : (
-                    <p>
-                      Arrastra y suelta una imagen aquí, o haz clic para
-                      seleccionar una
-                    </p>
-                  )}
-                </div>
-                {selectedImage && <p>{selectedImage.name}</p>}
-
-*/
-}

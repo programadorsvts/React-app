@@ -1,6 +1,5 @@
 import { Container } from 'react-bootstrap'
 import Galeria from '../Galeria/Galeria';
-import Cronograma from '../Galeria/Cronograma.js';
 import './principal.css';
 import Image from "react-bootstrap/Image";
 

@@ -5,8 +5,6 @@ import Gestion from "../components/ComponentsHome/Gestion/Gestion";
 import Principal from "../components/ComponentsHome/Principal/Principal";
 import Redes from "../components/ComponentsHome/Redes/Redes";
 import Vinculaciones from "../components/ComponentsHome/Vinculaciones/Vinculaciones";
-import Stan from "../components/ComponentsHome/Stan/Stan";
-import Banner from "./Banner";
 
 
 function Home() {
