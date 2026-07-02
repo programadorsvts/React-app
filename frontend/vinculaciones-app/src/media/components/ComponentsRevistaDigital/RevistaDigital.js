@@ -82,12 +82,25 @@ function revista() {
                     fecha: 'Diciembre 2025 ',
                     isbn: ''
             }
+        const revista11 =
+            {
+                    imagen: 'assets/images/revista11.webp',
+                    link: 'assets/revistadigital/revistapdf/Revista11.pdf',
+                    titulo: 'Volumen 7 - Número 11',
+                    fecha: 'Julio 2026 ',
+                    isbn: ''
+            }
 
         return (
                 <>
                         <Container>
                                 <h1 className='encabezado-2 encabezado-1 text-center mt-5'>Publicaciones</h1>
                                 <Row className='mt-5'>
+                                        <Col className='mt-5 d-flex justify-content-center'>
+
+                                                <RevistaCard data={revista11}></RevistaCard>
+
+                                        </Col>
                                         <Col className='mt-5 d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista10}></RevistaCard>
@@ -98,14 +111,14 @@ function revista() {
                                                 <RevistaCard data={revista9}></RevistaCard>
 
                                         </Col>
-                                        <Col className='mt-5 d-flex justify-content-center'>
+                                </Row>
+                                <Row className='mt-5'>
+                                        <Col className='mt-5  d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista8}></RevistaCard>
 
                                         </Col>
-                                </Row>
-                                <Row className='mt-5'>
-                                        <Col className='mt-5  d-flex justify-content-center'>
+                                        <Col className='mt-5 d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista7}></RevistaCard>
 
@@ -115,24 +128,26 @@ function revista() {
                                                 <RevistaCard data={revista6}></RevistaCard>
 
                                         </Col>
-                                        <Col className='mt-5 d-flex justify-content-center'>
+                                </Row>
+                                <Row className='mt-5'>
+                                        <Col className='mt-5  d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista5}></RevistaCard>
 
                                         </Col>
-                                </Row>
-                                <Row className='mt-5'>
                                         <Col className='mt-5  d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista4}></RevistaCard>
 
                                         </Col>
-                                        <Col className='mt-5  d-flex justify-content-center'>
+                                        <Col className='mt-5 d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista3}></RevistaCard>
 
                                         </Col>
-                                        <Col className='mt-5 d-flex justify-content-center'>
+                                </Row>
+                                <Row className='mt-5'>
+                                        <Col className='mt-5  d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista2}></RevistaCard>
 
