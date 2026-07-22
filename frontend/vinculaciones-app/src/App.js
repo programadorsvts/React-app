@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Axios from "axios";
 /////////////////////////////Vercel Speed Insights////////////////////////////////
 import { SpeedInsights } from '@vercel/speed-insights/react';
+/////////////////////////////Vercel Web Analytics////////////////////////////////////
+import { Analytics } from '@vercel/analytics/react';
 ///////////////////////Pages/////////////////////////////////////////
 import Observatorio from './media/pages/ObservatorioPage'
 import RevistaDigital from './media/pages/RevistaDigitalPage'
@@ -62,6 +64,7 @@ function App() {
                       </Layout>   
             </LoginProvider>
             <SpeedInsights />
+            <Analytics />
   </Router>
      
 
