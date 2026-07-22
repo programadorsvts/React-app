@@ -2,6 +2,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 /////////////////////////////AXIOS////////////////////////////////////////////////
 import Axios from "axios";
+/////////////////////////////Vercel Speed Insights////////////////////////////////
+import { SpeedInsights } from '@vercel/speed-insights/react';
 ///////////////////////Pages/////////////////////////////////////////
 import Observatorio from './media/pages/ObservatorioPage'
 import RevistaDigital from './media/pages/RevistaDigitalPage'
@@ -58,7 +60,8 @@ function App() {
                                 <Route exact path=" * " element={<NotFoundPage />} />
                           </Routes>
                       </Layout>   
-            </LoginProvider>  
+            </LoginProvider>
+            <SpeedInsights />
   </Router>
      
 
