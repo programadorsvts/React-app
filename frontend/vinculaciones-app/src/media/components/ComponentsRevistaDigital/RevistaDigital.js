@@ -152,8 +152,6 @@ function revista() {
                                                 <RevistaCard data={revista2}></RevistaCard>
 
                                         </Col>
-                                </Row>
-                                <Row className='mt-5'>
                                         <Col className='mt-5  d-flex justify-content-center'>
 
                                                 <RevistaCard data={revista1}></RevistaCard>
