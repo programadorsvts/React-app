@@ -19,3 +19,4 @@
     outline-offset: 4px;
 }
 .vinculaciones-img { width: 100%; height: 175px; object-fit: contain; }
+.vinculaciones-img[src$="/quienes-somos.svg"] { height: 120px; }
