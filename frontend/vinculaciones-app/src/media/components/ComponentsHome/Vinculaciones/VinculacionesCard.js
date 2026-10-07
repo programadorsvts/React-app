@@ -1,13 +1,16 @@
-import {Card}from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-function vinculacionescard(props) {
+function VinculacionesCard({ data }) {
+  const imagen = <Card.Img src={data.ruta} alt={data.titulo} className="vinculaciones-img" />;
   return (
-    <Card className='vinculaciones-card '>
-      <a href={props.data.link}  rel="noreferrer">
-        <Card.Img src={props.data.ruta} className='vinculaciones-img '/>
-      </a>
+    <Card className="vinculaciones-card">
+      {data.interno ? (
+        <Link to={data.link}>{imagen}</Link>
+      ) : (
+        <a href={data.link} target="_blank" rel="noreferrer">{imagen}</a>
+      )}
     </Card>
   );
 }
-
-export default vinculacionescard;
+export default VinculacionesCard;

@@ -74,3 +74,27 @@
     /* Quita la sombra al hacer click */
     box-shadow: none;
 }
+.institutional-brand { flex-shrink: 1; max-width: calc(100% - 65px); padding: 6.8px 38.8px; }
+.institutional-logo { display: block; width: 650px; max-width: 100%; height: auto; }
+.navbar > .container-fluid { gap: 1rem; padding: 0.46rem 1rem; flex-wrap: nowrap; }
+.navbar-links { align-items: center; }
+.navbar .text-3 { font-size: 1.0625rem; }
+.menu-toggle .text-3.active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+.navbar-buttons .btn { padding-bottom: 11px; }
+@media (min-width: 1400px) {
+    .navbar { height: 88.11px; }
+    .navbar > .container-fluid { height: 100%; padding-block: 0; }
+    .institutional-brand { flex: 0 1 650px; min-width: 420px; }
+    .navbar .navbar-collapse { flex: 1; min-width: 0; align-self: stretch; }
+    .navbar .offcanvas { height: 100% !important; }
+    .navbar .offcanvas-body { height: 100%; padding-bottom: 8px !important; align-items: center; justify-content: space-between; gap: 1rem; }
+    .navbar-links { align-self: flex-end; flex-direction: row; justify-content: center; flex: 1; gap: clamp(10px, 1vw, 24px); }
+    .navbar .text-3 { margin: 0; white-space: nowrap; }
+    .navbar-buttons { margin: 0; flex-shrink: 0; align-self: flex-end; }
+    .navbar-buttons .btn { margin-block: 0; }
+    .navbar-buttons .btn { white-space: nowrap; padding-inline: clamp(14px, 1.4vw, 25px); }
+}

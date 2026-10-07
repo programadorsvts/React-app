@@ -6,17 +6,13 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useNavigate, NavLink } from "react-router-dom";
 import './navbar.css';
 import { useAuthUserContext, useLogOutContext } from '../../../../LoginProvider';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function NavBar() {
-  const offCanvasRef = useRef();
-  const closeOffCanvas = () => offCanvasRef.current.backdrop.click();
-  const ref = useRef();
-  
-const navigateAndClose = () => {
-  ref.current._offcanvas.hide(); 
-}  
+  const [expanded, setExpanded] = useState(false);
+  const closeOffCanvas = () => setExpanded(false);
+  const navigateAndClose = closeOffCanvas;
   const navigate = useNavigate();
   const logout = useLogOutContext();
   const AuthUser = useAuthUserContext();
@@ -45,20 +41,20 @@ const navigateAndClose = () => {
 
   return (
     <>
-    <Navbar expand="lg" className="navbar" sticky="top"  >
+    <Navbar expand="xxl" className="navbar" sticky="top" expanded={expanded} onToggle={setExpanded}>
       <Container fluid>
-        <NavLink to="/" >
-          <img src='assets/svgs/Solo-LogoSVTS.svg' width="95" height="36" className="d-inline-block " alt="logo1" />
+        <NavLink to="/" className="institutional-brand" onClick={closeOffCanvas}>
+          <img src='/assets/svgs/logo-institucional-subvt.svg' className="institutional-logo" alt="Universidad Nacional de San Luis · SIDI · Subsecretaría de Vinculación Territorial" />
         </ NavLink >
         <Navbar.Toggle className='navbar-toggler' aria-controls="offcanvasNavbar" />
         <Navbar.Collapse id="basic-navbar-nav" >
-          <Navbar.Offcanvas className='menu-toggle' placement="end" restoreFocus={false}>
+          <Navbar.Offcanvas id="offcanvasNavbar" className='menu-toggle' placement="end" restoreFocus={false}>
             <Offcanvas.Header closeButton >
               <Offcanvas.Title></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body >
-              <Nav className="justify-content-start flex-grow-1">
-                <NavLink to="/" className="text-3" onClick={() => navigateAndClose()}>inicio</NavLink>
+              <Nav className="navbar-links">
+                <NavLink to="/" end className="text-3" onClick={() => navigateAndClose()}>inicio</NavLink>
                 <NavLink to="/RevistaDigitalPage" className="text-3" onClick={() => navigateAndClose()}>Revista Digital</NavLink>
                 <NavLink to="/ObiPage" className="text-3" onClick={() => navigateAndClose()}>Ubi </NavLink>
                 <NavLink to="/ObservatorioPage" className="text-3" onClick={() => navigateAndClose()}>Observatorio</NavLink>
@@ -66,16 +62,15 @@ const navigateAndClose = () => {
               </Nav>
               <Nav className="navbar-buttons" id="btnuser" >
                 {UserButtons}
-                <img src='assets/svgs/Escudo-UNSL-Blanco.svg' width="100" height="50" className="d-inline-block " alt="" />
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  </> 
+  </>
 
   );
 }
 
-export default NavBar;
+export default NavBar;
