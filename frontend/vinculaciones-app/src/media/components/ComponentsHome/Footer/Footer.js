@@ -32,7 +32,7 @@ function footer() {
                 </div>
             </footer>
             <div className="copyright-body text-center ">
-                <p className="text-5">&#169; COPYRIGHT 2023 Subsecretaría de Vinculación Territorial (UNSL) <br />Diseñado y desarrollado por Iván Agustín Lucero y Octavio Riccardo</p>
+                <p className="text-5">&#169; COPYRIGHT 2026 Subsecretaría de Vinculación Territorial (UNSL) <br />Diseñado y desarrollado por Iván Agustín Lucero y Octavio Riccardo <br /> Mantenimiento por Marcos Gelves</p>
             </div>
         </>
     );
