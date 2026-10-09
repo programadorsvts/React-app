@@ -1,7 +1,8 @@
 import { Container } from 'react-bootstrap'
-import Galeria from '../Galeria/Galeria';
+// import Galeria from '../Galeria/Galeria';
+import Carrusel from '../Galeria/Carrusel';
 import './principal.css';
-import Image from "react-bootstrap/Image";
+// import Image from "react-bootstrap/Image";
 
 /*{ href:'https://encuestas.siu.edu.ar/kollaencuestas/aplicacion.php?ai=kolla||40000174&h=232&f=232', src: 'assets/images/upa.webp', alt: 'imagen-7',clickable: false, component: <Image src='assets/images/upa.webp' fluid/> },
 { src: 'assets/images/galeria-2.jpg', alt: 'imagen-2',clickable: true, component: <Image src='assets/images/galeria-2.jpg' fluid/> },
@@ -15,18 +16,21 @@ import Image from "react-bootstrap/Image";
 */
 
 function principal() {
+  /* Galería original conservada sin cambios.
   const media = [
     { src: 'assets/images/4_de_junio.webp', alt: 'El Triángulo de Sábato', clickable: false, type: 'image', component: <Image src='assets/images/4_de_junio.webp' fluid /> },
     //{ src: 'assets/images/portada-revista-9.webp', alt: 'imagen-3', clickable: false, type: 'image', href: 'assets/revistadigital/revistapdf/Revista9.pdf', component: <Image src='assets/images/portada-revista-9.webp' fluid /> },
     { src: 'assets/images/contacto.webp', alt: 'SubVT: direcciones y canales de contacto', clickable: false, type: 'image', component: <Image src='assets/images/contacto.webp' fluid /> },
     //{src: 'assets/images/Flyers-svts-4-de-junio.webp', alt: 'imagen-3', type: 'image', clickable: false, component: <Image src='assets/images/Flyers-svts-4-de-junio.webp' fluid/> },
   ];
+  */
   return (
     <Container fluid className="bg-home">
       <section className='container principal-body'>
         <h1 className="hero text-deg">Subsecretaría de Vinculación<br />Territorial</h1>
-        <p className="encabezado-3 mt-5 w-75">Promovemos la apropiación social de conocimiento generado en el ámbito de la Universidad Nacional de San Luis, impulsando la vinculación del sector científico-tecnológico con su entorno socio-productivo</p>
-        <Galeria media={media} />
+        <p className="encabezado-3">Promovemos la apropiación social de conocimiento generado en el ámbito de la Universidad Nacional de San Luis, impulsando la vinculación del sector científico-tecnológico con su entorno socio-productivo</p>
+        {/* <Galeria media={media} /> */}
+        <Carrusel />
       </section>
     </Container>
   );

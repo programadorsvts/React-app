@@ -1,0 +1,125 @@
+.carrusel {
+    --carrusel-gap: 1.5rem;
+    --carrusel-edge: 5%;
+    position: relative;
+    width: 126.5%;
+    max-width: calc(100vw - 1rem);
+    min-width: 0;
+    margin-top: .75rem;
+}
+
+.carrusel-viewport {
+    /* El degradado revela el fondo de la portada sin tapar los gestos. */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.carrusel-track {
+    display: flex;
+    gap: var(--carrusel-gap);
+    padding-inline: var(--carrusel-edge);
+    scroll-padding-inline: var(--carrusel-edge);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    border-radius: 24px;
+    cursor: grab;
+    user-select: none;
+}
+
+.carrusel-track.carrusel-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+.carrusel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carrusel-slide {
+    flex: 0 0 calc((100% - var(--carrusel-gap)) / 2);
+    min-width: 0;
+    scroll-snap-align: start;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.principal-body .carrusel-slide img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.carrusel-controls {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: .5rem;
+    pointer-events: none;
+}
+
+.carrusel-controls button {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 50%;
+    background: rgba(8, 17, 29, .6);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .2);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.carrusel-controls button:disabled {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.carrusel-controls button:hover {
+    background: var(--text-color);
+    color: var(--bg-color-dark);
+}
+
+.carrusel-controls button:focus-visible,
+.carrusel-track:focus-visible {
+    outline: 2px solid var(--text-color-third);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .carrusel {
+        --carrusel-gap: .75rem;
+        --carrusel-edge: .5rem;
+    }
+
+    .carrusel-slide {
+        flex-basis: calc((100% - var(--carrusel-gap)) / 1.5);
+        border-radius: 12px;
+    }
+
+    .carrusel-controls {
+        padding-inline: 0;
+    }
+
+    .carrusel-controls button {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carrusel-track {
+        scroll-behavior: auto;
+    }
+}

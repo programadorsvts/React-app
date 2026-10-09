@@ -7,10 +7,14 @@
    background: var(--bg-gradient-1);
  }
 
-.principal-body .hero {
-   margin-top: 4rem;
+.bg-home .principal-body .hero {
+   margin-top: 3.4rem;
+   margin-bottom: .425rem;
 }
 
-.principal-body .encabezado-3 {
+.bg-home .principal-body .encabezado-3 {
    line-height: 1.5;
+   width: 89.375%;
+   margin-top: 1.275rem;
+   margin-bottom: .85rem;
 }
