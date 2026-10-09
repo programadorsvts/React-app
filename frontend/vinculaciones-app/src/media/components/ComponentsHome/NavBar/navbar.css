@@ -85,6 +85,7 @@
     text-underline-offset: 6px;
 }
 .navbar-buttons .btn { padding-bottom: 11px; }
+.navbar .navbar-medium-toggle { display: none; }
 
 .navbar-folder-tab {
     position: absolute;
@@ -135,6 +136,16 @@
 
 @media (prefers-reduced-motion: reduce) {
     .navbar-folder-tab svg, .navbar .collapsing { transition: none; }
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-folder-tab { display: none; }
+}
+
+@media (min-width: 768px) and (max-width: 1399.98px) {
+    .navbar .navbar-medium-toggle { display: block; flex-shrink: 0; }
+    .navbar .institutional-brand { max-width: calc(100% - 72px); }
+    .navbar-medium-toggle:focus-visible { outline: 2px solid var(--text-color-third); outline-offset: 3px; }
 }
 
 @media (min-width: 1400px) {

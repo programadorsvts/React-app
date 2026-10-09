@@ -8,9 +8,9 @@ jest.mock('../../../../LoginProvider', () => ({
 }));
 const mockAuthUser = () => false;
 
-test('folder tab toggles the dropdown, closes on navigation and restores focus on Escape', async () => {
+test.each(['navbar-folder-tab', 'navbar-medium-toggle'])('%s toggles the dropdown, closes on navigation and restores focus on Escape', async (toggleClass) => {
   render(<MemoryRouter><NavBar /></MemoryRouter>);
-  const tab = screen.getByRole('button', { name: 'Abrir menú' });
+  const tab = document.querySelector(`.${toggleClass}`);
   const menu = document.getElementById(tab.getAttribute('aria-controls'));
   expect(tab).toHaveAttribute('aria-expanded', 'false');
   expect(menu).toHaveClass('collapse');

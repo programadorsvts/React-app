@@ -10,7 +10,7 @@ import { useState, useEffect, useRef } from 'react';
 
 function NavBar() {
   const [expanded, setExpanded] = useState(false);
-  const tabRef = useRef(null);
+  const toggleRef = useRef(null);
   const closeOffCanvas = () => setExpanded(false);
   const navigateAndClose = closeOffCanvas;
   const navigate = useNavigate();
@@ -45,13 +45,16 @@ function NavBar() {
       onKeyDown={(event) => {
         if (event.key === 'Escape' && expanded) {
           closeOffCanvas();
-          tabRef.current?.focus();
+          toggleRef.current?.focus();
         }
       }}>
       <Container fluid>
         <NavLink to="/" className="institutional-brand" onClick={closeOffCanvas}>
           <img src='/assets/svgs/logo-institucional-subvt.svg' className="institutional-logo" alt="Universidad Nacional de San Luis · SIDI · Subsecretaría de Vinculación Territorial" />
         </ NavLink >
+        <Navbar.Toggle className="navbar-medium-toggle" aria-controls="basic-navbar-nav"
+          aria-expanded={expanded} label={expanded ? 'Cerrar menú' : 'Abrir menú'}
+          onClick={(event) => { toggleRef.current = event.currentTarget; }} />
         <div className="navbar-dropdown">
         <Navbar.Collapse id="basic-navbar-nav" className="menu-toggle">
             <div className="navbar-menu-body">
@@ -67,8 +70,9 @@ function NavBar() {
               </Nav>
             </div>
         </Navbar.Collapse>
-        <Navbar.Toggle ref={tabRef} className="navbar-folder-tab" aria-controls="basic-navbar-nav"
-          aria-expanded={expanded} label={expanded ? 'Cerrar menú' : 'Abrir menú'}>
+        <Navbar.Toggle className="navbar-folder-tab" aria-controls="basic-navbar-nav"
+          aria-expanded={expanded} label={expanded ? 'Cerrar menú' : 'Abrir menú'}
+          onClick={(event) => { toggleRef.current = event.currentTarget; }}>
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
