@@ -18,3 +18,16 @@
    margin-top: 1.275rem;
    margin-bottom: .85rem;
 }
+
+@media (max-width: 768px) {
+   .bg-home .principal-body .hero {
+      font-size: clamp(1.65rem, 6vw, 2.5rem);
+      line-height: 1.2;
+      margin-top: 3rem;
+   }
+   .bg-home .principal-body .encabezado-3 {
+      font-size: 1rem;
+      width: 100%;
+      margin-top: 1rem;
+   }
+}

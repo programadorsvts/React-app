@@ -85,13 +85,65 @@
     text-underline-offset: 6px;
 }
 .navbar-buttons .btn { padding-bottom: 11px; }
+
+.navbar-folder-tab {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: 1.25rem;
+    width: 56px;
+    height: 32px;
+    padding: 0;
+    border: 2px solid var(--text-color);
+    border-top: 0;
+    border-radius: 0 0 12px 12px;
+    background: var(--bg-color-dark);
+    color: var(--text-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .12);
+}
+.navbar-folder-tab::after { content: ''; position: absolute; inset: 0 0 -12px; }
+.navbar-folder-tab svg { transition: transform .35s ease; }
+.navbar-folder-tab[aria-expanded="true"] svg { transform: rotate(180deg); }
+.navbar-folder-tab:hover { color: var(--text-color-third); }
+.navbar-folder-tab:focus-visible { outline: 2px solid var(--text-color-third); outline-offset: 3px; }
+
+@media (max-width: 1399.98px) {
+    .navbar { padding: .75rem 0; border-bottom-color: transparent; }
+    .navbar > .container-fluid { padding: 0 1rem; }
+    .institutional-brand { max-width: 650px; width: 100%; padding: 0; }
+    .navbar-dropdown { position: absolute; top: 100%; left: 0; right: 0; }
+    /* Keep the edge outside the collapsing content so it stays visible during animation. */
+    .navbar-dropdown::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-top: 2px solid var(--text-color);
+        pointer-events: none;
+    }
+    .navbar .navbar-menu-body {
+        max-height: calc(100dvh - 130px);
+        overflow-y: auto;
+        padding: 1.25rem 1rem;
+    }
+    .navbar-links { gap: .25rem; }
+    .navbar .text-3 { font-size: .875rem; font-weight: 500; margin: 0; padding: .75rem 1rem; }
+    .navbar-buttons { margin-top: 1rem; gap: .5rem; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+    .navbar-buttons .btn { margin: 0; padding: .65rem 1rem; font-size: .75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar-folder-tab svg, .navbar .collapsing { transition: none; }
+}
+
 @media (min-width: 1400px) {
     .navbar { height: 88.11px; }
     .navbar > .container-fluid { height: 100%; padding-block: 0; }
     .institutional-brand { flex: 0 1 650px; min-width: 420px; }
     .navbar .navbar-collapse { flex: 1; min-width: 0; align-self: stretch; }
-    .navbar .offcanvas { height: 100% !important; }
-    .navbar .offcanvas-body { height: 100%; padding-bottom: 8px !important; align-items: center; justify-content: space-between; gap: 1rem; }
+    .navbar-dropdown { display: flex; flex: 1; min-width: 0; align-self: stretch; }
+    .navbar .navbar-menu-body { display: flex; width: 100%; height: 100%; padding-bottom: 8px; align-items: center; justify-content: space-between; gap: 1rem; }
     .navbar-links { align-self: flex-end; flex-direction: row; justify-content: center; flex: 1; gap: clamp(10px, 1vw, 24px); }
     .navbar .text-3 { margin: 0; white-space: nowrap; }
     .navbar-buttons { margin: 0; flex-shrink: 0; align-self: flex-end; }
